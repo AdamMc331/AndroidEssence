@@ -1,0 +1,4 @@
+baseURL = 'https://androidessence.com/'
+languageCode = 'en-us'
+title = 'AndroidEssence'
+theme = 'hugo-blog-awesome'
