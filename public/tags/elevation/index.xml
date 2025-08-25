@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elevation on Android Essence</title>
+    <link>http://localhost:1313/tags/elevation/</link>
+    <description>Recent content in Elevation on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Sep 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/elevation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Elevation In Android Applications</title>
+      <link>http://localhost:1313/posts/2015-09-15-using-elevation-in-android-applications/</link>
+      <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2015-09-15-using-elevation-in-android-applications/</guid>
+      
+      <description>&lt;p&gt;The backbone of Material Design is to design your user interface in a way that is simple and intuitive for users, in the same way we use our intuition with real life materials. One of the many ways this is achieved is through the use of elevation in Android UI components, demonstrated here:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/elevation.gif&#34; alt=&#34;Android Layout Visualizer&#34;&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

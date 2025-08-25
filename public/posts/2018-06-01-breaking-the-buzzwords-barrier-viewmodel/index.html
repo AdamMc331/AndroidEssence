@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Breaking the Buzzwords Barrier Part 3&amp;#58; ViewModel | Android Essence</title>
+<meta property="og:title" content="Breaking the Buzzwords Barrier Part 3&amp;#58; ViewModel | Android Essence" />
+<meta name="twitter:title" content="Breaking the Buzzwords Barrier Part 3&amp;#58; ViewModel | Android Essence" />
+<meta itemprop="name" content="Breaking the Buzzwords Barrier Part 3&amp;#58; ViewModel | Android Essence" />
+<meta name="application-name" content="Breaking the Buzzwords Barrier Part 3&amp;#58; ViewModel | Android Essence" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="Explains what a ViewModel means in both MVVM and Android contexts.">
+<meta itemprop="description" content="Explains what a ViewModel means in both MVVM and Android contexts." />
+<meta property="og:description" content="Explains what a ViewModel means in both MVVM and Android contexts." />
+<meta name="twitter:description" content="Explains what a ViewModel means in both MVVM and Android contexts." />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/2018-06-01-breaking-the-buzzwords-barrier-viewmodel/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2018-06-01T00:00:00Z />
+    <meta property="article:published_time" content=2018-06-01T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/2018-06-01-breaking-the-buzzwords-barrier-viewmodel/" />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Breaking the Buzzwords Barrier Part 3\u0026#58; ViewModel",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2018-06-01",
+        "description": "Explains what a ViewModel means in both MVVM and Android contexts.",
+        "wordCount":  1065 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2018-06-01",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Android Essence"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/2018-06-01-breaking-the-buzzwords-barrier-viewmodel/">
+  <meta property="og:site_name" content="Android Essence">
+  <meta property="og:title" content="Breaking the Buzzwords Barrier Part 3&#58; ViewModel">
+  <meta property="og:description" content="Explains what a ViewModel means in both MVVM and Android contexts.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-06-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2018-06-01T00:00:00+00:00">
+    <meta property="article:tag" content="Architecture">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Breaking the Buzzwords Barrier Part 3&#58; ViewModel">
+  <meta name="twitter:description" content="Explains what a ViewModel means in both MVVM and Android contexts.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/2018-06-01-breaking-the-buzzwords-barrier-viewmodel/">
+    <link href="/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Breaking the Buzzwords Barrier Part 3&amp;#58; ViewModel</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2018-06-01T00:00:00&#43;00:00" itemprop="datePublished"> Jun 1, 2018 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>So far we&rsquo;ve covered four big buzzwords used in our application:</p>
+<ol>
+<li>Model-View-ViewModel</li>
+<li>Room</li>
+<li>RxJava</li>
+<li>Repository Pattern</li>
+</ol>
+<p>Now, we should circle back to the beginning. Following our diagram outlined in the [previous parts]({{ site.baseurl }}{% link _posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository.md %}), the next component we can begin to work on is our AccountViewModel:</p>
+<p><img src="/images/buzzwords/architecture_viewmodel.png" alt="Android Essence"></p>
+<p>Naturally, this may bring up some confusion. We already discussed ViewModels in [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}). Well, depending on context, we may not be referring to the same thing.</p>
+<h1 id="architecture">Architecture</h1>
+<p>When we refer to the MVVM architecture, the ViewModel here just refers to a specific component in your application&rsquo;s architecture. It does not have anything to do with Android or life cycles at this point. To quote the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">Wikipedia article</a>:</p>
+<blockquote>
+<p>The view model is an abstraction of the view exposing public properties and commands. Instead of the controller of the MVC pattern, or the presenter of the MVP pattern, MVVM has a binder. In the view model, the binder mediates communication between the view and the data binder. The view model has been described as a state of the data in the model.</p></blockquote>
+<p>Up to this point, a ViewModel is nothing more than a component that binds data to your view. We can do this a number of ways, including data binding which we will discuss in a later post, but we&rsquo;ll leave it at that for now. An important take away from this discussion is that MVVM is not specific to Android - a ViewModel could be a class inside an iOS or even a desktop application, if you chose to architect it as such.</p>
+<h1 id="android">Android</h1>
+<p>So then what does a ViewModel mean in terms of Android discussions? Every time the <a href="https://developer.android.com/topic/libraries/architecture/">architecture components</a> come up, it seems without fail that we begin talking about <a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModels</a>.</p>
+<p>This is a new class added with the architecture components in 2017 to manage data in a lifecycle conscious way. For those of you who have been doing Android for a long time, you&rsquo;ve experienced the struggles of activities being killed on rotation, and repulling for data, or learning the appropriate way to save state yourself. It&rsquo;s a hassle, and something every single Android developer has had to deal with.</p>
+<p>However, just like they did with Room, the Google developers sought out to make this easier for everybody, and provided this class to do so.</p>
+<blockquote>
+<p>Architecture Components provides ViewModel helper class for the UI controller that is responsible for preparing data for the UI. ViewModel objects are automatically retained during configuration changes so that data they hold is immediately available to the next activity or fragment instance.</p></blockquote>
+<p>So in this context, when we refer to the architecture component, we&rsquo;re simply talking about a class that can maintain data throughout orientation changes. While this might sound counterintuitive, the Android class for ViewModel is completely separate from the MVVM concept, and can be mutually exclusive. You can use an MVVM architecture without this class, and you can use this class without an MVVM architecture.</p>
+<h1 id="overlap">Overlap</h1>
+<p>Despite the ability to be mutually exclusive, there is often overlap in this discussion. The reason for that goes back to the purpose of a ViewModel in MVVM. As stated earlier, the ViewModel is simply an abstraction of the view that exposes certain properties. These properties could be a list of data to display, or the current state of your view.</p>
+<p>An Android ViewModel is a way to persist data across orientation changes. What kind of data would you want to persist? A list of data you&rsquo;re displaying, or the current state of your view. Thus, they often go hand in hand because the ViewModel class in Android was made to handle many of the concerns faced by a ViewModel in MVVM.</p>
+<h1 id="implementation">Implementation</h1>
+<p>As I go over these buzzwords, I also want to show the implementation where it&rsquo;s relevant. I&rsquo;ve trimmed this a little bit from the actual class in Cash Caretaker, but enough to demonstrate a couple key points:</p>
+<ol>
+<li>The ViewModel manages the current state of the view, not our Fragment. It&rsquo;s exposed via a <a href="">BehaviorSubject</a>, so the Fragment can respond to it.</li>
+<li>The ViewModel interracts with the Repository we made in the last section to fetch data. It also checks to make sure it&rsquo;s not pulling data redundently.</li>
+<li>The ViewModel also manages a <a href="http://reactivex.io/RxJava/javadoc/io/reactivex/disposables/CompositeDisposable.html">CompositeDisposable</a> which holds our network subscription, and clears the network subscription when our ViewModel is cleared. This is to avoid memory leaks if there&rsquo;s a long running request.</li>
+</ol>
+<p>If you don&rsquo;t understand the RxJava code below, head back to [part 2]({{ site.baseurl }}{% link _posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository.md %}) for some notes and links to external resources.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="k">class</span> <span class="nc">AccountViewModel</span><span class="p">(</span><span class="k">private</span> <span class="k">val</span> <span class="py">repository</span><span class="p">:</span> <span class="n">CCRepository</span><span class="p">)</span> <span class="p">:</span> <span class="n">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="k">private</span> <span class="k">val</span> <span class="py">compositeDisposable</span> <span class="p">=</span> <span class="n">CompositeDisposable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	    <span class="k">val</span> <span class="py">state</span><span class="p">:</span> <span class="n">BehaviorSubject</span><span class="p">&lt;</span><span class="n">DataViewState</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nc">BehaviorSubject</span><span class="p">.</span><span class="n">create</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	    <span class="k">fun</span> <span class="nf">fetchAccounts</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	        <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="k">value</span> <span class="o">!is</span> <span class="nc">DataViewState</span><span class="p">.</span><span class="n">Success</span><span class="p">&lt;*&gt;)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	            <span class="nc">Timber</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&#34;Loading Accounts&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	            <span class="n">postState</span><span class="p">(</span><span class="nc">DataViewState</span><span class="p">.</span><span class="n">Loading</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	            <span class="k">val</span> <span class="py">subscription</span> <span class="p">=</span> <span class="n">repository</span>
+</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">getAllAccounts</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">subscribeOn</span><span class="p">(</span><span class="nc">Schedulers</span><span class="p">.</span><span class="n">io</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">observeOn</span><span class="p">(</span><span class="nc">AndroidSchedulers</span><span class="p">.</span><span class="n">mainThread</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">subscribe</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">	                            <span class="k">this</span><span class="o">::</span><span class="n">postState</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	                            <span class="n">Timber</span><span class="o">::</span><span class="n">e</span>
+</span></span><span class="line"><span class="cl">	                    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	            <span class="n">compositeDisposable</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">subscription</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	    <span class="k">private</span> <span class="k">fun</span> <span class="nf">postState</span><span class="p">(</span><span class="n">newState</span><span class="p">:</span> <span class="n">DataViewState</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	        <span class="n">state</span><span class="p">.</span><span class="n">onNext</span><span class="p">(</span><span class="n">newState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	        <span class="n">notifyChange</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCleared</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	        <span class="n">compositeDisposable</span><span class="p">.</span><span class="n">dispose</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span></code></pre></div><p>Because this survives orientation changes, and because we do a state check before pulling accounts, we can save ourselves from unnecessarily requesting data every time the user rotates their phone, and instead only when the view (and ViewModel) are created for the first time.</p>
+<h2 id="factory">Factory</h2>
+<p>Instantiating your ViewModel from inside your activity or fragment can be pretty easy:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">viewModel</span> <span class="p">=</span> <span class="nc">ViewModelProviders</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="k">get</span><span class="p">(</span><span class="n">MyViewModel</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
+</span></span></code></pre></div><p>However, you may notice in the above example, we don&rsquo;t have any way to call a constructor. Unfortunately, there aren&rsquo;t any examples in the documentation, but you can do this using a <a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.Factory">ViewModelProvider.Factory</a>. There is an <a href="https://android.jlelse.eu/android-viewmodel-with-custom-arguments-d0ff0fba29e1">explanation by Mohit Sharma</a> that is quick and to the point.</p>
+<p>You can create an instance of this factory using an anonymous class, create your ViewModel with the constructor, and then return that. Here is an example from Cash Caretaker:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">viewModelFactory</span><span class="p">:</span> <span class="nc">ViewModelProvider</span><span class="p">.</span><span class="n">Factory</span> <span class="k">by</span> <span class="n">lazy</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">object</span> <span class="err">: </span><span class="nc">ViewModelProvider</span><span class="p">.</span><span class="n">Factory</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="p">&lt;</span><span class="nc">T</span> <span class="p">:</span> <span class="nc">ViewModel</span><span class="p">?&gt;</span> <span class="nf">create</span><span class="p">(</span><span class="n">modelClass</span><span class="p">:</span> <span class="n">Class</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;):</span> <span class="n">T</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">database</span> <span class="p">=</span> <span class="nc">CCDatabase</span><span class="p">.</span><span class="n">getInMemoryDatabase</span><span class="p">(</span><span class="n">context</span><span class="o">!!</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">repository</span> <span class="p">=</span> <span class="n">CCRepository</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">AccountViewModel</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span> <span class="k">as</span> <span class="n">T</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">viewModel</span> <span class="p">=</span> <span class="nc">ViewModelProviders</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">viewModelFactory</span><span class="p">).</span><span class="k">get</span><span class="p">(</span><span class="n">AccountViewModel</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
+</span></span></code></pre></div><h1 id="conclusion">Conclusion</h1>
+<p>I hope this demonstrates clearly what a ViewModel means in terms of the software architecture, as well as what the ViewModel class in Android does for us. Congratulations on making it through! You can now cross off another intimidating buzzword, and have a discussion about why this is truly relevant.</p>
+<p>Keep an eye out for part 4 coming soon!</p>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://twitch.tv/adammc" target="_blank" rel="noopener noreferrer me"
+    title="Twitch">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+</svg>
+</a>
+<a href="https://bsky.app/profile/adammc.bsky.social" target="_blank" rel="noopener noreferrer me"
+    title="Bluesky">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+    d="M11.999,10.236c0.321,-0.524 0.916,-1.507 1.405,-2.376c0.755,-1.344 1.692,-2.852 2.869,-4.028c1.283,-1.281 2.845,-2.171 4.739,-2.171c1.144,-0 1.864,0.585 2.299,1.497c0.486,1.017 0.545,2.551 0.51,3.883c-0.051,1.945 -0.232,3.337 -0.505,4.275c-0.229,0.786 -0.543,1.303 -0.878,1.615c-0.892,0.833 -1.8,1.263 -2.634,1.484c0.029,0.018 0.056,0.036 0.084,0.055c0.528,0.367 0.823,0.79 1.081,1.107c0.648,0.794 0.644,1.795 0.23,2.784c-0.481,1.151 -1.533,2.279 -2.12,2.773c-1.389,1.171 -2.506,1.362 -3.383,1.133c-0.88,-0.23 -1.59,-0.932 -2.156,-1.826c-0.45,-0.71 -0.817,-1.537 -1.176,-2.186c-0.115,-0.208 -0.302,-0.455 -0.406,-0.587c-0.02,0.019 -0.04,0.04 -0.056,0.058c-0.121,0.145 -0.234,0.328 -0.349,0.531c-0.363,0.644 -0.721,1.463 -1.157,2.166c-0.555,0.895 -1.252,1.597 -2.12,1.825c-0.863,0.227 -1.97,0.037 -3.363,-1.136c-0.586,-0.494 -1.638,-1.622 -2.119,-2.773c-0.414,-0.989 -0.418,-1.99 0.229,-2.784c0.258,-0.317 0.554,-0.74 1.082,-1.106c0.027,-0.019 0.055,-0.038 0.084,-0.056c-0.834,-0.221 -1.742,-0.651 -2.634,-1.484c-0.335,-0.312 -0.649,-0.829 -0.878,-1.615c-0.273,-0.938 -0.454,-2.33 -0.505,-4.275c-0.036,-1.332 0.024,-2.866 0.509,-3.883c0.435,-0.912 1.156,-1.497 2.3,-1.497c2.32,0 4.109,1.203 5.494,2.808c1.272,1.474 2.195,3.283 2.9,4.643c0.231,0.447 0.436,0.84 0.624,1.146Zm-0.01,5.653l0.296,0.031l0.271,0.086c0.208,0.088 0.413,0.229 0.607,0.428c0.455,0.467 0.882,1.369 1.36,2.284c0.249,0.477 0.518,0.958 0.841,1.339c0.231,0.274 0.483,0.502 0.805,0.569c0.488,0.103 1.052,-0.157 1.811,-0.797c0.452,-0.38 1.274,-1.239 1.645,-2.126c0.155,-0.371 0.265,-0.75 0.022,-1.048c-0.179,-0.22 -0.366,-0.529 -0.732,-0.783c-0.536,-0.372 -1.356,-0.51 -1.905,-0.654c-0.405,-0.106 -0.715,-0.234 -0.88,-0.355l-0.284,-0.303l-0.135,-0.367l-0.008,-0.211l0.035,-0.196l0.078,-0.195l0.142,-0.209l0.198,-0.181l0.296,-0.154c0.151,-0.055 0.348,-0.092 0.587,-0.104c0.815,-0.042 2.571,0.294 4.235,-1.259c0.171,-0.159 0.288,-0.445 0.404,-0.845c0.246,-0.843 0.391,-2.096 0.438,-3.843c0.024,-0.91 0.026,-1.938 -0.208,-2.738c-0.142,-0.486 -0.367,-0.891 -0.896,-0.891c-1.675,0 -2.974,0.983 -4.031,2.21c-1.179,1.369 -2.058,3.057 -2.752,4.321c-0.483,0.88 -0.902,1.573 -1.25,1.916c-0.088,0.086 -0.174,0.157 -0.257,0.214l-0.221,0.125l-0.228,0.078l-0.267,0.031l-0.274,-0.034l-0.231,-0.083l-0.219,-0.132c-0.081,-0.058 -0.164,-0.131 -0.248,-0.22c-0.327,-0.343 -0.718,-1.037 -1.174,-1.917c-0.654,-1.262 -1.497,-2.948 -2.676,-4.314c-1.067,-1.236 -2.417,-2.217 -4.203,-2.217c-0.53,0 -0.754,0.405 -0.896,0.891c-0.234,0.8 -0.232,1.828 -0.208,2.738c0.046,1.747 0.192,3 0.438,3.843c0.116,0.4 0.233,0.686 0.403,0.845c1.665,1.553 3.421,1.217 4.235,1.259c0.24,0.012 0.437,0.049 0.588,0.104l0.295,0.154l0.199,0.181l0.142,0.209l0.078,0.195l0.035,0.196l-0.009,0.211l-0.135,0.368l-0.283,0.303c-0.165,0.12 -0.476,0.248 -0.88,0.355c-0.549,0.144 -1.369,0.281 -1.905,0.653c-0.366,0.254 -0.554,0.564 -0.732,0.783c-0.243,0.298 -0.133,0.677 0.022,1.048c0.371,0.887 1.193,1.746 1.645,2.127c0.757,0.637 1.311,0.9 1.789,0.8c0.311,-0.066 0.55,-0.29 0.772,-0.557c0.315,-0.381 0.577,-0.86 0.822,-1.337c0.394,-0.763 0.752,-1.521 1.138,-2.01c0.431,-0.544 0.929,-0.815 1.455,-0.815Z" style="fill-rule:nonzero;"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://github.com/AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 .
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer>
+
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

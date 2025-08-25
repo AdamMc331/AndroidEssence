@@ -34,12 +34,20 @@ theme = "hugo-blog-awesome"
 		ordered = false # generates <ul> instead of <ol>
 
 [[params.socialIcons]]
-name = "github"
-url = "https://github.com/AdamMc331"
+name = "twitch"
+url = "https://twitch.tv/adammc"
 
 [[params.socialIcons]]
 name = "bluesky"
 url = "https://bsky.app/profile/adammc.bsky.social"
+
+[[params.socialIcons]]
+name = "youtube"
+url = "https://www.youtube.com/@AdamMc331"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/AdamMc331"
 
 [[params.socialIcons]]
 name = "Rss"

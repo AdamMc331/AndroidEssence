@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ui on Android Essence</title>
+    <link>http://localhost:1313/tags/ui/</link>
+    <description>Recent content in Ui on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Dec 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How To Make An Android UI Part 2&amp;#58; Java Code</title>
+      <link>http://localhost:1313/posts/2015-12-02-how-to-make-an-android-ui-part-2/</link>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2015-12-02-how-to-make-an-android-ui-part-2/</guid>
+      
+      <description>&lt;p&gt;After reading [part one]({{ site.baseurl }}{% link _posts/2015-11-08-how-to-make-an-android-ui-part-1.md %}) which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>How To Make An Android UI Part 1&amp;#58; XML and Views</title>
+      <link>http://localhost:1313/posts/2015-11-08-how-to-make-an-android-ui-part-1/</link>
+      <pubDate>Sun, 08 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2015-11-08-how-to-make-an-android-ui-part-1/</guid>
+      
+      <description>&lt;p&gt;Many of the posts on this site so far deal with nuanced tricks such as RecyclerView swiping/drag and drops, and often make the assumption that the reader has already worked with the Android UI. This post is going to break it down for the beginners, teaching you the fundamentals of mobile UI development and where you can pick up on skills to move forward.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

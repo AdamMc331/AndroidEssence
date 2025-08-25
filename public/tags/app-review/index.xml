@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>App Review on Android Essence</title>
+    <link>http://localhost:1313/tags/app-review/</link>
+    <description>Recent content in App Review on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Oct 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/app-review/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>App Review&amp;#58;  DigiLux</title>
+      <link>http://localhost:1313/posts/2017-10-09-app-review-digilux/</link>
+      <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2017-10-09-app-review-digilux/</guid>
+      
+      <description>&lt;p&gt;Controlling the brightness of your phone can be a hassle. Currently we&amp;rsquo;re stuck with the two step process - swipe down on the notification drawer, and then deal with the slider trying to get it just right. However, with the release of Android Oreo and a new &lt;a href=&#34;https://developer.android.com/guide/topics/ui/accessibility/services.html#fingerprint&#34;&gt;fingerprint gesture API&lt;/a&gt;, a new solution was born. Enter &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.tunjid.fingergestures&#34;&gt;DigiLux&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

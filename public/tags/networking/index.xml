@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Android Essence</title>
+    <link>http://localhost:1313/tags/networking/</link>
+    <description>Recent content in Networking on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started With Retrofit In Android</title>
+      <link>http://localhost:1313/posts/2016-11-05-getting-started-with-retrofit/</link>
+      <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2016-11-05-getting-started-with-retrofit/</guid>
+      
+      <description>&lt;p&gt;As a new or intermediate Android developer, getting started with &lt;a href=&#34;http://square.github.io/retrofit&#34;&gt;Retrofit&lt;/a&gt;, a popular HTTP client, can seem pretty daunting. However, using this library is not as scary as it sounds. Here are four easy steps to creating your first Retrofit application!&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

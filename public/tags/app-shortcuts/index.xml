@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>App-Shortcuts on Android Essence</title>
+    <link>http://localhost:1313/tags/app-shortcuts/</link>
+    <description>Recent content in App-Shortcuts on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Apr 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/app-shortcuts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating Android App Shortcuts</title>
+      <link>http://localhost:1313/posts/2017-04-14-creating-android-app-shortcuts/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2017-04-14-creating-android-app-shortcuts/</guid>
+      
+      <description>&lt;p&gt;Android app shortcuts are a special feature added in Android 7.1 (API 25). Shortcuts are special actions that appear when you long press on a launcher icon, that will trigger a specified intent. With this post you will learn how to create both static and dynamic app shortcuts. The only pre-requisite is that your app is targeting API 25 or greater.&lt;/p&gt;
+&lt;h4 id=&#34;static-shortcuts&#34;&gt;Static Shortcuts&lt;/h4&gt;
+&lt;p&gt;Static app shortcuts are shortcuts that are defined via XML. This means they are created at compile time, and will be consistent as long as your app is on the user&amp;rsquo;s device. Common use cases for this would be to launch a regularly used activity in your app that is not the launcher activity.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

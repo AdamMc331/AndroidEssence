@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Twitch on Android Essence</title>
+    <link>http://localhost:1313/tags/twitch/</link>
+    <description>Recent content in Twitch on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/twitch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Five Essential Developer Experience Concepts For Android</title>
+      <link>http://localhost:1313/posts/2021-09-10-essential-dev-experience-concepts-android/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2021-09-10-essential-dev-experience-concepts-android/</guid>
+      
+      <description>&lt;p&gt;In the most recent &lt;a href=&#34;https://www.youtube.com/watch?v=ePpbpLyYI1w&#34;&gt;live stream&lt;/a&gt; for Tasks Of Affirmation, we looked at creating a good developer experience. It&amp;rsquo;s important to consider developers at the start of any new project, so we can ensure that over the lifetime of a project anyone who contributes can understand how to contribute, match any guidelines that a team has, and get up and running quickly. We also want to ensure that our codebase maintains a certain quality of formatting and a lack of code smells - and putting these checks in place before you even start prevents them from ever being introduced at all.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s look at five developer experience concepts I consider essential to every project.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Tasks Of Affirmation: A New Twitch Live Stream Series</title>
+      <link>http://localhost:1313/posts/2021-09-02-toa-twitch-series/</link>
+      <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2021-09-02-toa-twitch-series/</guid>
+      
+      <description>&lt;p&gt;In the late summer of 2020, I began live streaming on &lt;a href=&#34;https://twitch.com/adammc331&#34;&gt;my Twitch channel&lt;/a&gt;. We started off by building an &lt;a href=&#34;https://github.com/adammc331/AndroidStudyGuide&#34;&gt;Android Study Guide&lt;/a&gt; application. The purpose of the application was to build something people would be interested in using, while also taking the opportunity to build an application out in the open.&lt;/p&gt;
+&lt;p&gt;For a number of reasons, discussed in &lt;a href=&#34;https://www.youtube.com/watch?v=8Umvlpx-Wvg&#34;&gt;the latest video&lt;/a&gt;, I&amp;rsquo;ve decided to sunset that project and begin a new live stream series: Tasks Of Affirmation.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

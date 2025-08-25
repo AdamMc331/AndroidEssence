@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graphql on Android Essence</title>
+    <link>http://localhost:1313/tags/graphql/</link>
+    <description>Recent content in Graphql on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/graphql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Storing Network Responses With Apollo Normalized Cache</title>
+      <link>http://localhost:1313/posts/2021-02-15-storing-network-responses-with-apollo-normalized-cache/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2021-02-15-storing-network-responses-with-apollo-normalized-cache/</guid>
+      
+      <description>&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-01-storing-network-responses-with-apollo-http-cache.md %}) we looked at the HTTP cache from &lt;a href=&#34;https://www.apollographql.com/docs/android/&#34;&gt;Apollo Android&lt;/a&gt; for storing network responses. In this post, we look at its counter part, the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/normalized-cache/&#34;&gt;normalized cache&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Storing Network Responses With Apollo HTTP Cache</title>
+      <link>http://localhost:1313/posts/2021-02-01-storing-network-responses-with-apollo-http-cache/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2021-02-01-storing-network-responses-with-apollo-http-cache/</guid>
+      
+      <description>&lt;p&gt;Caching is the practice of storing data that we requested previously so we can serve it faster in the future. This creates a better user experience by decreasing loading times. It also has long term benefits like reducing the number of network requests, to save on phone resources or potentially provide offline support. Today, we&amp;rsquo;re going to discuss how to use the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/http-cache/&#34;&gt;HTTP cache&lt;/a&gt; for the &lt;a href=&#34;https://github.com/apollographql/apollo-android&#34;&gt;Apollo Android SDK&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swipe to Dismiss on Android Essence</title>
+    <link>http://localhost:1313/tags/swipe-to-dismiss/</link>
+    <description>Recent content in Swipe to Dismiss on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Sep 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/swipe-to-dismiss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swipe To Dismiss RecyclerView Items</title>
+      <link>http://localhost:1313/posts/2015-09-09-swipe-to-dismiss-recyclerview-items/</link>
+      <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2015-09-09-swipe-to-dismiss-recyclerview-items/</guid>
+      
+      <description>&lt;p&gt;In my last post I broke down the differences between the RecyclerView and a ListView. One of the benefits of the RecyclerView that I touched on was the &lt;a href=&#34;https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html&#34;&gt;ItemTouchHelper&lt;/a&gt;. This class is used to handle the Swipe-To-Dismiss and Drag-N-Drop behaviors of a RecyclerView. In this post I am going to teach you how to swipe to dismiss RecyclerView items using the sample application seen here:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/std-sample.gif&#34; alt=&#34;Swipe To Dismiss&#34;&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rxjava on Android Essence</title>
+    <link>http://localhost:1313/tags/rxjava/</link>
+    <description>Recent content in Rxjava on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/rxjava/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unit Testing RxJava or Coroutine Code With Constructor Injection</title>
+      <link>http://localhost:1313/posts/2019-04-30-unit-testing-async-code/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2019-04-30-unit-testing-async-code/</guid>
+      
+      <description>&lt;p&gt;Putting aside the long lasting debate right now about whether you should use RxJava or coroutines for your asynchronous code on Android, both camps often hit the same problem. How do I write unit tests for this?&lt;/p&gt;
+&lt;p&gt;Unit testing asynchronous code is tricky, because we may need to know how to properly test callback APIs, or perhaps we just want things to run instantly and not worry about thread changes. We may also be wondering how to handle not having a &amp;ldquo;main&amp;rdquo; thread in a junit test, unlike a connected test. This post will be focusing on handling that last one.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Breaking the Buzzwords Barrier Part 2&amp;#58; Rx, Room, and Repository</title>
+      <link>http://localhost:1313/posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository/</guid>
+      
+      <description>&lt;p&gt;In [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) we discussed how we were going to architect the various components of our application. Now it&amp;rsquo;s time to build them. To understand what we should build first, we should revisit the diagram:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/buzzwords/cashcaretaker_mvvm.png&#34; alt=&#34;MVVM&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I would start with three spots:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The account&lt;/li&gt;
+&lt;li&gt;The database&lt;/li&gt;
+&lt;li&gt;The repository&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A good rule of thumb to remember this, is that these nodes don&amp;rsquo;t depend on anything else just yet (well, the repository depends on the database, but that was included). I can&amp;rsquo;t build my ViewModel until I have my repository, and so on.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s start with persistence.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

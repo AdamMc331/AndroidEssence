@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lint on Android Essence</title>
+    <link>http://localhost:1313/tags/lint/</link>
+    <description>Recent content in Lint on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/lint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unit Testing Custom Lint Checks</title>
+      <link>http://localhost:1313/posts/2021-03-01-unit-testing-custom-lint-checks/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2021-03-01-unit-testing-custom-lint-checks/</guid>
+      
+      <description>&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-22-enforce-custom-views-with-lint.md %}) we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.&lt;/p&gt;
+&lt;p&gt;In this post, we&amp;rsquo;ll go over how to unit test such a scenario, and take the opportunity to look at some additional options of unit testing with lint as well.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Enforcing Custom View Usage With Android Lint</title>
+      <link>http://localhost:1313/posts/2021-02-22-enforce-custom-views-with-lint/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2021-02-22-enforce-custom-views-with-lint/</guid>
+      
+      <description>&lt;p&gt;Sometimes an Android project will have to implement a &lt;a href=&#34;https://developer.android.com/guide/topics/ui/custom-components&#34;&gt;custom view&lt;/a&gt; that is an extension of an existing Android view. We may do this for style purposes, or to implement additional logic, or any number of customization purposes.&lt;/p&gt;
+&lt;p&gt;This solution brings a new problem for our codebase - how do we enforce that other developers use our custom view, instead of the Android framework view? We can solve this problem by writing our own &lt;a href=&#34;https://developer.android.com/studio/write/lint&#34;&gt;Android lint&lt;/a&gt; check.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

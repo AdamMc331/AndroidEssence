@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Singleton Pattern on Android Essence</title>
+    <link>http://localhost:1313/tags/singleton-pattern/</link>
+    <description>Recent content in Singleton Pattern on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Sep 2015 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/singleton-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLiteOpenHelper and the Singleton Pattern</title>
+      <link>http://localhost:1313/posts/2015-09-06-sqliteopenhelper-and-the-singleton-pattern/</link>
+      <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2015-09-06-sqliteopenhelper-and-the-singleton-pattern/</guid>
+      
+      <description>&lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/Singleton_pattern&#34;&gt;singleton design pattern&lt;/a&gt; is a design that limits the instantiation of a class to a single object. To quote Wikipedia:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is useful when exactly one object is needed to coordinate actions across the system.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;A great example of this is the SQLiteOpenHelper, or any other data source object. Using more than one datasource to talk to an SQLite database on Android creates the opportunity for leaks in your SQLite connection, which we will discuss later. First, let’s talk about the proper way to use the SQLiteOpenHelper and the singleton pattern. This tutorial assumes you have already created the open helper class. If you do not have any experience with SQLite databases for Android, I recommend &lt;a href=&#34;http://www.vogella.com/tutorials/AndroidSQLite/article.html&#34;&gt;Lars Vogel’s tutorial&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">MVWTF&amp;#58; Demystifying Architecture Patterns | Android Essence</title>
+<meta property="og:title" content="MVWTF&amp;#58; Demystifying Architecture Patterns | Android Essence" />
+<meta name="twitter:title" content="MVWTF&amp;#58; Demystifying Architecture Patterns | Android Essence" />
+<meta itemprop="name" content="MVWTF&amp;#58; Demystifying Architecture Patterns | Android Essence" />
+<meta name="application-name" content="MVWTF&amp;#58; Demystifying Architecture Patterns | Android Essence" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="Breaking down the differences of various MV* patterns.">
+<meta itemprop="description" content="Breaking down the differences of various MV* patterns." />
+<meta property="og:description" content="Breaking down the differences of various MV* patterns." />
+<meta name="twitter:description" content="Breaking down the differences of various MV* patterns." />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/2019-08-16-mvwtf/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2019-08-16T00:00:00Z />
+    <meta property="article:published_time" content=2019-08-16T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/2019-08-16-mvwtf/" />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "MVWTF\u0026#58; Demystifying Architecture Patterns",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2019-08-16",
+        "description": "Breaking down the differences of various MV* patterns.",
+        "wordCount":  2914 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2019-08-16",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Android Essence"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/2019-08-16-mvwtf/">
+  <meta property="og:site_name" content="Android Essence">
+  <meta property="og:title" content="MVWTF&#58; Demystifying Architecture Patterns">
+  <meta property="og:description" content="Breaking down the differences of various MV* patterns.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-08-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-08-16T00:00:00+00:00">
+    <meta property="article:tag" content="Architecture">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MVWTF&#58; Demystifying Architecture Patterns">
+  <meta name="twitter:description" content="Breaking down the differences of various MV* patterns.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/2019-08-16-mvwtf/">
+    <link href="/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">MVWTF&amp;#58; Demystifying Architecture Patterns</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2019-08-16T00:00:00&#43;00:00" itemprop="datePublished"> Aug 16, 2019 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>As an Android developer, one of the questions I constantly see asked within the community is &ldquo;what architecture pattern should I use?&rdquo;</p>
+<p>This discussion usually leads to a handful of buzzwordy acronyms:</p>
+<ul>
+<li>MVC</li>
+<li>MVP</li>
+<li>MVVM</li>
+<li>MVI</li>
+<li>MVU?? (We don&rsquo;t talk about this but apparently it&rsquo;s the new kid on the block)</li>
+</ul>
+<p>This can be really intimidating to new Android devs, as well as seasoned veterans who are constantly questioning if they&rsquo;re using the right one. Whether you&rsquo;re trying to decide which one to learn, or wondering if the one you already use is best for you, this post will help lead you to the right decision.</p>
+<p>We should first start off by understanding why we even need architecture patterns. When that question is asked, we get even more buzzwords, saying we want code that is:</p>
+<ul>
+<li>Maintainable</li>
+<li>Extensible</li>
+<li>Robust</li>
+<li>Testable</li>
+</ul>
+<p>At face value, these may not sound like buzzwords, but are often just filler. What does it mean to write maintainable code anyways? The word robust means strong and healthy. What is strong and healthy code?</p>
+<p>We&rsquo;re going to start at the beginning. Putting all of the buzzwords aside, we need to start with one single truth that is the basis for the rest of this post:</p>
+<blockquote>
+<p>You can&rsquo;t put all of your code in the Activity.</p></blockquote>
+<p>Implicitly we all know this, and we put our code into separate files. However, it&rsquo;s more than just putting various classes into their own file. How we decide to break apart our code is very important, and that process is what architecture patterns are for. An architecture pattern is the way of describing how you split up your code.</p>
+<p>Let&rsquo;s work through some options we have for splitting up our code by tackling the list of acronyms from the beginning, starting at the top.</p>
+<h1 id="model-view-controller">Model-View-Controller</h1>
+<p>MVC deserves a quick section simply because it&rsquo;s one of the oldest architecture patterns. It was developed in the 1970s as a way to break up your application into three components: a model, a view, and a controller. It&rsquo;s important to understand the function of each component.</p>
+<h2 id="model">Model</h2>
+<p>The model component is your data source. This can be a database, remote server, local text file, or anything else. The important thing to remember is that it does not care about the view.</p>
+<p>Your model should not be responsible for any behavior related to how data is displayed, just retrieving it.</p>
+<p>For example, if you want to fetch a user and display a label that has the username and age together, you will create that label elsewhere. Not inside the model component.</p>
+<h2 id="view">View</h2>
+<p>The view component is the visual representation of your data. That is all it is responsible for. It should not care where that data came from. The view should not be making any decisions. If you find yourself writing a conditional logic in your view component, consider refactoring that.</p>
+<h2 id="controller">Controller</h2>
+<p>Being the last component, the controller is responsible for just about everything else. It should:</p>
+<ol>
+<li>Handle user input</li>
+<li>Validate that input if necessary</li>
+<li>Pass that input into the model</li>
+<li>Pass that model response into the view</li>
+</ol>
+<p>An easy way to think about this flow is to consider a form. The controller reads all of your text inputs, makes sure you&rsquo;ve filled everything out, sends it to the model, and then tells the UI to show a success screen.</p>
+<h2 id="mvc-diagram">MVC Diagram</h2>
+<p>Let&rsquo;s take a look at how this all connects together:</p>
+<p><img src="../assets/mvwtf/mvcdiagram.png" alt="Model View Controller"></p>
+<h2 id="why-dont-we-use-this-on-android">Why Don&rsquo;t We Use This On Android?</h2>
+<p>At face value, this looks pretty good. Our concerns are separated and the flow of information is pretty clear.</p>
+<p>However, of all the patterns in this post, MVC is the one discussed the least on Android. There&rsquo;s a quick explanation for this.</p>
+<p><img src="../assets/mvwtf/mvcandroiddiagram.png" alt="Model View Controller"></p>
+<p>When you consider the responsibilities of a controller (accepting user inputs) and the responsibility of a view (displaying data), you may recognize that these are handled by the same thing in Android. This is your Activity or Fragment.</p>
+<h2 id="why-is-this-bad">Why Is This Bad?</h2>
+<p>I&rsquo;d like to highlight two reasons we wouldn&rsquo;t want this on Android:</p>
+<ol>
+<li>We can&rsquo;t write Junit tests for an Activity or Fragment, so we should move as much code out of there as we can.</li>
+<li>Our concerns aren&rsquo;t actually separated if two of three components are in the same class.</li>
+</ol>
+<h2 id="how-do-we-fix-this">How Do We Fix This?</h2>
+<p>Let&rsquo;s move the controller/UI logic out of the Activity/Fragment.</p>
+<h1 id="model-view-presenter">Model-View-Presenter</h1>
+<p>By breaking the UI and business logic out of the Activity/Fragment, we create a slightly different flow of information. This creates the MVP pattern.</p>
+<p><img src="../assets/mvwtf/mvp.png" alt="inline"></p>
+<p>Now we have a separation of concerns where all of our non UI code is outside of the Activity/Fragment, and we can unit test all of it.</p>
+<h2 id="mvp-implementation">MVP Implementation</h2>
+<p>Before we move on to the next pattern, I think it&rsquo;s important to understand a little bit about the implementation of a pattern like MVP, so we can compare how the code evolves along the way, too.</p>
+<h3 id="contract-class">Contract Class</h3>
+<p>The first thing we need to do to build a feature in MVP is design a contract class that has the interfaces defining the behavior of our three components:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TaskListContract</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">interface</span> <span class="nc">View</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">showTasks</span><span class="p">(</span><span class="n">tasks</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Task</span><span class="p">&gt;)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">interface</span> <span class="nc">Presenter</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">viewCreated</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">viewDestroyed</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">interface</span> <span class="nc">Model</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">getTasks</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Task</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="model-1">Model</h3>
+<p>Our model can be a simple in memory list for this example.</p>
+<p>Notice that our model doesn&rsquo;t actually reference other components.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">InMemoryTaskService</span> <span class="p">:</span> <span class="nc">TaskListContract</span><span class="p">.</span><span class="n">Model</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getTasks</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Task</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">listOf</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="view-1">View</h3>
+<p>The view really only needs to do two things here:</p>
+<ol>
+<li>Notify the presenter of any relevant life cycle methods, or click listeners if that was relevant</li>
+<li>Override any methods from our contract class to display data</li>
+</ol>
+<p>Notice that our View only has a reference to the Presenter.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TaskListActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">(),</span> <span class="nc">TaskListContract</span><span class="p">.</span><span class="n">View</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">val</span> <span class="py">presenter</span> <span class="p">=</span> <span class="n">TaskListPresenter</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">TaskRepository</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="n">presenter</span><span class="p">.</span><span class="n">viewCreated</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onDestroy</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">presenter</span><span class="p">.</span><span class="n">viewDestroyed</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">super</span><span class="p">.</span><span class="n">onDestroy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">showTasks</span><span class="p">(</span><span class="n">tasks</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Task</span><span class="p">&gt;)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">taskAdapter</span><span class="p">.</span><span class="n">tasks</span> <span class="p">=</span> <span class="n">tasks</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="presenter">Presenter</h3>
+<p>The presenter needs to override the methods from the contract class, call the view when necessary, and do any clean up required to avoid memory leaks (like removing a reference to the view).</p>
+<p>Notice that our presenter has both a reference to the View, and a reference to the Model.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TaskListPresenter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">var</span> <span class="py">view</span><span class="p">:</span> <span class="nc">TaskListContract</span><span class="p">.</span><span class="n">View</span><span class="p">?,</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">val</span> <span class="py">model</span><span class="p">:</span> <span class="nc">TaskListContract</span><span class="p">.</span><span class="n">Model</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span> <span class="p">:</span> <span class="nc">TaskListContract</span><span class="p">.</span><span class="n">Presenter</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">viewCreated</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">val</span> <span class="py">tasks</span> <span class="p">=</span> <span class="n">model</span><span class="p">.</span><span class="n">getTasks</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">view</span><span class="o">?.</span><span class="n">showTasks</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">viewDestroyed</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">view</span> <span class="p">=</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="is-this-good-enough">Is This Good Enough?</h2>
+<ul>
+<li>Our view is only responsible for displaying data</li>
+<li>Our model handles fetching data</li>
+<li>The presenter handles all inputs and UI logic</li>
+<li>Everything is well separated and everything is testable</li>
+<li>If you think this is good enough, use it!</li>
+</ul>
+<h2 id="what-is-different-about-mvvm">What Is Different About MVVM?</h2>
+<p>Each architecture pattern in our original list leads into the next. MVP serves as a base for our discussion about MVVM, because there&rsquo;s really only one nuanced difference between them: the presenter doesn&rsquo;t need to care about the view.</p>
+<h1 id="model-view-viewmodel">Model-View-ViewModel</h1>
+<p>In the last pattern, we see that the presenter explicitly tells the view what to display. As an alternative, we can consider an event based approach where we just expose the state that our view should be in and anyone who needs to display that state can subscribe to those changes.</p>
+<p>That&rsquo;s exactly how MVVM works. It breaks the connection between the presenter and the view and instead exposes information via some observable type, like LiveData or RxJava.</p>
+<p><img src="../assets/mvwtf/mvvmdiagram.png" alt="Model View ViewModel"></p>
+<h2 id="mvvm-implementation">MVVM Implementation</h2>
+<p>Let&rsquo;s look at the code comparisons between implementing MVP and MVVM.</p>
+<h3 id="model-2">Model</h3>
+<p>The model component doesn&rsquo;t actually change much. Since we no longer have a contract class, though, I still recommend setting up an interface for your data fetching behavior.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">interface</span> <span class="nc">TaskRepository</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">getTasks</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Task</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">InMemoryTaskService</span> <span class="p">:</span> <span class="n">TaskRepository</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getTasks</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Task</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">listOf</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="view-2">View</h3>
+<p>The view behaves similarly to the last example, in that we need to:</p>
+<ol>
+<li>Create a reference to our ViewModel</li>
+<li>Observe changes from that ViewModel to update the UI accordingly</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TaskListActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">val</span> <span class="py">viewModel</span> <span class="p">=</span> <span class="n">TaskListviewModel</span><span class="p">(</span><span class="n">repository</span> <span class="p">=</span> <span class="n">InMemoryTaskService</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="n">subscribeToViewModel</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">fun</span> <span class="nf">subscribeToViewModel</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">viewModel</span><span class="p">.</span><span class="n">getTasks</span><span class="p">().</span><span class="n">observe</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">Observer</span> <span class="p">{</span> <span class="n">tasks</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">adapter</span><span class="p">.</span><span class="n">tasks</span> <span class="p">=</span> <span class="n">tasks</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="viewmodel">ViewModel</h3>
+<p>Our ViewModel will look similar to the presenter, with a few key differences:</p>
+<ol>
+<li>We no longer have a reference to the view, only the model component</li>
+<li>We expose information via a LiveData object</li>
+<li>We can fetch information as soon as we initialize, so we don&rsquo;t need to be notified of view creation</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TaskListViewModel</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">val</span> <span class="py">repository</span><span class="p">:</span> <span class="n">TaskRepository</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">val</span> <span class="py">tasks</span> <span class="p">=</span> <span class="n">MutableLiveData</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Task</span><span class="p">&gt;&gt;()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">getTasks</span><span class="p">():</span> <span class="n">LiveData</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Task</span><span class="p">&gt;&gt;</span> <span class="p">=</span> <span class="n">tasks</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">init</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fetchTasks</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">fun</span> <span class="nf">fetchTasks</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tasks</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">repository</span><span class="p">.</span><span class="n">getTasks</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="what-makes-mvvm-better-than-mvp">What Makes MVVM Better Than MVP?</h2>
+<p>Up to this point, our code looks exactly like it did before, minus a direct reference to the view. The benefit of dropping that connection is that now we can leverage Android&rsquo;s <a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModel</a> architecture component to help handle configuration changes better.</p>
+<p>In MVP, our presenter had a reference to the view, which is often an Activity. If I rotate my phone, that activity is recreated, and now the presenter is referencing an Activity that no longer exists.</p>
+<p>With a ViewModel, we have something that outlasts those configuration changes, and never has to lose state.</p>
+<h3 id="handle-rotation-in-mvp">Handle Rotation in MVP</h3>
+<p>In MVP, we had to follow a lot of steps to handle rotation:</p>
+<ol>
+<li>Add two new methods to our presenters contract to <code>getState()</code> and <code>restoreState()</code></li>
+<li>Update our view to call those methods in the corresponding lifecycle steps</li>
+<li>Implement the methods to retrieve state and restore it in the presenter</li>
+</ol>
+<p>Depending on how complicated your state is, step 3 can take a lot of time and require a lot of code.</p>
+<h3 id="handle-rotation-in-mvvm">Handle Rotation In MVVM</h3>
+<p>To make sure we easily handle rotation in MVVM, we do the following:</p>
+<ol>
+<li>Update our ViewModel to extend the Android ViewModel architecture component</li>
+<li>In our Activity, use ViewModelProviders to get the ViewModel that already exists</li>
+<li>Re-subscribe to the LiveData to get the state</li>
+</ol>
+<p>The first two steps are the same level of effort as those in the previous section, but now we don&rsquo;t have to think about saving and restoring state. We just need to re-subscribe to LiveData.</p>
+<p>This saves us A LOT of time.</p>
+<p>If you want to see the code comparisons there, please check out the <a href="https://github.com/AdamMc331/MVWTF/blob/master/presentation/mvwtf.pdf">slides</a> from when this was post was given as a presentation.</p>
+<h2 id="why-isnt-mvvm-good-enough">Why Isn&rsquo;t MVVM Good Enough?</h2>
+<p>As we work through these architecture patterns, each one sounds even better. Now we have all the separation and testability benefits of MVP, <em>and</em> we have better state management on rotation!</p>
+<p>There&rsquo;s still one more acronym in our list, though, which spoils the fun that MVVM isn&rsquo;t the best we can do. To understand where it falls short, let&rsquo;s look at a more complicated state.</p>
+<p>Consider a feature that fetches a list of tasks and supports both a loading and an error state. You may try to put your state into some Kotlin sealed class:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">sealed</span> <span class="k">class</span> <span class="nc">TaskListState</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">object</span> <span class="nc">Loading</span> <span class="p">:</span> <span class="n">TaskListState</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">data</span> <span class="k">class</span> <span class="nc">Loaded</span><span class="p">(</span><span class="k">val</span> <span class="py">tasks</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Task</span><span class="p">&gt;)</span> <span class="p">:</span> <span class="n">TaskListState</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">data</span> <span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="k">val</span> <span class="py">error</span><span class="p">:</span> <span class="n">Throwable</span><span class="p">?)</span> <span class="p">:</span> <span class="n">TaskListState</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Next, you update your ViewModel to show the state according to what&rsquo;s happening:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TaskListViewModel</span><span class="p">(</span><span class="k">private</span> <span class="k">val</span> <span class="py">repository</span><span class="p">:</span> <span class="n">TaskRepository</span><span class="p">)</span> <span class="p">:</span> <span class="n">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">init</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">showLoading</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fetchTasks</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">Exception</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">showError</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">fun</span> <span class="nf">showLoading</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">state</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="nc">TaskListState</span><span class="p">.</span><span class="n">Loading</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">fun</span> <span class="nf">fetchTasks</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">val</span> <span class="py">tasks</span> <span class="p">=</span> <span class="n">repository</span><span class="p">.</span><span class="n">getItems</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">state</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="nc">TaskListState</span><span class="p">.</span><span class="n">Loaded</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">fun</span> <span class="nf">showError</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">state</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="nc">TaskListState</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">Throwable</span><span class="p">(</span><span class="s2">&#34;Unable to fetch tasks.&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This looks pretty good. There are some risks to the <code>showLoading()</code>, <code>fetchTasks()</code>, and <code>showError()</code> methods, though.</p>
+<ol>
+<li>Any methods in the class can call them</li>
+<li>We can&rsquo;t guarantee they&rsquo;re associated with a specific action or intent</li>
+<li>We have multiple methods manipulating our state that we have to ensure don&rsquo;t conflict with each other</li>
+</ol>
+<p>For a simple example like this one, MVVM may be fine. I can easily test everything to ensure I call these methods in the right order and avoid those risks. However, they would become more prevalent as our ViewModel gets more complicated. The next pattern works to solve that.</p>
+<h1 id="model-view-intent">Model-View-Intent</h1>
+<p>Unlike the previous patterns, &ldquo;Intent&rdquo; doesn&rsquo;t refer to some specific component, but rather the <em>intention</em> of doing something that we want to capture in our state.</p>
+<h2 id="managing-predictable-state-changes-with-a-reducer">Managing Predictable State Changes With A Reducer</h2>
+<p>The first problem with MVVM that we can tackle is the lack of predictable state changes. Instead of having multiple methods that manipulate our state, we should have one pipeline. This flow will take in some action, and a current state, and output a new state for us.</p>
+<p>Here is what that method signature would look like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Reducer</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">reduce</span><span class="p">(</span><span class="n">action</span><span class="p">:</span> <span class="n">Action</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">State</span><span class="p">):</span> <span class="n">State</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>If you are using a sealed class like we saw earlier to represent your state, we can have very clearly defined inputs and outputs:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TaskListReducer</span> <span class="p">:</span> <span class="n">Reducer</span><span class="p">&lt;</span><span class="n">TaskListState</span><span class="p">&gt;()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">reduce</span><span class="p">(</span><span class="n">action</span><span class="p">:</span> <span class="n">Action</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">TaskListState</span><span class="p">):</span> <span class="n">TaskListState</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">when</span> <span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">is</span> <span class="nc">TaskListAction</span><span class="p">.</span><span class="n">TasksLoading</span> <span class="o">-&gt;</span> <span class="nc">TaskListState</span><span class="p">.</span><span class="n">Loading</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">is</span> <span class="nc">TaskListAction</span><span class="p">.</span><span class="n">TasksLoaded</span> <span class="o">-&gt;</span> <span class="nc">TaskListState</span><span class="p">.</span><span class="n">Loaded</span><span class="p">(</span><span class="n">action</span><span class="p">.</span><span class="n">tasks</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">is</span> <span class="nc">TaskListAction</span><span class="p">.</span><span class="n">TasksErrored</span> <span class="o">-&gt;</span> <span class="nc">TaskListState</span><span class="p">.</span><span class="n">Error</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="o">-&gt;</span> <span class="n">state</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>If you&rsquo;re not using sealed classes, we can also leverage the <code>copy()</code> methods from data classes to handle updating our state here as well:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TaskListReducer</span> <span class="p">:</span> <span class="n">Reducer</span><span class="p">&lt;</span><span class="n">TaskListState</span><span class="p">&gt;()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">reduce</span><span class="p">(</span><span class="n">action</span><span class="p">:</span> <span class="n">BaseAction</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">TaskListState</span><span class="p">):</span> <span class="n">TaskListState</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">when</span> <span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">is</span> <span class="nc">TaskListAction</span><span class="p">.</span><span class="n">TasksLoading</span> <span class="o">-&gt;</span> <span class="n">state</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">isLoading</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">isError</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tasks</span> <span class="p">=</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">is</span> <span class="nc">TaskListAction</span><span class="p">.</span><span class="n">TasksLoaded</span> <span class="o">-&gt;</span> <span class="n">state</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">isLoading</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">isError</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tasks</span> <span class="p">=</span> <span class="n">action</span><span class="p">.</span><span class="n">tasks</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">is</span> <span class="nc">TaskListAction</span><span class="p">.</span><span class="n">TasksErrored</span> <span class="o">-&gt;</span> <span class="n">state</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">isLoading</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">isError</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tasks</span> <span class="p">=</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="o">-&gt;</span> <span class="n">state</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="using-a-store-for-a-single-source-of-truth">Using A Store For A Single Source Of Truth</h2>
+<p>The other goal we want to accomplish with MVI is to have a single source of truth for our state. We can achieve this by creating a state container called a <code>Store</code>. It has the following responsibilities:</p>
+<ul>
+<li>The store maintains the reference to our current state</li>
+<li>The store holds the reference to our reducer</li>
+<li>The store is responsible for dispatching actions into the reducer to update the state</li>
+</ul>
+<p>Here&rsquo;s a quick snippet on how we can implement all of that. In this example I expose the state via some listener that gets called whenever it changes, but you can do this with RxJava, LiveData, etc.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BaseStore</span><span class="p">&lt;</span><span class="n">S</span> <span class="p">:</span> <span class="n">State</span><span class="p">&gt;(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">initialState</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">val</span> <span class="py">reducer</span><span class="p">:</span> <span class="n">Reducer</span><span class="p">&lt;</span><span class="n">S</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">var</span> <span class="py">stateListener</span><span class="p">:</span> <span class="p">((</span><span class="n">S</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Unit</span><span class="p">)?</span> <span class="p">=</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">var</span> <span class="py">currentState</span><span class="p">:</span> <span class="n">S</span> <span class="p">=</span> <span class="n">initialState</span>
+</span></span><span class="line"><span class="cl">        <span class="k">set</span><span class="p">(</span><span class="k">value</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">field</span> <span class="p">=</span> <span class="k">value</span>
+</span></span><span class="line"><span class="cl">            <span class="n">stateListener</span><span class="o">?.</span><span class="n">invoke</span><span class="p">(</span><span class="k">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">dispatch</span><span class="p">(</span><span class="n">action</span><span class="p">:</span> <span class="n">Action</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">currentState</span> <span class="p">=</span> <span class="n">reducer</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">currentState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">subscribe</span><span class="p">(</span><span class="n">stateListener</span><span class="p">:</span> <span class="p">((</span><span class="n">S</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Unit</span><span class="p">)?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="n">stateListener</span> <span class="p">=</span> <span class="n">stateListener</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This is better than what we had previously, because the state lives in one place only (the store) and can only be modified by one thing (the reducer). Not only do we get clearly defined inputs and outputs from this, but we are also able to get a unidirectional flow of data, as seen in this diagram from <a href="https://www.esri.com/arcgis-blog/products/3d-gis/3d-gis/react-redux-building-modern-web-apps-with-the-arcgis-js-api/">Esri</a>:</p>
+<p><img src="../assets/mvwtf/reduxdiagram.png" alt="Redux Diagram"></p>
+<h2 id="connect-this-to-our-viewmodel-or-presenter">Connect This To Our ViewModel Or Presenter</h2>
+<p>Note in the diagram that we have a component that dispatches actions. This can be anything, meaning you don&rsquo;t need to be using MVVM to implement this flow. You can create a store and reducer and plug them into a presenter, too!</p>
+<p>For this post, we&rsquo;ll hook it up to a ViewModel. All we need to do is create a reference to the store, and where we were previously modifying state we will just dispatch actions to it:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TaskListViewModel</span><span class="p">(</span><span class="k">private</span> <span class="k">val</span> <span class="py">repository</span><span class="p">:</span> <span class="n">TaskRepository</span><span class="p">)</span> <span class="p">:</span> <span class="n">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">val</span> <span class="py">store</span><span class="p">:</span> <span class="n">BaseStore</span><span class="p">&lt;</span><span class="n">TaskListState</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">BaseStore</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nc">TaskListState</span><span class="p">.</span><span class="n">Loading</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TaskListReducer</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">fun</span> <span class="nf">fetchTasks</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">store</span><span class="p">.</span><span class="n">dispatch</span><span class="p">(</span><span class="nc">TaskListAction</span><span class="p">.</span><span class="n">TasksLoading</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">tasks</span> <span class="p">=</span> <span class="n">repository</span><span class="p">.</span><span class="n">getTasks</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">store</span><span class="p">.</span><span class="n">dispatch</span><span class="p">(</span><span class="nc">TaskListAction</span><span class="p">.</span><span class="n">TasksLoaded</span><span class="p">(</span><span class="n">tasks</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">Throwable</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">store</span><span class="p">.</span><span class="n">dispatch</span><span class="p">(</span><span class="nc">TaskListAction</span><span class="p">.</span><span class="n">TasksErrored</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h1 id="recap">Recap</h1>
+<p>Wow! That was a lot to take in, and thanks for making it this far. Let&rsquo;s TL;DR everything we just saw:</p>
+<p>MVP is helpful because it separates our concerns and gives us code that is all junit testable. However, state management is unpredictable and rotation requires more work to support.</p>
+<p>MVVM is a step forward, because we break the two way communication between the View and the Presenter allowing for better rotation support, but we still have unpredictable state management.</p>
+<p>MVI takes us even further, by giving us predictable state management with clearly defined inputs and outputs.</p>
+<h1 id="so-what-should-i-use">So What Should I Use?</h1>
+<p>While it is clear that MVI is the strongest pattern we discussed, it&rsquo;s not always right for everyone. If your feature is really complex and has confusing user flows, you can benefit a lot from having that predictable state management.</p>
+<p>If your feature is simply fetching and displaying some data, though, the learning curve of MVI and extra code required might not be worth the effort. It&rsquo;s up to you as a developer to decide how much complexity you need.</p>
+<p>You certainly shouldn&rsquo;t feel bad about using MVVM, and in fact in the majority of features I&rsquo;ve built it works well for me.</p>
+<h1 id="code-samples">Code Samples</h1>
+<p>Interested in seeing the implementation for a specific pattern? Check out this <a href="https://github.com/AdamMc331/MVWTF">GitHub repository</a> which has a sample app with a module for each architecture pattern.</p>
+<p>If you have any questions, drop a comment below or reach out to me on <a href="https://twitter.com/AdamMc331">Twitter</a>! If you were inspired by any particular section and want to see a deeper dive into a specific pattern, let me know!</p>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://twitch.tv/adammc" target="_blank" rel="noopener noreferrer me"
+    title="Twitch">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+</svg>
+</a>
+<a href="https://bsky.app/profile/adammc.bsky.social" target="_blank" rel="noopener noreferrer me"
+    title="Bluesky">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+    d="M11.999,10.236c0.321,-0.524 0.916,-1.507 1.405,-2.376c0.755,-1.344 1.692,-2.852 2.869,-4.028c1.283,-1.281 2.845,-2.171 4.739,-2.171c1.144,-0 1.864,0.585 2.299,1.497c0.486,1.017 0.545,2.551 0.51,3.883c-0.051,1.945 -0.232,3.337 -0.505,4.275c-0.229,0.786 -0.543,1.303 -0.878,1.615c-0.892,0.833 -1.8,1.263 -2.634,1.484c0.029,0.018 0.056,0.036 0.084,0.055c0.528,0.367 0.823,0.79 1.081,1.107c0.648,0.794 0.644,1.795 0.23,2.784c-0.481,1.151 -1.533,2.279 -2.12,2.773c-1.389,1.171 -2.506,1.362 -3.383,1.133c-0.88,-0.23 -1.59,-0.932 -2.156,-1.826c-0.45,-0.71 -0.817,-1.537 -1.176,-2.186c-0.115,-0.208 -0.302,-0.455 -0.406,-0.587c-0.02,0.019 -0.04,0.04 -0.056,0.058c-0.121,0.145 -0.234,0.328 -0.349,0.531c-0.363,0.644 -0.721,1.463 -1.157,2.166c-0.555,0.895 -1.252,1.597 -2.12,1.825c-0.863,0.227 -1.97,0.037 -3.363,-1.136c-0.586,-0.494 -1.638,-1.622 -2.119,-2.773c-0.414,-0.989 -0.418,-1.99 0.229,-2.784c0.258,-0.317 0.554,-0.74 1.082,-1.106c0.027,-0.019 0.055,-0.038 0.084,-0.056c-0.834,-0.221 -1.742,-0.651 -2.634,-1.484c-0.335,-0.312 -0.649,-0.829 -0.878,-1.615c-0.273,-0.938 -0.454,-2.33 -0.505,-4.275c-0.036,-1.332 0.024,-2.866 0.509,-3.883c0.435,-0.912 1.156,-1.497 2.3,-1.497c2.32,0 4.109,1.203 5.494,2.808c1.272,1.474 2.195,3.283 2.9,4.643c0.231,0.447 0.436,0.84 0.624,1.146Zm-0.01,5.653l0.296,0.031l0.271,0.086c0.208,0.088 0.413,0.229 0.607,0.428c0.455,0.467 0.882,1.369 1.36,2.284c0.249,0.477 0.518,0.958 0.841,1.339c0.231,0.274 0.483,0.502 0.805,0.569c0.488,0.103 1.052,-0.157 1.811,-0.797c0.452,-0.38 1.274,-1.239 1.645,-2.126c0.155,-0.371 0.265,-0.75 0.022,-1.048c-0.179,-0.22 -0.366,-0.529 -0.732,-0.783c-0.536,-0.372 -1.356,-0.51 -1.905,-0.654c-0.405,-0.106 -0.715,-0.234 -0.88,-0.355l-0.284,-0.303l-0.135,-0.367l-0.008,-0.211l0.035,-0.196l0.078,-0.195l0.142,-0.209l0.198,-0.181l0.296,-0.154c0.151,-0.055 0.348,-0.092 0.587,-0.104c0.815,-0.042 2.571,0.294 4.235,-1.259c0.171,-0.159 0.288,-0.445 0.404,-0.845c0.246,-0.843 0.391,-2.096 0.438,-3.843c0.024,-0.91 0.026,-1.938 -0.208,-2.738c-0.142,-0.486 -0.367,-0.891 -0.896,-0.891c-1.675,0 -2.974,0.983 -4.031,2.21c-1.179,1.369 -2.058,3.057 -2.752,4.321c-0.483,0.88 -0.902,1.573 -1.25,1.916c-0.088,0.086 -0.174,0.157 -0.257,0.214l-0.221,0.125l-0.228,0.078l-0.267,0.031l-0.274,-0.034l-0.231,-0.083l-0.219,-0.132c-0.081,-0.058 -0.164,-0.131 -0.248,-0.22c-0.327,-0.343 -0.718,-1.037 -1.174,-1.917c-0.654,-1.262 -1.497,-2.948 -2.676,-4.314c-1.067,-1.236 -2.417,-2.217 -4.203,-2.217c-0.53,0 -0.754,0.405 -0.896,0.891c-0.234,0.8 -0.232,1.828 -0.208,2.738c0.046,1.747 0.192,3 0.438,3.843c0.116,0.4 0.233,0.686 0.403,0.845c1.665,1.553 3.421,1.217 4.235,1.259c0.24,0.012 0.437,0.049 0.588,0.104l0.295,0.154l0.199,0.181l0.142,0.209l0.078,0.195l0.035,0.196l-0.009,0.211l-0.135,0.368l-0.283,0.303c-0.165,0.12 -0.476,0.248 -0.88,0.355c-0.549,0.144 -1.369,0.281 -1.905,0.653c-0.366,0.254 -0.554,0.564 -0.732,0.783c-0.243,0.298 -0.133,0.677 0.022,1.048c0.371,0.887 1.193,1.746 1.645,2.127c0.757,0.637 1.311,0.9 1.789,0.8c0.311,-0.066 0.55,-0.29 0.772,-0.557c0.315,-0.381 0.577,-0.86 0.822,-1.337c0.394,-0.763 0.752,-1.521 1.138,-2.01c0.431,-0.544 0.929,-0.815 1.455,-0.815Z" style="fill-rule:nonzero;"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://github.com/AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 .
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer>
+
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

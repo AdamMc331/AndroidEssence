@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gradle on Android Essence</title>
+    <link>http://localhost:1313/tags/gradle/</link>
+    <description>Recent content in Gradle on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maintain Library Versions Across Modules</title>
+      <link>http://localhost:1313/posts/2017-05-05-maintain-library-versions-across-modules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2017-05-05-maintain-library-versions-across-modules/</guid>
+      
+      <description>&lt;p&gt;It is tough enough maintaing your app by updating the support library version numbers every time a new version is out, let alone factoring in any other third party libraries you may use. This is especially painful if you have multiple modules, as you have to update the version in each &lt;code&gt;build.gradle&lt;/code&gt; file. Thankfully, we can make use of the project level gradle file to make this more maintainable.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
