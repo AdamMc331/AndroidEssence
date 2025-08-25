@@ -42,25 +42,25 @@ Inside of the ViewGroup, we can have any number of [Views](http://developer.andr
 So, putting all this together, let’s say we want to create a simple RelativeLayout, with two TextViews at the top left and top right corners. We can use a RelativeLayout ViewGroup as our parent item, and inside of it use two Views (TextViews, specifically) as children. Since they are children of a RelativeLayout, we can give them attributes for their relation to the parent:
 
 ```xml
-	<RelativeLayout
-	   android:layout_width="match_parent"
-	   android:layout_height="match_parent">
-	 
-	   <TextView
-	      android:layout_width="wrap_content"
-	      android:layout_height="wrap_content"
-	      android:layout_alignParentTop="true"
-	      android:layout_alignParentLeft="true"
-	      android:layout_alignParentStart="true"/>
-	 
-	   <TextView
-	      android:layout_width="wrap_content"
-	      android:layout_height="wrap_content"
-	      android:layout_alignParentTop="true"
-	      android:layout_alignParentRight="true"
-	      android:layout_alignParentEnd="true"/>
-	 
-	</RelativeLayout>
+    <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+     
+       <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentStart="true"/>
+     
+       <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentEnd="true"/>
+     
+    </RelativeLayout>
 ```
 
 I hope this is enough to get you started on creating your own layouts. If you use Android Studio, take advantage of the ‘Preview’ tab to see what your layout will look like as you add more XML elements. Be sure to read the documentation to determine what kind of parent container you need, as well as the child elements that you’re looking for.

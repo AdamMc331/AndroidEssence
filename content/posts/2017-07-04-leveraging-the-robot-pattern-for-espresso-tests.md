@@ -44,7 +44,7 @@ Before we get into the robot pattern, it's important to understand the problem i
 ```kotlin
     @Test
     fun addPersonSuccess() {
-    	// Click the FAB
+        // Click the FAB
         onView(withId(R.id.fab)).perform(click())
 
         // Enter all their information and click submit

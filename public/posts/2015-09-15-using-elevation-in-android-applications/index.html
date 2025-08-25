@@ -182,21 +182,21 @@ stroke-linejoin="round" class="feather feather-home">
 <p>What you should do in this step is consider each of the surfaces you have defined in the last step, and rank them in order of importance. In the first screenshot above, the FAB is given the highest elevation in that screen, typically 6 dps. Next is the Toolbar with 4dp elevation, and the Cards themselves with 2 dps. When determining which elevation to use for each component, take a look at the <a href="https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-elevation-android-">specifications</a> which can give you an idea. Always remember that these are just guidelines, and not strict rules. The most important thing to take away from this step is to use elevation to give users an intuitive way to navigate through the screen. If you feel that your individual Cards are more important than the Toolbar, don’t give your toolbar any elevation, like the second example above.</p>
 <h1 id="add-the-elevation-in-xml">Add the elevation in XML</h1>
 <p>Adding the elevation to components in Android is the easiest part, as all you need to do is set the elevation attribute, added in API 21. For example, you can give your FloatingActionButton the necessary 6 dps elevation like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">	<span class="nt">&lt;android.support.design.widget.FloatingActionButton</span> 
-</span></span><span class="line"><span class="cl">	   <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span> 
-</span></span><span class="line"><span class="cl">	   <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span> 
-</span></span><span class="line"><span class="cl">	   <span class="na">android:layout_margin=</span><span class="s">&#34;16dp&#34;</span> 
-</span></span><span class="line"><span class="cl">	   <span class="na">android:layout_gravity=</span><span class="s">&#34;bottom|end&#34;</span> 
-</span></span><span class="line"><span class="cl">	   <span class="na">android:elevation=</span><span class="s">&#34;6dp&#34;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="nt">&lt;android.support.design.widget.FloatingActionButton</span> 
+</span></span><span class="line"><span class="cl">       <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span> 
+</span></span><span class="line"><span class="cl">       <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span> 
+</span></span><span class="line"><span class="cl">       <span class="na">android:layout_margin=</span><span class="s">&#34;16dp&#34;</span> 
+</span></span><span class="line"><span class="cl">       <span class="na">android:layout_gravity=</span><span class="s">&#34;bottom|end&#34;</span> 
+</span></span><span class="line"><span class="cl">       <span class="na">android:elevation=</span><span class="s">&#34;6dp&#34;</span><span class="nt">/&gt;</span>
 </span></span></code></pre></div><p>During this step, you will also want to consider if any elements require an additional elevation upon being pressed. When using a button, you may want to add extra elevation to make it appear as if it rises up and meets your finger when you press it, or sink further down. To do this, you can just use the <code>pressedTranslationZ</code> attribute:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">	<span class="nt">&lt;android.support.design.widget.FloatingActionButton</span>
-</span></span><span class="line"><span class="cl">	   <span class="na">xmlns:fab=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-</span></span><span class="line"><span class="cl">	   <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	   <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	   <span class="na">android:layout_margin=</span><span class="s">&#34;16dp&#34;</span>
-</span></span><span class="line"><span class="cl">	   <span class="na">android:layout_gravity=</span><span class="s">&#34;bottom|end&#34;</span>
-</span></span><span class="line"><span class="cl">	   <span class="na">android:elevation=</span><span class="s">&#34;6dp&#34;</span>
-</span></span><span class="line"><span class="cl">	   <span class="na">fab:pressedTranslationZ=</span><span class="s">&#34;12dp&#34;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="nt">&lt;android.support.design.widget.FloatingActionButton</span>
+</span></span><span class="line"><span class="cl">       <span class="na">xmlns:fab=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">       <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">       <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">       <span class="na">android:layout_margin=</span><span class="s">&#34;16dp&#34;</span>
+</span></span><span class="line"><span class="cl">       <span class="na">android:layout_gravity=</span><span class="s">&#34;bottom|end&#34;</span>
+</span></span><span class="line"><span class="cl">       <span class="na">android:elevation=</span><span class="s">&#34;6dp&#34;</span>
+</span></span><span class="line"><span class="cl">       <span class="na">fab:pressedTranslationZ=</span><span class="s">&#34;12dp&#34;</span><span class="nt">/&gt;</span>
 </span></span></code></pre></div><p>Following these three steps to use elevation in your Android applications will help you create a much more understandable and intuitive user interface that is both simple to use and visually appealing. As always, make sure to browse the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#">Material Design specifications on elevation</a> for more examples and specific use cases that aren’t discussed here.</p>
             </div>
         </article></main>

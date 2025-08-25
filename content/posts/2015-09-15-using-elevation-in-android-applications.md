@@ -34,25 +34,25 @@ What you should do in this step is consider each of the surfaces you have define
 Adding the elevation to components in Android is the easiest part, as all you need to do is set the elevation attribute, added in API 21. For example, you can give your FloatingActionButton the necessary 6 dps elevation like this:
 
 ```xml
-	<android.support.design.widget.FloatingActionButton 
-	   android:layout_width="wrap_content" 
-	   android:layout_height="wrap_content" 
-	   android:layout_margin="16dp" 
-	   android:layout_gravity="bottom|end" 
-	   android:elevation="6dp"/>
+    <android.support.design.widget.FloatingActionButton 
+       android:layout_width="wrap_content" 
+       android:layout_height="wrap_content" 
+       android:layout_margin="16dp" 
+       android:layout_gravity="bottom|end" 
+       android:elevation="6dp"/>
 ```
 
 During this step, you will also want to consider if any elements require an additional elevation upon being pressed. When using a button, you may want to add extra elevation to make it appear as if it rises up and meets your finger when you press it, or sink further down. To do this, you can just use the `pressedTranslationZ` attribute:
 
 ```xml
-	<android.support.design.widget.FloatingActionButton
-	   xmlns:fab="http://schemas.android.com/apk/res-auto"
-	   android:layout_width="wrap_content"
-	   android:layout_height="wrap_content"
-	   android:layout_margin="16dp"
-	   android:layout_gravity="bottom|end"
-	   android:elevation="6dp"
-	   fab:pressedTranslationZ="12dp"/>
+    <android.support.design.widget.FloatingActionButton
+       xmlns:fab="http://schemas.android.com/apk/res-auto"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="16dp"
+       android:layout_gravity="bottom|end"
+       android:elevation="6dp"
+       fab:pressedTranslationZ="12dp"/>
 ```
 
 Following these three steps to use elevation in your Android applications will help you create a much more understandable and intuitive user interface that is both simple to use and visually appealing. As always, make sure to browse the [Material Design specifications on elevation](http://www.google.com/design/spec/what-is-material/elevation-shadows.html#) for more examples and specific use cases that aren’t discussed here.

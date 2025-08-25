@@ -178,7 +178,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">    <span class="n">modifier</span> <span class="p">=</span> <span class="n">Modifier</span>
 </span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">sharedElement</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">            <span class="n">rememberSharedContentState</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            	<span class="n">key</span> <span class="p">=</span> <span class="s2">&#34;article_image_</span><span class="si">$articleId</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">key</span> <span class="p">=</span> <span class="s2">&#34;article_image_</span><span class="si">$articleId</span><span class="s2">&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">            <span class="p">),</span>
 </span></span><span class="line"><span class="cl">            <span class="n">animatedVisibilityScope</span> <span class="p">=</span> <span class="n">animatedVisibilityScope</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="p">),</span>
@@ -214,20 +214,20 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">        <span class="n">id</span> <span class="p">=</span> <span class="n">article</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">title</span> <span class="p">=</span> <span class="n">buildAnnotatedString</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="n">withStyle</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            	<span class="n">style</span> <span class="p">=</span> <span class="n">SpanStyle</span><span class="p">(</span><span class="n">fontWeight</span> <span class="p">=</span> <span class="nc">FontWeight</span><span class="p">.</span><span class="n">Bold</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">style</span> <span class="p">=</span> <span class="n">SpanStyle</span><span class="p">(</span><span class="n">fontWeight</span> <span class="p">=</span> <span class="nc">FontWeight</span><span class="p">.</span><span class="n">Bold</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">            <span class="n">append</span><span class="p">(</span><span class="s2">&#34; | &#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">authorNames</span> <span class="p">=</span> <span class="n">article</span>
-</span></span><span class="line"><span class="cl">            	<span class="p">.</span><span class="n">authors</span>
-</span></span><span class="line"><span class="cl">            	<span class="p">.</span><span class="n">joinToString</span><span class="p">(</span><span class="n">transform</span> <span class="p">=</span> <span class="n">Author</span><span class="o">::</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">authors</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">joinToString</span><span class="p">(</span><span class="n">transform</span> <span class="p">=</span> <span class="n">Author</span><span class="o">::</span><span class="n">name</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="n">append</span><span class="p">(</span><span class="n">authorNames</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">},</span>
 </span></span><span class="line"><span class="cl">        <span class="n">publishedAt</span> <span class="p">=</span> <span class="n">article</span>
-</span></span><span class="line"><span class="cl">        	<span class="p">.</span><span class="n">publishedAtUtc</span>
-</span></span><span class="line"><span class="cl">        	<span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="n">publishedDateFormat</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">publishedAtUtc</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="n">publishedDateFormat</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">        <span class="n">image</span> <span class="p">=</span> <span class="nc">ImageModel</span><span class="p">.</span><span class="n">Remote</span><span class="p">(</span><span class="n">article</span><span class="p">.</span><span class="n">imageUrl</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">        <span class="n">url</span> <span class="p">=</span> <span class="n">article</span><span class="p">.</span><span class="n">url</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">summary</span> <span class="p">=</span> <span class="n">article</span><span class="p">.</span><span class="n">summary</span><span class="p">,</span>

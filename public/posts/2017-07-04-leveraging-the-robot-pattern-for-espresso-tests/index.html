@@ -194,7 +194,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>Before we get into the robot pattern, it&rsquo;s important to understand the problem it solves. In the above application, we may want to automate a test that goes to the add person activity, enters their information, clicks submit, and verifies that the person was added to the list. We can do that like this:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="nd">@Test</span>
 </span></span><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">addPersonSuccess</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    	<span class="c1">// Click the FAB
+</span></span><span class="line"><span class="cl">        <span class="c1">// Click the FAB
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">onView</span><span class="p">(</span><span class="n">withId</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fab</span><span class="p">)).</span><span class="n">perform</span><span class="p">(</span><span class="n">click</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">// Enter all their information and click submit

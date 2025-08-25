@@ -181,52 +181,52 @@ stroke-linejoin="round" class="feather feather-home">
 <p>Now, you have support for Kotlin in your project, but if you look inside the source files everything is still Java. Configuring Kotlin in your project does not convert it for you, but that is still easy to do. On a Mac you can do <code>CMD + ALT + SHIFT + K</code> to convert, or select <code>Code -&gt; Convert Java File To Kotlin File</code> in the menu:</p>
 <p><img src="/images/kotlin/convert_to_kotlin.png" alt="AndroidEssence"></p>
 <p>And that is all you need to get off the ground in Kotlin. You should run the HelloWorld application we&rsquo;ve built to make sure that there weren&rsquo;t mistakes along the way. Let&rsquo;s wrap up part 1 by dissecting our new <code>MainActivity.kt</code> file, and how it&rsquo;s different from Java:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="k">package</span> <span class="nn">com.adammcneilly.todolist</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="k">package</span> <span class="nn">com.adammcneilly.todolist</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.os.Bundle</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.support.design.widget.FloatingActionButton</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.support.design.widget.Snackbar</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.support.v7.widget.Toolbar</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.view.View</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.view.Menu</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.view.MenuItem</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.os.Bundle</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.support.design.widget.FloatingActionButton</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.support.design.widget.Snackbar</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.support.v7.widget.Toolbar</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.view.View</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.view.Menu</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.view.MenuItem</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="k">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">val</span> <span class="py">toolbar</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span> <span class="k">as</span> <span class="n">Toolbar</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">setSupportActionBar</span><span class="p">(</span><span class="n">toolbar</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">toolbar</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span> <span class="k">as</span> <span class="n">Toolbar</span>
+</span></span><span class="line"><span class="cl">            <span class="n">setSupportActionBar</span><span class="p">(</span><span class="n">toolbar</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	        <span class="k">val</span> <span class="py">fab</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fab</span><span class="p">)</span> <span class="k">as</span> <span class="n">FloatingActionButton</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">fab</span><span class="p">.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="o">-&gt;</span>
-</span></span><span class="line"><span class="cl">	            <span class="nc">Snackbar</span><span class="p">.</span><span class="n">make</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="s2">&#34;Replace with your own action&#34;</span><span class="p">,</span> <span class="nc">Snackbar</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">setAction</span><span class="p">(</span><span class="s2">&#34;Action&#34;</span><span class="p">,</span> <span class="k">null</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">fab</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fab</span><span class="p">)</span> <span class="k">as</span> <span class="n">FloatingActionButton</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fab</span><span class="p">.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nc">Snackbar</span><span class="p">.</span><span class="n">make</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="s2">&#34;Replace with your own action&#34;</span><span class="p">,</span> <span class="nc">Snackbar</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">.</span><span class="n">setAction</span><span class="p">(</span><span class="s2">&#34;Action&#34;</span><span class="p">,</span> <span class="k">null</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateOptionsMenu</span><span class="p">(</span><span class="n">menu</span><span class="p">:</span> <span class="n">Menu</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="c1">// Inflate the menu; this adds items to the action bar if it is present.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="n">menuInflater</span><span class="p">.</span><span class="n">inflate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">menu</span><span class="p">.</span><span class="n">menu_main</span><span class="p">,</span> <span class="n">menu</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">return</span> <span class="k">true</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateOptionsMenu</span><span class="p">(</span><span class="n">menu</span><span class="p">:</span> <span class="n">Menu</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// Inflate the menu; this adds items to the action bar if it is present.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">menuInflater</span><span class="p">.</span><span class="n">inflate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">menu</span><span class="p">.</span><span class="n">menu_main</span><span class="p">,</span> <span class="n">menu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">true</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">MenuItem</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="c1">// Handle action bar item clicks here. The action bar will
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="c1">// automatically handle clicks on the Home/Up button, so long
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="c1">// as you specify a parent activity in AndroidManifest.xml.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="k">val</span> <span class="py">id</span> <span class="p">=</span> <span class="n">item</span><span class="p">.</span><span class="n">itemId</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">MenuItem</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// Handle action bar item clicks here. The action bar will
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="c1">// automatically handle clicks on the Home/Up button, so long
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="c1">// as you specify a parent activity in AndroidManifest.xml.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">val</span> <span class="py">id</span> <span class="p">=</span> <span class="n">item</span><span class="p">.</span><span class="n">itemId</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	        <span class="k">if</span> <span class="p">(</span><span class="n">id</span> <span class="o">==</span> <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_settings</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	            <span class="k">return</span> <span class="k">true</span>
-</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">id</span> <span class="o">==</span> <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_settings</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="k">true</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	        <span class="k">return</span> <span class="k">super</span><span class="p">.</span><span class="n">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">super</span><span class="p">.</span><span class="n">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>There&rsquo;s a lot here, and I don&rsquo;t want this to be an ultra-detailed tutorial of the Kotlin language, but let&rsquo;s highlight a few things:</p>
 <ol>
 <li>No <code>extends</code> keyword. Kotlin uses <code>:</code> to represent extending a class or implementing an interface.</li>
@@ -243,48 +243,48 @@ stroke-linejoin="round" class="feather feather-home">
 <li>Using <code>when</code> inside <code>onOptionsItemSelected</code>. The <code>when</code> keyword in Kotlin replaces the <code>switch</code> statement in Java.</li>
 </ol>
 <p>Once we make those changes and optimize imports, here is what our <code>MainActivity.kt</code> file should look like:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="k">package</span> <span class="nn">com.adammcneilly.todolist</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="k">package</span> <span class="nn">com.adammcneilly.todolist</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.os.Bundle</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.support.design.widget.FloatingActionButton</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.support.design.widget.Snackbar</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.support.v7.widget.Toolbar</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.view.Menu</span>
-</span></span><span class="line"><span class="cl">	<span class="k">import</span> <span class="nn">android.view.MenuItem</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.os.Bundle</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.support.design.widget.FloatingActionButton</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.support.design.widget.Snackbar</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.support.v7.widget.Toolbar</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.view.Menu</span>
+</span></span><span class="line"><span class="cl">    <span class="k">import</span> <span class="nn">android.view.MenuItem</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="k">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        
-</span></span><span class="line"><span class="cl">	        <span class="k">val</span> <span class="py">toolbar</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span> <span class="k">as</span> <span class="n">Toolbar</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">setSupportActionBar</span><span class="p">(</span><span class="n">toolbar</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">toolbar</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span> <span class="k">as</span> <span class="n">Toolbar</span>
+</span></span><span class="line"><span class="cl">            <span class="n">setSupportActionBar</span><span class="p">(</span><span class="n">toolbar</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	        <span class="k">val</span> <span class="py">fab</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fab</span><span class="p">)</span> <span class="k">as</span> <span class="n">FloatingActionButton</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">fab</span><span class="p">.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="o">-&gt;</span>
-</span></span><span class="line"><span class="cl">	            <span class="nc">Snackbar</span><span class="p">.</span><span class="n">make</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="s2">&#34;Replace with your own action&#34;</span><span class="p">,</span> <span class="nc">Snackbar</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">setAction</span><span class="p">(</span><span class="s2">&#34;Action&#34;</span><span class="p">,</span> <span class="k">null</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">fab</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fab</span><span class="p">)</span> <span class="k">as</span> <span class="n">FloatingActionButton</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fab</span><span class="p">.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nc">Snackbar</span><span class="p">.</span><span class="n">make</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="s2">&#34;Replace with your own action&#34;</span><span class="p">,</span> <span class="nc">Snackbar</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">.</span><span class="n">setAction</span><span class="p">(</span><span class="s2">&#34;Action&#34;</span><span class="p">,</span> <span class="k">null</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateOptionsMenu</span><span class="p">(</span><span class="n">menu</span><span class="p">:</span> <span class="n">Menu</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="c1">// Inflate the menu; this adds items to the action bar if it is present.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="n">menuInflater</span><span class="p">.</span><span class="n">inflate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">menu</span><span class="p">.</span><span class="n">menu_main</span><span class="p">,</span> <span class="n">menu</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">return</span> <span class="k">true</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateOptionsMenu</span><span class="p">(</span><span class="n">menu</span><span class="p">:</span> <span class="n">Menu</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// Inflate the menu; this adds items to the action bar if it is present.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">menuInflater</span><span class="p">.</span><span class="n">inflate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">menu</span><span class="p">.</span><span class="n">menu_main</span><span class="p">,</span> <span class="n">menu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">true</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">MenuItem</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="c1">// Handle action bar item clicks here. The action bar will
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="c1">// automatically handle clicks on the Home/Up button, so long
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="c1">// as you specify a parent activity in AndroidManifest.xml.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="k">when</span> <span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">itemId</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	            <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_settings</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="k">true</span>
-</span></span><span class="line"><span class="cl">	            <span class="k">else</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="k">super</span><span class="p">.</span><span class="n">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">MenuItem</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// Handle action bar item clicks here. The action bar will
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="c1">// automatically handle clicks on the Home/Up button, so long
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="c1">// as you specify a parent activity in AndroidManifest.xml.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">when</span> <span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">itemId</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_settings</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="k">true</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="k">super</span><span class="p">.</span><span class="n">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>A note on the <code>as</code> keyword:</p>
 <ul>
 <li><code>as</code> is referred to as the unsafe cast operator in Kotlin. If the cast fails, it can throw an exception. However, Kotlin provides an <code>as?</code> operator, which is a safe operator. If the cast fails, it simply returns null. You can read more on them <a href="https://kotlinlang.org/docs/reference/typecasts.html#unsafe-cast-operator">here</a>.</li>

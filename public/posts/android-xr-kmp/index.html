@@ -193,12 +193,12 @@ stroke-linejoin="round" class="feather feather-home">
 </ol>
 <p>A great way to model this is via an interface, which allows us to provide platform specific implementations. On Android, we&rsquo;ll use the XR dependencies. On iOS, we&rsquo;ll do nothing for now (though you can begin to see how this might expand to <a href="https://developer.apple.com/visionos/">AVP</a> support).</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">interface</span> <span class="nc">XRSession</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="cm">/**
-</span></span></span><span class="line"><span class="cl"><span class="cm">	 * This getter has to be composable, because on the Android side 
-</span></span></span><span class="line"><span class="cl"><span class="cm">	 * we&#39;ll reference `LocalSpatialCapabilities` Composition local.
-</span></span></span><span class="line"><span class="cl"><span class="cm">	 * 
-</span></span></span><span class="line"><span class="cl"><span class="cm">	 * https://developer.android.com/develop/xr/jetpack-xr-sdk/check-spatial-capabilities
-</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span> 
+</span></span><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * This getter has to be composable, because on the Android side 
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * we&#39;ll reference `LocalSpatialCapabilities` Composition local.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * https://developer.android.com/develop/xr/jetpack-xr-sdk/check-spatial-capabilities
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span> 
 </span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">isSpatialUiEnabled</span><span class="p">:</span> <span class="n">Boolean</span>
 </span></span><span class="line"><span class="cl">        <span class="nd">@Composable</span> <span class="k">get</span>
 </span></span><span class="line"><span class="cl">
@@ -256,7 +256,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">    <span class="n">CompositionLocalProvider</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">        <span class="n">LocalXRSession</span> <span class="n">provides</span> <span class="n">currentXRSession</span><span class="p">(),</span>
 </span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    	<span class="c1">// App content
+</span></span><span class="line"><span class="cl">        <span class="c1">// App content
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h2 id="further-details">Further Details</h2>
@@ -278,7 +278,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="p">},</span>
 </span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    	<span class="c1">// ...
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>And now, our entirely Compose Multiplatform application has the ability to switch between home and full space mode on an Android XR emulator:</p>

@@ -24,36 +24,36 @@ First, we need to create an Activity for adding an account. We can create a new 
 We'll just use a simple layout to avoid over-complicating the tutorial. I used the new `ConstraintLayout` and placed an EditText with a Button underneath:
 
 ```xml
-	<?xml version="1.0" encoding="utf-8"?>
-	<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    xmlns:app="http://schemas.android.com/apk/res-auto"
-	    xmlns:tools="http://schemas.android.com/tools"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    tools:context="com.adammcneilly.todolist.AddTaskActivity">
+    <?xml version="1.0" encoding="utf-8"?>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.adammcneilly.todolist.AddTaskActivity">
 
-	    <EditText
-	        android:id="@+id/task_description"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:hint="@string/description"
-	        android:inputType="text"
-	        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/task_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/description"
+            android:inputType="text"
+            app:layout_constraintTop_toTopOf="parent" />
 
-	    <Button
-	        android:id="@+id/submit"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/submit"
-	        app:layout_constraintTop_toBottomOf="@id/task_description" />
-	</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            app:layout_constraintTop_toBottomOf="@id/task_description" />
+    </android.support.constraint.ConstraintLayout>
 ```
 
 The string resources are defined as:
 
 ```xml
-	<string name="description">Description</string>
-	<string name="submit">Submit</string>
+    <string name="description">Description</string>
+    <string name="submit">Submit</string>
 ```
 
 # Launch New Activity
@@ -68,43 +68,43 @@ Before we implement the logic in this new activity, let's make the corresponding
 Here is what our `addTask()` method looks like:
 
 ```kotlin
-	fun addTask(task: Task) {
-	    tasks.add(task)
-	    notifyDataSetChanged()
-	}
+    fun addTask(task: Task) {
+        tasks.add(task)
+        notifyDataSetChanged()
+    }
 ```
 
 And here is what the MainActivity looks like with our new code added:
 
 ```kotlin
-	class MainActivity : AppCompatActivity() {
+    class MainActivity : AppCompatActivity() {
 
-	    var adapter: TaskAdapter? = TaskAdapter()
+        var adapter: TaskAdapter? = TaskAdapter()
 
-	    override fun onCreate(savedInstanceState: Bundle?) {
-	        // ...
+        override fun onCreate(savedInstanceState: Bundle?) {
+            // ...
 
-	        val fab = findViewById(R.id.fab) as? FloatingActionButton
-	        fab?.setOnClickListener { _ ->
-	            val intent = Intent(this, AddTaskActivity::class.java)
-	            startActivityForResult(intent, ADD_TASK_REQUEST)
-	        }
-	    }
+            val fab = findViewById(R.id.fab) as? FloatingActionButton
+            fab?.setOnClickListener { _ ->
+                val intent = Intent(this, AddTaskActivity::class.java)
+                startActivityForResult(intent, ADD_TASK_REQUEST)
+            }
+        }
 
-	    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-	        if (requestCode == ADD_TASK_REQUEST && resultCode == Activity.RESULT_OK) {
-	            val task = Task(data?.getStringExtra(DESCRIPTION_TEXT).orEmpty())
-	            adapter?.addTask(task)
-	        }
-	    }
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            if (requestCode == ADD_TASK_REQUEST && resultCode == Activity.RESULT_OK) {
+                val task = Task(data?.getStringExtra(DESCRIPTION_TEXT).orEmpty())
+                adapter?.addTask(task)
+            }
+        }
 
-	    // ...
+        // ...
 
-	    companion object {
-	    	private val ADD_TASK_REQUEST = 0
-	        val DESCRIPTION_TEXT = "description"
-	    }
-	}
+        companion object {
+            private val ADD_TASK_REQUEST = 0
+            val DESCRIPTION_TEXT = "description"
+        }
+    }
 ```
 
 If you use this as a break point, you'll see the new activity starts up, but nothing happens when you hit submit. We'll implement that now.
@@ -120,28 +120,28 @@ In our activity, we'll have the following logic:
 All of this code can be implemented in our `onCreate()` method:
 
 ```kotlin
-	class AddTaskActivity : AppCompatActivity() {
+    class AddTaskActivity : AppCompatActivity() {
 
-	    override fun onCreate(savedInstanceState: Bundle?) {
-	        super.onCreate(savedInstanceState)
-	        setContentView(R.layout.activity_add_task)
-	        
-	        val description = findViewById(R.id.task_description) as? EditText
-	        val submit = findViewById(R.id.submit) as? Button
-	        
-	        submit?.setOnClickListener { 
-	            if (description?.text?.toString().isNullOrBlank()) {
-	                description?.error = "Please enter a description"
-	            } else {
-	                val data = Intent()
-	                data.putExtra(MainActivity.DESCRIPTION_TEXT, description?.text.toString())
-	                setResult(Activity.RESULT_OK, data)
-	                
-	                finish()
-	            }
-	        }
-	    }
-	}
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_add_task)
+            
+            val description = findViewById(R.id.task_description) as? EditText
+            val submit = findViewById(R.id.submit) as? Button
+            
+            submit?.setOnClickListener { 
+                if (description?.text?.toString().isNullOrBlank()) {
+                    description?.error = "Please enter a description"
+                } else {
+                    val data = Intent()
+                    data.putExtra(MainActivity.DESCRIPTION_TEXT, description?.text.toString())
+                    setResult(Activity.RESULT_OK, data)
+                    
+                    finish()
+                }
+            }
+        }
+    }
 ```
 
 Running the app at this point you'll see that we can start a new activity, type in a description, and hit submit to see the new task in our list. That's it for part 3! Move on to the the [fourth part]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-4-storing-items.md %}) to see how we can read and write to a text file and persist the information. If you've missed any code, you can find it on [GitHub](http://github.com/AdamMc331/todo-kotlin).

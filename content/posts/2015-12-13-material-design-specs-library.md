@@ -18,7 +18,7 @@ Along with the [RecyclerViewCursorAdapter library](http://androidessence.com/rec
 The convention for accessing the color resources is like so:
 
 ```xml
-	R.color.mds_colorName_colorLevel
+    R.color.mds_colorName_colorLevel
 ```
 
 where colorName and colorLevel are replaced with the values you want. There are 19 color names:
@@ -78,8 +78,8 @@ Available helper methods include:
 Each of these methods will throw an [IllegalAccessException](http://developer.android.com/intl/pt-br/reference/java/lang/IllegalAccessException.html) if any of the resources are unable to be accessed. For passing in the color name or color level, you can make use of the available static strings, such as:
 
 ```java
-	MaterialPalettes.RED
-	MaterialPalettes.LEVEL_500
+    MaterialPalettes.RED
+    MaterialPalettes.LEVEL_500
 ```
 
 # Elevation
@@ -87,7 +87,7 @@ Each of these methods will throw an [IllegalAccessException](http://developer.an
 Currently the only supported elevation values are those found from the [elevation specs](https://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-elevation-android) that follow convention:
 
 ```xml
-	R.dimen.mds_elevation_componentName
+    R.dimen.mds_elevation_componentName
 ```
 
 where componentNAme can be replaced by "dialog" or "appbar". With its current functionality, there is no need for programatic helper methods for using elevation values. This may change as more specs are included in the future.

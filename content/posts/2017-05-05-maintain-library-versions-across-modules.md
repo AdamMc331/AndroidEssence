@@ -17,23 +17,23 @@ It is tough enough maintaing your app by updating the support library version nu
 In your root `build.gradle` file for the project, you can define some [ExtraPropertyExtensions](https://docs.gradle.org/current/dsl/org.gradle.api.plugins.ExtraPropertiesExtension.html) that will be reused for various modules. That would look something like this:
 
 ```groovy
-	allprojects {
-	    repositories {
-	        jcenter()
-	    }
+    allprojects {
+        repositories {
+            jcenter()
+        }
 
-	    ext {
-	        //Android
-	        androidBuildToolsVersion = "25.0.2"
-	        androidMinSdkVersion = 16
-	        androidTargetSdkVersion = 25
-	        androidCompileSdkVersion = 25
+        ext {
+            //Android
+            androidBuildToolsVersion = "25.0.2"
+            androidMinSdkVersion = 16
+            androidTargetSdkVersion = 25
+            androidCompileSdkVersion = 25
 
-	        //Libraries
-	        supportLibraryVersion = "25.3.1"
-	        playServicesVersion = "10.2.1"
-	    }
-	}
+            //Libraries
+            supportLibraryVersion = "25.3.1"
+            playServicesVersion = "10.2.1"
+        }
+    }
 ```
 
 Now we've got some reusable variables that we want to be consistent across our various modules.
@@ -43,28 +43,28 @@ Now we've got some reusable variables that we want to be consistent across our v
 In the `build.gradle` file of each module, inside the "android" block, we'll need to define a reference to the global configuration we just created. We can do so with the following single line of code:
 
 ```groovy
-	android {
-	    def globalConfiguration = rootProject.extensions.getByName("ext")
+    android {
+        def globalConfiguration = rootProject.extensions.getByName("ext")
 
-	    ...
-	}
+        ...
+    }
 ```
 
 With that, there are two ways you can use these properties. When trying to reference them individually, for properties such as build tools or compile sdk version, you can reference them using the property key:
 
 ```groovy
 android {
-	...
-	compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
-	buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
-	...
+    ...
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+    buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
+    ...
 }
 ```
 
 If you want to include version numbers as part of your compile statements, you can simply use gradle's string interpolation:
 
 ```groovy
-	compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
+    compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
 ```
 
 That's it! That one simple little trick is all you need to have consistent library versions across modules. Some notes on further studying this:

@@ -21,7 +21,7 @@ AsyncImage(
     modifier = Modifier
         .sharedElement(
             rememberSharedContentState(
-            	key = "article_image_$articleId",
+                key = "article_image_$articleId",
             ),
             animatedVisibilityScope = animatedVisibilityScope,
         ),
@@ -68,20 +68,20 @@ data class ArticleDisplayModel(
         id = article.id,
         title = buildAnnotatedString {
             withStyle(
-            	style = SpanStyle(fontWeight = FontWeight.Bold)
+                style = SpanStyle(fontWeight = FontWeight.Bold)
             ) {
                 append(article.title)
             }
             append(" | ")
 
             val authorNames = article
-            	.authors
-            	.joinToString(transform = Author::name)
+                .authors
+                .joinToString(transform = Author::name)
             append(authorNames)
         },
         publishedAt = article
-        	.publishedAtUtc
-        	.format(publishedDateFormat),
+            .publishedAtUtc
+            .format(publishedDateFormat),
         image = ImageModel.Remote(article.imageUrl),
         url = article.url,
         summary = article.summary,

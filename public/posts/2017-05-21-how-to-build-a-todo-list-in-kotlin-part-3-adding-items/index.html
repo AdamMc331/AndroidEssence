@@ -176,32 +176,32 @@ stroke-linejoin="round" class="feather feather-home">
 <p><img src="/images/kotlin/new-activity-1.png" alt="AndroidEssence"></p>
 <p><img src="/images/kotlin/new-activity-2.png" alt="AndroidESsence"></p>
 <p>We&rsquo;ll just use a simple layout to avoid over-complicating the tutorial. I used the new <code>ConstraintLayout</code> and placed an EditText with a Button underneath:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">	<span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;android.support.constraint.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">tools:context=</span><span class="s">&#34;com.adammcneilly.todolist.AddTaskActivity&#34;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;android.support.constraint.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">tools:context=</span><span class="s">&#34;com.adammcneilly.todolist.AddTaskActivity&#34;</span><span class="nt">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;EditText</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:id=</span><span class="s">&#34;@+id/task_description&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:hint=</span><span class="s">&#34;@string/description&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:inputType=</span><span class="s">&#34;text&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;EditText</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:id=</span><span class="s">&#34;@+id/task_description&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:hint=</span><span class="s">&#34;@string/description&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:inputType=</span><span class="s">&#34;text&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span> <span class="nt">/&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;Button</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:id=</span><span class="s">&#34;@+id/submit&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:text=</span><span class="s">&#34;@string/submit&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@id/task_description&#34;</span> <span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/android.support.constraint.ConstraintLayout&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:id=</span><span class="s">&#34;@+id/submit&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:text=</span><span class="s">&#34;@string/submit&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@id/task_description&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/android.support.constraint.ConstraintLayout&gt;</span>
 </span></span></code></pre></div><p>The string resources are defined as:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">	<span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&#34;description&#34;</span><span class="nt">&gt;</span>Description<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&#34;submit&#34;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/string&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&#34;description&#34;</span><span class="nt">&gt;</span>Description<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&#34;submit&#34;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/string&gt;</span>
 </span></span></code></pre></div><h1 id="launch-new-activity">Launch New Activity</h1>
 <p>Before we implement the logic in this new activity, let&rsquo;s make the corresponding changes in <code>MainActivity.kt</code> to launch it. There&rsquo;s four things we need to do:</p>
 <ol>
@@ -211,39 +211,39 @@ stroke-linejoin="round" class="feather feather-home">
 <li>Override onActivityResult in MainActivity to get the description that was passed from the other activity (this is coded later) and create a new task with it.</li>
 </ol>
 <p>Here is what our <code>addTask()</code> method looks like:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="k">fun</span> <span class="nf">addTask</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="n">Task</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">tasks</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">notifyDataSetChanged</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">addTask</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="n">Task</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tasks</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">notifyDataSetChanged</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>And here is what the MainActivity looks like with our new code added:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="k">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">var</span> <span class="py">adapter</span><span class="p">:</span> <span class="n">TaskAdapter</span><span class="p">?</span> <span class="p">=</span> <span class="n">TaskAdapter</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">var</span> <span class="py">adapter</span><span class="p">:</span> <span class="n">TaskAdapter</span><span class="p">?</span> <span class="p">=</span> <span class="n">TaskAdapter</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="c1">// ...
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// ...
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">	        <span class="k">val</span> <span class="py">fab</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fab</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">FloatingActionButton</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">fab</span><span class="o">?.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">_</span> <span class="o">-&gt;</span>
-</span></span><span class="line"><span class="cl">	            <span class="k">val</span> <span class="py">intent</span> <span class="p">=</span> <span class="n">Intent</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">AddTaskActivity</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	            <span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span> <span class="n">ADD_TASK_REQUEST</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">fab</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fab</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">FloatingActionButton</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fab</span><span class="o">?.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">_</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">val</span> <span class="py">intent</span> <span class="p">=</span> <span class="n">Intent</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">AddTaskActivity</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span> <span class="n">ADD_TASK_REQUEST</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onActivityResult</span><span class="p">(</span><span class="n">requestCode</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">resultCode</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">data</span><span class="p">:</span> <span class="n">Intent</span><span class="p">?)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">if</span> <span class="p">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">ADD_TASK_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="nc">Activity</span><span class="p">.</span><span class="n">RESULT_OK</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	            <span class="k">val</span> <span class="py">task</span> <span class="p">=</span> <span class="n">Task</span><span class="p">(</span><span class="k">data</span><span class="o">?.</span><span class="n">getStringExtra</span><span class="p">(</span><span class="n">DESCRIPTION_TEXT</span><span class="p">).</span><span class="n">orEmpty</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">	            <span class="n">adapter</span><span class="o">?.</span><span class="n">addTask</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onActivityResult</span><span class="p">(</span><span class="n">requestCode</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">resultCode</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">data</span><span class="p">:</span> <span class="n">Intent</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">ADD_TASK_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="nc">Activity</span><span class="p">.</span><span class="n">RESULT_OK</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">val</span> <span class="py">task</span> <span class="p">=</span> <span class="n">Task</span><span class="p">(</span><span class="k">data</span><span class="o">?.</span><span class="n">getStringExtra</span><span class="p">(</span><span class="n">DESCRIPTION_TEXT</span><span class="p">).</span><span class="n">orEmpty</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">                <span class="n">adapter</span><span class="o">?.</span><span class="n">addTask</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="c1">// ...
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">	    <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	    	<span class="k">private</span> <span class="k">val</span> <span class="py">ADD</span><span class="n">_TASK_REQUEST</span> <span class="p">=</span> <span class="m">0</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">val</span> <span class="py">DESCRIPTION</span><span class="n">_TEXT</span> <span class="p">=</span> <span class="s2">&#34;description&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">private</span> <span class="k">val</span> <span class="py">ADD</span><span class="n">_TASK_REQUEST</span> <span class="p">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">DESCRIPTION</span><span class="n">_TEXT</span> <span class="p">=</span> <span class="s2">&#34;description&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>If you use this as a break point, you&rsquo;ll see the new activity starts up, but nothing happens when you hit submit. We&rsquo;ll implement that now.</p>
 <h1 id="implement-new-activity">Implement New Activity</h1>
 <p>In our activity, we&rsquo;ll have the following logic:</p>
@@ -253,28 +253,28 @@ stroke-linejoin="round" class="feather feather-home">
 <li>If it&rsquo;s not empty, pass the description back as an intent extra.</li>
 </ul>
 <p>All of this code can be implemented in our <code>onCreate()</code> method:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="k">class</span> <span class="nc">AddTaskActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">AddTaskActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_add_task</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        
-</span></span><span class="line"><span class="cl">	        <span class="k">val</span> <span class="py">description</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">task_description</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">EditText</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">val</span> <span class="py">submit</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">submit</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">Button</span>
-</span></span><span class="line"><span class="cl">	        
-</span></span><span class="line"><span class="cl">	        <span class="n">submit</span><span class="o">?.</span><span class="n">setOnClickListener</span> <span class="p">{</span> 
-</span></span><span class="line"><span class="cl">	            <span class="k">if</span> <span class="p">(</span><span class="n">description</span><span class="o">?.</span><span class="n">text</span><span class="o">?.</span><span class="n">toString</span><span class="p">().</span><span class="n">isNullOrBlank</span><span class="p">())</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	                <span class="n">description</span><span class="o">?.</span><span class="n">error</span> <span class="p">=</span> <span class="s2">&#34;Please enter a description&#34;</span>
-</span></span><span class="line"><span class="cl">	            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	                <span class="k">val</span> <span class="py">data</span> <span class="p">=</span> <span class="n">Intent</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	                <span class="k">data</span><span class="p">.</span><span class="n">putExtra</span><span class="p">(</span><span class="nc">MainActivity</span><span class="p">.</span><span class="n">DESCRIPTION_TEXT</span><span class="p">,</span> <span class="n">description</span><span class="o">?.</span><span class="n">text</span><span class="p">.</span><span class="n">toString</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">	                <span class="n">setResult</span><span class="p">(</span><span class="nc">Activity</span><span class="p">.</span><span class="n">RESULT_OK</span><span class="p">,</span> <span class="k">data</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	                
-</span></span><span class="line"><span class="cl">	                <span class="n">finish</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_add_task</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">description</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">task_description</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">EditText</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">submit</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">submit</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">Button</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="n">submit</span><span class="o">?.</span><span class="n">setOnClickListener</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">description</span><span class="o">?.</span><span class="n">text</span><span class="o">?.</span><span class="n">toString</span><span class="p">().</span><span class="n">isNullOrBlank</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">description</span><span class="o">?.</span><span class="n">error</span> <span class="p">=</span> <span class="s2">&#34;Please enter a description&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">val</span> <span class="py">data</span> <span class="p">=</span> <span class="n">Intent</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">data</span><span class="p">.</span><span class="n">putExtra</span><span class="p">(</span><span class="nc">MainActivity</span><span class="p">.</span><span class="n">DESCRIPTION_TEXT</span><span class="p">,</span> <span class="n">description</span><span class="o">?.</span><span class="n">text</span><span class="p">.</span><span class="n">toString</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">setResult</span><span class="p">(</span><span class="nc">Activity</span><span class="p">.</span><span class="n">RESULT_OK</span><span class="p">,</span> <span class="k">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    
+</span></span><span class="line"><span class="cl">                    <span class="n">finish</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>Running the app at this point you&rsquo;ll see that we can start a new activity, type in a description, and hit submit to see the new task in our list. That&rsquo;s it for part 3! Move on to the the [fourth part]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-4-storing-items.md %}) to see how we can read and write to a text file and persist the information. If you&rsquo;ve missed any code, you can find it on <a href="http://github.com/AdamMc331/todo-kotlin">GitHub</a>.</p>
             </div>
         </article></main>

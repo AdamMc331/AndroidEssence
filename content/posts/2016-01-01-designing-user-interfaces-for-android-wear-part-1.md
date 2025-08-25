@@ -20,7 +20,7 @@ The first class you should learn about from the Wear library is [WatchViewStub](
 
 ```xml
     <android.support.wearable.view.WatchViewStub 
-    	xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/watch_view_stub"

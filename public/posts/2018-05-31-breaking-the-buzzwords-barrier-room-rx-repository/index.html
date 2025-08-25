@@ -191,75 +191,75 @@ stroke-linejoin="round" class="feather feather-home">
 <h2 id="entity">Entity</h2>
 <p>The first thing we need to get started with Room is an <a href="https://developer.android.com/training/data-storage/room/defining-data">Entity</a>. To create an entity in room, you just have to annotate the class. What this will do is create a table for your entity, and each property you have (that you don&rsquo;t ignore) will be created as a column.</p>
 <p>So if I wanted a table called <code>Account</code>, with a column for <code>name</code> and <code>balance</code>, I would write an entity like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="nd">@Entity</span><span class="p">(</span><span class="n">indices</span> <span class="p">=</span> <span class="p">[(</span><span class="n">Index</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">))])</span>
-</span></span><span class="line"><span class="cl">	<span class="k">data</span> <span class="k">class</span> <span class="nc">Account</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">	        <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span> <span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">var</span> <span class="py">balance</span><span class="p">:</span> <span class="n">Double</span> <span class="p">=</span> <span class="m">0.0</span>
-</span></span><span class="line"><span class="cl">	<span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="nd">@Entity</span><span class="p">(</span><span class="n">indices</span> <span class="p">=</span> <span class="p">[(</span><span class="n">Index</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">))])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">data</span> <span class="k">class</span> <span class="nc">Account</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span> <span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="k">var</span> <span class="py">balance</span><span class="p">:</span> <span class="n">Double</span> <span class="p">=</span> <span class="m">0.0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
 </span></span></code></pre></div><p>If you chose to <a href="https://developer.android.com/reference/android/arch/persistence/room/Database#exportschema">export schemas</a> in room, you can see a detailed overview of what this class will actually do with regards to the database:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;tableName&#34;</span><span class="p">:</span> <span class="s2">&#34;Account&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;createSql&#34;</span><span class="p">:</span> <span class="s2">&#34;CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `balance` REAL NOT NULL, PRIMARY KEY(`name`))&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;fields&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">		  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;fieldPath&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;columnName&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;affinity&#34;</span><span class="p">:</span> <span class="s2">&#34;TEXT&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;notNull&#34;</span><span class="p">:</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">		  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">		  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;fieldPath&#34;</span><span class="p">:</span> <span class="s2">&#34;balance&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;columnName&#34;</span><span class="p">:</span> <span class="s2">&#34;balance&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;affinity&#34;</span><span class="p">:</span> <span class="s2">&#34;REAL&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;notNull&#34;</span><span class="p">:</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">		  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="p">],</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;primaryKey&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		  <span class="nt">&#34;columnNames&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">		    <span class="s2">&#34;name&#34;</span>
-</span></span><span class="line"><span class="cl">		  <span class="p">],</span>
-</span></span><span class="line"><span class="cl">		  <span class="nt">&#34;autoGenerate&#34;</span><span class="p">:</span> <span class="kc">false</span>
-</span></span><span class="line"><span class="cl">		<span class="p">},</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;indices&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">		  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;index_Account_name&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;unique&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;columnNames&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">		      <span class="s2">&#34;name&#34;</span>
-</span></span><span class="line"><span class="cl">		    <span class="p">],</span>
-</span></span><span class="line"><span class="cl">		    <span class="nt">&#34;createSql&#34;</span><span class="p">:</span> <span class="s2">&#34;CREATE  INDEX `index_Account_name` ON `${TABLE_NAME}` (`name`)&#34;</span>
-</span></span><span class="line"><span class="cl">		  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="p">],</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;foreignKeys&#34;</span><span class="p">:</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;tableName&#34;</span><span class="p">:</span> <span class="s2">&#34;Account&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;createSql&#34;</span><span class="p">:</span> <span class="s2">&#34;CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `balance` REAL NOT NULL, PRIMARY KEY(`name`))&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fields&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">          <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;fieldPath&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;columnName&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;affinity&#34;</span><span class="p">:</span> <span class="s2">&#34;TEXT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;notNull&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">          <span class="p">},</span>
+</span></span><span class="line"><span class="cl">          <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;fieldPath&#34;</span><span class="p">:</span> <span class="s2">&#34;balance&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;columnName&#34;</span><span class="p">:</span> <span class="s2">&#34;balance&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;affinity&#34;</span><span class="p">:</span> <span class="s2">&#34;REAL&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;notNull&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;primaryKey&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;columnNames&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;name&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">],</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;autoGenerate&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;indices&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">          <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;index_Account_name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;unique&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;columnNames&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;name&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;createSql&#34;</span><span class="p">:</span> <span class="s2">&#34;CREATE  INDEX `index_Account_name` ON `${TABLE_NAME}` (`name`)&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;foreignKeys&#34;</span><span class="p">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>An important thing to note, is that the class name is what is automatically used as the table name, unless annotated otherwise. In Cash Caretaker, we naturally want a class called a <code>Transaction</code>, representing a financial one, but we can&rsquo;t have a <code>Transaction</code> table as that&rsquo;s a reserved SQLite keyword. So in some cases you want to add the table name to your annotation (this example also shows how you can have foreign keys as well):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="nd">@Parcelize</span>
-</span></span><span class="line"><span class="cl">	<span class="nd">@Entity</span><span class="p">(</span><span class="n">tableName</span> <span class="p">=</span> <span class="s2">&#34;transactionTable&#34;</span><span class="p">,</span> <span class="n">foreignKeys</span> <span class="p">=</span> <span class="p">[(</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">entity</span> <span class="p">=</span> <span class="n">Account</span><span class="o">::</span><span class="k">class</span><span class="p">,</span> <span class="n">parentColumns</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">),</span> <span class="n">childColumns</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="s2">&#34;accountName&#34;</span><span class="p">),</span> <span class="n">onDelete</span> <span class="p">=</span> <span class="nc">ForeignKey</span><span class="p">.</span><span class="n">CASCADE</span><span class="p">))])</span>
-</span></span><span class="line"><span class="cl">	<span class="k">data</span> <span class="k">class</span> <span class="nc">Transaction</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">var</span> <span class="py">accountName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">var</span> <span class="py">description</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">var</span> <span class="py">amount</span><span class="p">:</span> <span class="n">Double</span> <span class="p">=</span> <span class="m">0.0</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">var</span> <span class="py">withdrawal</span><span class="p">:</span> <span class="n">Boolean</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">var</span> <span class="py">date</span><span class="p">:</span> <span class="n">Date</span> <span class="p">=</span> <span class="n">Date</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">	        <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span> <span class="k">var</span> <span class="py">id</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0</span>
-</span></span><span class="line"><span class="cl">	<span class="p">)</span> <span class="p">:</span> <span class="n">Parcelable</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="nd">@Parcelize</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Entity</span><span class="p">(</span><span class="n">tableName</span> <span class="p">=</span> <span class="s2">&#34;transactionTable&#34;</span><span class="p">,</span> <span class="n">foreignKeys</span> <span class="p">=</span> <span class="p">[(</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">entity</span> <span class="p">=</span> <span class="n">Account</span><span class="o">::</span><span class="k">class</span><span class="p">,</span> <span class="n">parentColumns</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">),</span> <span class="n">childColumns</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="s2">&#34;accountName&#34;</span><span class="p">),</span> <span class="n">onDelete</span> <span class="p">=</span> <span class="nc">ForeignKey</span><span class="p">.</span><span class="n">CASCADE</span><span class="p">))])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">data</span> <span class="k">class</span> <span class="nc">Transaction</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="k">var</span> <span class="py">accountName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="k">var</span> <span class="py">description</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="k">var</span> <span class="py">amount</span><span class="p">:</span> <span class="n">Double</span> <span class="p">=</span> <span class="m">0.0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="k">var</span> <span class="py">withdrawal</span><span class="p">:</span> <span class="n">Boolean</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="k">var</span> <span class="py">date</span><span class="p">:</span> <span class="n">Date</span> <span class="p">=</span> <span class="n">Date</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span> <span class="k">var</span> <span class="py">id</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">:</span> <span class="n">Parcelable</span>
 </span></span></code></pre></div><h2 id="database-access-object">Database Access Object</h2>
 <p>Once we&rsquo;ve created our entity, we need to create a Database Access Object (DAO). Our DAO is what we use to write our insert/update/query functionality.</p>
 <p>Fortunately, we have annotations for Insert/Update/Delete already, but if you want to write a special query (even if it&rsquo;s for deleting, not necessarily a select query), you can do that as well. Below is an example of some options, but you can find more info <a href="https://developer.android.com/training/data-storage/room/accessing-data">in the official documentation</a>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="nd">@Dao</span>
-</span></span><span class="line"><span class="cl">	<span class="k">interface</span> <span class="nc">AccountDAO</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="nd">@Query</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM account ORDER BY name&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">fun</span> <span class="nf">getAll</span><span class="p">():</span> <span class="n">Flowable</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Account</span><span class="p">&gt;&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="nd">@Dao</span>
+</span></span><span class="line"><span class="cl">    <span class="k">interface</span> <span class="nc">AccountDAO</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nd">@Query</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM account ORDER BY name&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">getAll</span><span class="p">():</span> <span class="n">Flowable</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Account</span><span class="p">&gt;&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="nd">@Insert</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">fun</span> <span class="nf">insert</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">):</span> <span class="n">Long</span>
+</span></span><span class="line"><span class="cl">        <span class="nd">@Insert</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">insert</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">):</span> <span class="n">Long</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="nd">@Delete</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">fun</span> <span class="nf">delete</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">):</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">        <span class="nd">@Delete</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">delete</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">):</span> <span class="n">Int</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="nd">@Query</span><span class="p">(</span><span class="s2">&#34;DELETE FROM account&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">fun</span> <span class="nf">deleteAll</span><span class="p">():</span> <span class="n">Int</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nd">@Query</span><span class="p">(</span><span class="s2">&#34;DELETE FROM account&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">deleteAll</span><span class="p">():</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>Other than the two special cases, we didn&rsquo;t have to write out long insert/delete queries, or even worry about reading back from the cursor. We just annotate our interface with <code>@Dao</code>, and each method with the appropriate database action. If you&rsquo;re interested in studying the generate code for this DAO, I&rsquo;ve put an example <a href="https://gist.github.com/AdamMc331/150908d1be78fec8d638542502e61839">into a GitHub gist</a>.</p>
 <h2 id="database">Database</h2>
 <p>Once you&rsquo;ve created your entity and DAO, the only thing left is the actual database. This is only a few short steps as well:</p>
@@ -269,54 +269,54 @@ stroke-linejoin="round" class="feather feather-home">
 <li>Create an abstract function for each of your DAOs.</li>
 </ol>
 <p>This will leave you with something like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="nd">@Database</span><span class="p">(</span><span class="n">entities</span> <span class="p">=</span> <span class="p">[(</span><span class="n">Account</span><span class="o">::</span><span class="k">class</span><span class="p">),</span> <span class="p">(</span><span class="n">Transaction</span><span class="o">::</span><span class="k">class</span><span class="p">)],</span> <span class="n">version</span> <span class="p">=</span> <span class="m">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nd">@TypeConverters</span><span class="p">(</span><span class="n">Converters</span><span class="o">::</span><span class="k">class</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="k">abstract</span> <span class="k">class</span> <span class="nc">CCDatabase</span> <span class="p">:</span> <span class="n">RoomDatabase</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">accountDao</span><span class="p">():</span> <span class="n">AccountDAO</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">transactionDao</span><span class="p">():</span> <span class="n">TransactionDAO</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="nd">@Database</span><span class="p">(</span><span class="n">entities</span> <span class="p">=</span> <span class="p">[(</span><span class="n">Account</span><span class="o">::</span><span class="k">class</span><span class="p">),</span> <span class="p">(</span><span class="n">Transaction</span><span class="o">::</span><span class="k">class</span><span class="p">)],</span> <span class="n">version</span> <span class="p">=</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@TypeConverters</span><span class="p">(</span><span class="n">Converters</span><span class="o">::</span><span class="k">class</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">abstract</span> <span class="k">class</span> <span class="nc">CCDatabase</span> <span class="p">:</span> <span class="n">RoomDatabase</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">accountDao</span><span class="p">():</span> <span class="n">AccountDAO</span>
+</span></span><span class="line"><span class="cl">        <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">transactionDao</span><span class="p">():</span> <span class="n">TransactionDAO</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">private</span> <span class="k">var</span> <span class="py">INSTANCE</span><span class="p">:</span> <span class="n">CCDatabase</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl">        <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">private</span> <span class="k">var</span> <span class="py">INSTANCE</span><span class="p">:</span> <span class="n">CCDatabase</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	        <span class="k">fun</span> <span class="nf">getInMemoryDatabase</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">):</span> <span class="n">CCDatabase</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	            <span class="k">if</span> <span class="p">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	                <span class="n">INSTANCE</span> <span class="p">=</span> <span class="nc">Room</span><span class="p">.</span><span class="n">databaseBuilder</span><span class="p">(</span><span class="n">context</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	                        <span class="n">CCDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span> <span class="s2">&#34;cashcaretaker.db&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	                        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">fun</span> <span class="nf">getInMemoryDatabase</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">):</span> <span class="n">CCDatabase</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">INSTANCE</span> <span class="p">=</span> <span class="nc">Room</span><span class="p">.</span><span class="n">databaseBuilder</span><span class="p">(</span><span class="n">context</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">CCDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span> <span class="s2">&#34;cashcaretaker.db&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	            <span class="k">return</span> <span class="n">INSTANCE</span><span class="o">!!</span>
-</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">INSTANCE</span><span class="o">!!</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><h3 id="callback">Callback</h3>
 <p>An optional feature you may want to add is a <code>RoomDatabase.Callback</code>. This <a href="https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase.Callback">class</a> allows you to get a callback each time the database is updated or created. You may use this to define triggers for your database such as updating account balance whenever a transaction is added. That will look a little something like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="k">fun</span> <span class="nf">getInMemoryDatabase</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">):</span> <span class="n">CCDatabase</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">if</span> <span class="p">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">INSTANCE</span> <span class="p">=</span> <span class="nc">Room</span><span class="p">.</span><span class="n">databaseBuilder</span><span class="p">(</span><span class="n">context</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	                <span class="n">CCDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span> <span class="s2">&#34;cashcaretaker.db&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	                <span class="p">.</span><span class="n">addCallback</span><span class="p">(</span><span class="n">CALLBACK</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	                <span class="p">.</span><span class="n">build</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">getInMemoryDatabase</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">):</span> <span class="n">CCDatabase</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">INSTANCE</span> <span class="p">=</span> <span class="nc">Room</span><span class="p">.</span><span class="n">databaseBuilder</span><span class="p">(</span><span class="n">context</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">CCDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span> <span class="s2">&#34;cashcaretaker.db&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">.</span><span class="n">addCallback</span><span class="p">(</span><span class="n">CALLBACK</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">return</span> <span class="n">INSTANCE</span><span class="o">!!</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">INSTANCE</span><span class="o">!!</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="k">val</span> <span class="py">CALLBACK</span> <span class="p">=</span> <span class="k">object</span> <span class="err">: </span><span class="nc">RoomDatabase</span><span class="p">.</span><span class="n">Callback</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">SupportSQLiteDatabase</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">CALLBACK</span> <span class="p">=</span> <span class="k">object</span> <span class="err">: </span><span class="nc">RoomDatabase</span><span class="p">.</span><span class="n">Callback</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">SupportSQLiteDatabase</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	        <span class="n">db</span><span class="p">.</span><span class="n">execSQL</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">	                <span class="s2">&#34;CREATE TRIGGER update_balance_for_withdrawal &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">	                        <span class="s2">&#34;AFTER INSERT ON transactionTable &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">	                        <span class="s2">&#34;WHEN new.withdrawal &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">	                        <span class="s2">&#34;BEGIN &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">	                        <span class="s2">&#34;UPDATE account &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">	                        <span class="s2">&#34;SET balance = balance - new.amount &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">	                        <span class="s2">&#34;WHERE name = new.accountName; END;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">db</span><span class="p">.</span><span class="n">execSQL</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                    <span class="s2">&#34;CREATE TRIGGER update_balance_for_withdrawal &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;AFTER INSERT ON transactionTable &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;WHEN new.withdrawal &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;BEGIN &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;UPDATE account &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;SET balance = balance - new.amount &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;WHERE name = new.accountName; END;&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	        <span class="o">..</span><span class="p">.</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">..</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><h1 id="rxjava">RxJava</h1>
 <p>There are countless blog posts and tutorial on the internet about RxJava. Rightfully so, as this is a really complex topic and one with a high learning curve. I really recommend <a href="https://www.youtube.com/watch?v=YPf6AYDaYf8">RxJava With Kotlin In Baby Steps</a> by Annyce Davis for getting started.</p>
 <h2 id="purpose-1">Purpose</h2>
@@ -345,24 +345,24 @@ stroke-linejoin="round" class="feather feather-home">
 <p>For those of you coming from an MVP background, it works like an <a href="https://stackoverflow.com/a/47452682/3131147">interactor</a>.</p>
 <h2 id="implementation">Implementation</h2>
 <p>For the purpose of this app, the repository will behave in a number of cases like a proxy straight through to the database - but it can also be used for some intermediate mapping where necessary! Let&rsquo;s look at our account examples:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="k">open</span> <span class="k">class</span> <span class="nc">CCRepository</span><span class="p">(</span><span class="k">private</span> <span class="k">val</span> <span class="py">database</span><span class="p">:</span> <span class="n">CCDatabase</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">private</span> <span class="k">val</span> <span class="py">accountDAO</span><span class="p">:</span> <span class="n">AccountDAO</span> <span class="p">=</span> <span class="n">database</span><span class="p">.</span><span class="n">accountDao</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="k">open</span> <span class="k">class</span> <span class="nc">CCRepository</span><span class="p">(</span><span class="k">private</span> <span class="k">val</span> <span class="py">database</span><span class="p">:</span> <span class="n">CCDatabase</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">val</span> <span class="py">accountDAO</span><span class="p">:</span> <span class="n">AccountDAO</span> <span class="p">=</span> <span class="n">database</span><span class="p">.</span><span class="n">accountDao</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">fun</span> <span class="nf">getAllAccounts</span><span class="p">():</span> <span class="n">Flowable</span><span class="p">&lt;</span><span class="n">DataViewState</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">accountDAO</span><span class="p">.</span><span class="n">getAll</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	            <span class="p">.</span><span class="n">map</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	                <span class="k">if</span> <span class="p">(</span><span class="k">it</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	                    <span class="nc">DataViewState</span><span class="p">.</span><span class="n">Empty</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	                    <span class="nc">DataViewState</span><span class="p">.</span><span class="n">Success</span><span class="p">(</span><span class="k">it</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	                <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">getAllAccounts</span><span class="p">():</span> <span class="n">Flowable</span><span class="p">&lt;</span><span class="n">DataViewState</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">accountDAO</span><span class="p">.</span><span class="n">getAll</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">map</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="p">(</span><span class="k">it</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="nc">DataViewState</span><span class="p">.</span><span class="n">Empty</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="nc">DataViewState</span><span class="p">.</span><span class="n">Success</span><span class="p">(</span><span class="k">it</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">fun</span> <span class="nf">deleteAccount</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">):</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">accountDAO</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">account</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">deleteAccount</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">):</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">accountDAO</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">account</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">fun</span> <span class="nf">insertAccount</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">):</span> <span class="n">Long</span> <span class="p">=</span> <span class="n">accountDAO</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">account</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">insertAccount</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">):</span> <span class="n">Long</span> <span class="p">=</span> <span class="n">accountDAO</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">account</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="o">..</span><span class="p">.</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">..</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>In the case of deleting and inserting an account, we just return whatever the database wants. However, when I query for accounts, I don&rsquo;t want to return the list of accounts, but rather a state that my ViewModel can be in.</p>
 <p>We&rsquo;ll learn more about this in the next post, but there&rsquo;s room for discussion on whether or not this mapping logic should be inside my repository or the ViewModel itself. I think it is okay here in the repository, but some could argue that your repository should only care about fetching data, and nothing to do with a state.</p>
 <p>If you&rsquo;re unfamiliar with the RxJava map operator, you can learn more <a href="http://reactivex.io/documentation/operators/map.html">here</a>.</p>

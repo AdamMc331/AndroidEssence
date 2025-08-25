@@ -39,12 +39,12 @@ A great way to model this is via an interface, which allows us to provide platfo
 
 ```kotlin
 interface XRSession {
-	/**
-	 * This getter has to be composable, because on the Android side 
-	 * we'll reference `LocalSpatialCapabilities` Composition local.
-	 * 
-	 * https://developer.android.com/develop/xr/jetpack-xr-sdk/check-spatial-capabilities
-	 */ 
+    /**
+     * This getter has to be composable, because on the Android side 
+     * we'll reference `LocalSpatialCapabilities` Composition local.
+     * 
+     * https://developer.android.com/develop/xr/jetpack-xr-sdk/check-spatial-capabilities
+     */ 
     val isSpatialUiEnabled: Boolean
         @Composable get
 
@@ -130,7 +130,7 @@ fun MyApp() {
     CompositionLocalProvider(
         LocalXRSession provides currentXRSession(),
     ) {
-    	// App content
+        // App content
     }
 }
 ```
@@ -157,7 +157,7 @@ fun SpatialModeSwitchFAB(
             }
         },
     ) {
-    	// ...
+        // ...
     }
 }
 ```

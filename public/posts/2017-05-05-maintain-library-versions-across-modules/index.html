@@ -167,40 +167,40 @@ stroke-linejoin="round" class="feather feather-home">
                 <p>It is tough enough maintaing your app by updating the support library version numbers every time a new version is out, let alone factoring in any other third party libraries you may use. This is especially painful if you have multiple modules, as you have to update the version in each <code>build.gradle</code> file. Thankfully, we can make use of the project level gradle file to make this more maintainable.</p>
 <h1 id="define-variables-in-project-gradle-file">Define Variables In Project Gradle File</h1>
 <p>In your root <code>build.gradle</code> file for the project, you can define some <a href="https://docs.gradle.org/current/dsl/org.gradle.api.plugins.ExtraPropertiesExtension.html">ExtraPropertyExtensions</a> that will be reused for various modules. That would look something like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">allprojects</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">repositories</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">jcenter</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">	    <span class="o">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">allprojects</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">repositories</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">jcenter</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="n">ext</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="c1">//Android
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="n">androidBuildToolsVersion</span> <span class="o">=</span> <span class="s2">&#34;25.0.2&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">androidMinSdkVersion</span> <span class="o">=</span> <span class="mi">16</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">androidTargetSdkVersion</span> <span class="o">=</span> <span class="mi">25</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">androidCompileSdkVersion</span> <span class="o">=</span> <span class="mi">25</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ext</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//Android
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">androidBuildToolsVersion</span> <span class="o">=</span> <span class="s2">&#34;25.0.2&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">androidMinSdkVersion</span> <span class="o">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl">            <span class="n">androidTargetSdkVersion</span> <span class="o">=</span> <span class="mi">25</span>
+</span></span><span class="line"><span class="cl">            <span class="n">androidCompileSdkVersion</span> <span class="o">=</span> <span class="mi">25</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	        <span class="c1">//Libraries
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	        <span class="n">supportLibraryVersion</span> <span class="o">=</span> <span class="s2">&#34;25.3.1&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">playServicesVersion</span> <span class="o">=</span> <span class="s2">&#34;10.2.1&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//Libraries
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">supportLibraryVersion</span> <span class="o">=</span> <span class="s2">&#34;25.3.1&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">playServicesVersion</span> <span class="o">=</span> <span class="s2">&#34;10.2.1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span></code></pre></div><p>Now we&rsquo;ve got some reusable variables that we want to be consistent across our various modules.</p>
 <h1 id="define-global-configuration-reference-in-module">Define Global Configuration Reference In Module</h1>
 <p>In the <code>build.gradle</code> file of each module, inside the &ldquo;android&rdquo; block, we&rsquo;ll need to define a reference to the global configuration we just created. We can do so with the following single line of code:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">android</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="kt">def</span> <span class="n">globalConfiguration</span> <span class="o">=</span> <span class="n">rootProject</span><span class="o">.</span><span class="na">extensions</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s2">&#34;ext&#34;</span><span class="o">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">android</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">def</span> <span class="n">globalConfiguration</span> <span class="o">=</span> <span class="n">rootProject</span><span class="o">.</span><span class="na">extensions</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s2">&#34;ext&#34;</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="o">...</span>
-</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span></code></pre></div><p>With that, there are two ways you can use these properties. When trying to reference them individually, for properties such as build tools or compile sdk version, you can reference them using the property key:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">android</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	<span class="o">...</span>
-</span></span><span class="line"><span class="cl">	<span class="n">compileSdkVersion</span> <span class="n">globalConfiguration</span><span class="o">[</span><span class="s2">&#34;androidCompileSdkVersion&#34;</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">	<span class="n">buildToolsVersion</span> <span class="n">globalConfiguration</span><span class="o">[</span><span class="s2">&#34;androidBuildToolsVersion&#34;</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">	<span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="n">compileSdkVersion</span> <span class="n">globalConfiguration</span><span class="o">[</span><span class="s2">&#34;androidCompileSdkVersion&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buildToolsVersion</span> <span class="n">globalConfiguration</span><span class="o">[</span><span class="s2">&#34;androidBuildToolsVersion&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>If you want to include version numbers as part of your compile statements, you can simply use gradle&rsquo;s string interpolation:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">compile</span> <span class="s2">&#34;com.android.support:appcompat-v7:${supportLibraryVersion}&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">compile</span> <span class="s2">&#34;com.android.support:appcompat-v7:${supportLibraryVersion}&#34;</span>
 </span></span></code></pre></div><p>That&rsquo;s it! That one simple little trick is all you need to have consistent library versions across modules. Some notes on further studying this:</p>
 <ul>
 <li>A gist of all above code can be found <a href="https://gist.github.com/AdamMc331/a1dd4e8503c0cf86e0165c5f14c308ba">here</a>.</li>

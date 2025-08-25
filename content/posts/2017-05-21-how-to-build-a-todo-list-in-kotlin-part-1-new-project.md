@@ -34,52 +34,52 @@ Now, you have support for Kotlin in your project, but if you look inside the sou
 And that is all you need to get off the ground in Kotlin. You should run the HelloWorld application we've built to make sure that there weren't mistakes along the way. Let's wrap up part 1 by dissecting our new `MainActivity.kt` file, and how it's different from Java:
 
 ```kotlin
-	package com.adammcneilly.todolist
+    package com.adammcneilly.todolist
 
-	import android.os.Bundle
-	import android.support.design.widget.FloatingActionButton
-	import android.support.design.widget.Snackbar
-	import android.support.v7.app.AppCompatActivity
-	import android.support.v7.widget.Toolbar
-	import android.view.View
-	import android.view.Menu
-	import android.view.MenuItem
+    import android.os.Bundle
+    import android.support.design.widget.FloatingActionButton
+    import android.support.design.widget.Snackbar
+    import android.support.v7.app.AppCompatActivity
+    import android.support.v7.widget.Toolbar
+    import android.view.View
+    import android.view.Menu
+    import android.view.MenuItem
 
-	class MainActivity : AppCompatActivity() {
+    class MainActivity : AppCompatActivity() {
 
-	    override fun onCreate(savedInstanceState: Bundle?) {
-	        super.onCreate(savedInstanceState)
-	        setContentView(R.layout.activity_main)
-	        val toolbar = findViewById(R.id.toolbar) as Toolbar
-	        setSupportActionBar(toolbar)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+            val toolbar = findViewById(R.id.toolbar) as Toolbar
+            setSupportActionBar(toolbar)
 
-	        val fab = findViewById(R.id.fab) as FloatingActionButton
-	        fab.setOnClickListener { view ->
-	            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-	                    .setAction("Action", null).show()
-	        }
-	    }
+            val fab = findViewById(R.id.fab) as FloatingActionButton
+            fab.setOnClickListener { view ->
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show()
+            }
+        }
 
-	    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-	        // Inflate the menu; this adds items to the action bar if it is present.
-	        menuInflater.inflate(R.menu.menu_main, menu)
-	        return true
-	    }
+        override fun onCreateOptionsMenu(menu: Menu): Boolean {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            menuInflater.inflate(R.menu.menu_main, menu)
+            return true
+        }
 
-	    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-	        // Handle action bar item clicks here. The action bar will
-	        // automatically handle clicks on the Home/Up button, so long
-	        // as you specify a parent activity in AndroidManifest.xml.
-	        val id = item.itemId
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            // Handle action bar item clicks here. The action bar will
+            // automatically handle clicks on the Home/Up button, so long
+            // as you specify a parent activity in AndroidManifest.xml.
+            val id = item.itemId
 
 
-	        if (id == R.id.action_settings) {
-	            return true
-	        }
+            if (id == R.id.action_settings) {
+                return true
+            }
 
-	        return super.onOptionsItemSelected(item)
-	    }
-	}
+            return super.onOptionsItemSelected(item)
+        }
+    }
 ```
 
 There's a lot here, and I don't want this to be an ultra-detailed tutorial of the Kotlin language, but let's highlight a few things:
@@ -100,48 +100,48 @@ Now as great as this is, there's a few ways we can change the above code. Specif
 Once we make those changes and optimize imports, here is what our `MainActivity.kt` file should look like:
 
 ```kotlin
-	package com.adammcneilly.todolist
+    package com.adammcneilly.todolist
 
-	import android.os.Bundle
-	import android.support.design.widget.FloatingActionButton
-	import android.support.design.widget.Snackbar
-	import android.support.v7.app.AppCompatActivity
-	import android.support.v7.widget.Toolbar
-	import android.view.Menu
-	import android.view.MenuItem
+    import android.os.Bundle
+    import android.support.design.widget.FloatingActionButton
+    import android.support.design.widget.Snackbar
+    import android.support.v7.app.AppCompatActivity
+    import android.support.v7.widget.Toolbar
+    import android.view.Menu
+    import android.view.MenuItem
 
-	class MainActivity : AppCompatActivity() {
+    class MainActivity : AppCompatActivity() {
 
-	    override fun onCreate(savedInstanceState: Bundle?) {
-	        super.onCreate(savedInstanceState)
-	        setContentView(R.layout.activity_main)
-	        
-	        val toolbar = findViewById(R.id.toolbar) as Toolbar
-	        setSupportActionBar(toolbar)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+            
+            val toolbar = findViewById(R.id.toolbar) as Toolbar
+            setSupportActionBar(toolbar)
 
-	        val fab = findViewById(R.id.fab) as FloatingActionButton
-	        fab.setOnClickListener { view ->
-	            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-	                    .setAction("Action", null).show()
-	        }
-	    }
+            val fab = findViewById(R.id.fab) as FloatingActionButton
+            fab.setOnClickListener { view ->
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show()
+            }
+        }
 
-	    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-	        // Inflate the menu; this adds items to the action bar if it is present.
-	        menuInflater.inflate(R.menu.menu_main, menu)
-	        return true
-	    }
+        override fun onCreateOptionsMenu(menu: Menu): Boolean {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            menuInflater.inflate(R.menu.menu_main, menu)
+            return true
+        }
 
-	    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-	        // Handle action bar item clicks here. The action bar will
-	        // automatically handle clicks on the Home/Up button, so long
-	        // as you specify a parent activity in AndroidManifest.xml.
-	        when (item.itemId) {
-	            R.id.action_settings -> return true
-	            else -> return super.onOptionsItemSelected(item)
-	        }
-	    }
-	}
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            // Handle action bar item clicks here. The action bar will
+            // automatically handle clicks on the Home/Up button, so long
+            // as you specify a parent activity in AndroidManifest.xml.
+            when (item.itemId) {
+                R.id.action_settings -> return true
+                else -> return super.onOptionsItemSelected(item)
+            }
+        }
+    }
 ```
 
 A note on the `as` keyword:

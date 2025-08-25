@@ -20,10 +20,10 @@ Before continuing this post, I recommend that you read my previous one on [Swipe
 Before we can properly use the drag and drop feature, we need to add another method to our Adapter that swaps two items. You can use `Collections.swap() to do this easily on a List object:
 
 ```java
-	public void swap(int firstPosition, int secondPosition) {
-		Collections.swap(movies, firstPosition, secondPosition);
-		notifyItemMoved(firstPosition, secondPosition);
-	}
+    public void swap(int firstPosition, int secondPosition) {
+        Collections.swap(movies, firstPosition, secondPosition);
+        notifyItemMoved(firstPosition, secondPosition);
+    }
 ```
 
 # Implement onMove
@@ -31,11 +31,11 @@ Before we can properly use the drag and drop feature, we need to add another met
 In our previous lesson, you'll recall we left our implementation of `onMove` blank. To make us of it, all we have to do is make sure it swaps our Adapter items:
 
 ```java
-	@Override
-	public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-	   mMovieAdapter.swap(viewHolder.getAdapterPosition(), target.getAdapterPosition());
-	   return true;
-	}
+    @Override
+    public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+       mMovieAdapter.swap(viewHolder.getAdapterPosition(), target.getAdapterPosition());
+       return true;
+    }
 ```
 
 Once you've done those two things, in addition to all the necessary steps for swipe-to-dismiss, you're done. If you chose to only use the drag and drop feature, you can delet the `remove()` function from the adapter and the implementation of `onSwap()` inside the `ItemTouchHelper` class.

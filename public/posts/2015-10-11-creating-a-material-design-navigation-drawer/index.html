@@ -176,32 +176,32 @@ stroke-linejoin="round" class="feather feather-home">
 <p>The first thing that’s changed is that we no longer need a fragment object to build our Navigation Drawer in the XML. We can use a <a href="https://developer.android.com/reference/android/support/design/widget/NavigationView.html">NavigationView</a>, which according to docs:</p>
 <blockquote>
 <p>Represents a standard navigation menu for application. The menu contents can be populated by a menu resource file.</p></blockquote>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">	<span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;android.support.v4.widget.DrawerLayout</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">android:id=</span><span class="s">&#34;@+id/drawer_layout&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">android:fitsSystemWindows=</span><span class="s">&#34;true&#34;</span>
-</span></span><span class="line"><span class="cl">	    <span class="na">tools:openDrawer=</span><span class="s">&#34;start&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;include</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">layout=</span><span class="s">&#34;@layout/app_bar_main&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;android.support.design.widget.NavigationView</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:id=</span><span class="s">&#34;@+id/nav_view&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_gravity=</span><span class="s">&#34;start&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:fitsSystemWindows=</span><span class="s">&#34;true&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">app:headerLayout=</span><span class="s">&#34;@layout/nav_header_main&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">app:menu=</span><span class="s">&#34;@menu/activity_main_drawer&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/android.support.v4.widget.DrawerLayout&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;android.support.v4.widget.DrawerLayout</span>
+</span></span><span class="line"><span class="cl">        <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/drawer_layout&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:fitsSystemWindows=</span><span class="s">&#34;true&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">tools:openDrawer=</span><span class="s">&#34;start&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;include</span>
+</span></span><span class="line"><span class="cl">            <span class="na">layout=</span><span class="s">&#34;@layout/app_bar_main&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;android.support.design.widget.NavigationView</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:id=</span><span class="s">&#34;@+id/nav_view&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_gravity=</span><span class="s">&#34;start&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:fitsSystemWindows=</span><span class="s">&#34;true&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">app:headerLayout=</span><span class="s">&#34;@layout/nav_header_main&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">app:menu=</span><span class="s">&#34;@menu/activity_main_drawer&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/android.support.v4.widget.DrawerLayout&gt;</span>
 </span></span></code></pre></div><p>The NavigationView should still belong inside a DrawerLayout, as we did previously. There are two attributes that may be new to you: headerLayout and menu. These attributes represent the green portion of the image above, and the menu below it, respectively. We’ll look at each of those in more depth next.</p>
 <h1 id="the-headerlayout">The headerLayout</h1>
 <p>The header layout is rather simple; It’s just a LinearLayout. However, it does have a few attributes to keep it up to spec. These include, but are not limited to:</p>
@@ -212,113 +212,113 @@ stroke-linejoin="round" class="feather feather-home">
 <li>16dp padding between the top TextView and the ImageView</li>
 </ul>
 <p>The XML looks like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">	<span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:layout_height=</span><span class="s">&#34;@dimen/nav_header_height&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:background=</span><span class="s">&#34;@drawable/side_nav_bar&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:paddingBottom=</span><span class="s">&#34;@dimen/activity_vertical_margin&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:paddingLeft=</span><span class="s">&#34;@dimen/activity_horizontal_margin&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:paddingRight=</span><span class="s">&#34;@dimen/activity_horizontal_margin&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:paddingTop=</span><span class="s">&#34;@dimen/activity_vertical_margin&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:theme=</span><span class="s">&#34;@style/ThemeOverlay.AppCompat.Dark&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:orientation=</span><span class="s">&#34;vertical&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="na">android:gravity=</span><span class="s">&#34;bottom&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;ImageView</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:paddingTop=</span><span class="s">&#34;@dimen/nav_header_vertical_spacing&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:src=</span><span class="s">&#34;@android:drawable/sym_def_app_icon&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:id=</span><span class="s">&#34;@+id/imageView&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;TextView</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:paddingTop=</span><span class="s">&#34;@dimen/nav_header_vertical_spacing&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:text=</span><span class="s">&#34;Android Studio&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:textAppearance=</span><span class="s">&#34;@style/TextAppearance.AppCompat.Body1&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;TextView</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:text=</span><span class="s">&#34;android.studio@android.com&#34;</span>
-</span></span><span class="line"><span class="cl">	        <span class="na">android:id=</span><span class="s">&#34;@+id/textView&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/LinearLayout&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;@dimen/nav_header_height&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:background=</span><span class="s">&#34;@drawable/side_nav_bar&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:paddingBottom=</span><span class="s">&#34;@dimen/activity_vertical_margin&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:paddingLeft=</span><span class="s">&#34;@dimen/activity_horizontal_margin&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:paddingRight=</span><span class="s">&#34;@dimen/activity_horizontal_margin&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:paddingTop=</span><span class="s">&#34;@dimen/activity_vertical_margin&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:theme=</span><span class="s">&#34;@style/ThemeOverlay.AppCompat.Dark&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:orientation=</span><span class="s">&#34;vertical&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:gravity=</span><span class="s">&#34;bottom&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;ImageView</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:paddingTop=</span><span class="s">&#34;@dimen/nav_header_vertical_spacing&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:src=</span><span class="s">&#34;@android:drawable/sym_def_app_icon&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:id=</span><span class="s">&#34;@+id/imageView&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;TextView</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:paddingTop=</span><span class="s">&#34;@dimen/nav_header_vertical_spacing&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:text=</span><span class="s">&#34;Android Studio&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:textAppearance=</span><span class="s">&#34;@style/TextAppearance.AppCompat.Body1&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;TextView</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:text=</span><span class="s">&#34;android.studio@android.com&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:id=</span><span class="s">&#34;@+id/textView&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/LinearLayout&gt;</span>
 </span></span></code></pre></div><p>The background to the view is a gradient that was left out for simplicity.</p>
 <h1 id="the-menu">The menu</h1>
 <p>There are two cool ways we can handle menus inside the NavigationDrawer. The first is to add a <group> tag that includes menu items and their icons. This is to handle the first four items from import to tools:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">	<span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;menu</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;group</span> <span class="na">android:checkableBehavior=</span><span class="s">&#34;single&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl">	        <span class="nt">&lt;item</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:id=</span><span class="s">&#34;@+id/nav_camara&#34;</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_camera&#34;</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:title=</span><span class="s">&#34;Import&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	        <span class="nt">&lt;item</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:id=</span><span class="s">&#34;@+id/nav_gallery&#34;</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_gallery&#34;</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:title=</span><span class="s">&#34;Gallery&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	        <span class="nt">&lt;item</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:id=</span><span class="s">&#34;@+id/nav_slideshow&#34;</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_slideshow&#34;</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:title=</span><span class="s">&#34;Slideshow&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	        <span class="nt">&lt;item</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:id=</span><span class="s">&#34;@+id/nav_manage&#34;</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_manage&#34;</span>
-</span></span><span class="line"><span class="cl">	            <span class="na">android:title=</span><span class="s">&#34;Tools&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;/group&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;item</span> <span class="na">android:title=</span><span class="s">&#34;Communicate&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl">	        <span class="nt">&lt;menu&gt;</span>
-</span></span><span class="line"><span class="cl">	            <span class="nt">&lt;item</span>
-</span></span><span class="line"><span class="cl">	                <span class="na">android:id=</span><span class="s">&#34;@+id/nav_share&#34;</span>
-</span></span><span class="line"><span class="cl">	                <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_share&#34;</span>
-</span></span><span class="line"><span class="cl">	                <span class="na">android:title=</span><span class="s">&#34;Share&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	            <span class="nt">&lt;item</span>
-</span></span><span class="line"><span class="cl">	                <span class="na">android:id=</span><span class="s">&#34;@+id/nav_send&#34;</span>
-</span></span><span class="line"><span class="cl">	                <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_send&#34;</span>
-</span></span><span class="line"><span class="cl">	                <span class="na">android:title=</span><span class="s">&#34;Send&#34;</span><span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">	        <span class="nt">&lt;/menu&gt;</span>
-</span></span><span class="line"><span class="cl">	    <span class="nt">&lt;/item&gt;</span>
-</span></span><span class="line"><span class="cl">	 
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/menu&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;menu</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;group</span> <span class="na">android:checkableBehavior=</span><span class="s">&#34;single&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;item</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:id=</span><span class="s">&#34;@+id/nav_camara&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_camera&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:title=</span><span class="s">&#34;Import&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;item</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:id=</span><span class="s">&#34;@+id/nav_gallery&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_gallery&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:title=</span><span class="s">&#34;Gallery&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;item</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:id=</span><span class="s">&#34;@+id/nav_slideshow&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_slideshow&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:title=</span><span class="s">&#34;Slideshow&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;item</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:id=</span><span class="s">&#34;@+id/nav_manage&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_manage&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">android:title=</span><span class="s">&#34;Tools&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/group&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;item</span> <span class="na">android:title=</span><span class="s">&#34;Communicate&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;menu&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;item</span>
+</span></span><span class="line"><span class="cl">                    <span class="na">android:id=</span><span class="s">&#34;@+id/nav_share&#34;</span>
+</span></span><span class="line"><span class="cl">                    <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_share&#34;</span>
+</span></span><span class="line"><span class="cl">                    <span class="na">android:title=</span><span class="s">&#34;Share&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;item</span>
+</span></span><span class="line"><span class="cl">                    <span class="na">android:id=</span><span class="s">&#34;@+id/nav_send&#34;</span>
+</span></span><span class="line"><span class="cl">                    <span class="na">android:icon=</span><span class="s">&#34;@android:drawable/ic_menu_send&#34;</span>
+</span></span><span class="line"><span class="cl">                    <span class="na">android:title=</span><span class="s">&#34;Send&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/menu&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/item&gt;</span>
+</span></span><span class="line"><span class="cl">     
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/menu&gt;</span>
 </span></span></code></pre></div><p>The second option is to use <item> with a menu inside. That is how we get the label ‘Communicate’ at the bottom of the Navigation View and separate these items from the rest.</p>
 <h1 id="the-mainactivity">The MainActivity</h1>
 <p>A personal favorite about the new NavigationView is, as I mentioned earlier, the lack of need for a fragment class. The XML above is all we need to build our NavigationView, and we can interact with it as necessary inside our Activity. All we need to do is implement OnNavigationItemSelectedListener:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	        </span><span class="kd">implements</span><span class="w"> </span><span class="n">NavigationView</span><span class="p">.</span><span class="na">OnNavigationItemSelectedListener</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kd">implements</span><span class="w"> </span><span class="n">NavigationView</span><span class="p">.</span><span class="na">OnNavigationItemSelectedListener</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>This interface only requires one implementation to handle the navigation item that was selected:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">	</span><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">&#34;StatementWithEmptyBody&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onNavigationItemSelected</span><span class="p">(</span><span class="n">MenuItem</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="c1">// Handle navigation view item clicks here.</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="na">getItemId</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	 
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_camara</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	        </span><span class="c1">// Handle the camera action</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_gallery</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	 
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_slideshow</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	 
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_manage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	 
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_share</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	 
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_send</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	 
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	 
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="n">DrawerLayout</span><span class="w"> </span><span class="n">drawer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">DrawerLayout</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">drawer_layout</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="n">drawer</span><span class="p">.</span><span class="na">closeDrawer</span><span class="p">(</span><span class="n">GravityCompat</span><span class="p">.</span><span class="na">START</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">&#34;StatementWithEmptyBody&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onNavigationItemSelected</span><span class="p">(</span><span class="n">MenuItem</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Handle navigation view item clicks here.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="na">getItemId</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_camara</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// Handle the camera action</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_gallery</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_slideshow</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_manage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_share</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_send</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">DrawerLayout</span><span class="w"> </span><span class="n">drawer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">DrawerLayout</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">drawer_layout</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">drawer</span><span class="p">.</span><span class="na">closeDrawer</span><span class="p">(</span><span class="n">GravityCompat</span><span class="p">.</span><span class="na">START</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>The last thing you need to do is set the interface on your NavigationView inside onCreate():</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">	</span><span class="n">NavigationView</span><span class="w"> </span><span class="n">navigationView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">NavigationView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_view</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">navigationView</span><span class="p">.</span><span class="na">setNavigationItemSelectedListener</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="n">NavigationView</span><span class="w"> </span><span class="n">navigationView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">NavigationView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">nav_view</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">navigationView</span><span class="p">.</span><span class="na">setNavigationItemSelectedListener</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></div><p>That’s it! You’ve now successfully created a Material Design NavigationView! As you go on to build your own and customize them, make sure to check with the <a href="https://www.google.com/design/spec/patterns/navigation-drawer.html">design guidelines</a> for proper specifications.</p>
 <h1 id="additional-notes">Additional Notes</h1>
 <p>Because items in the navigation header belong to the NavigationView, this also means they belong to the Activity. Therefore, nothing fancy is required to access these elements, you can do it right inside the activity by calling findViewById(R.id.imageView). This is the ImageView item inside nav_header_main.xml.</p>

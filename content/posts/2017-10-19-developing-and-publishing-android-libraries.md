@@ -40,7 +40,7 @@ Now that you have a working project with an app module, you can right click on t
 To use your library code within your application, all you have to do is modify your dependencies in your application's `build.gradle` file:
 
 ```groovy
-	compile project(":lib")
+    compile project(":lib")
 ```
 
 Now you can use whatever models/views/utility functions you wrote in your library and use them in your app, so you can provide some sample uses to your future users.
@@ -58,11 +58,11 @@ Bintray is a software distribution service that you can use to push up your libr
 In your library module's `build.gradle` file, you'll need to add some code. First, at the top and underneat the plugin line, you define your library information. Here is an example from one of mine:
 
 ```groovy
-	ext {
-	    PUBLISH_GROUP_ID = 'com.adammcneilly'
-	    PUBLISH_ARTIFACT_ID = 'recyclerviewutils'
-	    PUBLISH_VERSION = '2.0.2'
-	}
+    ext {
+        PUBLISH_GROUP_ID = 'com.adammcneilly'
+        PUBLISH_ARTIFACT_ID = 'recyclerviewutils'
+        PUBLISH_VERSION = '2.0.2'
+    }
 ```
 
 An explanation for each portion:
@@ -73,13 +73,13 @@ An explanation for each portion:
 To provide a familiar example, to import the above library I would write:
 
 ```groovy
-	compile 'com.adammcneilly:recyclerviewutils:2.0.2'
+    compile 'com.adammcneilly:recyclerviewutils:2.0.2'
 ```
 
 Also, at the bottom of the `build.gradle` file you'll need to include this line:
 
 ```groovy
-	apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+    apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
 ```
 
 ## Project configuration
@@ -87,11 +87,11 @@ Also, at the bottom of the `build.gradle` file you'll need to include this line:
 Once you've added the necessary code to your library's build file, we need to modify the `build.gradle` file at the project level as well by adding the following dependencies:
 
 ```groovy
-	dependencies {
-	    classpath 'com.android.tools.build:gradle:2.3.3'
-	    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-	    classpath 'com.github.dcendents:android-maven-plugin:1.2'
-	}
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+    }
 ```
 
 Note that your gradle version number may change from the time of writing this. The first line will likely already be in the file from when Android Studio generated the project.
@@ -101,8 +101,8 @@ Note that your gradle version number may change from the time of writing this. T
 Next you'll need to modify your `local.properties` file to include your Bintray information:
 
 ```groovy
-	bintray.user=bintrayUserName
-	bintray.apikey=abc123ApiKey
+    bintray.user=bintrayUserName
+    bintray.apikey=abc123ApiKey
 ```
 
 Your username is whatever you created your account with. To find your API key, login to bintray, click on your avatar at the top right and select edit profile. You will have a tab on the left menu for API Key and can find it there:
@@ -114,7 +114,7 @@ Your username is whatever you created your account with. To find your API key, l
 Last, you need to generate the zip file that will be uploaded to Bintray. You can do that by going into the terminal in Android Studio and running:
 
 ```bash
-	./gradlew clean build generateRelease
+    ./gradlew clean build generateRelease
 ```
 
 Now you'll find in your lib/build folder a file with a name of `release-x.y.z.zip` which contains everything you'll need to upload.

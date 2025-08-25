@@ -174,7 +174,7 @@ stroke-linejoin="round" class="feather feather-home">
                 <p>Along with the <a href="http://androidessence.com/recyclerview-cursoradapter-library/">RecyclerViewCursorAdapter library</a> that was released earlier this week, I have now released my second open source Android library. In collaboration with my good friend <a href="https://github.com/Mauker1">Maurício</a>, we have built a library for including the Material Design Specs in your Android application. Currently, the library has the full color palette along with some helper methods, and some elevation resources to give the proper elevation to your components. The source code, as well as instructions for including the library can be found on <a href="https://github.com/androidessence/MaterialDesignSpecs">GitHub</a>, so go there to check it out and give us a star!</p>
 <h1 id="colors">Colors</h1>
 <p>The convention for accessing the color resources is like so:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">	R.color.mds_colorName_colorLevel
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    R.color.mds_colorName_colorLevel
 </span></span></code></pre></div><p>where colorName and colorLevel are replaced with the values you want. There are 19 color names:</p>
 <ul>
 <li>red</li>
@@ -229,11 +229,11 @@ stroke-linejoin="round" class="feather feather-home">
 <li><code>getAllColors()</code></li>
 </ul>
 <p>Each of these methods will throw an <a href="http://developer.android.com/intl/pt-br/reference/java/lang/IllegalAccessException.html">IllegalAccessException</a> if any of the resources are unable to be accessed. For passing in the color name or color level, you can make use of the available static strings, such as:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">	</span><span class="n">MaterialPalettes</span><span class="p">.</span><span class="na">RED</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">MaterialPalettes</span><span class="p">.</span><span class="na">LEVEL_500</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="n">MaterialPalettes</span><span class="p">.</span><span class="na">RED</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">MaterialPalettes</span><span class="p">.</span><span class="na">LEVEL_500</span><span class="w">
 </span></span></span></code></pre></div><h1 id="elevation">Elevation</h1>
 <p>Currently the only supported elevation values are those found from the <a href="https://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-elevation-android">elevation specs</a> that follow convention:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">	R.dimen.mds_elevation_componentName
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    R.dimen.mds_elevation_componentName
 </span></span></code></pre></div><p>where componentNAme can be replaced by &ldquo;dialog&rdquo; or &ldquo;appbar&rdquo;. With its current functionality, there is no need for programatic helper methods for using elevation values. This may change as more specs are included in the future.</p>
 <p>We hope this gives you everything you need for moving forward and incorporating Material Design in your applications. If you feel like our library is missing anything, let us know in the comments or submit an issue on GitHub!</p>
             </div>

@@ -184,7 +184,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p><img src="/images/library/library_package.png" alt="AndroidEssence"></p>
 <h1 id="referencing-the-library-from-the-app">Referencing the library from the app</h1>
 <p>To use your library code within your application, all you have to do is modify your dependencies in your application&rsquo;s <code>build.gradle</code> file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">compile</span> <span class="nf">project</span><span class="o">(</span><span class="s2">&#34;:lib&#34;</span><span class="o">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">compile</span> <span class="nf">project</span><span class="o">(</span><span class="s2">&#34;:lib&#34;</span><span class="o">)</span>
 </span></span></code></pre></div><p>Now you can use whatever models/views/utility functions you wrote in your library and use them in your app, so you can provide some sample uses to your future users.</p>
 <h1 id="build-library">Build library</h1>
 <p>I originally learned about publishing through a <a href="http://room-15.github.io/blog/2015/11/05/How-to-publish-a-library-to-jcenter/">post by my friend Eric</a>, but will relay the main points to you here.</p>
@@ -192,11 +192,11 @@ stroke-linejoin="round" class="feather feather-home">
 <p>Bintray is a software distribution service that you can use to push up your libraries. You can create an account <a href="https://bintray.com/">here</a> and use GitHub authentication if you prefer.</p>
 <h2 id="library-configuration">Library configuration</h2>
 <p>In your library module&rsquo;s <code>build.gradle</code> file, you&rsquo;ll need to add some code. First, at the top and underneat the plugin line, you define your library information. Here is an example from one of mine:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">ext</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">PUBLISH_GROUP_ID</span> <span class="o">=</span> <span class="s1">&#39;com.adammcneilly&#39;</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">PUBLISH_ARTIFACT_ID</span> <span class="o">=</span> <span class="s1">&#39;recyclerviewutils&#39;</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">PUBLISH_VERSION</span> <span class="o">=</span> <span class="s1">&#39;2.0.2&#39;</span>
-</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">ext</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PUBLISH_GROUP_ID</span> <span class="o">=</span> <span class="s1">&#39;com.adammcneilly&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PUBLISH_ARTIFACT_ID</span> <span class="o">=</span> <span class="s1">&#39;recyclerviewutils&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PUBLISH_VERSION</span> <span class="o">=</span> <span class="s1">&#39;2.0.2&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span></code></pre></div><p>An explanation for each portion:</p>
 <ul>
 <li>Group Id is your package name.</li>
@@ -204,26 +204,26 @@ stroke-linejoin="round" class="feather feather-home">
 <li>Publish Version is your current version.</li>
 </ul>
 <p>To provide a familiar example, to import the above library I would write:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">compile</span> <span class="s1">&#39;com.adammcneilly:recyclerviewutils:2.0.2&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">compile</span> <span class="s1">&#39;com.adammcneilly:recyclerviewutils:2.0.2&#39;</span>
 </span></span></code></pre></div><p>Also, at the bottom of the <code>build.gradle</code> file you&rsquo;ll need to include this line:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">apply</span> <span class="nl">from:</span> <span class="s1">&#39;https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">apply</span> <span class="nl">from:</span> <span class="s1">&#39;https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle&#39;</span>
 </span></span></code></pre></div><h2 id="project-configuration">Project configuration</h2>
 <p>Once you&rsquo;ve added the necessary code to your library&rsquo;s build file, we need to modify the <code>build.gradle</code> file at the project level as well by adding the following dependencies:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">dependencies</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">classpath</span> <span class="s1">&#39;com.android.tools.build:gradle:2.3.3&#39;</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">classpath</span> <span class="s1">&#39;com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2&#39;</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">classpath</span> <span class="s1">&#39;com.github.dcendents:android-maven-plugin:1.2&#39;</span>
-</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">dependencies</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">classpath</span> <span class="s1">&#39;com.android.tools.build:gradle:2.3.3&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">classpath</span> <span class="s1">&#39;com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">classpath</span> <span class="s1">&#39;com.github.dcendents:android-maven-plugin:1.2&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span></code></pre></div><p>Note that your gradle version number may change from the time of writing this. The first line will likely already be in the file from when Android Studio generated the project.</p>
 <h2 id="bintray-api-setup">Bintray API setup</h2>
 <p>Next you&rsquo;ll need to modify your <code>local.properties</code> file to include your Bintray information:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">bintray</span><span class="o">.</span><span class="na">user</span><span class="o">=</span><span class="n">bintrayUserName</span>
-</span></span><span class="line"><span class="cl">	<span class="n">bintray</span><span class="o">.</span><span class="na">apikey</span><span class="o">=</span><span class="n">abc123ApiKey</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">bintray</span><span class="o">.</span><span class="na">user</span><span class="o">=</span><span class="n">bintrayUserName</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bintray</span><span class="o">.</span><span class="na">apikey</span><span class="o">=</span><span class="n">abc123ApiKey</span>
 </span></span></code></pre></div><p>Your username is whatever you created your account with. To find your API key, login to bintray, click on your avatar at the top right and select edit profile. You will have a tab on the left menu for API Key and can find it there:</p>
 <p><img src="/images/library/api_key.png" alt="AndroidEssence"></p>
 <h2 id="generate-release-zip">Generate release zip</h2>
 <p>Last, you need to generate the zip file that will be uploaded to Bintray. You can do that by going into the terminal in Android Studio and running:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">	./gradlew clean build generateRelease
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    ./gradlew clean build generateRelease
 </span></span></code></pre></div><p>Now you&rsquo;ll find in your lib/build folder a file with a name of <code>release-x.y.z.zip</code> which contains everything you&rsquo;ll need to upload.</p>
 <h2 id="bintray-upload">Bintray Upload</h2>
 <p>Once you&rsquo;ve generated the zip file, the remaining steps are just a tedious upload:</p>

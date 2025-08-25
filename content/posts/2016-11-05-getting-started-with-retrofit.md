@@ -28,9 +28,9 @@ Next, we need to define the models that will be returned from the server. In thi
 
 ```java
     public class Person {
-    	private String id;
-    	private String firstName;
-    	private String lastName;
+        private String id;
+        private String firstName;
+        private String lastName;
     }
 ```
 
@@ -38,9 +38,9 @@ It's important to note that the variable names match up with the JSON representa
 
 ```json
     {
-    	"id": 1,
-    	"firstName": "George",
-    	"lastName": "Washington"
+        "id": 1,
+        "firstName": "George",
+        "lastName": "Washington"
     }
 ```
 
@@ -48,13 +48,13 @@ If you don't want to use the same variable names as the JSON keys, you can use t
 
 ```java
     public class Person {
-    	private String id;
+        private String id;
 
-    	@SerializedName("firstName")
-    	private String first;
+        @SerializedName("firstName")
+        private String first;
 
-    	@SerializedName("lastName")
-    	private String last;
+        @SerializedName("lastName")
+        private String last;
     }
 ```
 
@@ -62,7 +62,7 @@ Since our project will be taking back a list of presidents, not just a single pe
 
 ```java
     public class Presidents {
-    	public List<Person> presidents;
+        public List<Person> presidents;
     }
 ```
 
@@ -70,9 +70,9 @@ Which has the corresponding JSON response:
 
 ```json
     {
-    	"presidents": [
-    		...
-    	]
+        "presidents": [
+            ...
+        ]
     }
 ```
 

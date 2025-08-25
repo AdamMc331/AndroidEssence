@@ -30,19 +30,19 @@ For the purposes of this tutorial, we won't be including a "use password" fallba
 Before writing out the actual dialog, we need to create a helper class that handles some of the fingerprint authentication flow. While much of this code could be written inside the DialogFragment class, it is better to abstract it out for separation of concerns, and only give the controller the info that it needs. Let's look at how we define our `FingerprintController.kt` class:
 
 ```kotlin
-	class FingerprintController(
-		private val fingerprintManager: FingerprintManagerCompat,
-		private val callback: Callback,
-		private val title: TextView,
-		private val subtitle: TextView,
-		private val errorText: TextView,
-		private val icon: ImageView) : FingerprintManagerCompat.AuthenticationCallback() { 
+    class FingerprintController(
+        private val fingerprintManager: FingerprintManagerCompat,
+        private val callback: Callback,
+        private val title: TextView,
+        private val subtitle: TextView,
+        private val errorText: TextView,
+        private val icon: ImageView) : FingerprintManagerCompat.AuthenticationCallback() { 
 
-		interface Callback {
-			fun onAuthenticated()
-			fun onError()
-		}
-	}
+        interface Callback {
+            fun onAuthenticated()
+            fun onError()
+        }
+    }
 ```
 
 This looks overwhelming, so we can break it down by each bit:
@@ -62,31 +62,31 @@ In addition to all of the properties accepted via the constructor, there are som
 Here is what our class looks like now:
 
 ```kotlin
-	class FingerprintController(...) : FingerprintManagerCompat.AuthenticationCallback() {
-		/**
-		 * Helper variable to get the context from one of the views. The view used is arbitrary. 
-		 */
-		private val context: Context
-			get() = errorText.context
+    class FingerprintController(...) : FingerprintManagerCompat.AuthenticationCallback() {
+        /**
+         * Helper variable to get the context from one of the views. The view used is arbitrary. 
+         */
+        private val context: Context
+            get() = errorText.context
 
-		private var cancellationSignal: CancellationSignal? = null
-		private var selfCancelled = false
+        private var cancellationSignal: CancellationSignal? = null
+        private var selfCancelled = false
 
-		private val isFingerprintAuthAvailable: Boolean
-			get() = fingerprintManager.isHardwareDetected && fingerprintManager.hasEnrolledFingerprints()
+        private val isFingerprintAuthAvailable: Boolean
+            get() = fingerprintManager.isHardwareDetected && fingerprintManager.hasEnrolledFingerprints()
 
-		private val resetErrorTextRunnable: Runnable = Runnable {
-			errorText.setTextColor(ContextCompat.getColor(context, R.color.hint_color))
-			errorText.text = context.getString(R.string.touch_sensor)
-			icon.setImageResource(R.drawable.ic_fingerprint_white_24dp)
-		}
+        private val resetErrorTextRunnable: Runnable = Runnable {
+            errorText.setTextColor(ContextCompat.getColor(context, R.color.hint_color))
+            errorText.text = context.getString(R.string.touch_sensor)
+            icon.setImageResource(R.drawable.ic_fingerprint_white_24dp)
+        }
 
-		init {
-			errorText.post(resetErrorTextRunnable)
-		}
+        init {
+            errorText.post(resetErrorTextRunnable)
+        }
 
-		interface Callback { }
-	}
+        interface Callback { }
+    }
 ```
 
 ### Listening For Authentication
@@ -125,45 +125,45 @@ As discussed in the first part of this section, our controller class extends `Fi
  Sample code for each one may look like this. Everything below is inside our `FingerprintController.kt` file:
 
 ```kotlin
-	private fun showError(text: CharSequence?) {
-		icon.setImageResource(R.drawable.ic_error_white_24dp)
-		errorText.text = text
-		errorText.setTextColor(ContextCompat.getColor(errorText.context, R.color.warning_color))
-		errorText.removeCallbacks(resetErrorTextRunnable)
-		errorText.postDelayed(resetErrorTextRunnable, ERROR_TIMEOUT_MILLIS)
-	}
+    private fun showError(text: CharSequence?) {
+        icon.setImageResource(R.drawable.ic_error_white_24dp)
+        errorText.text = text
+        errorText.setTextColor(ContextCompat.getColor(errorText.context, R.color.warning_color))
+        errorText.removeCallbacks(resetErrorTextRunnable)
+        errorText.postDelayed(resetErrorTextRunnable, ERROR_TIMEOUT_MILLIS)
+    }
 
-	override fun onAuthenticationError(errMsgId: Int, errString: CharSequence?) {
-		if (!selfCancelled) {
-			showError(errString)
-			icon.postDelayed({
-				callback.onError()
-			}, ERROR_TIMEOUT_MILLIS)
-		}
-	}
+    override fun onAuthenticationError(errMsgId: Int, errString: CharSequence?) {
+        if (!selfCancelled) {
+            showError(errString)
+            icon.postDelayed({
+                callback.onError()
+            }, ERROR_TIMEOUT_MILLIS)
+        }
+    }
 
-	override fun onAuthenticationSucceeded(result: FingerprintManagerCompat.AuthenticationResult?) {
-		errorText.removeCallbacks(resetErrorTextRunnable)
-		icon.setImageResource(R.drawable.ic_check_white_24dp)
-		errorText.setTextColor(ContextCompat.getColor(errorText.context, R.color.success_color))
-		errorText.text = errorText.context.getString(R.string.fingerprint_recognized)
-		icon.postDelayed({
-			callback.onAuthenticated()
-		}, SUCCESS_DELAY_MILLIS)
-	}
+    override fun onAuthenticationSucceeded(result: FingerprintManagerCompat.AuthenticationResult?) {
+        errorText.removeCallbacks(resetErrorTextRunnable)
+        icon.setImageResource(R.drawable.ic_check_white_24dp)
+        errorText.setTextColor(ContextCompat.getColor(errorText.context, R.color.success_color))
+        errorText.text = errorText.context.getString(R.string.fingerprint_recognized)
+        icon.postDelayed({
+            callback.onAuthenticated()
+        }, SUCCESS_DELAY_MILLIS)
+    }
 
-	override fun onAuthenticationHelp(helpMsgId: Int, helpString: CharSequence?) {
-		showError(helpString)
-	}
+    override fun onAuthenticationHelp(helpMsgId: Int, helpString: CharSequence?) {
+        showError(helpString)
+    }
 
-	override fun onAuthenticationFailed() {
-		showError(errorText.context.getString(R.string.fingerprint_not_recognized))
-	}
+    override fun onAuthenticationFailed() {
+        showError(errorText.context.getString(R.string.fingerprint_not_recognized))
+    }
 
-	companion object {
-		private val ERROR_TIMEOUT_MILLIS = 1600L
-		private val SUCCESS_DELAY_MILLIS = 1300L
-	}
+    companion object {
+        private val ERROR_TIMEOUT_MILLIS = 1600L
+        private val SUCCESS_DELAY_MILLIS = 1300L
+    }
 ```
 
 ## Fingerprint Dialog
@@ -187,122 +187,122 @@ So, admittedly, this is where I struggled myself to understand what was happenin
 Here is what our class looks like now, with code removed for simplicity:
 
 ```kotlin
-	class FingerprintDialog : DialogFragment(), FingerprintController.Callback {
+    class FingerprintDialog : DialogFragment(), FingerprintController.Callback {
 
-	    private var cryptoObject: FingerprintManagerCompat.CryptoObject? = null
-	    private var keyStore: KeyStore? = null
-	    private var keyGenerator: KeyGenerator? = null
+        private var cryptoObject: FingerprintManagerCompat.CryptoObject? = null
+        private var keyStore: KeyStore? = null
+        private var keyGenerator: KeyGenerator? = null
 
-	    override fun onCreate(savedInstanceState: Bundle?) {
-	        super.onCreate(savedInstanceState)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
 
-	        try {
-	            keyStore = KeyStore.getInstance("AndroidKeyStore")
-	        } catch (...) {}
+            try {
+                keyStore = KeyStore.getInstance("AndroidKeyStore")
+            } catch (...) {}
 
-	        try {
-	            keyGenerator = KeyGenerator
-	                    .getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore")
-	        } catch (...) {}
+            try {
+                keyGenerator = KeyGenerator
+                        .getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore")
+            } catch (...) {}
 
-	        createKey(DEFAULT_KEY_NAME, false)
+            createKey(DEFAULT_KEY_NAME, false)
 
-	        val defaultCipher: Cipher
-	        try {
-	            defaultCipher = Cipher.getInstance(KeyProperties.KEY_ALGORITHM_AES + "/"
-	                    + KeyProperties.BLOCK_MODE_CBC + "/"
-	                    + KeyProperties.ENCRYPTION_PADDING_PKCS7)
-	        } catch (...) {}
+            val defaultCipher: Cipher
+            try {
+                defaultCipher = Cipher.getInstance(KeyProperties.KEY_ALGORITHM_AES + "/"
+                        + KeyProperties.BLOCK_MODE_CBC + "/"
+                        + KeyProperties.ENCRYPTION_PADDING_PKCS7)
+            } catch (...) {}
 
-	        if (initCipher(defaultCipher, DEFAULT_KEY_NAME)) {
-	            cryptoObject = FingerprintManagerCompat.CryptoObject(defaultCipher)
-	        }
-	    }
+            if (initCipher(defaultCipher, DEFAULT_KEY_NAME)) {
+                cryptoObject = FingerprintManagerCompat.CryptoObject(defaultCipher)
+            }
+        }
 
-	    override fun onResume() {
-	        super.onResume()
+        override fun onResume() {
+            super.onResume()
 
-	        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-	        cryptoObject?.let {
-	            controller.startListening(it)
-	        }
-	    }
+            dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            cryptoObject?.let {
+                controller.startListening(it)
+            }
+        }
 
-	    override fun onPause() {
-	        super.onPause()
-	        controller.stopListening()
-	    }
+        override fun onPause() {
+            super.onPause()
+            controller.stopListening()
+        }
 
-	    /**
-	     * Lifted code from the Google samples - https://github.com/googlesamples/android-FingerprintDialog/blob/master/kotlinApp/app/src/main/java/com/example/android/fingerprintdialog/MainActivity.kt
-	     *
-	     * Initialize the [Cipher] instance with the created key in the
-	     * [.createKey] method.
-	     *
-	     * @param keyName the key name to init the cipher
-	     * @return `true` if initialization is successful, `false` if the lock screen has
-	     * been disabled or reset after the key was generated, or if a fingerprint got enrolled after
-	     * the key was generated.
-	     */
-	    private fun initCipher(cipher: Cipher, keyName: String): Boolean {
-	        try {
-	            keyStore?.load(null)
-	            val key = keyStore?.getKey(keyName, null) as SecretKey
-	            cipher.init(Cipher.ENCRYPT_MODE, key)
-	            return true
-	        } catch (...) {}
-	    }
+        /**
+         * Lifted code from the Google samples - https://github.com/googlesamples/android-FingerprintDialog/blob/master/kotlinApp/app/src/main/java/com/example/android/fingerprintdialog/MainActivity.kt
+         *
+         * Initialize the [Cipher] instance with the created key in the
+         * [.createKey] method.
+         *
+         * @param keyName the key name to init the cipher
+         * @return `true` if initialization is successful, `false` if the lock screen has
+         * been disabled or reset after the key was generated, or if a fingerprint got enrolled after
+         * the key was generated.
+         */
+        private fun initCipher(cipher: Cipher, keyName: String): Boolean {
+            try {
+                keyStore?.load(null)
+                val key = keyStore?.getKey(keyName, null) as SecretKey
+                cipher.init(Cipher.ENCRYPT_MODE, key)
+                return true
+            } catch (...) {}
+        }
 
-	    /**
-	     * Lifted code from the Google Samples - https://github.com/googlesamples/android-FingerprintDialog/blob/master/kotlinApp/app/src/main/java/com/example/android/fingerprintdialog/MainActivity.kt
-	     *
-	     * Creates a symmetric key in the Android Key Store which can only be used after the user has
-	     * authenticated with fingerprint.
-	     *
-	     * @param keyName the name of the key to be created
-	     * @param invalidatedByBiometricEnrollment if `false` is passed, the created key will not
-	     * be invalidated even if a new fingerprint is enrolled.
-	     * The default value is `true`, so passing
-	     * `true` doesn't change the behavior
-	     * (the key will be invalidated if a new fingerprint is
-	     * enrolled.). Note that this parameter is only valid if
-	     * the app works on Android N developer preview.
-	     */
-	    private fun createKey(keyName: String, invalidatedByBiometricEnrollment: Boolean) {
-	        // The enrolling flow for fingerprint. This is where you ask the user to set up fingerprint
-	        // for your flow. Use of keys is necessary if you need to know if the set of
-	        // enrolled fingerprints has changed.
-	        try {
-	            keyStore?.load(null)
-	            // Set the alias of the entry in Android KeyStore where the key will appear
-	            // and the constrains (purposes) in the constructor of the Builder
+        /**
+         * Lifted code from the Google Samples - https://github.com/googlesamples/android-FingerprintDialog/blob/master/kotlinApp/app/src/main/java/com/example/android/fingerprintdialog/MainActivity.kt
+         *
+         * Creates a symmetric key in the Android Key Store which can only be used after the user has
+         * authenticated with fingerprint.
+         *
+         * @param keyName the name of the key to be created
+         * @param invalidatedByBiometricEnrollment if `false` is passed, the created key will not
+         * be invalidated even if a new fingerprint is enrolled.
+         * The default value is `true`, so passing
+         * `true` doesn't change the behavior
+         * (the key will be invalidated if a new fingerprint is
+         * enrolled.). Note that this parameter is only valid if
+         * the app works on Android N developer preview.
+         */
+        private fun createKey(keyName: String, invalidatedByBiometricEnrollment: Boolean) {
+            // The enrolling flow for fingerprint. This is where you ask the user to set up fingerprint
+            // for your flow. Use of keys is necessary if you need to know if the set of
+            // enrolled fingerprints has changed.
+            try {
+                keyStore?.load(null)
+                // Set the alias of the entry in Android KeyStore where the key will appear
+                // and the constrains (purposes) in the constructor of the Builder
 
-	            val builder = KeyGenParameterSpec.Builder(keyName,
-	                    KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT)
-	                    .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
-	                    // Require the user to authenticate with a fingerprint to authorize every use
-	                    // of the key
-	                    .setUserAuthenticationRequired(true)
-	                    .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_PKCS7)
+                val builder = KeyGenParameterSpec.Builder(keyName,
+                        KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT)
+                        .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
+                        // Require the user to authenticate with a fingerprint to authorize every use
+                        // of the key
+                        .setUserAuthenticationRequired(true)
+                        .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_PKCS7)
 
-	            // This is a workaround to avoid crashes on devices whose API level is < 24
-	            // because KeyGenParameterSpec.Builder#setInvalidatedByBiometricEnrollment is only
-	            // visible on API level +24.
-	            // Ideally there should be a compat library for KeyGenParameterSpec.Builder but
-	            // which isn't available yet.
-	            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-	                builder.setInvalidatedByBiometricEnrollment(invalidatedByBiometricEnrollment)
-	            }
-	            keyGenerator?.init(builder.build())
-	            keyGenerator?.generateKey()
-	        } catch (...) {}
+                // This is a workaround to avoid crashes on devices whose API level is < 24
+                // because KeyGenParameterSpec.Builder#setInvalidatedByBiometricEnrollment is only
+                // visible on API level +24.
+                // Ideally there should be a compat library for KeyGenParameterSpec.Builder but
+                // which isn't available yet.
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    builder.setInvalidatedByBiometricEnrollment(invalidatedByBiometricEnrollment)
+                }
+                keyGenerator?.init(builder.build())
+                keyGenerator?.generateKey()
+            } catch (...) {}
 
-	    }
+        }
 
-	    companion object {
-	        private val DEFAULT_KEY_NAME = "default_key"
-	    }
-	}
+        companion object {
+            private val DEFAULT_KEY_NAME = "default_key"
+        }
+    }
 ```
 
 ## Summary

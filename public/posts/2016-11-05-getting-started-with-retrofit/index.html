@@ -179,35 +179,35 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></code></pre></div><h1 id="define-your-models">Define Your Model(s)</h1>
 <p>Next, we need to define the models that will be returned from the server. In this example, we will be returning a list of people that are presidents. Each person is represented in the following way:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lastName</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lastName</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>It&rsquo;s important to note that the variable names match up with the JSON representation:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    	<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    	<span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;George&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    	<span class="nt">&#34;lastName&#34;</span><span class="p">:</span> <span class="s2">&#34;Washington&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;George&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;lastName&#34;</span><span class="p">:</span> <span class="s2">&#34;Washington&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>If you don&rsquo;t want to use the same variable names as the JSON keys, you can use the <code>SerializedName</code> annotation:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="nd">@SerializedName</span><span class="p">(</span><span class="s">&#34;firstName&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">first</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nd">@SerializedName</span><span class="p">(</span><span class="s">&#34;firstName&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">first</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="nd">@SerializedName</span><span class="p">(</span><span class="s">&#34;lastName&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">last</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nd">@SerializedName</span><span class="p">(</span><span class="s">&#34;lastName&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">last</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>Since our project will be taking back a list of presidents, not just a single person, we should have a POJO for that as well:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Presidents</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="n">presidents</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="n">presidents</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>Which has the corresponding JSON response:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    	<span class="nt">&#34;presidents&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    		<span class="err">...</span>
-</span></span><span class="line"><span class="cl">    	<span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;presidents&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="err">...</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><h1 id="create-a-service-interface">Create A Service Interface</h1>
 <p>Next, we need to create an interface that is responsible for communicating with our API, which will look like this:</p>

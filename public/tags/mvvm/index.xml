@@ -19,5 +19,23 @@
       
     </item>
     
+    <item>
+      <title>Breaking the Buzzwords Barrier Part 1&amp;#58; MVVM</title>
+      <link>http://localhost:1313/posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm/</link>
+      <pubDate>Wed, 30 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm/</guid>
+      
+      <description>&lt;p&gt;When you&amp;rsquo;re starting out with Android development, and even as an expert, you will hear about a lot of different architecture patterns. Anything from:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model-View-Controller&lt;/li&gt;
+&lt;li&gt;Model-View-Presenter&lt;/li&gt;
+&lt;li&gt;Model-View-ViewModel&lt;/li&gt;
+&lt;li&gt;Model-View-Intent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It can be extremely hard to know which one to pick, what their differences are, and why they matter. I will tell you that even with my three years of Android experience at the point of writing this, I have trouble answering the first two questions. I can, however, explain why these architecture patterns matter - and it boils down to the idea of separation of concerns.&lt;/p&gt;</description>
+      
+    </item>
+    
   </channel>
 </rss>

@@ -203,37 +203,37 @@ stroke-linejoin="round" class="feather feather-home">
 <li>The ViewModel also manages a <a href="http://reactivex.io/RxJava/javadoc/io/reactivex/disposables/CompositeDisposable.html">CompositeDisposable</a> which holds our network subscription, and clears the network subscription when our ViewModel is cleared. This is to avoid memory leaks if there&rsquo;s a long running request.</li>
 </ol>
 <p>If you don&rsquo;t understand the RxJava code below, head back to [part 2]({{ site.baseurl }}{% link _posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository.md %}) for some notes and links to external resources.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">	<span class="k">class</span> <span class="nc">AccountViewModel</span><span class="p">(</span><span class="k">private</span> <span class="k">val</span> <span class="py">repository</span><span class="p">:</span> <span class="n">CCRepository</span><span class="p">)</span> <span class="p">:</span> <span class="n">ViewModel</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">private</span> <span class="k">val</span> <span class="py">compositeDisposable</span> <span class="p">=</span> <span class="n">CompositeDisposable</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	    <span class="k">val</span> <span class="py">state</span><span class="p">:</span> <span class="n">BehaviorSubject</span><span class="p">&lt;</span><span class="n">DataViewState</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nc">BehaviorSubject</span><span class="p">.</span><span class="n">create</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">AccountViewModel</span><span class="p">(</span><span class="k">private</span> <span class="k">val</span> <span class="py">repository</span><span class="p">:</span> <span class="n">CCRepository</span><span class="p">)</span> <span class="p">:</span> <span class="n">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">val</span> <span class="py">compositeDisposable</span> <span class="p">=</span> <span class="n">CompositeDisposable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">val</span> <span class="py">state</span><span class="p">:</span> <span class="n">BehaviorSubject</span><span class="p">&lt;</span><span class="n">DataViewState</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nc">BehaviorSubject</span><span class="p">.</span><span class="n">create</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">fun</span> <span class="nf">fetchAccounts</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="k">value</span> <span class="o">!is</span> <span class="nc">DataViewState</span><span class="p">.</span><span class="n">Success</span><span class="p">&lt;*&gt;)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	            <span class="nc">Timber</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&#34;Loading Accounts&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	            <span class="n">postState</span><span class="p">(</span><span class="nc">DataViewState</span><span class="p">.</span><span class="n">Loading</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">fetchAccounts</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="k">value</span> <span class="o">!is</span> <span class="nc">DataViewState</span><span class="p">.</span><span class="n">Success</span><span class="p">&lt;*&gt;)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nc">Timber</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&#34;Loading Accounts&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">postState</span><span class="p">(</span><span class="nc">DataViewState</span><span class="p">.</span><span class="n">Loading</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	            <span class="k">val</span> <span class="py">subscription</span> <span class="p">=</span> <span class="n">repository</span>
-</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">getAllAccounts</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">subscribeOn</span><span class="p">(</span><span class="nc">Schedulers</span><span class="p">.</span><span class="n">io</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">observeOn</span><span class="p">(</span><span class="nc">AndroidSchedulers</span><span class="p">.</span><span class="n">mainThread</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">	                    <span class="p">.</span><span class="n">subscribe</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">	                            <span class="k">this</span><span class="o">::</span><span class="n">postState</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	                            <span class="n">Timber</span><span class="o">::</span><span class="n">e</span>
-</span></span><span class="line"><span class="cl">	                    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">val</span> <span class="py">subscription</span> <span class="p">=</span> <span class="n">repository</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">.</span><span class="n">getAllAccounts</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">.</span><span class="n">subscribeOn</span><span class="p">(</span><span class="nc">Schedulers</span><span class="p">.</span><span class="n">io</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">.</span><span class="n">observeOn</span><span class="p">(</span><span class="nc">AndroidSchedulers</span><span class="p">.</span><span class="n">mainThread</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">.</span><span class="n">subscribe</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                                <span class="k">this</span><span class="o">::</span><span class="n">postState</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">Timber</span><span class="o">::</span><span class="n">e</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	            <span class="n">compositeDisposable</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">subscription</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="n">compositeDisposable</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">subscription</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">private</span> <span class="k">fun</span> <span class="nf">postState</span><span class="p">(</span><span class="n">newState</span><span class="p">:</span> <span class="n">DataViewState</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">state</span><span class="p">.</span><span class="n">onNext</span><span class="p">(</span><span class="n">newState</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">notifyChange</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">fun</span> <span class="nf">postState</span><span class="p">(</span><span class="n">newState</span><span class="p">:</span> <span class="n">DataViewState</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">state</span><span class="p">.</span><span class="n">onNext</span><span class="p">(</span><span class="n">newState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">notifyChange</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCleared</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	        <span class="n">compositeDisposable</span><span class="p">.</span><span class="n">dispose</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCleared</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">compositeDisposable</span><span class="p">.</span><span class="n">dispose</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><p>Because this survives orientation changes, and because we do a state check before pulling accounts, we can save ourselves from unnecessarily requesting data every time the user rotates their phone, and instead only when the view (and ViewModel) are created for the first time.</p>
 <h2 id="factory">Factory</h2>
 <p>Instantiating your ViewModel from inside your activity or fragment can be pretty easy:</p>

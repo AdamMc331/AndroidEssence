@@ -6,16 +6,15 @@
     <description>Recent content in Dependency Injection on Android Essence</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/dependency-injection/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/dependency-injection/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The Imposter&#39;s Guide To Dependency Injection</title>
-      <link>http://localhost:1313/posts/the-imposter-guide-to-dependency-injection/</link>
-      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      <title>Comparing Three Dependency Injection Solutions</title>
+      <link>http://localhost:1313/posts/2020-08-22-comparing-three-dependency-injection-solutions/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/the-imposter-guide-to-dependency-injection/</guid>
+      <guid>http://localhost:1313/posts/2020-08-22-comparing-three-dependency-injection-solutions/</guid>
       
-      <description>&lt;p&gt;Dependency Injection is one of the hottest topics in Android and software development in general. It&amp;rsquo;s also a topic that can provide a lot of anxiety and create imposter syndrome for developers.&lt;/p&gt;
-&lt;p&gt;In this post, we&amp;rsquo;ll take incremental steps toward understanding DI, why we need it, and how to implement it inside our applications.&lt;/p&gt;</description>
+      <description>&lt;p&gt;During a recent live stream on my &lt;a href=&#34;https://www.twitch.tv/adammc331&#34;&gt;Twitch&lt;/a&gt; channel, we explored three different solutions to dependency injection on Android. A do it yourself approach, Koin, and Dagger Hilt. Let&amp;rsquo;s revisit them side by side, and look at the nuances between them, so we can determine which solution we want to use in our own applications.&lt;/p&gt;</description>
       
     </item>
     

@@ -20,13 +20,13 @@ This post is both going to review the official docs linked above, as well as pro
 First, let's explain what we mean when we keep saying Kotlin has nullability in the type system. In Java, we know that an object can either have a value or be null. As discussed in the first paragraph, this can lead to trouble. In Kotlin, however, we have the ability to say a type will never be null. We do that by simplify specifying the type as is. If we want to declare a type as nullable, we append a question mark at the end. Here is an example:
 
 ```kotlin
-	// String is a non-nullable type, so if we tried to assign null to it, there would be a compilation error
-	val a: String = "test"
-	a = null // Compilation error
+    // String is a non-nullable type, so if we tried to assign null to it, there would be a compilation error
+    val a: String = "test"
+    a = null // Compilation error
 
-	// String? is a nullable type, so if we tried to assign null to it, it would accept it
-	val b: String? = "test"
-	b = null // Okay
+    // String? is a nullable type, so if we tried to assign null to it, it would accept it
+    val b: String? = "test"
+    b = null // Okay
 ```
 
 Note: If you are working with Java interrop, there's still a risk of the first option being able to throw an NPE. We'll discuss that later under platform types.
@@ -40,13 +40,13 @@ There are a few ways to check and handle nullability on a type. Let's discuss ea
 Just like Java, we could explicitly check for null:
 
 ```kotlin
-	val b: String? = "test"
+    val b: String? = "test"
 
-	if (b != null && b.length > 0) {
-		// Do something with the string
-	} else {
-		// String is null, handle error
-	}
+    if (b != null && b.length > 0) {
+        // Do something with the string
+    } else {
+        // String is null, handle error
+    }
 ```
 
 ## Safe Operator
@@ -54,8 +54,8 @@ Just like Java, we could explicitly check for null:
 If we don't want to deal with the verbosity of the above code, we can use the safe operator (`?.`) provided by Kotlin. This operator will either return the value if non-null, or null if it was unable to be read. Here is what the code would look like with and without the safe operator:
 
 ```kotlin
-	val length: Int? = if (b != null) b.length else null
-	val length: Int? = b?.length
+    val length: Int? = if (b != null) b.length else null
+    val length: Int? = b?.length
 ```
 
 As you can see, the safe operator makes the code a lot more concise. This becomes even more useful when you have a number of nested objects, and you are able to chain multiple safe operator calls together.
@@ -65,20 +65,20 @@ As you can see, the safe operator makes the code a lot more concise. This become
 In Java, we may also be used to doing an explicit check for null and returning another value if it's not found. For example, you may have written code like this in your lifetime:
 
 ```java
-	return (myValue != null) ? myValue : -1;
+    return (myValue != null) ? myValue : -1;
 ```
 
 Kotlin provides an elvis operator (`?:`) which works similar to the safe operator. However, instead of returning null, it'll return the default value that you supply it. The above Java code would be written in Kotlin as:
 
 ```kotlin
-	return myValue ?: -1
+    return myValue ?: -1
 ```
 
 Using that for the example further up regarding string length:
 
 ```kotlin
-	val length: Int = b?.length ?: 0
-	if (length > 0) doSomething() else fail()
+    val length: Int = b?.length ?: 0
+    if (length > 0) doSomething() else fail()
 ```
 
 ## Safe Class Casting
@@ -86,7 +86,7 @@ Using that for the example further up regarding string length:
 Similar to the safe operator for types, we can use the `as?` operator to safely cast objects. This will just return null if the cast is unsuccessful:
 
 ```kotlin
-	val intVal: Int? = myValue as? Int
+    val intVal: Int? = myValue as? Int
 ```
 
 ## Do Not Enter
@@ -111,17 +111,17 @@ After reading through this, don't just go through all of your Kotlin code and ma
 You should also be aware of some of Kotlin's [delegated properties](https://kotlinlang.org/docs/reference/delegated-properties.html), especially the `lazy()` method. Before we talk about what it does, let's explain the problem we're trying to solve. Consider the following fragment code:
 
 ```kotlin
-	class MyFragment : Fragment() {
-		private var manager: MyAPIManager? = null
+    class MyFragment : Fragment() {
+        private var manager: MyAPIManager? = null
 
-		@Override
-		public void onCreate(savedInstanceState: Bundle?) {
-			super.onCreate(savedInstanceState)
+        @Override
+        public void onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
 
-			manager = MyAPIManager(context)
-			manager.authorize()
-		}
-	}
+            manager = MyAPIManager(context)
+            manager.authorize()
+        }
+    }
 ```
 
 In this case, we define a manager object at the class level. We have to give it an initial value, and we're forced to give it null. That's because we don't have access to the context at this point, and so we have no choice but to give it a value inside of our onCreate method. There are two consequences of this approach, despite how logical it may seem:
@@ -132,18 +132,18 @@ In this case, we define a manager object at the class level. We have to give it 
 Solution? [The lazy property](https://kotlinlang.org/docs/reference/delegated-properties.html#lazy). This property takes in a lambda, which is executed the first time the property is accessed. After that, it will return the value that was assigned to it. This way we can declare the property as immutable, and non-null, so that as long as the fragment is created before we access it the first time, we'll avoid the two problems mentioned above. Here is what the code looks like now:
 
 ```kotlin
-	class MyFragment : Fragment() {
-		private val manager: MyAPIManager by lazy {
-			MyAPIManager(context)
-		}
+    class MyFragment : Fragment() {
+        private val manager: MyAPIManager by lazy {
+            MyAPIManager(context)
+        }
 
-		@Override
-		public void onCreate(savedInstanceState: Bundle?) {
-			super.onCreate(savedInstanceState)
+        @Override
+        public void onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
 
-			manager.authorize()
-		}
-	}
+            manager.authorize()
+        }
+    }
 ```
 
 ## Lateinit Property
@@ -152,16 +152,16 @@ Similar to lazy, we can use the [lateinit](https://kotlinlang.org/docs/reference
 
 ```kotlin
     class MyFragment : Fragment() {
-		lateinit var manager: MyAPIManager
+        lateinit var manager: MyAPIManager
 
-		@Override
-		public void onCreate(savedInstanceState: Bundle?) {
-			super.onCreate(savedInstanceState)
+        @Override
+        public void onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
 
                         manager = MyAPIManager(context)
-			manager.authorize()
-		}
-	}
+            manager.authorize()
+        }
+    }
 ```
 
 This way, we can still declare the variable as non-nullable, and assign it *late*r when the time is right. However, we still are unable to access this field before it's assigned. If we do, though, an exception is thrown explaining that the field hasn't been initialized yet, which is slightly different from an NPE.
