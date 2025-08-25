@@ -1,4 +1,46 @@
+title = "Android Essence"
 baseURL = 'https://androidessence.com/'
+
 languageCode = 'en-us'
-title = 'AndroidEssence'
-theme = 'hugo-blog-awesome'
+defaultContentLanguage = "en-us"
+
+# Enable emojis globally
+enableEmoji = true
+ignoreErrors = ["additional-script-loading-error"] # ignore error of loading additional scripts.
+
+# traditional way: theme component resides in directory 'themes'
+theme = "hugo-blog-awesome"
+
+[services]
+# To enable Google Analytics 4 (gtag.js) provide G-MEASUREMENT_ID below.
+# To disable Google Analytics, simply leave the field empty or remove the next two lines
+  [services.googleAnalytics]
+    id = '' # G-MEASUREMENT_ID
+
+# To enable Disqus comments, provide Disqus Shortname below.
+# To disable Disqus comments, simply leave the field empty or remove the next two lines
+  # [services.disqus]
+  #   shortname = ''
+
+# set markup.highlight.noClasses=false to enable code highlight
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+	[markup.tableOfContents]
+		startLevel = 2 # ToC starts from H2
+		endLevel = 4 # ToC ends at H4
+		ordered = false # generates <ul> instead of <ol>
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/AdamMc331"
+
+[[params.socialIcons]]
+name = "bluesky"
+url = "https://bsky.app/profile/adammc.bsky.social"
+
+[[params.socialIcons]]
+name = "Rss"
+url = "/index.xml"
