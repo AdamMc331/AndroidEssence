@@ -3,11 +3,11 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">How To Make An Android UI Part 2&amp;#58; Java Code | Android Essence</title>
-<meta property="og:title" content="How To Make An Android UI Part 2&amp;#58; Java Code | Android Essence" />
-<meta name="twitter:title" content="How To Make An Android UI Part 2&amp;#58; Java Code | Android Essence" />
-<meta itemprop="name" content="How To Make An Android UI Part 2&amp;#58; Java Code | Android Essence" />
-<meta name="application-name" content="How To Make An Android UI Part 2&amp;#58; Java Code | Android Essence" />
+<title itemprop="name">How To Make An Android UI Part 2: Java Code | Android Essence</title>
+<meta property="og:title" content="How To Make An Android UI Part 2: Java Code | Android Essence" />
+<meta name="twitter:title" content="How To Make An Android UI Part 2: Java Code | Android Essence" />
+<meta itemprop="name" content="How To Make An Android UI Part 2: Java Code | Android Essence" />
+<meta name="application-name" content="How To Make An Android UI Part 2: Java Code | Android Essence" />
 <meta property="og:site_name" content="" />
 
 <meta name="description" content="">
@@ -29,8 +29,8 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2015-12-02T00:00:00Z />
-    <meta property="article:published_time" content=2015-12-02T00:00:00Z />
+    <meta property="og:article:published_time" content=2015-12-02T00:00:00-0400 />
+    <meta property="article:published_time" content=2015-12-02T00:00:00-0400 />
     <meta property="og:url" content="http://localhost:1313/posts/2015-12-02-how-to-make-an-android-ui-part-2/" />
 
     
@@ -41,7 +41,7 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "How To Make An Android UI Part 2\u0026#58; Java Code",
+        "headline": "How To Make An Android UI Part 2: Java Code",
         "author": {
         "@type": "Person",
         "name": ""
@@ -68,20 +68,19 @@
     
     <meta property="og:url" content="http://localhost:1313/posts/2015-12-02-how-to-make-an-android-ui-part-2/">
   <meta property="og:site_name" content="Android Essence">
-  <meta property="og:title" content="How To Make An Android UI Part 2&#58; Java Code">
+  <meta property="og:title" content="How To Make An Android UI Part 2: Java Code">
   <meta property="og:description" content="After reading [part one]({{ site.baseurl }}{% link _posts/2015-11-08-how-to-make-an-android-ui-part-1.md %}) which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2015-12-02T00:00:00+00:00">
-    <meta property="article:modified_time" content="2015-12-02T00:00:00+00:00">
-    <meta property="article:tag" content="Ui">
+    <meta property="article:published_time" content="2015-12-02T00:00:00-04:00">
+    <meta property="article:modified_time" content="2015-12-02T00:00:00-04:00">
 
 
     
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="How To Make An Android UI Part 2&#58; Java Code">
+  <meta name="twitter:title" content="How To Make An Android UI Part 2: Java Code">
   <meta name="twitter:description" content="After reading [part one]({{ site.baseurl }}{% link _posts/2015-11-08-how-to-make-an-android-ui-part-1.md %}) which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:">
 
 
@@ -159,12 +158,12 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title">How To Make An Android UI Part 2&amp;#58; Java Code</h1>
+                <h1 class="header-title">How To Make An Android UI Part 2: Java Code</h1>
                 
                 
                 
                 <div class="post-meta">
-                    <time datetime="2015-12-02T00:00:00&#43;00:00" itemprop="datePublished"> Dec 2, 2015 </time>
+                    <time datetime="2015-12-02T00:00:00-04:00" itemprop="datePublished"> Dec 2, 2015 </time>
                 </div>
                 
             </header>
@@ -173,38 +172,38 @@ stroke-linejoin="round" class="feather feather-home">
                 <p>After reading [part one]({{ site.baseurl }}{% link _posts/2015-11-08-how-to-make-an-android-ui-part-1.md %}) which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:</p>
 <h1 id="activities">Activities</h1>
 <p>Activities are a specific focus for the user. Nearly every Activity you create will display a window for the user, which is defined using the <a href="http://developer.android.com/reference/android/app/Activity.html#setContentView(int)">setContentView()</a> function. There are a few overloads for this method, the most popular being one that takes an integer resource to your xml file. That is why you will often see the following code in a default template:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>This call to <code>setContentView()</code> is required in order to see anything displayed in the Activity, and it must also be called before any interaction with the UI elements in the Activity, which we’ll talk about later.  Next, let’s discuss how Fragments get their layouts.</p>
 <h1 id="fragments">Fragments</h1>
 <p>A fragment is just a part of your app’s UI that can be placed within an Activity. Fragments do not use the <code>setContentView()</code> method, but instead implement [onCreateView()](<a href="http://developer.android.com/intl/pt-br/reference/android/app/Fragment.html#onCreateView(android.view.LayoutInflater">http://developer.android.com/intl/pt-br/reference/android/app/Fragment.html#onCreateView(android.view.LayoutInflater</a>, android.view.ViewGroup, android.os.Bundle)) to initialize a Fragment’s User Interface. A <a href="http://developer.android.com/reference/android/view/LayoutInflater.html">LayoutInflater</a> object is used to inflate the layout:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="nf">onCreateView</span><span class="p">(</span><span class="n">LayoutInflater</span><span class="w"> </span><span class="n">inflater</span><span class="p">,</span><span class="w"> </span><span class="n">ViewGroup</span><span class="w"> </span><span class="n">container</span><span class="p">,</span><span class="w"> </span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">View</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inflater</span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">fragment_accounts</span><span class="p">,</span><span class="w"> </span><span class="n">container</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Do actions with view if necessary</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">view</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="nf">onCreateView</span><span class="p">(</span><span class="n">LayoutInflater</span><span class="w"> </span><span class="n">inflater</span><span class="p">,</span><span class="w"> </span><span class="n">ViewGroup</span><span class="w"> </span><span class="n">container</span><span class="p">,</span><span class="w"> </span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">View</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inflater</span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">fragment_accounts</span><span class="p">,</span><span class="w"> </span><span class="n">container</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Do actions with view if necessary</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">view</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>Again, we’ll come back to what kinds of actions you can preform on Views a little later. For now, let’s try to really understand what’s happening behind the scenes in a LayoutInflater.</p>
 <h1 id="layoutinflater">LayoutInflater</h1>
 <p>The concept is rather simple, but important to understand what is going on. A LayoutInflater instantiates a layout XML file into its corresponding View objects. In other words, when you have your LinearLayout and children defined in XML, the inflater will create actually View objects for you that you can manipulate in code. This is your gateway into everything you will need to create a positive user experience.</p>
 <h1 id="accessing-views">Accessing Views</h1>
 <p>If you ever need to manipulate view, whether you’re setting text, reading input, or handling clicks programatically, you’ll need to create an object in your code. To access that object, you can use the <a href="http://developer.android.com/reference/android/view/View.html#findViewById(int)">View.findViewbyId()</a> method. There also exists an Activity.findViewById() method, which means you can just call the method directly inside an Activity:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Inside activity</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">     
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">TextView</span><span class="w"> </span><span class="n">myTextView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">my_text_view</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">     
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Inside fragment</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="nf">onCreateView</span><span class="p">(</span><span class="n">LayoutInflater</span><span class="w"> </span><span class="n">inflater</span><span class="p">,</span><span class="w"> </span><span class="n">ViewGroup</span><span class="w"> </span><span class="n">container</span><span class="p">,</span><span class="w"> </span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">View</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inflater</span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">fragment_main</span><span class="p">,</span><span class="w"> </span><span class="n">container</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">TextView</span><span class="w"> </span><span class="n">myTextView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">view</span><span class="p">.</span><span class="na">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">my_text_view</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">view</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Inside activity</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">TextView</span><span class="w"> </span><span class="n">myTextView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">my_text_view</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Inside fragment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="nf">onCreateView</span><span class="p">(</span><span class="n">LayoutInflater</span><span class="w"> </span><span class="n">inflater</span><span class="p">,</span><span class="w"> </span><span class="n">ViewGroup</span><span class="w"> </span><span class="n">container</span><span class="p">,</span><span class="w"> </span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">View</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inflater</span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">fragment_main</span><span class="p">,</span><span class="w"> </span><span class="n">container</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">TextView</span><span class="w"> </span><span class="n">myTextView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">view</span><span class="p">.</span><span class="na">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">my_text_view</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">view</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>Once you’ve learned how to create your XML files, inflate the views, and access specific elements, you have the base foundation required to create beautiful interactive interfaces. Unfortunately, there are too many different things you can do for me to discuss them all here, so I highly encourage you to look at the docs to understand the various attributes of UI elements and learn the different ways to style them and manipulate them. I hope this gave you a better understand of the User Interface.</p>
             </div>
         </article></main>

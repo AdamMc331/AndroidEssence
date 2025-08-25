@@ -21,12 +21,12 @@ In the AdapterView design, the Adapter is the component responsible for mapping 
 If you’ve ever used an AdapterView such as the ListView, you’ve probably needed to handle the event when the user clicks on an item. This was trivial with the ListView:
 
 ```java
-    mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-       @Override 
-       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {  
-          //TODO:
-       } 
-    });
+mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+   @Override 
+   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {  
+      //TODO:
+   } 
+});
 ```
 
 However, the RecyclerView does not have nested classes like OnItemClickListener, so handling these events is a little harder. I will give an example later on.
@@ -40,11 +40,11 @@ I am only speculating, but I expect there are many times when developers want to
 With the ListView, you could set a [divider](http://developer.android.com/reference/android/widget/ListView.html#attr_android:divider) drawable to appear between each item, which can be as simple as a thin line to represent a separation. This could be done easily in XML for the ListViews:
 
 ```xml
-    <ListView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:divider="#FFFFFF"
-       android:dividerHeight="1dp"/>
+<ListView
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:divider="#FFFFFF"
+   android:dividerHeight="1dp"/>
 ```
 
 However, with the RecyclerView you need to implement an ItemDecorator to achieve this effect.
@@ -68,21 +68,21 @@ As explained in the [The Busy Coder’s Guide to Android Development](https://co
 You are probably asking yourself how you are supposed to handle all of the on-click logic. Well, the best place to handle interactions with a particular View would be inside of your ViewHolder. For example, if you just want to handle the click of a particular RecyclerView item, just have the ViewHolder implement `View.OnClickListener` and set it to the view itself, like this:
 
 ```java
-    public class MyViewHolder extends RecyclerView.ViewHolder 
-          implements View.OnClickListener{
-       public final TextView textView; 
-     
-       public MyViewHolder(View view){
-          textView = (TextView) view.findViewById(R.id.text_view);
-          view.setOnClickListener(this);
-       } 
-     
-       @Override
-       public void onClick(View v){
-          // Clicked on item 
-          Toast.makeText(mContext, "Clicked on position: " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-       }
-    }
+public class MyViewHolder extends RecyclerView.ViewHolder 
+      implements View.OnClickListener{
+   public final TextView textView; 
+ 
+   public MyViewHolder(View view){
+      textView = (TextView) view.findViewById(R.id.text_view);
+      view.setOnClickListener(this);
+   } 
+ 
+   @Override
+   public void onClick(View v){
+      // Clicked on item 
+      Toast.makeText(mContext, "Clicked on position: " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+   }
+}
 ```
 
 2. LayoutManagers

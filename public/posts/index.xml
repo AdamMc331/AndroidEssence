@@ -624,7 +624,7 @@
     <item>
       <title>Top 5 Color Scheme Tools</title>
       <link>http://localhost:1313/posts/2015-09-21-top-5-color-scheme-tools/</link>
-      <pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 21 Sep 2015 00:00:00 -0400</pubDate>
       
       <guid>http://localhost:1313/posts/2015-09-21-top-5-color-scheme-tools/</guid>
       
@@ -635,10 +635,10 @@
     
     <item>
       <title>How To Use The RecyclerView Adapter</title>
-      <link>http://localhost:1313/posts/2015-09-17-how-to-use-the-recyclerview-adapter/</link>
-      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</link>
+      <pubDate>Thu, 17 Sep 2015 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-09-17-how-to-use-the-recyclerview-adapter/</guid>
+      <guid>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</guid>
       
       <description>&lt;p&gt;The &lt;a href=&#34;https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html&#34;&gt;RecyclerView.Adapter&lt;/a&gt; class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, [RecyclerView Vs ListView]({{ site.baseurl }}{% link _posts/2015-09-07-recyclerview-vs-listview.md %}), the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my [Swipe-To-Dismiss]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) example, and break it down to explain the required implementations and how to use the RecyclerView adapter.&lt;/p&gt;</description>
       
@@ -646,22 +646,31 @@
     
     <item>
       <title>Using Elevation In Android Applications</title>
-      <link>http://localhost:1313/posts/2015-09-15-using-elevation-in-android-applications/</link>
-      <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/posts/using-elevation-in-android-applications/</link>
+      <pubDate>Tue, 15 Sep 2015 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-09-15-using-elevation-in-android-applications/</guid>
+      <guid>http://localhost:1313/posts/using-elevation-in-android-applications/</guid>
       
-      <description>&lt;p&gt;The backbone of Material Design is to design your user interface in a way that is simple and intuitive for users, in the same way we use our intuition with real life materials. One of the many ways this is achieved is through the use of elevation in Android UI components, demonstrated here:&lt;/p&gt;
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;categories-android&#34;&gt;layout: post
+author: adam
+title: Using Elevation In Android Applications
+description: Discussion of some of the best ways to handle elevation in your Android application.
+modified: 2015-09-15
+published: true
+tags: [elevation, material design]
+categories: [android]&lt;/h2&gt;
+&lt;p&gt;The backbone of Material Design is to design your user interface in a way that is simple and intuitive for users, in the same way we use our intuition with real life materials. One of the many ways this is achieved is through the use of elevation in Android UI components, demonstrated here:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/elevation.gif&#34; alt=&#34;Android Layout Visualizer&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Drag And Drop RecyclerView Items</title>
-      <link>http://localhost:1313/posts/2015-09-09-drag-and-drop-recyclerview-items/</link>
-      <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</link>
+      <pubDate>Wed, 09 Sep 2015 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-09-09-drag-and-drop-recyclerview-items/</guid>
+      <guid>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</guid>
       
       <description>&lt;p&gt;Before continuing this post, I recommend that you read my previous one on [Swipe To Dismiss RecyclerView Items]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) as this will build upon the &lt;code&gt;ItemTouchHelper&lt;/code&gt; class discussed there. Once you&amp;rsquo;ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/drag-and-drop.gif&#34; alt=&#34;Drag And Drop RecyclerView&#34;&gt;&lt;/p&gt;</description>
@@ -670,10 +679,10 @@
     
     <item>
       <title>Swipe To Dismiss RecyclerView Items</title>
-      <link>http://localhost:1313/posts/2015-09-09-swipe-to-dismiss-recyclerview-items/</link>
+      <link>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</link>
       <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-09-09-swipe-to-dismiss-recyclerview-items/</guid>
+      <guid>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</guid>
       
       <description>&lt;p&gt;In my last post I broke down the differences between the RecyclerView and a ListView. One of the benefits of the RecyclerView that I touched on was the &lt;a href=&#34;https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html&#34;&gt;ItemTouchHelper&lt;/a&gt;. This class is used to handle the Swipe-To-Dismiss and Drag-N-Drop behaviors of a RecyclerView. In this post I am going to teach you how to swipe to dismiss RecyclerView items using the sample application seen here:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/std-sample.gif&#34; alt=&#34;Swipe To Dismiss&#34;&gt;&lt;/p&gt;</description>
