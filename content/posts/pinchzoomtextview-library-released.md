@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-modified: 2016-11-27
-title: PinchZoomTextView Library Released
-published: true
-tags: [views]
-description: PinchZoomTextView is a library that allows you to increase/decrease the font size with a two finger gesture.
-categories: Android
----
++++
+date = '2016-11-27T00:00:00-04:00'
+draft = false
+title = 'PinchZoomTextView Library Released'
++++
 
 I was recently asked if there was a way to increase/decrease the font size of a TextView by pinching on it, just as you can with many iamges. Well, it turns out that's quite possible!
 

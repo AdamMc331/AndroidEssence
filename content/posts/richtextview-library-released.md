@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: RichTextView Library Released
-modified: 2016-04-03
-description: RichTextView provides SpanBuilder utils for a single TextView.
-published: true
-tags: [views, TextView, library]
-categories: android
----
++++
+date = '2016-04-03T00:00:00-04:00'
+draft = false
+title = "RichTextView Library Released"
++++
 
 As a form of ultimate procrastination this weekend, I decided to spend the last two days developing a RichTextView library.
 

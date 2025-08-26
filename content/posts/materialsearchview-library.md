@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-modified: 2016-04-22
-title: MaterialSearchView Library
-published: true
-tags: [material design, library]
-categories: android
-description: MaterialSearchView is a library that simulates the material design search from Google.
----
++++
+date = '2016-04-22T00:00:00-04:00'
+draft = false
+title = 'MaterialSearchView Library'
++++
 
 Android has a built in SearchView component but it doesn't feel much like Material Design. This has even been asked on [StackOverflow](http://stackoverflow.com/questions/27556623/creating-a-searchview-that-looks-like-the-material-design-guidelines) because developers are having trouble recreating the same MaterialSearchView that appears in many of Google's applications. However, thanks to one of my good friends Maurício, you can now implement this great component in your own projects!
 
