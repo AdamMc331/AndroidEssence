@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Five Essential Developer Experience Concepts For Android | Android Essence</title>
+<meta property="og:title" content="Five Essential Developer Experience Concepts For Android | Android Essence" />
+<meta name="twitter:title" content="Five Essential Developer Experience Concepts For Android | Android Essence" />
+<meta itemprop="name" content="Five Essential Developer Experience Concepts For Android | Android Essence" />
+<meta name="application-name" content="Five Essential Developer Experience Concepts For Android | Android Essence" />
+<meta property="og:site_name" content="Android Essence" />
+
+<meta name="description" content="Simplified Android Development">
+<meta itemprop="description" content="Simplified Android Development" />
+<meta property="og:description" content="Simplified Android Development" />
+<meta name="twitter:description" content="Simplified Android Development" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/essential-dev-experience-concepts-android/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2021-09-10T00:00:00Z />
+    <meta property="article:published_time" content=2021-09-10T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/essential-dev-experience-concepts-android/" />
+
+    
+    <meta property="og:article:author" content="Adam McNeilly" />
+    <meta property="article:author" content="Adam McNeilly" />
+    <meta name="author" content="Adam McNeilly" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Five Essential Developer Experience Concepts For Android",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2021-09-10",
+        "description": "",
+        "wordCount":  993 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2021-09-10",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Android Essence"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/essential-dev-experience-concepts-android/">
+  <meta property="og:site_name" content="Android Essence">
+  <meta property="og:title" content="Five Essential Developer Experience Concepts For Android">
+  <meta property="og:description" content="In the most recent live stream for Tasks Of Affirmation, we looked at creating a good developer experience. It’s important to consider developers at the start of any new project, so we can ensure that over the lifetime of a project anyone who contributes can understand how to contribute, match any guidelines that a team has, and get up and running quickly. We also want to ensure that our codebase maintains a certain quality of formatting and a lack of code smells - and putting these checks in place before you even start prevents them from ever being introduced at all.
+Let’s look at five developer experience concepts I consider essential to every project.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-09-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-09-10T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Five Essential Developer Experience Concepts For Android">
+  <meta name="twitter:description" content="In the most recent live stream for Tasks Of Affirmation, we looked at creating a good developer experience. It’s important to consider developers at the start of any new project, so we can ensure that over the lifetime of a project anyone who contributes can understand how to contribute, match any guidelines that a team has, and get up and running quickly. We also want to ensure that our codebase maintains a certain quality of formatting and a lack of code smells - and putting these checks in place before you even start prevents them from ever being introduced at all.
+Let’s look at five developer experience concepts I consider essential to every project.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/essential-dev-experience-concepts-android/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Five Essential Developer Experience Concepts For Android</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2021-09-10T00:00:00&#43;00:00" itemprop="datePublished"> Sep 10, 2021 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#github-actions">GitHub Actions</a>
+      <ul>
+        <li><a href="#setup">Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#danger">Danger</a>
+      <ul>
+        <li><a href="#setup-1">Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#ktlint">Ktlint</a>
+      <ul>
+        <li><a href="#setup-2">Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#detekt">Detekt</a>
+      <ul>
+        <li><a href="#setup-3">Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#git-hooks">Git Hooks</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>In the most recent <a href="https://www.youtube.com/watch?v=ePpbpLyYI1w">live stream</a> for Tasks Of Affirmation, we looked at creating a good developer experience. It&rsquo;s important to consider developers at the start of any new project, so we can ensure that over the lifetime of a project anyone who contributes can understand how to contribute, match any guidelines that a team has, and get up and running quickly. We also want to ensure that our codebase maintains a certain quality of formatting and a lack of code smells - and putting these checks in place before you even start prevents them from ever being introduced at all.</p>
+<p>Let&rsquo;s look at five developer experience concepts I consider essential to every project.</p>
+<p>During the live stream, we went over the following concepts to use in the TOA application:</p>
+<ul>
+<li>GitHub Actions</li>
+<li>Danger</li>
+<li>Ktlint</li>
+<li>Detekt</li>
+<li>Git Hooks</li>
+</ul>
+<p>The live stream link will have video markers to each of these sections, where you can see the implementation in more detail. For this blog post, we&rsquo;re just going to highlight what each of these concepts are, and why they were necessary for the <a href="https://github.com/adammc331/toa">TOA application</a>.</p>
+<h2 id="github-actions">GitHub Actions</h2>
+<p>GitHub Actions is a way to <a href="https://github.com/features/actions">automate workflows</a> for your GitHub projects. The possibilities are endless - verifying unit tests pass, running lint checks, publishing to the play store, sharing internal builds, generating documentation - any process that you want to automate can be done via GitHub Actions.</p>
+<p>You don&rsquo;t need to use Actions - there are many CI tools out there such as Bitrise, Circle CI, Jenkins, and others. We&rsquo;ve opted to use GitHub Actions for this project because it is quick and easy to implement straight from GitHub, where this project is hosted anyways.</p>
+<h3 id="setup">Setup</h3>
+<p>To create an Action, we need to add a new directory <code>.github/workflows</code> in our project. Inside of that, we can add a YAML file that configures the action. This can be edited via the GitHub UI which gives additional tooling for editing them. You can also feel free to use the <a href="https://github.com/AdamMc331/TOA/tree/development/.github/workflows">TOA Actions</a> for inspiration.</p>
+<h2 id="danger">Danger</h2>
+<p>Danger is a tool for automating <a href="https://danger.systems/ruby">common pull request chores</a>. There are versions of Danger in multiple languages, but I prefer the Ruby gem. At first this may sound like the same thing as a GitHub Action, but it&rsquo;s a little more specific. Danger will run on Actions (or any other CI tool) to perform checks related to a Pull Request itself. An example of common Danger checks:</p>
+<ul>
+<li>Does this PR have labels?</li>
+<li>Does this PR have a description?</li>
+<li>Did we assign a reviewer?</li>
+<li>Is it too long?</li>
+<li>Did we modify the CHANGELOG.md file?</li>
+</ul>
+<p>Any meta information about a git diff or PR that you can think of, can be validated with Danger.</p>
+<h3 id="setup-1">Setup</h3>
+<p>I would defer to the official <a href="https://danger.systems/guides/getting_started.html">Danger</a> documentation for getting started, as it can vary a bit based on where you are running it and what source control tooling you have.</p>
+<p>For inspiration on some Danger checks, you can reference the <a href="https://github.com/AdamMc331/TOA/blob/development/Dangerfile">TOA Dangerfile</a>.</p>
+<h2 id="ktlint">Ktlint</h2>
+<p>Ktlint is a static analysis tool from Pinterest to <a href="https://github.com/pinterest/ktlint">prevent bikeshedding</a>. It has the ability to format your code and verify your code is formatted to match the Kotlin style guides. It is customizable and you can turn off certain rulesets if you wish, but I tend to use the out of the box configuration.</p>
+<h3 id="setup-2">Setup</h3>
+<p>For Android, I prefer to use <a href="https://github.com/jlleitschuh/ktlint-gradle">this Gradle plugin</a> to set up Ktlint in my Android applications. For an example of how to quickly integrate the plugin, you can check out <a href="https://github.com/AdamMc331/TOA/pull/30/files">this pull request</a>.</p>
+<h2 id="detekt">Detekt</h2>
+<p>A similar tool that provides a lot of benefit is <a href="https://github.com/detekt/detekt">Detekt</a>. This is another static analysis tool but rather than just checking for formatting, it checks for other common code smells such as:</p>
+<ul>
+<li>Magic numbers</li>
+<li>Functions that are too long</li>
+<li>Classes that have too many functions</li>
+<li>Functions that have too many parameters</li>
+<li>And more!</li>
+</ul>
+<h3 id="setup-3">Setup</h3>
+<p>To setup Detekt, you&rsquo;ll need to import the Gradle plugin, but also generate a config file that allows you to customize all of the different Detekt rules. You can actually generate this by running <code>./gradlew detektGenerateConfig</code> once you&rsquo;ve added the plugin.</p>
+<p>For an example of what that config file looks like, you can view it <a href="https://github.com/AdamMc331/TOA/blob/development/config/detekt/detekt.yml">here</a>. You can see a comparison in <a href="https://github.com/AdamMc331/TOA/pull/31">this pull request</a> for the full integration.</p>
+<h2 id="git-hooks">Git Hooks</h2>
+<p>The last concept we discussed in this stream was git hooks. Hooks are a way to connect a script with a certain git action, like committing or pushing code. In my projects, I like to do the following checks:</p>
+<ol>
+<li>Before committing code, format all of my changed Kotlin files.</li>
+<li>Before pushing code, ensure that we don&rsquo;t have any code smells.</li>
+</ol>
+<p>To create a git hook, you need to store it in the <code>.git/hooks</code> directory and name the file with the relevant hook like <code>pre-commit</code> and <code>pre-push</code>, respectively. However, this alone isn&rsquo;t super helpful because it doesn&rsquo;t allow you to easily share hooks between teammates.</p>
+<p>Thankfully, I learned from a great friend and fellow GDE Sebastiano Poggi how to do this in <a href="https://blog.sebastiano.dev/ooga-chaka-git-hooks-to-enforce-code-quality/">his amazing blog post</a>, which I recommend reading for the details. In summary:</p>
+<ol>
+<li>Add your git hooks to your repo, in files like <code>pre-commit.sh</code> and <code>pre-push.sh</code>.</li>
+<li>Write a gradle task that copies those files into the <code>.git/hooks</code> directory.</li>
+<li>Write a gradle task to modify those files so that they are executable.</li>
+<li>Have any new teammates on your project run these gradle tasks and now they can ensure their code is formatted, too!</li>
+</ol>
+<p>Here is the relevant <a href="https://github.com/AdamMc331/TOA/pull/32">PR</a> from the TOA stream.</p>
+<h1 id="recap">Recap</h1>
+<p>Of course this list is not exhaustive, nor are all five of these essential to every team. They are, however, five tools that I&rsquo;ve come to trust and find incredibly helpful in my projects. I hope that they&rsquo;ve inspired some of you as well, and that you can find benefit adding these or similar tools to your project. If you have any other inspirations, let me know on Twitter, or join me live on <a href="https://twitch.tv/adammc331">Twitch</a> every Wednesday!</p>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://twitch.tv/adammc" target="_blank" rel="noopener noreferrer me"
+    title="Twitch">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+</svg>
+</a>
+<a href="https://bsky.app/profile/adammc.bsky.social" target="_blank" rel="noopener noreferrer me"
+    title="Bluesky">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+    d="M11.999,10.236c0.321,-0.524 0.916,-1.507 1.405,-2.376c0.755,-1.344 1.692,-2.852 2.869,-4.028c1.283,-1.281 2.845,-2.171 4.739,-2.171c1.144,-0 1.864,0.585 2.299,1.497c0.486,1.017 0.545,2.551 0.51,3.883c-0.051,1.945 -0.232,3.337 -0.505,4.275c-0.229,0.786 -0.543,1.303 -0.878,1.615c-0.892,0.833 -1.8,1.263 -2.634,1.484c0.029,0.018 0.056,0.036 0.084,0.055c0.528,0.367 0.823,0.79 1.081,1.107c0.648,0.794 0.644,1.795 0.23,2.784c-0.481,1.151 -1.533,2.279 -2.12,2.773c-1.389,1.171 -2.506,1.362 -3.383,1.133c-0.88,-0.23 -1.59,-0.932 -2.156,-1.826c-0.45,-0.71 -0.817,-1.537 -1.176,-2.186c-0.115,-0.208 -0.302,-0.455 -0.406,-0.587c-0.02,0.019 -0.04,0.04 -0.056,0.058c-0.121,0.145 -0.234,0.328 -0.349,0.531c-0.363,0.644 -0.721,1.463 -1.157,2.166c-0.555,0.895 -1.252,1.597 -2.12,1.825c-0.863,0.227 -1.97,0.037 -3.363,-1.136c-0.586,-0.494 -1.638,-1.622 -2.119,-2.773c-0.414,-0.989 -0.418,-1.99 0.229,-2.784c0.258,-0.317 0.554,-0.74 1.082,-1.106c0.027,-0.019 0.055,-0.038 0.084,-0.056c-0.834,-0.221 -1.742,-0.651 -2.634,-1.484c-0.335,-0.312 -0.649,-0.829 -0.878,-1.615c-0.273,-0.938 -0.454,-2.33 -0.505,-4.275c-0.036,-1.332 0.024,-2.866 0.509,-3.883c0.435,-0.912 1.156,-1.497 2.3,-1.497c2.32,0 4.109,1.203 5.494,2.808c1.272,1.474 2.195,3.283 2.9,4.643c0.231,0.447 0.436,0.84 0.624,1.146Zm-0.01,5.653l0.296,0.031l0.271,0.086c0.208,0.088 0.413,0.229 0.607,0.428c0.455,0.467 0.882,1.369 1.36,2.284c0.249,0.477 0.518,0.958 0.841,1.339c0.231,0.274 0.483,0.502 0.805,0.569c0.488,0.103 1.052,-0.157 1.811,-0.797c0.452,-0.38 1.274,-1.239 1.645,-2.126c0.155,-0.371 0.265,-0.75 0.022,-1.048c-0.179,-0.22 -0.366,-0.529 -0.732,-0.783c-0.536,-0.372 -1.356,-0.51 -1.905,-0.654c-0.405,-0.106 -0.715,-0.234 -0.88,-0.355l-0.284,-0.303l-0.135,-0.367l-0.008,-0.211l0.035,-0.196l0.078,-0.195l0.142,-0.209l0.198,-0.181l0.296,-0.154c0.151,-0.055 0.348,-0.092 0.587,-0.104c0.815,-0.042 2.571,0.294 4.235,-1.259c0.171,-0.159 0.288,-0.445 0.404,-0.845c0.246,-0.843 0.391,-2.096 0.438,-3.843c0.024,-0.91 0.026,-1.938 -0.208,-2.738c-0.142,-0.486 -0.367,-0.891 -0.896,-0.891c-1.675,0 -2.974,0.983 -4.031,2.21c-1.179,1.369 -2.058,3.057 -2.752,4.321c-0.483,0.88 -0.902,1.573 -1.25,1.916c-0.088,0.086 -0.174,0.157 -0.257,0.214l-0.221,0.125l-0.228,0.078l-0.267,0.031l-0.274,-0.034l-0.231,-0.083l-0.219,-0.132c-0.081,-0.058 -0.164,-0.131 -0.248,-0.22c-0.327,-0.343 -0.718,-1.037 -1.174,-1.917c-0.654,-1.262 -1.497,-2.948 -2.676,-4.314c-1.067,-1.236 -2.417,-2.217 -4.203,-2.217c-0.53,0 -0.754,0.405 -0.896,0.891c-0.234,0.8 -0.232,1.828 -0.208,2.738c0.046,1.747 0.192,3 0.438,3.843c0.116,0.4 0.233,0.686 0.403,0.845c1.665,1.553 3.421,1.217 4.235,1.259c0.24,0.012 0.437,0.049 0.588,0.104l0.295,0.154l0.199,0.181l0.142,0.209l0.078,0.195l0.035,0.196l-0.009,0.211l-0.135,0.368l-0.283,0.303c-0.165,0.12 -0.476,0.248 -0.88,0.355c-0.549,0.144 -1.369,0.281 -1.905,0.653c-0.366,0.254 -0.554,0.564 -0.732,0.783c-0.243,0.298 -0.133,0.677 0.022,1.048c0.371,0.887 1.193,1.746 1.645,2.127c0.757,0.637 1.311,0.9 1.789,0.8c0.311,-0.066 0.55,-0.29 0.772,-0.557c0.315,-0.381 0.577,-0.86 0.822,-1.337c0.394,-0.763 0.752,-1.521 1.138,-2.01c0.431,-0.544 0.929,-0.815 1.455,-0.815Z" style="fill-rule:nonzero;"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://github.com/AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Adam McNeilly.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

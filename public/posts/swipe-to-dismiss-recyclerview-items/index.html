@@ -8,12 +8,12 @@
 <meta name="twitter:title" content="Swipe To Dismiss RecyclerView Items | Android Essence" />
 <meta itemprop="name" content="Swipe To Dismiss RecyclerView Items | Android Essence" />
 <meta name="application-name" content="Swipe To Dismiss RecyclerView Items | Android Essence" />
-<meta property="og:site_name" content="" />
+<meta property="og:site_name" content="Android Essence" />
 
-<meta name="description" content="">
-<meta itemprop="description" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:description" content="" />
+<meta name="description" content="Simplified Android Development">
+<meta itemprop="description" content="Simplified Android Development" />
+<meta property="og:description" content="Simplified Android Development" />
+<meta name="twitter:description" content="Simplified Android Development" />
 
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
@@ -29,10 +29,15 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2015-09-09T00:00:00-0400 />
-    <meta property="article:published_time" content=2015-09-09T00:00:00-0400 />
+    <meta property="og:article:published_time" content=2015-09-09T00:00:00Z />
+    <meta property="article:published_time" content=2015-09-09T00:00:00Z />
     <meta property="og:url" content="http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/" />
 
+    
+    <meta property="og:article:author" content="Adam McNeilly" />
+    <meta property="article:author" content="Adam McNeilly" />
+    <meta name="author" content="Adam McNeilly" />
+    
     
 
     
@@ -73,8 +78,8 @@
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2015-09-09T00:00:00-04:00">
-    <meta property="article:modified_time" content="2015-09-09T00:00:00-04:00">
+    <meta property="article:published_time" content="2015-09-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2015-09-09T00:00:00+00:00">
 
 
     
@@ -87,7 +92,7 @@
     
 
     <link rel="canonical" href="http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/">
-    <link href="/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css" rel="stylesheet">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
     
@@ -112,7 +117,7 @@
     
     
 </head>
-<body data-theme = "" class="notransition">
+<body data-theme = "dark" class="notransition">
 
 <script src="/js/theme.js"></script>
 
@@ -137,6 +142,27 @@ stroke-linejoin="round" class="feather feather-home">
         <div class="trigger">
             <ul class="trigger-container">
                 
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
                 
                 <li class="menu-separator">
                     <span>|</span>
@@ -163,11 +189,16 @@ stroke-linejoin="round" class="feather feather-home">
                 
                 
                 <div class="post-meta">
-                    <time datetime="2015-09-09T00:00:00-04:00" itemprop="datePublished"> Sep 9, 2015 </time>
+                    <time datetime="2015-09-09T00:00:00&#43;00:00" itemprop="datePublished"> Sep 9, 2015 </time>
                 </div>
                 
             </header>
             
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents"></nav>
+    </details>
             <div class="page-content">
                 <p>In my last post I broke down the differences between the RecyclerView and a ListView. One of the benefits of the RecyclerView that I touched on was the <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html">ItemTouchHelper</a>. This class is used to handle the Swipe-To-Dismiss and Drag-N-Drop behaviors of a RecyclerView. In this post I am going to teach you how to swipe to dismiss RecyclerView items using the sample application seen here:</p>
 <p><img src="/images/std-sample.gif" alt="Swipe To Dismiss"></p>
@@ -178,7 +209,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">movies</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">position</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">notifyItemRemoved</span><span class="p">(</span><span class="n">position</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>This method will remove an item from our movie list, and notifies the adapter that an item has been removed. By notifying the adapter, we are not rebinding the data but simply altering the positions, as explained in the <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html#notifyItemRemoved(int)">documentation</a>:</p>
+</span></span></span></code></pre></div><p>This method will remove an item from our movie list, and notifies the adapter that an item has been removed. By notifying the adapter, we are not rebinding the data but simply altering the positions, as explained in the <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html#notifyItemRemoved%28int%29">documentation</a>:</p>
 <blockquote>
 <p>This is a structural change event. Representations of other existing items in the data set are still considered up to date and will not be rebound, though their positions may be altered.</p></blockquote>
 <p>If you would like to see the entire Adapter class, please see <a href="https://github.com/androidessence/SwipeToDismissSample/blob/master/app/src/main/java/androidessence/movielist/MovieAdapter.java">this file on GitHub</a>.</p>
@@ -264,14 +295,31 @@ stroke-linejoin="round" class="feather feather-home">
 </a>
 </div>
     <small class="footer_copyright">
-        © 2025 .
+        © 2025 Adam McNeilly.
         Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
     </small>
-</footer>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
 
 
 
 
+    
+    
+        
+    
+
+    
+    
+        
+    
 
 
 

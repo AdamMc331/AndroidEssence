@@ -6,11 +6,11 @@
     <description>Recent content on Android Essence</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Aug 2025 00:32:48 -0400</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sharing Shared Element Keys</title>
       <link>http://localhost:1313/posts/sharing-shared-element-keys/</link>
-      <pubDate>Sun, 24 Aug 2025 00:32:48 -0400</pubDate>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/sharing-shared-element-keys/</guid>
       
@@ -21,7 +21,7 @@
     <item>
       <title>Wrapping Android XR For KMP</title>
       <link>http://localhost:1313/posts/android-xr-kmp/</link>
-      <pubDate>Thu, 19 Dec 2024 00:00:00 -0400</pubDate>
+      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/android-xr-kmp/</guid>
       
@@ -33,7 +33,7 @@
     <item>
       <title>Interface Naming Conventions</title>
       <link>http://localhost:1313/posts/interface-naming-conventions/</link>
-      <pubDate>Sun, 05 Feb 2023 00:00:00 -0400</pubDate>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/interface-naming-conventions/</guid>
       
@@ -45,12 +45,327 @@
     <item>
       <title>The Imposter&#39;s Guide To Dependency Injection</title>
       <link>http://localhost:1313/posts/the-imposter-guide-to-dependency-injection/</link>
-      <pubDate>Mon, 31 Jan 2022 00:00:00 -0400</pubDate>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/the-imposter-guide-to-dependency-injection/</guid>
       
       <description>&lt;p&gt;Dependency Injection is one of the hottest topics in Android and software development in general. It&amp;rsquo;s also a topic that can provide a lot of anxiety and create imposter syndrome for developers.&lt;/p&gt;
 &lt;p&gt;In this post, we&amp;rsquo;ll take incremental steps toward understanding DI, why we need it, and how to implement it inside our applications.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Five Essential Developer Experience Concepts For Android</title>
+      <link>http://localhost:1313/posts/essential-dev-experience-concepts-android/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/essential-dev-experience-concepts-android/</guid>
+      
+      <description>&lt;p&gt;In the most recent &lt;a href=&#34;https://www.youtube.com/watch?v=ePpbpLyYI1w&#34;&gt;live stream&lt;/a&gt; for Tasks Of Affirmation, we looked at creating a good developer experience. It&amp;rsquo;s important to consider developers at the start of any new project, so we can ensure that over the lifetime of a project anyone who contributes can understand how to contribute, match any guidelines that a team has, and get up and running quickly. We also want to ensure that our codebase maintains a certain quality of formatting and a lack of code smells - and putting these checks in place before you even start prevents them from ever being introduced at all.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s look at five developer experience concepts I consider essential to every project.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Tasks Of Affirmation: A New Twitch Live Stream Series</title>
+      <link>http://localhost:1313/posts/toa-twitch-series/</link>
+      <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/toa-twitch-series/</guid>
+      
+      <description>&lt;p&gt;In the late summer of 2020, I began live streaming on &lt;a href=&#34;https://twitch.com/adammc331&#34;&gt;my Twitch channel&lt;/a&gt;. We started off by building an &lt;a href=&#34;https://github.com/adammc331/AndroidStudyGuide&#34;&gt;Android Study Guide&lt;/a&gt; application. The purpose of the application was to build something people would be interested in using, while also taking the opportunity to build an application out in the open.&lt;/p&gt;
+&lt;p&gt;For a number of reasons, discussed in &lt;a href=&#34;https://www.youtube.com/watch?v=8Umvlpx-Wvg&#34;&gt;the latest video&lt;/a&gt;, I&amp;rsquo;ve decided to sunset that project and begin a new live stream series: Tasks Of Affirmation.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Unit Testing Custom Lint Checks</title>
+      <link>http://localhost:1313/posts/unit-testing-custom-lint-checks/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/unit-testing-custom-lint-checks/</guid>
+      
+      <description>&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-22-enforce-custom-views-with-lint.md %}) we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.&lt;/p&gt;
+&lt;p&gt;In this post, we&amp;rsquo;ll go over how to unit test such a scenario, and take the opportunity to look at some additional options of unit testing with lint as well.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Enforcing Custom View Usage With Android Lint</title>
+      <link>http://localhost:1313/posts/enforce-custom-views-with-lint/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/enforce-custom-views-with-lint/</guid>
+      
+      <description>&lt;p&gt;Sometimes an Android project will have to implement a &lt;a href=&#34;https://developer.android.com/guide/topics/ui/custom-components&#34;&gt;custom view&lt;/a&gt; that is an extension of an existing Android view. We may do this for style purposes, or to implement additional logic, or any number of customization purposes.&lt;/p&gt;
+&lt;p&gt;This solution brings a new problem for our codebase - how do we enforce that other developers use our custom view, instead of the Android framework view? We can solve this problem by writing our own &lt;a href=&#34;https://developer.android.com/studio/write/lint&#34;&gt;Android lint&lt;/a&gt; check.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Storing Network Responses With Apollo Normalized Cache</title>
+      <link>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</link>
+      <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</guid>
+      
+      <description>&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-01-storing-network-responses-with-apollo-http-cache.md %}) we looked at the HTTP cache from &lt;a href=&#34;https://www.apollographql.com/docs/android/&#34;&gt;Apollo Android&lt;/a&gt; for storing network responses. In this post, we look at its counter part, the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/normalized-cache/&#34;&gt;normalized cache&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Storing Network Responses With Apollo HTTP Cache</title>
+      <link>http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/</guid>
+      
+      <description>&lt;p&gt;Caching is the practice of storing data that we requested previously so we can serve it faster in the future. This creates a better user experience by decreasing loading times. It also has long term benefits like reducing the number of network requests, to save on phone resources or potentially provide offline support. Today, we&amp;rsquo;re going to discuss how to use the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/http-cache/&#34;&gt;HTTP cache&lt;/a&gt; for the &lt;a href=&#34;https://github.com/apollographql/apollo-android&#34;&gt;Apollo Android SDK&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Comparing Three Dependency Injection Solutions</title>
+      <link>http://localhost:1313/posts/comparing-three-dependency-injection-solutions/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/comparing-three-dependency-injection-solutions/</guid>
+      
+      <description>&lt;p&gt;During a recent live stream on my &lt;a href=&#34;https://www.twitch.tv/adammc331&#34;&gt;Twitch&lt;/a&gt; channel, we explored three different solutions to dependency injection on Android. A do it yourself approach, Koin, and Dagger Hilt. Let&amp;rsquo;s revisit them side by side, and look at the nuances between them, so we can determine which solution we want to use in our own applications.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Mastering Room Database Migrations</title>
+      <link>http://localhost:1313/posts/mastering-room-database-migrations/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/mastering-room-database-migrations/</guid>
+      
+      <description>&lt;p&gt;In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we&amp;rsquo;re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Room Relationship Recap</title>
+      <link>http://localhost:1313/posts/room-relationship-recap/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/room-relationship-recap/</guid>
+      
+      <description>&lt;p&gt;In this post, we&amp;rsquo;re going to explore some advanced concepts of the &lt;a href=&#34;https://developer.android.com/training/data-storage/room&#34;&gt;Room Persistence Library&lt;/a&gt;. Room is a great tool for storing complex data for your Android applications inside a SQLite database. As you begin to store more data in your applications though, it can be difficult to determine how to organize all of it.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re going to demistify database organization, and break down everything you need to know about database relationships in the Room library.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Getting Started With Test Driven Development</title>
+      <link>http://localhost:1313/posts/test-driven-development/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/test-driven-development/</guid>
+      
+      <description>&lt;p&gt;One of the many buzzwords thrown around the software devleopment community is Test Driven Development, or TDD. It is one of those phrases that sounds great when you say it - who wouldn&amp;rsquo;t want to have tests be their first priority when writing code?&lt;/p&gt;
+&lt;p&gt;However, it&amp;rsquo;s not always clear what TDD means. Does it mean you write code with testability in mind? Does it mean writing tests first? How can we write tests if we don&amp;rsquo;t have code &lt;em&gt;to&lt;/em&gt; test? This post will answer all of those questions, and teach you how to implement TDD effectively on Android.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Contributing Code Samples To Kotlin Documentation</title>
+      <link>http://localhost:1313/posts/contributing-to-kotlin/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/contributing-to-kotlin/</guid>
+      
+      <description>&lt;p&gt;The Kotlin language used by Android developers all over the world is open source and available on &lt;a href=&#34;https://github.com/jetbrains/kotlin&#34;&gt;GitHub&lt;/a&gt;. This means it&amp;rsquo;s open for contributions from anyone! It may, of course, feel very intimidating to contribute to a project of that size. Especially for those of us who are new to open source contributions.&lt;/p&gt;
+&lt;p&gt;The JetBrains team makes this process a lot less scary than it sounds. There are some beginner friendly ways to contribute to the language, and this post will walk you through every step.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>MVWTF: Demystifying Architecture Patterns</title>
+      <link>http://localhost:1313/posts/mvwtf/</link>
+      <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/mvwtf/</guid>
+      
+      <description>&lt;p&gt;As an Android developer, one of the questions I constantly see asked within the community is &amp;ldquo;what architecture pattern should I use?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;This discussion usually leads to a handful of buzzwordy acronyms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MVC&lt;/li&gt;
+&lt;li&gt;MVP&lt;/li&gt;
+&lt;li&gt;MVVM&lt;/li&gt;
+&lt;li&gt;MVI&lt;/li&gt;
+&lt;li&gt;MVU?? (We don&amp;rsquo;t talk about this but apparently it&amp;rsquo;s the new kid on the block)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This can be really intimidating to new Android devs, as well as seasoned veterans who are constantly questioning if they&amp;rsquo;re using the right one. Whether you&amp;rsquo;re trying to decide which one to learn, or wondering if the one you already use is best for you, this post will help lead you to the right decision.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Repository Pattern: Properly Organizing Your Data Layer</title>
+      <link>http://localhost:1313/posts/repository-pattern/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/repository-pattern/</guid>
+      
+      <description>&lt;p&gt;How to properly architect your application is a concern we as developers constantly face. There&amp;rsquo;s unfortunately no one size fits all answer to it, and sometimes we don&amp;rsquo;t even know where to begin. I&amp;rsquo;ve learned along my Android journey that the answer can also vary depending on what portion of your app you&amp;rsquo;re trying to organize. Of course, you might say, &lt;a href=&#34;https://handstandsam.com/2019/03/10/it-depends-is-the-answer-to-your-android-question/&#34;&gt;it depends&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When it comes to your data layer, though, there are some really good tips on how to write clean, maintainable code. One of them is the Repository Pattern, and I&amp;rsquo;d like to provide a quick walk through of what it is and why it&amp;rsquo;s important.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Unit Testing RxJava Or Coroutine Code With Constructor Injection</title>
+      <link>http://localhost:1313/posts/unit-testing-async-code/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/unit-testing-async-code/</guid>
+      
+      <description>&lt;p&gt;Putting aside the long lasting debate right now about whether you should use RxJava or coroutines for your asynchronous code on Android, both camps often hit the same problem. How do I write unit tests for this?&lt;/p&gt;
+&lt;p&gt;Unit testing asynchronous code is tricky, because we may need to know how to properly test callback APIs, or perhaps we just want things to run instantly and not worry about thread changes. We may also be wondering how to handle not having a &amp;ldquo;main&amp;rdquo; thread in a junit test, unlike a connected test. This post will be focusing on handling that last one.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Showing A Fragment For A Result</title>
+      <link>http://localhost:1313/posts/starting-fragment-for-result/</link>
+      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/starting-fragment-for-result/</guid>
+      
+      <description>&lt;p&gt;A number of developers preach a single activity architecture on Android, which is something I&amp;rsquo;ve been trying to move forward to as well. In the process, though, I ran into one tricky problem. I don&amp;rsquo;t have something like &lt;code&gt;startActivityResult&lt;/code&gt; for fragments. If you&amp;rsquo;re unfamiliar, &lt;code&gt;startActivityForResult&lt;/code&gt; is a method that allows you to launch an activity with a specific request code, and when that activity finishes, your first activity will get a callback in &lt;code&gt;onActivityResult&lt;/code&gt; and can do stuff with it.&lt;/p&gt;
+&lt;p&gt;This post is going to walk through how we can achieve that same affect using fragments.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Building An Application With MVVM</title>
+      <link>http://localhost:1313/posts/building-an-app-with-mvvm/</link>
+      <pubDate>Sun, 28 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/building-an-app-with-mvvm/</guid>
+      
+      <description>&lt;p&gt;This is the second post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following &lt;a href=&#34;https://github.com/AdamMc331/todo-monorepo&#34;&gt;this repo&lt;/a&gt;. Give it a star!&lt;/p&gt;
+&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2018-10-20-building-an-app-with-mvp.md %}) we discussed the MVP architecture for building an app. This time, we&amp;rsquo;re going to check out MVVM.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Building An Application With MVP</title>
+      <link>http://localhost:1313/posts/building-an-app-with-mvp/</link>
+      <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/building-an-app-with-mvp/</guid>
+      
+      <description>&lt;p&gt;This is the first post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following &lt;a href=&#34;https://github.com/AdamMc331/todo-monorepo&#34;&gt;this repo&lt;/a&gt;. Give it a star!&lt;/p&gt;
+&lt;p&gt;The first architecture pattern we&amp;rsquo;re going to walk through is MVP.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Breaking The Buzzwords Barrier Part 3: ViewModel</title>
+      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier-viewmodel/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-viewmodel/</guid>
+      
+      <description>&lt;p&gt;So far we&amp;rsquo;ve covered four big buzzwords used in our application:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Model-View-ViewModel&lt;/li&gt;
+&lt;li&gt;Room&lt;/li&gt;
+&lt;li&gt;RxJava&lt;/li&gt;
+&lt;li&gt;Repository Pattern&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now, we should circle back to the beginning. Following our diagram outlined in the [previous parts]({{ site.baseurl }}{% link _posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository.md %}), the next component we can begin to work on is our AccountViewModel:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/buzzwords/architecture_viewmodel.png&#34; alt=&#34;Android Essence&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Naturally, this may bring up some confusion. We already discussed ViewModels in [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}). Well, depending on context, we may not be referring to the same thing.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Breaking The Buzzwords Barrier Part 2: Rx, Room, and Repository</title>
+      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</guid>
+      
+      <description>&lt;p&gt;In [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) we discussed how we were going to architect the various components of our application. Now it&amp;rsquo;s time to build them. To understand what we should build first, we should revisit the diagram:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/buzzwords/cashcaretaker_mvvm.png&#34; alt=&#34;MVVM&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I would start with three spots:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The account&lt;/li&gt;
+&lt;li&gt;The database&lt;/li&gt;
+&lt;li&gt;The repository&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A good rule of thumb to remember this, is that these nodes don&amp;rsquo;t depend on anything else just yet (well, the repository depends on the database, but that was included). I can&amp;rsquo;t build my ViewModel until I have my repository, and so on.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s start with persistence.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Breaking The Buzzwords Barrier</title>
+      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier/</link>
+      <pubDate>Wed, 30 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier/</guid>
+      
+      <description>&lt;p&gt;MVVM? Retrofit? RxJava? Data binding? Architecture components? LiveData? Kotlin?&lt;/p&gt;
+&lt;p&gt;Right now, these buzzwords are heard all over the Android community. Every podcast/blog/conference talk is referencing one of these. Which can be &lt;strong&gt;very&lt;/strong&gt; intimidating to new developers. Which one should I learn first? Do I need all of them? What are these things even used for?&lt;/p&gt;
+&lt;p&gt;The purpose of this series is to break all of that down, and show that none of these buzzwords are truly that scary. We&amp;rsquo;ll go over an application I&amp;rsquo;ve published called &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.androidessence.cashcaretaker&#34;&gt;CashCaretaker&lt;/a&gt; which is a simple finance tracker with all data stored locally on the device. It uses all of the buzzwords I mentioned further up, and we can go through them step by step.&lt;/p&gt;
+&lt;p&gt;You can checkout a simple gif of the project here:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Breaking The Buzzwords Barrier Part 1: MVVM</title>
+      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/</link>
+      <pubDate>Wed, 30 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/</guid>
+      
+      <description>&lt;p&gt;When you&amp;rsquo;re starting out with Android development, and even as an expert, you will hear about a lot of different architecture patterns. Anything from:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model-View-Controller&lt;/li&gt;
+&lt;li&gt;Model-View-Presenter&lt;/li&gt;
+&lt;li&gt;Model-View-ViewModel&lt;/li&gt;
+&lt;li&gt;Model-View-Intent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It can be extremely hard to know which one to pick, what their differences are, and why they matter. I will tell you that even with my three years of Android experience at the point of writing this, I have trouble answering the first two questions. I can, however, explain why these architecture patterns matter - and it boils down to the idea of separation of concerns.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Fingerprint Authentication Tutorial</title>
+      <link>http://localhost:1313/posts/fingerprint-authentication-tutorial/</link>
+      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fingerprint-authentication-tutorial/</guid>
+      
+      <description>&lt;p&gt;When Android released version 6.0 Marshmallow (yes, a little outdated at this point), a whole slew of new developer APIs came with it. One that I&amp;rsquo;ve personally enjoyed as a consumer is &lt;a href=&#34;https://developer.android.com/about/versions/marshmallow/android-6.0.html#fingerprint-authentication&#34;&gt;fingerprint authentication&lt;/a&gt;. I skimmed over the official docs, and even through their &lt;a href=&#34;https://developer.android.com/samples/FingerprintDialog/index.html&#34;&gt;Fingerprint Dialog Sample&lt;/a&gt; but had a difficult time following what was going on.&lt;/p&gt;
+&lt;p&gt;Eventually, though, I was able to recreate the flow. This post is going to be a step by step guide to integrating your own fingerprint dialog in your Android application.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Developing And Publishing Android Libraries</title>
+      <link>http://localhost:1313/posts/developing-and-publishing-android-libraries/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/developing-and-publishing-android-libraries/</guid>
+      
+      <description>&lt;p&gt;Third party libraries are a huge part of mobile app development. Popular tools like Retrofit, RxJava, Picasso, and many others prevent Android developers from reinventing the wheel everytime we need to do something over the network, asynchronously, or loading images.&lt;/p&gt;
+&lt;p&gt;However, developing and publishing these libraries can be intimidating to many people. I think this occurs for a number of reasons - worry about keeping up with maintenance, being outshined, or sometimes thinking no one would use your code. I have many thoughts on those ideas, but will save them for another blog post. In this one, we&amp;rsquo;ll just go over a step by step guide to creating and publishing a library to JCenter.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>App Review: Digilux</title>
+      <link>http://localhost:1313/posts/app-review-digilux/</link>
+      <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/app-review-digilux/</guid>
+      
+      <description>&lt;p&gt;Controlling the brightness of your phone can be a hassle. Currently we&amp;rsquo;re stuck with the two step process - swipe down on the notification drawer, and then deal with the slider trying to get it just right. However, with the release of Android Oreo and a new &lt;a href=&#34;https://developer.android.com/guide/topics/ui/accessibility/services.html#fingerprint&#34;&gt;fingerprint gesture API&lt;/a&gt;, a new solution was born. Enter &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.tunjid.fingergestures&#34;&gt;DigiLux&lt;/a&gt;.&lt;/p&gt;</description>
       
     </item>
     
@@ -61,20 +376,83 @@
       
       <guid>http://localhost:1313/posts/leveraging-the-robot-pattern-for-espresso-tests/</guid>
       
-      <description>&lt;p&gt;+++
-date = &amp;lsquo;2017-07-04:00:00-04:00&amp;rsquo;
-draft = false
-title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
-+++&lt;/p&gt;
-&lt;p&gt;Espresso is a &lt;a href=&#34;https://developer.android.com/training/testing/ui-testing/espresso-testing.html&#34;&gt;testing framework for Android&lt;/a&gt; that allows developers to write automated tests for their applications. The benefit of automated testing is that you can write a test plan, and simply hit run and have all of the important features in your app tested effortlessly, and arguably more consistent and thorough than manual testing. There is no doubt that it is a lot faster.&lt;/p&gt;
+      <description>&lt;p&gt;Espresso is a &lt;a href=&#34;https://developer.android.com/training/testing/ui-testing/espresso-testing.html&#34;&gt;testing framework for Android&lt;/a&gt; that allows developers to write automated tests for their applications. The benefit of automated testing is that you can write a test plan, and simply hit run and have all of the important features in your app tested effortlessly, and arguably more consistent and thorough than manual testing. There is no doubt that it is a lot faster.&lt;/p&gt;
 &lt;p&gt;However, one of the lesser known development patterns for automated testing is the robot pattern, which makes writing tests much easier while providing a painless way to update tests whenever your app changes. Let&amp;rsquo;s take a deeper dive into what makes the robot pattern so powerful, and how to implement it in your next test suite.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Understanding Nullability In Kotlin</title>
+      <link>http://localhost:1313/posts/understanding-nullability-in-kotlin/</link>
+      <pubDate>Wed, 28 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/understanding-nullability-in-kotlin/</guid>
+      
+      <description>&lt;p&gt;Every Java programmer has faced the dreaded &lt;code&gt;NullPointerException&lt;/code&gt; at some point in their life. Sometimes it&amp;rsquo;s your fault, sometimes it&amp;rsquo;s a pesky race condition. Regardless, it&amp;rsquo;s a head ache and generally leads to a ton of &lt;code&gt;if (myVariable != null) { }&lt;/code&gt; conditions all over your code. However, the latest craze &lt;a href=&#34;https://kotlinlang.org&#34;&gt;Kotlin&lt;/a&gt; can help with that too. Kotlin introduced &lt;a href=&#34;https://kotlinlang.org/docs/reference/null-safety.html&#34;&gt;null safety&lt;/a&gt; into its type system, with the potential of removing all NPEs.&lt;/p&gt;
+&lt;p&gt;This post is both going to review the official docs linked above, as well as provide some common tips and tricks to work with the nullability - something that is new in this language for many Java programmers.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Getting Started With Room Persistence Library</title>
+      <link>http://localhost:1313/posts/getting-started-with-room-persistence-library/</link>
+      <pubDate>Sat, 10 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/getting-started-with-room-persistence-library/</guid>
+      
+      <description>&lt;p&gt;This year at Google I/O, the Android team announced &lt;a href=&#34;https://developer.android.com/topic/libraries/architecture/index.html&#34;&gt;Android Architecture Components&lt;/a&gt; a combination of new, helpful libraries for Android development. One that particularly interested me was the &lt;a href=&#34;https://developer.android.com/topic/libraries/architecture/room.html&#34;&gt;Room Persistence Library&lt;/a&gt;, which is an abstraction layer of SQLite designed to make database access and creation a lot easier. Right off the bat it reminded me of &lt;a href=&#34;https://realm.io/products/realm-mobile-database/&#34;&gt;Realm&lt;/a&gt;, which I learned about at &lt;a href=&#34;https://www.youtube.com/watch?v=QT7XD1hifkU&#34;&gt;Droidcon NYC&lt;/a&gt; and really admired, so I decided to dive in and build a todo list using Room &amp;amp; RxJava.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>How To Build A Todo List In Kotlin Part 1: Creating A New Project</title>
+      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</link>
+      <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</guid>
+      
+      <description>&lt;p&gt;This blog post is going to discuss creating a project from scratch in Kotlin. We will build a sample Todo List application that will not be very complicated, but covers enough to show the benefits of Kotlin. Part 1 will discuss creating a new project and configuring Kotlin. If you&amp;rsquo;re familiar with that, copy the &lt;code&gt;MainActivity.kt&lt;/code&gt; code and skip to part 2 to begin building the app.&lt;/p&gt;
+&lt;p&gt;This tutorial assumes a basic knowledge of programming, and some familiarity with Android. If you have any questions please leave them in the comments, and I will udpate these posts with a deeper explanation.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>How To Build A Todo List In Kotlin Part 2: Implementing A RecyclerView</title>
+      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</link>
+      <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</guid>
+      
+      <description>&lt;p&gt;Following up on [part 2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) which demonstrates how to create your Android app and configure Kotlin, we&amp;rsquo;ll begin building the heart and soul of a Todo List application - the list!&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>How To Build A Todo List In Kotlin Part 3: Adding Items</title>
+      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</link>
+      <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</guid>
+      
+      <description>&lt;p&gt;Following parts [1]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) and [2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview.md %}) you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>How To Build A Todo List In Kotlin Part 4: Storing Items</title>
+      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</link>
+      <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</guid>
+      
+      <description>&lt;p&gt;If you&amp;rsquo;ve been following along with parts 1-3, you now have an (almost) working todo list application. The only thing we are missing is persisting the data. Running your Android app now and rotating your screen will show you that the items you add won&amp;rsquo;t persist, and disappear anytime an activity is killed and recreated. This post will show you how to write the list to a text file and read from it.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Maintain Library Versions ACross Modules</title>
       <link>http://localhost:1313/posts/maintain-library-versions-across-modules/</link>
-      <pubDate>Fri, 05 May 2017 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/maintain-library-versions-across-modules/</guid>
       
@@ -85,7 +463,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>Creating Android App Shortcuts</title>
       <link>http://localhost:1313/posts/creating-android-app-shortcuts/</link>
-      <pubDate>Fri, 14 Apr 2017 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/creating-android-app-shortcuts/</guid>
       
@@ -98,7 +476,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>PinchZoomTextView Library Released</title>
       <link>http://localhost:1313/posts/pinchzoomtextview-library-released/</link>
-      <pubDate>Sun, 27 Nov 2016 00:00:00 -0400</pubDate>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/pinchzoomtextview-library-released/</guid>
       
@@ -110,7 +488,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>Getting Started With Retrofit In Android</title>
       <link>http://localhost:1313/posts/getting-started-with-retrofit/</link>
-      <pubDate>Thu, 13 Oct 2016 00:00:00 -0400</pubDate>
+      <pubDate>Thu, 13 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/getting-started-with-retrofit/</guid>
       
@@ -121,7 +499,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>RecyclerViewUtils Library Released</title>
       <link>http://localhost:1313/posts/recyclerviewutils-library-released/</link>
-      <pubDate>Wed, 31 Aug 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/recyclerviewutils-library-released/</guid>
       
@@ -133,7 +511,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>MaterialSearchView Library</title>
       <link>http://localhost:1313/posts/materialsearchview-library/</link>
-      <pubDate>Fri, 22 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/materialsearchview-library/</guid>
       
@@ -144,19 +522,19 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>RichTextView Library Released</title>
       <link>http://localhost:1313/posts/richtextview-library-released/</link>
-      <pubDate>Sun, 03 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/richtextview-library-released/</guid>
       
       <description>&lt;p&gt;As a form of ultimate procrastination this weekend, I decided to spend the last two days developing a RichTextView library.&lt;/p&gt;
-&lt;p&gt;This weekend I built the RichTextView (the naming convention comes from the &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/system.windows.controls.richtextbox(v=vs.110).aspx&#34;&gt;RichTextBox&lt;/a&gt; C# class) which allows the user to format different parts ofa. TextView in different ways. For example, if I wanted to display a string but only bold a portion of it, I could achieve that with this class.&lt;/p&gt;</description>
+&lt;p&gt;This weekend I built the RichTextView (the naming convention comes from the &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/system.windows.controls.richtextbox%28v=vs.110%29.aspx&#34;&gt;RichTextBox&lt;/a&gt; C# class) which allows the user to format different parts ofa. TextView in different ways. For example, if I wanted to display a string but only bold a portion of it, I could achieve that with this class.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Designing User Interfaces For Android Wear Part 2: Cards</title>
       <link>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-2/</link>
-      <pubDate>Tue, 26 Jan 2016 00:00:00 -0400</pubDate>
+      <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-2/</guid>
       
@@ -168,7 +546,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>Designing User Interfaces For Android Wear Part 1: Lists</title>
       <link>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-1/</link>
-      <pubDate>Fri, 01 Jan 2016 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-1/</guid>
       
@@ -180,7 +558,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>Material Design Specs Library</title>
       <link>http://localhost:1313/posts/material-design-specs-library/</link>
-      <pubDate>Sun, 13 Dec 2015 00:00:00 -0400</pubDate>
+      <pubDate>Sun, 13 Dec 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/material-design-specs-library/</guid>
       
@@ -191,7 +569,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>RecyclerViewCursorAdapter Library</title>
       <link>http://localhost:1313/posts/recyclerviewcursoradapter-library/</link>
-      <pubDate>Thu, 10 Dec 2015 00:00:00 -0400</pubDate>
+      <pubDate>Thu, 10 Dec 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/recyclerviewcursoradapter-library/</guid>
       
@@ -203,7 +581,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>How To Make An Android UI Part 2: Java Code</title>
       <link>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</link>
-      <pubDate>Wed, 02 Dec 2015 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</guid>
       
@@ -214,7 +592,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>How To Make An Android UI Part 1: XML And Views</title>
       <link>http://localhost:1313/posts/how-to-make-an-android-ui-part-1/</link>
-      <pubDate>Sun, 08 Nov 2015 00:00:00 -0400</pubDate>
+      <pubDate>Sun, 08 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/how-to-make-an-android-ui-part-1/</guid>
       
@@ -225,7 +603,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>Creating A Material Design Navigation Drawer</title>
       <link>http://localhost:1313/posts/creating-a-material-design-navigation-drawer/</link>
-      <pubDate>Sun, 11 Oct 2015 00:00:00 -0400</pubDate>
+      <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/creating-a-material-design-navigation-drawer/</guid>
       
@@ -236,7 +614,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>Top 5 Color Scheme Tools</title>
       <link>http://localhost:1313/posts/top-5-color-scheme-tools/</link>
-      <pubDate>Mon, 21 Sep 2015 00:00:00 -0400</pubDate>
+      <pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/top-5-color-scheme-tools/</guid>
       
@@ -248,7 +626,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>How To Use The RecyclerView Adapter</title>
       <link>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</link>
-      <pubDate>Thu, 17 Sep 2015 00:00:00 -0400</pubDate>
+      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</guid>
       
@@ -259,7 +637,7 @@ title = &amp;ldquo;Leveraging The Robot Pattern For Espresso Tests&amp;rdquo;
     <item>
       <title>Using Elevation In Android Applications</title>
       <link>http://localhost:1313/posts/using-elevation-in-android-applications/</link>
-      <pubDate>Tue, 15 Sep 2015 00:00:00 -0400</pubDate>
+      <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/using-elevation-in-android-applications/</guid>
       
@@ -280,7 +658,7 @@ categories: [android]&lt;/h2&gt;
     <item>
       <title>Drag And Drop RecyclerView Items</title>
       <link>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</link>
-      <pubDate>Wed, 09 Sep 2015 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</guid>
       
@@ -292,7 +670,7 @@ categories: [android]&lt;/h2&gt;
     <item>
       <title>Swipe To Dismiss RecyclerView Items</title>
       <link>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</link>
-      <pubDate>Wed, 09 Sep 2015 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</guid>
       
@@ -304,7 +682,7 @@ categories: [android]&lt;/h2&gt;
     <item>
       <title>RecyclerView Vs ListView</title>
       <link>http://localhost:1313/posts/recyclerview-vs-listview/</link>
-      <pubDate>Mon, 07 Sep 2015 00:00:00 -0400</pubDate>
+      <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/recyclerview-vs-listview/</guid>
       
@@ -319,7 +697,7 @@ categories: [android]&lt;/h2&gt;
     <item>
       <title>SQLiteOpenHelper and the Singleton Pattern</title>
       <link>http://localhost:1313/posts/sqliteopenhelper-and-the-singleton-pattern/</link>
-      <pubDate>Sun, 06 Sep 2015 00:00:00 -0400</pubDate>
+      <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/sqliteopenhelper-and-the-singleton-pattern/</guid>
       
@@ -333,396 +711,13 @@ categories: [android]&lt;/h2&gt;
     <item>
       <title>Hide The FloatingActionButton When Scrolling A RecyclerView</title>
       <link>http://localhost:1313/posts/hide-the-floatingactionbutton-when-scrolling-recyclerview/</link>
-      <pubDate>Wed, 02 Sep 2015 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 02 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/hide-the-floatingactionbutton-when-scrolling-recyclerview/</guid>
       
       <description>&lt;p&gt;One of my favorite components introduced with Material Design is the &lt;a href=&#34;https://www.google.com/design/spec/components/buttons-floating-action-button.html&#34;&gt;FloatingActionButton&lt;/a&gt; (FAB). These buttons are great for emphasizing the primary action of an Activity, but quickly become a nuisance when displayed over a RecyclerView as they may block the bottom list item. To avoid this, we can hide the FloatingActionButton when scrolling a RecyclerView.&lt;/p&gt;
 &lt;p&gt;In today’s tutorial we will only be hiding the FAB when the RecyclerView is scrolled upward, and it will reappear on the next down scroll as shown here:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/fab_scroll.gif&#34; alt=&#34;FloatingActionButton&#34;&gt;&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>App Review: Digilux</title>
-      <link>http://localhost:1313/posts/app-review-digilux/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/app-review-digilux/</guid>
-      
-      <description>&lt;p&gt;Controlling the brightness of your phone can be a hassle. Currently we&amp;rsquo;re stuck with the two step process - swipe down on the notification drawer, and then deal with the slider trying to get it just right. However, with the release of Android Oreo and a new &lt;a href=&#34;https://developer.android.com/guide/topics/ui/accessibility/services.html#fingerprint&#34;&gt;fingerprint gesture API&lt;/a&gt;, a new solution was born. Enter &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.tunjid.fingergestures&#34;&gt;DigiLux&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Breaking The Buzzwords Barrier</title>
-      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier/</guid>
-      
-      <description>&lt;p&gt;MVVM? Retrofit? RxJava? Data binding? Architecture components? LiveData? Kotlin?&lt;/p&gt;
-&lt;p&gt;Right now, these buzzwords are heard all over the Android community. Every podcast/blog/conference talk is referencing one of these. Which can be &lt;strong&gt;very&lt;/strong&gt; intimidating to new developers. Which one should I learn first? Do I need all of them? What are these things even used for?&lt;/p&gt;
-&lt;p&gt;The purpose of this series is to break all of that down, and show that none of these buzzwords are truly that scary. We&amp;rsquo;ll go over an application I&amp;rsquo;ve published called &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.androidessence.cashcaretaker&#34;&gt;CashCaretaker&lt;/a&gt; which is a simple finance tracker with all data stored locally on the device. It uses all of the buzzwords I mentioned further up, and we can go through them step by step.&lt;/p&gt;
-&lt;p&gt;You can checkout a simple gif of the project here:&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Breaking The Buzzwords Barrier Part 1: MVVM</title>
-      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/</guid>
-      
-      <description>&lt;p&gt;When you&amp;rsquo;re starting out with Android development, and even as an expert, you will hear about a lot of different architecture patterns. Anything from:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Model-View-Controller&lt;/li&gt;
-&lt;li&gt;Model-View-Presenter&lt;/li&gt;
-&lt;li&gt;Model-View-ViewModel&lt;/li&gt;
-&lt;li&gt;Model-View-Intent&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;It can be extremely hard to know which one to pick, what their differences are, and why they matter. I will tell you that even with my three years of Android experience at the point of writing this, I have trouble answering the first two questions. I can, however, explain why these architecture patterns matter - and it boils down to the idea of separation of concerns.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Breaking The Buzzwords Barrier Part 2: Rx, Room, and Repository</title>
-      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</guid>
-      
-      <description>&lt;p&gt;In [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) we discussed how we were going to architect the various components of our application. Now it&amp;rsquo;s time to build them. To understand what we should build first, we should revisit the diagram:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/buzzwords/cashcaretaker_mvvm.png&#34; alt=&#34;MVVM&#34;&gt;&lt;/p&gt;
-&lt;p&gt;I would start with three spots:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The account&lt;/li&gt;
-&lt;li&gt;The database&lt;/li&gt;
-&lt;li&gt;The repository&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;A good rule of thumb to remember this, is that these nodes don&amp;rsquo;t depend on anything else just yet (well, the repository depends on the database, but that was included). I can&amp;rsquo;t build my ViewModel until I have my repository, and so on.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s start with persistence.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Breaking The Buzzwords Barrier Part 3: ViewModel</title>
-      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier-viewmodel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-viewmodel/</guid>
-      
-      <description>&lt;p&gt;So far we&amp;rsquo;ve covered four big buzzwords used in our application:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Model-View-ViewModel&lt;/li&gt;
-&lt;li&gt;Room&lt;/li&gt;
-&lt;li&gt;RxJava&lt;/li&gt;
-&lt;li&gt;Repository Pattern&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Now, we should circle back to the beginning. Following our diagram outlined in the [previous parts]({{ site.baseurl }}{% link _posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository.md %}), the next component we can begin to work on is our AccountViewModel:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/buzzwords/architecture_viewmodel.png&#34; alt=&#34;Android Essence&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Naturally, this may bring up some confusion. We already discussed ViewModels in [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}). Well, depending on context, we may not be referring to the same thing.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Building An Application With MVP</title>
-      <link>http://localhost:1313/posts/building-an-app-with-mvp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/building-an-app-with-mvp/</guid>
-      
-      <description>&lt;p&gt;This is the first post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following &lt;a href=&#34;https://github.com/AdamMc331/todo-monorepo&#34;&gt;this repo&lt;/a&gt;. Give it a star!&lt;/p&gt;
-&lt;p&gt;The first architecture pattern we&amp;rsquo;re going to walk through is MVP.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Building An Application With MVVM</title>
-      <link>http://localhost:1313/posts/building-an-app-with-mvvm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/building-an-app-with-mvvm/</guid>
-      
-      <description>&lt;p&gt;This is the second post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following &lt;a href=&#34;https://github.com/AdamMc331/todo-monorepo&#34;&gt;this repo&lt;/a&gt;. Give it a star!&lt;/p&gt;
-&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2018-10-20-building-an-app-with-mvp.md %}) we discussed the MVP architecture for building an app. This time, we&amp;rsquo;re going to check out MVVM.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Comparing Three Dependency Injection Solutions</title>
-      <link>http://localhost:1313/posts/comparing-three-dependency-injection-solutions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/comparing-three-dependency-injection-solutions/</guid>
-      
-      <description>&lt;p&gt;During a recent live stream on my &lt;a href=&#34;https://www.twitch.tv/adammc331&#34;&gt;Twitch&lt;/a&gt; channel, we explored three different solutions to dependency injection on Android. A do it yourself approach, Koin, and Dagger Hilt. Let&amp;rsquo;s revisit them side by side, and look at the nuances between them, so we can determine which solution we want to use in our own applications.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Contributing Code Samples To Kotlin Documentation</title>
-      <link>http://localhost:1313/posts/contributing-to-kotlin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/contributing-to-kotlin/</guid>
-      
-      <description>&lt;p&gt;The Kotlin language used by Android developers all over the world is open source and available on &lt;a href=&#34;https://github.com/jetbrains/kotlin&#34;&gt;GitHub&lt;/a&gt;. This means it&amp;rsquo;s open for contributions from anyone! It may, of course, feel very intimidating to contribute to a project of that size. Especially for those of us who are new to open source contributions.&lt;/p&gt;
-&lt;p&gt;The JetBrains team makes this process a lot less scary than it sounds. There are some beginner friendly ways to contribute to the language, and this post will walk you through every step.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Developing And Publishing Android Libraries</title>
-      <link>http://localhost:1313/posts/developing-and-publishing-android-libraries/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/developing-and-publishing-android-libraries/</guid>
-      
-      <description>&lt;p&gt;Third party libraries are a huge part of mobile app development. Popular tools like Retrofit, RxJava, Picasso, and many others prevent Android developers from reinventing the wheel everytime we need to do something over the network, asynchronously, or loading images.&lt;/p&gt;
-&lt;p&gt;However, developing and publishing these libraries can be intimidating to many people. I think this occurs for a number of reasons - worry about keeping up with maintenance, being outshined, or sometimes thinking no one would use your code. I have many thoughts on those ideas, but will save them for another blog post. In this one, we&amp;rsquo;ll just go over a step by step guide to creating and publishing a library to JCenter.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Enforcing Custom View Usage With Android Lint</title>
-      <link>http://localhost:1313/posts/enforce-custom-views-with-lint/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/enforce-custom-views-with-lint/</guid>
-      
-      <description>&lt;p&gt;Sometimes an Android project will have to implement a &lt;a href=&#34;https://developer.android.com/guide/topics/ui/custom-components&#34;&gt;custom view&lt;/a&gt; that is an extension of an existing Android view. We may do this for style purposes, or to implement additional logic, or any number of customization purposes.&lt;/p&gt;
-&lt;p&gt;This solution brings a new problem for our codebase - how do we enforce that other developers use our custom view, instead of the Android framework view? We can solve this problem by writing our own &lt;a href=&#34;https://developer.android.com/studio/write/lint&#34;&gt;Android lint&lt;/a&gt; check.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Fingerprint Authentication Tutorial</title>
-      <link>http://localhost:1313/posts/fingerprint-authentication-tutorial/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/fingerprint-authentication-tutorial/</guid>
-      
-      <description>&lt;p&gt;When Android released version 6.0 Marshmallow (yes, a little outdated at this point), a whole slew of new developer APIs came with it. One that I&amp;rsquo;ve personally enjoyed as a consumer is &lt;a href=&#34;https://developer.android.com/about/versions/marshmallow/android-6.0.html#fingerprint-authentication&#34;&gt;fingerprint authentication&lt;/a&gt;. I skimmed over the official docs, and even through their &lt;a href=&#34;https://developer.android.com/samples/FingerprintDialog/index.html&#34;&gt;Fingerprint Dialog Sample&lt;/a&gt; but had a difficult time following what was going on.&lt;/p&gt;
-&lt;p&gt;Eventually, though, I was able to recreate the flow. This post is going to be a step by step guide to integrating your own fingerprint dialog in your Android application.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Five Essential Developer Experience Concepts For Android</title>
-      <link>http://localhost:1313/posts/essential-dev-experience-concepts-android/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/essential-dev-experience-concepts-android/</guid>
-      
-      <description>&lt;p&gt;In the most recent &lt;a href=&#34;https://www.youtube.com/watch?v=ePpbpLyYI1w&#34;&gt;live stream&lt;/a&gt; for Tasks Of Affirmation, we looked at creating a good developer experience. It&amp;rsquo;s important to consider developers at the start of any new project, so we can ensure that over the lifetime of a project anyone who contributes can understand how to contribute, match any guidelines that a team has, and get up and running quickly. We also want to ensure that our codebase maintains a certain quality of formatting and a lack of code smells - and putting these checks in place before you even start prevents them from ever being introduced at all.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s look at five developer experience concepts I consider essential to every project.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Getting Started With Room Persistence Library</title>
-      <link>http://localhost:1313/posts/getting-started-with-room-persistence-library/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/getting-started-with-room-persistence-library/</guid>
-      
-      <description>&lt;p&gt;This year at Google I/O, the Android team announced &lt;a href=&#34;https://developer.android.com/topic/libraries/architecture/index.html&#34;&gt;Android Architecture Components&lt;/a&gt; a combination of new, helpful libraries for Android development. One that particularly interested me was the &lt;a href=&#34;https://developer.android.com/topic/libraries/architecture/room.html&#34;&gt;Room Persistence Library&lt;/a&gt;, which is an abstraction layer of SQLite designed to make database access and creation a lot easier. Right off the bat it reminded me of &lt;a href=&#34;https://realm.io/products/realm-mobile-database/&#34;&gt;Realm&lt;/a&gt;, which I learned about at &lt;a href=&#34;https://www.youtube.com/watch?v=QT7XD1hifkU&#34;&gt;Droidcon NYC&lt;/a&gt; and really admired, so I decided to dive in and build a todo list using Room &amp;amp; RxJava.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Getting Started With Test Driven Development</title>
-      <link>http://localhost:1313/posts/test-driven-development/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/test-driven-development/</guid>
-      
-      <description>&lt;p&gt;One of the many buzzwords thrown around the software devleopment community is Test Driven Development, or TDD. It is one of those phrases that sounds great when you say it - who wouldn&amp;rsquo;t want to have tests be their first priority when writing code?&lt;/p&gt;
-&lt;p&gt;However, it&amp;rsquo;s not always clear what TDD means. Does it mean you write code with testability in mind? Does it mean writing tests first? How can we write tests if we don&amp;rsquo;t have code &lt;em&gt;to&lt;/em&gt; test? This post will answer all of those questions, and teach you how to implement TDD effectively on Android.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>How To Build A Todo List In Kotlin Part 1: Creating A New Project</title>
-      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</guid>
-      
-      <description>&lt;p&gt;This blog post is going to discuss creating a project from scratch in Kotlin. We will build a sample Todo List application that will not be very complicated, but covers enough to show the benefits of Kotlin. Part 1 will discuss creating a new project and configuring Kotlin. If you&amp;rsquo;re familiar with that, copy the &lt;code&gt;MainActivity.kt&lt;/code&gt; code and skip to part 2 to begin building the app.&lt;/p&gt;
-&lt;p&gt;This tutorial assumes a basic knowledge of programming, and some familiarity with Android. If you have any questions please leave them in the comments, and I will udpate these posts with a deeper explanation.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>How To Build A Todo List In Kotlin Part 2: Implementing A RecyclerView</title>
-      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</guid>
-      
-      <description>&lt;p&gt;Following up on [part 2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) which demonstrates how to create your Android app and configure Kotlin, we&amp;rsquo;ll begin building the heart and soul of a Todo List application - the list!&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>How To Build A Todo List In Kotlin Part 3: Adding Items</title>
-      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</guid>
-      
-      <description>&lt;p&gt;Following parts [1]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) and [2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview.md %}) you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>How To Build A Todo List In Kotlin Part 4: Storing Items</title>
-      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</guid>
-      
-      <description>&lt;p&gt;If you&amp;rsquo;ve been following along with parts 1-3, you now have an (almost) working todo list application. The only thing we are missing is persisting the data. Running your Android app now and rotating your screen will show you that the items you add won&amp;rsquo;t persist, and disappear anytime an activity is killed and recreated. This post will show you how to write the list to a text file and read from it.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Mastering Room Database Migrations</title>
-      <link>http://localhost:1313/posts/mastering-room-database-migrations/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/mastering-room-database-migrations/</guid>
-      
-      <description>&lt;p&gt;In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we&amp;rsquo;re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>MVWTF: Demystifying Architecture Patterns</title>
-      <link>http://localhost:1313/posts/mvwtf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/mvwtf/</guid>
-      
-      <description>&lt;p&gt;As an Android developer, one of the questions I constantly see asked within the community is &amp;ldquo;what architecture pattern should I use?&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;This discussion usually leads to a handful of buzzwordy acronyms:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MVC&lt;/li&gt;
-&lt;li&gt;MVP&lt;/li&gt;
-&lt;li&gt;MVVM&lt;/li&gt;
-&lt;li&gt;MVI&lt;/li&gt;
-&lt;li&gt;MVU?? (We don&amp;rsquo;t talk about this but apparently it&amp;rsquo;s the new kid on the block)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This can be really intimidating to new Android devs, as well as seasoned veterans who are constantly questioning if they&amp;rsquo;re using the right one. Whether you&amp;rsquo;re trying to decide which one to learn, or wondering if the one you already use is best for you, this post will help lead you to the right decision.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Repository Pattern: Properly Organizing Your Data Layer</title>
-      <link>http://localhost:1313/posts/repository-pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/repository-pattern/</guid>
-      
-      <description>&lt;p&gt;How to properly architect your application is a concern we as developers constantly face. There&amp;rsquo;s unfortunately no one size fits all answer to it, and sometimes we don&amp;rsquo;t even know where to begin. I&amp;rsquo;ve learned along my Android journey that the answer can also vary depending on what portion of your app you&amp;rsquo;re trying to organize. Of course, you might say, &lt;a href=&#34;https://handstandsam.com/2019/03/10/it-depends-is-the-answer-to-your-android-question/&#34;&gt;it depends&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;When it comes to your data layer, though, there are some really good tips on how to write clean, maintainable code. One of them is the Repository Pattern, and I&amp;rsquo;d like to provide a quick walk through of what it is and why it&amp;rsquo;s important.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Room Relationship Recap</title>
-      <link>http://localhost:1313/posts/room-relationship-recap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/room-relationship-recap/</guid>
-      
-      <description>&lt;p&gt;In this post, we&amp;rsquo;re going to explore some advanced concepts of the &lt;a href=&#34;https://developer.android.com/training/data-storage/room&#34;&gt;Room Persistence Library&lt;/a&gt;. Room is a great tool for storing complex data for your Android applications inside a SQLite database. As you begin to store more data in your applications though, it can be difficult to determine how to organize all of it.&lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;re going to demistify database organization, and break down everything you need to know about database relationships in the Room library.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Showing A Fragment For A Result</title>
-      <link>http://localhost:1313/posts/starting-fragment-for-result/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/starting-fragment-for-result/</guid>
-      
-      <description>&lt;p&gt;A number of developers preach a single activity architecture on Android, which is something I&amp;rsquo;ve been trying to move forward to as well. In the process, though, I ran into one tricky problem. I don&amp;rsquo;t have something like &lt;code&gt;startActivityResult&lt;/code&gt; for fragments. If you&amp;rsquo;re unfamiliar, &lt;code&gt;startActivityForResult&lt;/code&gt; is a method that allows you to launch an activity with a specific request code, and when that activity finishes, your first activity will get a callback in &lt;code&gt;onActivityResult&lt;/code&gt; and can do stuff with it.&lt;/p&gt;
-&lt;p&gt;This post is going to walk through how we can achieve that same affect using fragments.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Storing Network Responses With Apollo HTTP Cache</title>
-      <link>http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/</guid>
-      
-      <description>&lt;p&gt;Caching is the practice of storing data that we requested previously so we can serve it faster in the future. This creates a better user experience by decreasing loading times. It also has long term benefits like reducing the number of network requests, to save on phone resources or potentially provide offline support. Today, we&amp;rsquo;re going to discuss how to use the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/http-cache/&#34;&gt;HTTP cache&lt;/a&gt; for the &lt;a href=&#34;https://github.com/apollographql/apollo-android&#34;&gt;Apollo Android SDK&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Storing Network Responses With Apollo Normalized Cache</title>
-      <link>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</guid>
-      
-      <description>&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-01-storing-network-responses-with-apollo-http-cache.md %}) we looked at the HTTP cache from &lt;a href=&#34;https://www.apollographql.com/docs/android/&#34;&gt;Apollo Android&lt;/a&gt; for storing network responses. In this post, we look at its counter part, the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/normalized-cache/&#34;&gt;normalized cache&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Tasks Of Affirmation: A New Twitch Live Stream Series</title>
-      <link>http://localhost:1313/posts/toa-twitch-series/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/toa-twitch-series/</guid>
-      
-      <description>&lt;p&gt;In the late summer of 2020, I began live streaming on &lt;a href=&#34;https://twitch.com/adammc331&#34;&gt;my Twitch channel&lt;/a&gt;. We started off by building an &lt;a href=&#34;https://github.com/adammc331/AndroidStudyGuide&#34;&gt;Android Study Guide&lt;/a&gt; application. The purpose of the application was to build something people would be interested in using, while also taking the opportunity to build an application out in the open.&lt;/p&gt;
-&lt;p&gt;For a number of reasons, discussed in &lt;a href=&#34;https://www.youtube.com/watch?v=8Umvlpx-Wvg&#34;&gt;the latest video&lt;/a&gt;, I&amp;rsquo;ve decided to sunset that project and begin a new live stream series: Tasks Of Affirmation.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Understanding Nullability In Kotlin</title>
-      <link>http://localhost:1313/posts/understanding-nullability-in-kotlin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/understanding-nullability-in-kotlin/</guid>
-      
-      <description>&lt;p&gt;Every Java programmer has faced the dreaded &lt;code&gt;NullPointerException&lt;/code&gt; at some point in their life. Sometimes it&amp;rsquo;s your fault, sometimes it&amp;rsquo;s a pesky race condition. Regardless, it&amp;rsquo;s a head ache and generally leads to a ton of &lt;code&gt;if (myVariable != null) { }&lt;/code&gt; conditions all over your code. However, the latest craze &lt;a href=&#34;https://kotlinlang.org&#34;&gt;Kotlin&lt;/a&gt; can help with that too. Kotlin introduced &lt;a href=&#34;https://kotlinlang.org/docs/reference/null-safety.html&#34;&gt;null safety&lt;/a&gt; into its type system, with the potential of removing all NPEs.&lt;/p&gt;
-&lt;p&gt;This post is both going to review the official docs linked above, as well as provide some common tips and tricks to work with the nullability - something that is new in this language for many Java programmers.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Unit Testing Custom Lint Checks</title>
-      <link>http://localhost:1313/posts/unit-testing-custom-lint-checks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/unit-testing-custom-lint-checks/</guid>
-      
-      <description>&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-22-enforce-custom-views-with-lint.md %}) we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.&lt;/p&gt;
-&lt;p&gt;In this post, we&amp;rsquo;ll go over how to unit test such a scenario, and take the opportunity to look at some additional options of unit testing with lint as well.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Unit Testing RxJava Or Coroutine Code With Constructor Injection</title>
-      <link>http://localhost:1313/posts/unit-testing-async-code/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/unit-testing-async-code/</guid>
-      
-      <description>&lt;p&gt;Putting aside the long lasting debate right now about whether you should use RxJava or coroutines for your asynchronous code on Android, both camps often hit the same problem. How do I write unit tests for this?&lt;/p&gt;
-&lt;p&gt;Unit testing asynchronous code is tricky, because we may need to know how to properly test callback APIs, or perhaps we just want things to run instantly and not worry about thread changes. We may also be wondering how to handle not having a &amp;ldquo;main&amp;rdquo; thread in a junit test, unlike a connected test. This post will be focusing on handling that last one.&lt;/p&gt;</description>
       
     </item>
     

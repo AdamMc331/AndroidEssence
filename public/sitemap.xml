@@ -3,168 +3,184 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-08-24T00:32:48-04:00</lastmod>
+    <lastmod>2025-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-08-24T00:32:48-04:00</lastmod>
+    <lastmod>2025-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/sharing-shared-element-keys/</loc>
-    <lastmod>2025-08-24T00:32:48-04:00</lastmod>
+    <lastmod>2025-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/android-xr-kmp/</loc>
-    <lastmod>2024-12-19T00:00:00-04:00</lastmod>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/interface-naming-conventions/</loc>
-    <lastmod>2023-02-05T00:00:00-04:00</lastmod>
+    <lastmod>2023-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/the-imposter-guide-to-dependency-injection/</loc>
-    <lastmod>2022-01-31T00:00:00-04:00</lastmod>
+    <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/android/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/essential-dev-experience-concepts-android/</loc>
+    <lastmod>2021-09-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/toa-twitch-series/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/espresso/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/unit-testing-custom-lint-checks/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/enforce-custom-views-with-lint/</loc>
+    <lastmod>2021-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</loc>
+    <lastmod>2021-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/</loc>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/comparing-three-dependency-injection-solutions/</loc>
+    <lastmod>2020-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/mastering-room-database-migrations/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/room-relationship-recap/</loc>
+    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/test-driven-development/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/contributing-to-kotlin/</loc>
+    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/mvwtf/</loc>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/repository-pattern/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/unit-testing-async-code/</loc>
+    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/starting-fragment-for-result/</loc>
+    <lastmod>2019-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/building-an-app-with-mvvm/</loc>
+    <lastmod>2018-10-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/building-an-app-with-mvp/</loc>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier-viewmodel/</loc>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</loc>
+    <lastmod>2018-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier/</loc>
+    <lastmod>2018-05-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/</loc>
+    <lastmod>2018-05-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/fingerprint-authentication-tutorial/</loc>
+    <lastmod>2018-01-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/developing-and-publishing-android-libraries/</loc>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/app-review-digilux/</loc>
+    <lastmod>2017-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/leveraging-the-robot-pattern-for-espresso-tests/</loc>
     <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/robot-pattern/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/testing/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/maintain-library-versions-across-modules/</loc>
-    <lastmod>2017-05-05T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/creating-android-app-shortcuts/</loc>
-    <lastmod>2017-04-14T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/pinchzoomtextview-library-released/</loc>
-    <lastmod>2016-11-27T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/getting-started-with-retrofit/</loc>
-    <lastmod>2016-10-13T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/recyclerviewutils-library-released/</loc>
-    <lastmod>2016-08-31T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/materialsearchview-library/</loc>
-    <lastmod>2016-04-22T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/richtextview-library-released/</loc>
-    <lastmod>2016-04-03T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-2/</loc>
-    <lastmod>2016-01-26T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-1/</loc>
-    <lastmod>2016-01-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/material-design-specs-library/</loc>
-    <lastmod>2015-12-13T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/recyclerviewcursoradapter-library/</loc>
-    <lastmod>2015-12-10T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</loc>
-    <lastmod>2015-12-02T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/how-to-make-an-android-ui-part-1/</loc>
-    <lastmod>2015-11-08T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/creating-a-material-design-navigation-drawer/</loc>
-    <lastmod>2015-10-11T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/top-5-color-scheme-tools/</loc>
-    <lastmod>2015-09-21T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</loc>
-    <lastmod>2015-09-17T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/using-elevation-in-android-applications/</loc>
-    <lastmod>2015-09-15T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</loc>
-    <lastmod>2015-09-09T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</loc>
-    <lastmod>2015-09-09T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/recyclerview-vs-listview/</loc>
-    <lastmod>2015-09-07T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/sqliteopenhelper-and-the-singleton-pattern/</loc>
-    <lastmod>2015-09-06T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/hide-the-floatingactionbutton-when-scrolling-recyclerview/</loc>
-    <lastmod>2015-09-02T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/app-review-digilux/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier-viewmodel/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/building-an-app-with-mvp/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/building-an-app-with-mvvm/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/comparing-three-dependency-injection-solutions/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/contributing-to-kotlin/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/developing-and-publishing-android-libraries/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/enforce-custom-views-with-lint/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/fingerprint-authentication-tutorial/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/essential-dev-experience-concepts-android/</loc>
+    <loc>http://localhost:1313/posts/understanding-nullability-in-kotlin/</loc>
+    <lastmod>2017-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/getting-started-with-room-persistence-library/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/test-driven-development/</loc>
+    <lastmod>2017-06-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/mastering-room-database-migrations/</loc>
+    <loc>http://localhost:1313/posts/maintain-library-versions-across-modules/</loc>
+    <lastmod>2017-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/mvwtf/</loc>
+    <loc>http://localhost:1313/posts/creating-android-app-shortcuts/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/repository-pattern/</loc>
+    <loc>http://localhost:1313/posts/pinchzoomtextview-library-released/</loc>
+    <lastmod>2016-11-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/room-relationship-recap/</loc>
+    <loc>http://localhost:1313/posts/getting-started-with-retrofit/</loc>
+    <lastmod>2016-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/starting-fragment-for-result/</loc>
+    <loc>http://localhost:1313/posts/recyclerviewutils-library-released/</loc>
+    <lastmod>2016-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/</loc>
+    <loc>http://localhost:1313/posts/materialsearchview-library/</loc>
+    <lastmod>2016-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</loc>
+    <loc>http://localhost:1313/posts/richtextview-library-released/</loc>
+    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/toa-twitch-series/</loc>
+    <loc>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-2/</loc>
+    <lastmod>2016-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/understanding-nullability-in-kotlin/</loc>
+    <loc>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-1/</loc>
+    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/unit-testing-custom-lint-checks/</loc>
+    <loc>http://localhost:1313/posts/material-design-specs-library/</loc>
+    <lastmod>2015-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/unit-testing-async-code/</loc>
+    <loc>http://localhost:1313/posts/recyclerviewcursoradapter-library/</loc>
+    <lastmod>2015-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</loc>
+    <lastmod>2015-12-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-make-an-android-ui-part-1/</loc>
+    <lastmod>2015-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/creating-a-material-design-navigation-drawer/</loc>
+    <lastmod>2015-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/top-5-color-scheme-tools/</loc>
+    <lastmod>2015-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</loc>
+    <lastmod>2015-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/using-elevation-in-android-applications/</loc>
+    <lastmod>2015-09-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</loc>
+    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</loc>
+    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/recyclerview-vs-listview/</loc>
+    <lastmod>2015-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/sqliteopenhelper-and-the-singleton-pattern/</loc>
+    <lastmod>2015-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/hide-the-floatingactionbutton-when-scrolling-recyclerview/</loc>
+    <lastmod>2015-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

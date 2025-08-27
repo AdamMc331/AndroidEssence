@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">How To Build A Todo List In Kotlin Part 3: Adding Items | Android Essence</title>
+<meta property="og:title" content="How To Build A Todo List In Kotlin Part 3: Adding Items | Android Essence" />
+<meta name="twitter:title" content="How To Build A Todo List In Kotlin Part 3: Adding Items | Android Essence" />
+<meta itemprop="name" content="How To Build A Todo List In Kotlin Part 3: Adding Items | Android Essence" />
+<meta name="application-name" content="How To Build A Todo List In Kotlin Part 3: Adding Items | Android Essence" />
+<meta property="og:site_name" content="Android Essence" />
+
+<meta name="description" content="Simplified Android Development">
+<meta itemprop="description" content="Simplified Android Development" />
+<meta property="og:description" content="Simplified Android Development" />
+<meta name="twitter:description" content="Simplified Android Development" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2017-05-21T00:00:00Z />
+    <meta property="article:published_time" content=2017-05-21T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/" />
+
+    
+    <meta property="og:article:author" content="Adam McNeilly" />
+    <meta property="article:author" content="Adam McNeilly" />
+    <meta name="author" content="Adam McNeilly" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "How To Build A Todo List In Kotlin Part 3: Adding Items",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2017-05-21",
+        "description": "",
+        "wordCount":  573 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2017-05-21",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Android Essence"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/">
+  <meta property="og:site_name" content="Android Essence">
+  <meta property="og:title" content="How To Build A Todo List In Kotlin Part 3: Adding Items">
+  <meta property="og:description" content="Following parts [1]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) and [2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview.md %}) you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2017-05-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2017-05-21T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How To Build A Todo List In Kotlin Part 3: Adding Items">
+  <meta name="twitter:description" content="Following parts [1]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) and [2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview.md %}) you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">How To Build A Todo List In Kotlin Part 3: Adding Items</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2017-05-21T00:00:00&#43;00:00" itemprop="datePublished"> May 21, 2017 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents"></nav>
+    </details>
+            <div class="page-content">
+                <p>Following parts [1]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) and [2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview.md %}) you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.</p>
+<h1 id="create-a-new-kotlin-activity">Create A New Kotlin Activity</h1>
+<p>First, we need to create an Activity for adding an account. We can create a new activity by selecting our project folder, right clicking and going to <code>New -&gt; Kotlin Activity -&gt; Empty Activity</code> in the context menu that pops up. I&rsquo;m going to name it AddTaskActivity:</p>
+<p><img src="/images/kotlin/new-activity-1.png" alt="AndroidEssence"></p>
+<p><img src="/images/kotlin/new-activity-2.png" alt="AndroidESsence"></p>
+<p>We&rsquo;ll just use a simple layout to avoid over-complicating the tutorial. I used the new <code>ConstraintLayout</code> and placed an EditText with a Button underneath:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;android.support.constraint.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">tools:context=</span><span class="s">&#34;com.adammcneilly.todolist.AddTaskActivity&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;EditText</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/task_description&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:hint=</span><span class="s">&#34;@string/description&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:inputType=</span><span class="s">&#34;text&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/submit&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;@string/submit&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@id/task_description&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/android.support.constraint.ConstraintLayout&gt;</span>
+</span></span></code></pre></div><p>The string resources are defined as:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&#34;description&#34;</span><span class="nt">&gt;</span>Description<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&#34;submit&#34;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/string&gt;</span>
+</span></span></code></pre></div><h1 id="launch-new-activity">Launch New Activity</h1>
+<p>Before we implement the logic in this new activity, let&rsquo;s make the corresponding changes in <code>MainActivity.kt</code> to launch it. There&rsquo;s four things we need to do:</p>
+<ol>
+<li>Add an <code>addTask()</code> method to our TaskAdapter class.</li>
+<li>Define a companion object in MainActivity which houses variables that work similar to static fields in Java. More information <a href="https://kotlinlang.org/docs/reference/object-declarations.html#companion-objects">here</a>.</li>
+<li>Modify the onClickListener of the FloatingActionButton in MainActivity to start our AddTaskActivity with a result code.</li>
+<li>Override onActivityResult in MainActivity to get the description that was passed from the other activity (this is coded later) and create a new task with it.</li>
+</ol>
+<p>Here is what our <code>addTask()</code> method looks like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">addTask</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="n">Task</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tasks</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">notifyDataSetChanged</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>And here is what the MainActivity looks like with our new code added:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">var</span> <span class="py">adapter</span><span class="p">:</span> <span class="n">TaskAdapter</span><span class="p">?</span> <span class="p">=</span> <span class="n">TaskAdapter</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="k">val</span> <span class="py">fab</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fab</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">FloatingActionButton</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fab</span><span class="o">?.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">_</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">intent</span> <span class="p">=</span> <span class="n">Intent</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">AddTaskActivity</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span> <span class="n">ADD_TASK_REQUEST</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onActivityResult</span><span class="p">(</span><span class="n">requestCode</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">resultCode</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">data</span><span class="p">:</span> <span class="n">Intent</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">ADD_TASK_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="nc">Activity</span><span class="p">.</span><span class="n">RESULT_OK</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">task</span> <span class="p">=</span> <span class="n">Task</span><span class="p">(</span><span class="k">data</span><span class="o">?.</span><span class="n">getStringExtra</span><span class="p">(</span><span class="n">DESCRIPTION_TEXT</span><span class="p">).</span><span class="n">orEmpty</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="n">adapter</span><span class="o">?.</span><span class="n">addTask</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">val</span> <span class="py">ADD</span><span class="n">_TASK_REQUEST</span> <span class="p">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">val</span> <span class="py">DESCRIPTION</span><span class="n">_TEXT</span> <span class="p">=</span> <span class="s2">&#34;description&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>If you use this as a break point, you&rsquo;ll see the new activity starts up, but nothing happens when you hit submit. We&rsquo;ll implement that now.</p>
+<h1 id="implement-new-activity">Implement New Activity</h1>
+<p>In our activity, we&rsquo;ll have the following logic:</p>
+<ul>
+<li>When the user submits, check if the EditText is empty.</li>
+<li>If it&rsquo;s empty, show an error message.</li>
+<li>If it&rsquo;s not empty, pass the description back as an intent extra.</li>
+</ul>
+<p>All of this code can be implemented in our <code>onCreate()</code> method:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">AddTaskActivity</span> <span class="p">:</span> <span class="n">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_add_task</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">val</span> <span class="py">description</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">task_description</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">EditText</span>
+</span></span><span class="line"><span class="cl">        <span class="k">val</span> <span class="py">submit</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">submit</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">Button</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">submit</span><span class="o">?.</span><span class="n">setOnClickListener</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">description</span><span class="o">?.</span><span class="n">text</span><span class="o">?.</span><span class="n">toString</span><span class="p">().</span><span class="n">isNullOrBlank</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">description</span><span class="o">?.</span><span class="n">error</span> <span class="p">=</span> <span class="s2">&#34;Please enter a description&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">val</span> <span class="py">data</span> <span class="p">=</span> <span class="n">Intent</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="k">data</span><span class="p">.</span><span class="n">putExtra</span><span class="p">(</span><span class="nc">MainActivity</span><span class="p">.</span><span class="n">DESCRIPTION_TEXT</span><span class="p">,</span> <span class="n">description</span><span class="o">?.</span><span class="n">text</span><span class="p">.</span><span class="n">toString</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">                <span class="n">setResult</span><span class="p">(</span><span class="nc">Activity</span><span class="p">.</span><span class="n">RESULT_OK</span><span class="p">,</span> <span class="k">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="n">finish</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Running the app at this point you&rsquo;ll see that we can start a new activity, type in a description, and hit submit to see the new task in our list. That&rsquo;s it for part 3! Move on to the the [fourth part]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-4-storing-items.md %}) to see how we can read and write to a text file and persist the information. If you&rsquo;ve missed any code, you can find it on <a href="http://github.com/AdamMc331/todo-kotlin">GitHub</a>.</p>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://twitch.tv/adammc" target="_blank" rel="noopener noreferrer me"
+    title="Twitch">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+</svg>
+</a>
+<a href="https://bsky.app/profile/adammc.bsky.social" target="_blank" rel="noopener noreferrer me"
+    title="Bluesky">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+    d="M11.999,10.236c0.321,-0.524 0.916,-1.507 1.405,-2.376c0.755,-1.344 1.692,-2.852 2.869,-4.028c1.283,-1.281 2.845,-2.171 4.739,-2.171c1.144,-0 1.864,0.585 2.299,1.497c0.486,1.017 0.545,2.551 0.51,3.883c-0.051,1.945 -0.232,3.337 -0.505,4.275c-0.229,0.786 -0.543,1.303 -0.878,1.615c-0.892,0.833 -1.8,1.263 -2.634,1.484c0.029,0.018 0.056,0.036 0.084,0.055c0.528,0.367 0.823,0.79 1.081,1.107c0.648,0.794 0.644,1.795 0.23,2.784c-0.481,1.151 -1.533,2.279 -2.12,2.773c-1.389,1.171 -2.506,1.362 -3.383,1.133c-0.88,-0.23 -1.59,-0.932 -2.156,-1.826c-0.45,-0.71 -0.817,-1.537 -1.176,-2.186c-0.115,-0.208 -0.302,-0.455 -0.406,-0.587c-0.02,0.019 -0.04,0.04 -0.056,0.058c-0.121,0.145 -0.234,0.328 -0.349,0.531c-0.363,0.644 -0.721,1.463 -1.157,2.166c-0.555,0.895 -1.252,1.597 -2.12,1.825c-0.863,0.227 -1.97,0.037 -3.363,-1.136c-0.586,-0.494 -1.638,-1.622 -2.119,-2.773c-0.414,-0.989 -0.418,-1.99 0.229,-2.784c0.258,-0.317 0.554,-0.74 1.082,-1.106c0.027,-0.019 0.055,-0.038 0.084,-0.056c-0.834,-0.221 -1.742,-0.651 -2.634,-1.484c-0.335,-0.312 -0.649,-0.829 -0.878,-1.615c-0.273,-0.938 -0.454,-2.33 -0.505,-4.275c-0.036,-1.332 0.024,-2.866 0.509,-3.883c0.435,-0.912 1.156,-1.497 2.3,-1.497c2.32,0 4.109,1.203 5.494,2.808c1.272,1.474 2.195,3.283 2.9,4.643c0.231,0.447 0.436,0.84 0.624,1.146Zm-0.01,5.653l0.296,0.031l0.271,0.086c0.208,0.088 0.413,0.229 0.607,0.428c0.455,0.467 0.882,1.369 1.36,2.284c0.249,0.477 0.518,0.958 0.841,1.339c0.231,0.274 0.483,0.502 0.805,0.569c0.488,0.103 1.052,-0.157 1.811,-0.797c0.452,-0.38 1.274,-1.239 1.645,-2.126c0.155,-0.371 0.265,-0.75 0.022,-1.048c-0.179,-0.22 -0.366,-0.529 -0.732,-0.783c-0.536,-0.372 -1.356,-0.51 -1.905,-0.654c-0.405,-0.106 -0.715,-0.234 -0.88,-0.355l-0.284,-0.303l-0.135,-0.367l-0.008,-0.211l0.035,-0.196l0.078,-0.195l0.142,-0.209l0.198,-0.181l0.296,-0.154c0.151,-0.055 0.348,-0.092 0.587,-0.104c0.815,-0.042 2.571,0.294 4.235,-1.259c0.171,-0.159 0.288,-0.445 0.404,-0.845c0.246,-0.843 0.391,-2.096 0.438,-3.843c0.024,-0.91 0.026,-1.938 -0.208,-2.738c-0.142,-0.486 -0.367,-0.891 -0.896,-0.891c-1.675,0 -2.974,0.983 -4.031,2.21c-1.179,1.369 -2.058,3.057 -2.752,4.321c-0.483,0.88 -0.902,1.573 -1.25,1.916c-0.088,0.086 -0.174,0.157 -0.257,0.214l-0.221,0.125l-0.228,0.078l-0.267,0.031l-0.274,-0.034l-0.231,-0.083l-0.219,-0.132c-0.081,-0.058 -0.164,-0.131 -0.248,-0.22c-0.327,-0.343 -0.718,-1.037 -1.174,-1.917c-0.654,-1.262 -1.497,-2.948 -2.676,-4.314c-1.067,-1.236 -2.417,-2.217 -4.203,-2.217c-0.53,0 -0.754,0.405 -0.896,0.891c-0.234,0.8 -0.232,1.828 -0.208,2.738c0.046,1.747 0.192,3 0.438,3.843c0.116,0.4 0.233,0.686 0.403,0.845c1.665,1.553 3.421,1.217 4.235,1.259c0.24,0.012 0.437,0.049 0.588,0.104l0.295,0.154l0.199,0.181l0.142,0.209l0.078,0.195l0.035,0.196l-0.009,0.211l-0.135,0.368l-0.283,0.303c-0.165,0.12 -0.476,0.248 -0.88,0.355c-0.549,0.144 -1.369,0.281 -1.905,0.653c-0.366,0.254 -0.554,0.564 -0.732,0.783c-0.243,0.298 -0.133,0.677 0.022,1.048c0.371,0.887 1.193,1.746 1.645,2.127c0.757,0.637 1.311,0.9 1.789,0.8c0.311,-0.066 0.55,-0.29 0.772,-0.557c0.315,-0.381 0.577,-0.86 0.822,-1.337c0.394,-0.763 0.752,-1.521 1.138,-2.01c0.431,-0.544 0.929,-0.815 1.455,-0.815Z" style="fill-rule:nonzero;"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://github.com/AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Adam McNeilly.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

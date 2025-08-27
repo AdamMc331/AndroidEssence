@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Storing Network Responses With Apollo Normalized Cache | Android Essence</title>
+<meta property="og:title" content="Storing Network Responses With Apollo Normalized Cache | Android Essence" />
+<meta name="twitter:title" content="Storing Network Responses With Apollo Normalized Cache | Android Essence" />
+<meta itemprop="name" content="Storing Network Responses With Apollo Normalized Cache | Android Essence" />
+<meta name="application-name" content="Storing Network Responses With Apollo Normalized Cache | Android Essence" />
+<meta property="og:site_name" content="Android Essence" />
+
+<meta name="description" content="Simplified Android Development">
+<meta itemprop="description" content="Simplified Android Development" />
+<meta property="og:description" content="Simplified Android Development" />
+<meta name="twitter:description" content="Simplified Android Development" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2021-02-05T00:00:00Z />
+    <meta property="article:published_time" content=2021-02-05T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/" />
+
+    
+    <meta property="og:article:author" content="Adam McNeilly" />
+    <meta property="article:author" content="Adam McNeilly" />
+    <meta name="author" content="Adam McNeilly" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Storing Network Responses With Apollo Normalized Cache",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2021-02-05",
+        "description": "",
+        "wordCount":  1561 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2021-02-05",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Android Essence"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/">
+  <meta property="og:site_name" content="Android Essence">
+  <meta property="og:title" content="Storing Network Responses With Apollo Normalized Cache">
+  <meta property="og:description" content="In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-01-storing-network-responses-with-apollo-http-cache.md %}) we looked at the HTTP cache from Apollo Android for storing network responses. In this post, we look at its counter part, the normalized cache.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-02-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-02-05T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Storing Network Responses With Apollo Normalized Cache">
+  <meta name="twitter:description" content="In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-01-storing-network-responses-with-apollo-http-cache.md %}) we looked at the HTTP cache from Apollo Android for storing network responses. In this post, we look at its counter part, the normalized cache.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Storing Network Responses With Apollo Normalized Cache</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2021-02-05T00:00:00&#43;00:00" itemprop="datePublished"> Feb 5, 2021 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#disclaimer">Disclaimer</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#printing-the-cache">Printing The Cache</a></li>
+    <li><a href="#database-inspector">Database Inspector</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#fromfieldrecordset">fromFieldRecordSet</a></li>
+    <li><a href="#fromfieldarguments">fromFieldArguments</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-01-storing-network-responses-with-apollo-http-cache.md %}) we looked at the HTTP cache from <a href="https://www.apollographql.com/docs/android/">Apollo Android</a> for storing network responses. In this post, we look at its counter part, the <a href="https://www.apollographql.com/docs/android/essentials/normalized-cache/">normalized cache</a>.</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>This post is written assuming some basic knowledge of the Apollo Android library and GraphQL. If you&rsquo;re unfamiliar with the topic, you can start with the <a href="https://www.apollographql.com/docs/android/essentials/get-started-kotlin/">official documentation</a>, or with this presentation from <a href="https://www.youtube.com/watch?v=np3JSkjisCk">Android Makers 2020</a>.</p>
+<p>You can find a sample project with all of the code from this blog post on <a href="https://github.com/AdamMc331/ApolloCaching">GitHub</a>.</p>
+<h1 id="normalized-cache">Normalized Cache</h1>
+<p>The normalized cache stores information by an ID, so that if we&rsquo;re looking up that information in the future, we can return that instead of making an additional network request. This post will walk through the different types of normalized caches we can create, how to debug them, how to observe changes, and even modify our caches if necessary.</p>
+<h1 id="how-it-works">How It Works</h1>
+<p>Unlike the HTTP cache which stores our responses in a file system, we have two ways to use a normalized cache.</p>
+<ol>
+<li>An in-memory cache, which will live as long as our application is alive.</li>
+<li>A SQLite cache, which stores information in a SQLite database and will persist across application sessions.</li>
+</ol>
+<p>We can implement one or both of these caches, and chain them together if necessary. Let&rsquo;s take a look at setting up each one, and when we go over how to debug these caches, it will become more clear about how information is stored for us.</p>
+<h1 id="implementing-in-memory-normalized-cache">Implementing In Memory Normalized Cache</h1>
+<p>To create an in memory cache, we need to define an <code>EvictionPolicy</code>. This is the configuration for determining if/when things should be removed from our cache. We can do so based on size, number of entries, and even the time since data was stored. From there, we can create an instance of <code>LruNormalizedCacheFactory</code> and use this in our ApolloClient:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">evictionPolicy</span> <span class="p">=</span> <span class="nc">EvictionPolicy</span><span class="p">.</span><span class="n">builder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">maxSizeBytes</span><span class="p">(</span><span class="m">10</span> <span class="p">*</span> <span class="m">1024</span> <span class="p">*</span> <span class="m">1024</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">maxEntries</span><span class="p">(</span><span class="m">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">expireAfterWrite</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="nc">TimeUnit</span><span class="p">.</span><span class="n">HOURS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">expireAfterAccess</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="nc">TimeUnit</span><span class="p">.</span><span class="n">HOURS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">inMemoryCache</span> <span class="p">=</span> <span class="n">LruNormalizedCacheFactory</span><span class="p">(</span><span class="n">evictionPolicy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">apolloClient</span> <span class="p">=</span> <span class="nc">ApolloClient</span><span class="p">.</span><span class="n">builder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">normalizedCache</span><span class="p">(</span><span class="n">inMemoryCache</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span></code></pre></div><p>The benefits of an in memory cache are that reads from this cache are very quick, as we don&rsquo;t need to read from a database or a file of any kind. The downfall is that it won&rsquo;t be persisted between application sessions. If we need that, we can add a SQLite cache as well.</p>
+<h1 id="implementing-the-sqlite-normalized-cache">Implementing The SQLite Normalized Cache</h1>
+<p>The SQLite normalized cache is a <a href="https://www.apollographql.com/docs/android/essentials/normalized-cache/#persisting-your-data-in-a-sqlite-database">separate dependency</a> for Apollo. This stores information in a database, which enables that information to be stored in between application sessions.</p>
+<p>To create an instance of this normalized cache, all we need to is supply our application context and a name for the database:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">sqliteCache</span> <span class="p">=</span> <span class="n">SqlNormalizedCacheFactory</span><span class="p">(</span><span class="n">applicationContext</span><span class="p">,</span> <span class="s2">&#34;countrycache.db&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">apolloClient</span> <span class="p">=</span> <span class="nc">ApolloClient</span><span class="p">.</span><span class="n">builder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">normalizedCache</span><span class="p">(</span><span class="n">sqliteCache</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span></code></pre></div><h1 id="chaining-caches">Chaining Caches</h1>
+<p>We may want to have the best of both caches. The speed of reading from memory, as well as the persistence of a SQLite cache. Thankfully, we can do so with the <code>chain</code> method:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">inMemoryCache</span> <span class="p">=</span> <span class="n">LruNormalizedCacheFactory</span><span class="p">(</span><span class="n">evictionPolicy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">sqliteCache</span> <span class="p">=</span> <span class="n">SqlNormalizedCacheFactory</span><span class="p">(</span><span class="n">applicationContext</span><span class="p">,</span> <span class="s2">&#34;countrycache.db&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">inMemoryThenSqliteCache</span> <span class="p">=</span> <span class="n">inMemoryCache</span><span class="p">.</span><span class="n">chain</span><span class="p">(</span><span class="n">sqliteCache</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">apolloClient</span> <span class="p">=</span> <span class="nc">ApolloClient</span><span class="p">.</span><span class="n">builder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">normalizedCache</span><span class="p">(</span><span class="n">inMemoryThenSqliteCache</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span></code></pre></div><h1 id="querying-from-the-cache">Querying From The Cache</h1>
+<p>Creating a cache and applying it to our ApolloClient instance isn&rsquo;t enough. We also need to tell the application when and how to use the cache, which we do through one of the <a href="https://www.apollographql.com/docs/android/essentials/normalized-cache/#using-the-cache-with-your-queries">ResponseFetcher</a> implementations. We have two ways to set a ResponseFetcher.</p>
+<p>We can choose to set a default for our ApolloClient:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">apolloClient</span> <span class="p">=</span> <span class="nc">ApolloClient</span><span class="p">.</span><span class="n">builder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">normalizedCache</span><span class="p">(</span><span class="n">normalizedCache</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">defaultResponseFetcher</span><span class="p">(</span><span class="nc">ApolloResponseFetchers</span><span class="p">.</span><span class="n">CACHE_FIRST</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span></code></pre></div><p>Or we can choose to set it per query:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">response</span> <span class="p">=</span> <span class="n">apolloClient</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">toBuilder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">responseFetcher</span><span class="p">(</span><span class="nc">ApolloResponseFetchers</span><span class="p">.</span><span class="n">CACHE_FIRST</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">await</span><span class="p">()</span>
+</span></span></code></pre></div><h1 id="debugging-the-cache">Debugging The Cache</h1>
+<p>Now that we&rsquo;ve created our cache, applied it to our client, we can look into debugging our cache. How we debug our cache can vary depending on which one we implemented.</p>
+<h2 id="printing-the-cache">Printing The Cache</h2>
+<p>Apollo offers a handy tool for printing our caches. We can get a cache dump, use the utility method to prettify the dump, and then print it to the logcat:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">normalizedCacheDump</span> <span class="p">=</span> <span class="n">apolloClient</span><span class="p">.</span><span class="n">apolloStore</span><span class="p">.</span><span class="n">normalizedCache</span><span class="p">().</span><span class="n">dump</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">formattedDump</span> <span class="p">=</span> <span class="nc">NormalizedCache</span><span class="p">.</span><span class="n">prettifyDump</span><span class="p">(</span><span class="n">normalizedCacheDump</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nc">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&#34;ApolloNormalizedCache&#34;</span><span class="p">,</span> <span class="n">formattedDump</span><span class="p">)</span>
+</span></span></code></pre></div><p>For the sample app, our cache becomes quite large, but here&rsquo;s a short snippet of what we can get:</p>
+<pre tabindex="0"><code>OptimisticNormalizedCache {}
+LruNormalizedCache {}
+SqlNormalizedCache {
+    &#34;countries.0.continent&#34; : {
+        &#34;__typename&#34; : Continent
+        &#34;code&#34; : EU
+        &#34;name&#34; : Europe
+    }
+
+    &#34;countries.0&#34; : {
+        &#34;__typename&#34; : Country
+        &#34;code&#34; : AD
+        &#34;name&#34; : Andorra
+        &#34;continent&#34; : CacheRecordRef(countries.0.continent)
+        &#34;capital&#34; : Andorra la Vella
+        &#34;emoji&#34; : 🇦🇩
+    }
+
+    &#34;countries.1.continent&#34; : {
+        &#34;__typename&#34; : Continent
+        &#34;code&#34; : AS
+        &#34;name&#34; : Asia
+    }
+
+    &#34;countries.1&#34; : {
+        &#34;__typename&#34; : Country
+        &#34;code&#34; : AE
+        &#34;name&#34; : United Arab Emirates
+        &#34;continent&#34; : CacheRecordRef(countries.1.continent)
+        &#34;capital&#34; : Abu Dhabi
+        &#34;emoji&#34; : 🇦🇪
+    }
+
+    // ...
+} 
+</code></pre><p>One thing to note here is the interesting identifiers that are set on each item. Since our main query pulls a list of countries, and each <code>Country</code> has a nested object <code>Continent</code>, the identifiers are set with the index of that entry in the response. This isn&rsquo;t great, because it&rsquo;s difficult to look up entries in our cache this way, which we&rsquo;ll discuss later.</p>
+<h2 id="database-inspector">Database Inspector</h2>
+<p>Before we dive into the cache identifiers, we can explore one other way for debugging our cache. This solution is specifically for applications implementing the SQLite database cache. Introduced in Android Studio 4.1, the <a href="https://developer.android.com/studio/inspect/database">database inspector</a> is a tool for examining SQLite databases on a device while your app is running.</p>
+<p><img src="assets/normalized_cache/DatabaseInspector.png" alt=""></p>
+<p>We can use this tool to run specific queries. So if we want to check for a country in our cache, we can write the following query:</p>
+<p><code>SELECT * FROM records WHERE record LIKE &quot;%countryName%&quot;</code></p>
+<p><img src="assets/normalized_cache/DatabaseQuery.png" alt=""></p>
+<h1 id="cachekeyresolver">CacheKeyResolver</h1>
+<p>Let&rsquo;s talk about those interesting identifiers we saw on each item. By default, it&rsquo;s just using the field path. This is fine, but it&rsquo;s not helpful if we want to look up information later. It also causes us to store information twice, if that information is requested by two different queries.</p>
+<p>We can fix this by defining a <a href="https://www.apollographql.com/docs/android/essentials/normalized-cache/#specifying-your-object-ids">CacheKeyResolver</a>. This includes two methods, which effectively map to each direction of a network request:</p>
+<ol>
+<li>The method <code>fromFieldRecordSet</code> is called when a network response returns, and we need to generate an ID for that response.</li>
+<li>The method <code>fromFieldArguments</code> is called when we are making a new query, and we want to take those query arguments and convert them into an ID.</li>
+</ol>
+<h2 id="fromfieldrecordset">fromFieldRecordSet</h2>
+<p>In our sample app, both Country and Continent objects have a <code>code</code> property that is their unique identifier. Let&rsquo;s generate an ID with the convention <code>Type.CODE</code> for example, <code>Country.US</code> or <code>Continent.NA</code>.</p>
+<p>To do this, we can get the <code>__typename</code> property, which will return <code>Country</code> or <code>Continent</code>, and suffix it with the <code>code</code> property:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">override</span> <span class="k">fun</span> <span class="nf">fromFieldRecordSet</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">field</span><span class="p">:</span> <span class="n">ResponseField</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">recordSet</span><span class="p">:</span> <span class="n">Map</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Any</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">):</span> <span class="n">CacheKey</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">codeProperty</span> <span class="p">=</span> <span class="n">recordSet</span><span class="p">[</span><span class="s2">&#34;code&#34;</span><span class="p">]</span> <span class="k">as</span> <span class="n">String</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">typePrefix</span> <span class="p">=</span> <span class="n">recordSet</span><span class="p">[</span><span class="s2">&#34;__typename&#34;</span><span class="p">]</span> <span class="k">as</span> <span class="n">String</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nc">CacheKey</span><span class="p">.</span><span class="n">from</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">$typePrefix</span><span class="s2">.</span><span class="si">$codeProperty</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>After doing this, you may need to delete or clear your normalized cache, but the next time you run a query you will see the updated IDs. Here is a sample from our database inspector:</p>
+<p><img src="assets/normalized_cache/DatabaseInspectorWithIds.png" alt=""></p>
+<h2 id="fromfieldarguments">fromFieldArguments</h2>
+<p>When we&rsquo;re making a request for a country, we supply a <code>code</code> argument. We can check specifically for this scenario, and in that case prefix the ID that we want to use. If we&rsquo;re not looking for a country, we can just return <code>CacheKey.NO_KEY</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">override</span> <span class="k">fun</span> <span class="nf">fromFieldArguments</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">field</span><span class="p">:</span> <span class="n">ResponseField</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">variables</span><span class="p">:</span> <span class="nc">Operation</span><span class="p">.</span><span class="n">Variables</span>
+</span></span><span class="line"><span class="cl"><span class="p">):</span> <span class="n">CacheKey</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">if</span> <span class="p">(</span><span class="k">field</span><span class="p">.</span><span class="n">fieldName</span> <span class="o">==</span> <span class="s2">&#34;country&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">val</span> <span class="py">codeProperty</span> <span class="p">=</span> <span class="k">field</span><span class="p">.</span><span class="n">resolveArgument</span><span class="p">(</span><span class="s2">&#34;code&#34;</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span> <span class="k">as</span> <span class="n">String</span>
+</span></span><span class="line"><span class="cl">        <span class="k">val</span> <span class="py">fullId</span> <span class="p">=</span> <span class="s2">&#34;Country.</span><span class="si">$codeProperty</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nc">CacheKey</span><span class="p">.</span><span class="n">from</span><span class="p">(</span><span class="n">fullId</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nc">CacheKey</span><span class="p">.</span><span class="n">NO_KEY</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h1 id="result">Result</h1>
+<p>Once we&rsquo;ve put it all together, we supply this resolver at the same time we supply our normalized cache:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">resolver</span> <span class="p">=</span> <span class="k">object</span> <span class="err">: </span><span class="nc">CacheKeyResolver</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">fromFieldArguments</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">):</span> <span class="n">CacheKey</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">fromFieldRecordSet</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">):</span> <span class="n">CacheKey</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">apolloClient</span> <span class="p">=</span> <span class="nc">ApolloClient</span><span class="p">.</span><span class="n">builder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">httpCache</span><span class="p">(</span><span class="k">get</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">normalizedCache</span><span class="p">(</span><span class="n">normalizedCache</span><span class="p">,</span> <span class="n">resolver</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span></code></pre></div><p>Now that we have this resolver in place, our sample app is actually able to cut down on network requests. Since the main screen requests all of the country info that the detail screen shows, it is able to pull everything from the cache rather than making a new request.</p>
+<p>Note that in our project, we don&rsquo;t show all of this information on the main screen - and that&rsquo;s fine. Requesting it early is solely for the cache benefit. If your app can support a slightly larger payload up front, you may benefit from this approach in your own projects.</p>
+<p>It&rsquo;s also important to be aware that this only works if the subsequent requests are pulling for the same, or fewer, fields that are in the cache. If the cache doesn&rsquo;t have all of the fields that are needed, we will have to skip it.</p>
+<h1 id="observing-cache-changes">Observing Cache Changes</h1>
+<p>If you want to be notified any time your cached data changes, all we need to do is change the return type of our queries. Instead of calling <code>await()</code> like in the earlier examples, we can convert our query response to a Kotlin <code>Flow</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">apolloClient</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">watcher</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">toFlow</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">collect</span> <span class="p">{</span> <span class="n">response</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><h1 id="recap">Recap</h1>
+<p>Unlike the HTTP cache counter part, there was a whole lot more to discuss with the normalized cache. We have two different types of caches. We can chain caches. We can override IDs. We can observe changes, and even modify the cache directly.</p>
+<p>However, as complicated as those things may seem, they can be very beneficial to creating a great user experience!</p>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://twitch.tv/adammc" target="_blank" rel="noopener noreferrer me"
+    title="Twitch">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+</svg>
+</a>
+<a href="https://bsky.app/profile/adammc.bsky.social" target="_blank" rel="noopener noreferrer me"
+    title="Bluesky">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+    d="M11.999,10.236c0.321,-0.524 0.916,-1.507 1.405,-2.376c0.755,-1.344 1.692,-2.852 2.869,-4.028c1.283,-1.281 2.845,-2.171 4.739,-2.171c1.144,-0 1.864,0.585 2.299,1.497c0.486,1.017 0.545,2.551 0.51,3.883c-0.051,1.945 -0.232,3.337 -0.505,4.275c-0.229,0.786 -0.543,1.303 -0.878,1.615c-0.892,0.833 -1.8,1.263 -2.634,1.484c0.029,0.018 0.056,0.036 0.084,0.055c0.528,0.367 0.823,0.79 1.081,1.107c0.648,0.794 0.644,1.795 0.23,2.784c-0.481,1.151 -1.533,2.279 -2.12,2.773c-1.389,1.171 -2.506,1.362 -3.383,1.133c-0.88,-0.23 -1.59,-0.932 -2.156,-1.826c-0.45,-0.71 -0.817,-1.537 -1.176,-2.186c-0.115,-0.208 -0.302,-0.455 -0.406,-0.587c-0.02,0.019 -0.04,0.04 -0.056,0.058c-0.121,0.145 -0.234,0.328 -0.349,0.531c-0.363,0.644 -0.721,1.463 -1.157,2.166c-0.555,0.895 -1.252,1.597 -2.12,1.825c-0.863,0.227 -1.97,0.037 -3.363,-1.136c-0.586,-0.494 -1.638,-1.622 -2.119,-2.773c-0.414,-0.989 -0.418,-1.99 0.229,-2.784c0.258,-0.317 0.554,-0.74 1.082,-1.106c0.027,-0.019 0.055,-0.038 0.084,-0.056c-0.834,-0.221 -1.742,-0.651 -2.634,-1.484c-0.335,-0.312 -0.649,-0.829 -0.878,-1.615c-0.273,-0.938 -0.454,-2.33 -0.505,-4.275c-0.036,-1.332 0.024,-2.866 0.509,-3.883c0.435,-0.912 1.156,-1.497 2.3,-1.497c2.32,0 4.109,1.203 5.494,2.808c1.272,1.474 2.195,3.283 2.9,4.643c0.231,0.447 0.436,0.84 0.624,1.146Zm-0.01,5.653l0.296,0.031l0.271,0.086c0.208,0.088 0.413,0.229 0.607,0.428c0.455,0.467 0.882,1.369 1.36,2.284c0.249,0.477 0.518,0.958 0.841,1.339c0.231,0.274 0.483,0.502 0.805,0.569c0.488,0.103 1.052,-0.157 1.811,-0.797c0.452,-0.38 1.274,-1.239 1.645,-2.126c0.155,-0.371 0.265,-0.75 0.022,-1.048c-0.179,-0.22 -0.366,-0.529 -0.732,-0.783c-0.536,-0.372 -1.356,-0.51 -1.905,-0.654c-0.405,-0.106 -0.715,-0.234 -0.88,-0.355l-0.284,-0.303l-0.135,-0.367l-0.008,-0.211l0.035,-0.196l0.078,-0.195l0.142,-0.209l0.198,-0.181l0.296,-0.154c0.151,-0.055 0.348,-0.092 0.587,-0.104c0.815,-0.042 2.571,0.294 4.235,-1.259c0.171,-0.159 0.288,-0.445 0.404,-0.845c0.246,-0.843 0.391,-2.096 0.438,-3.843c0.024,-0.91 0.026,-1.938 -0.208,-2.738c-0.142,-0.486 -0.367,-0.891 -0.896,-0.891c-1.675,0 -2.974,0.983 -4.031,2.21c-1.179,1.369 -2.058,3.057 -2.752,4.321c-0.483,0.88 -0.902,1.573 -1.25,1.916c-0.088,0.086 -0.174,0.157 -0.257,0.214l-0.221,0.125l-0.228,0.078l-0.267,0.031l-0.274,-0.034l-0.231,-0.083l-0.219,-0.132c-0.081,-0.058 -0.164,-0.131 -0.248,-0.22c-0.327,-0.343 -0.718,-1.037 -1.174,-1.917c-0.654,-1.262 -1.497,-2.948 -2.676,-4.314c-1.067,-1.236 -2.417,-2.217 -4.203,-2.217c-0.53,0 -0.754,0.405 -0.896,0.891c-0.234,0.8 -0.232,1.828 -0.208,2.738c0.046,1.747 0.192,3 0.438,3.843c0.116,0.4 0.233,0.686 0.403,0.845c1.665,1.553 3.421,1.217 4.235,1.259c0.24,0.012 0.437,0.049 0.588,0.104l0.295,0.154l0.199,0.181l0.142,0.209l0.078,0.195l0.035,0.196l-0.009,0.211l-0.135,0.368l-0.283,0.303c-0.165,0.12 -0.476,0.248 -0.88,0.355c-0.549,0.144 -1.369,0.281 -1.905,0.653c-0.366,0.254 -0.554,0.564 -0.732,0.783c-0.243,0.298 -0.133,0.677 0.022,1.048c0.371,0.887 1.193,1.746 1.645,2.127c0.757,0.637 1.311,0.9 1.789,0.8c0.311,-0.066 0.55,-0.29 0.772,-0.557c0.315,-0.381 0.577,-0.86 0.822,-1.337c0.394,-0.763 0.752,-1.521 1.138,-2.01c0.431,-0.544 0.929,-0.815 1.455,-0.815Z" style="fill-rule:nonzero;"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://github.com/AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Adam McNeilly.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

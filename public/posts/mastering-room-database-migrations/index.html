@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Mastering Room Database Migrations | Android Essence</title>
+<meta property="og:title" content="Mastering Room Database Migrations | Android Essence" />
+<meta name="twitter:title" content="Mastering Room Database Migrations | Android Essence" />
+<meta itemprop="name" content="Mastering Room Database Migrations | Android Essence" />
+<meta name="application-name" content="Mastering Room Database Migrations | Android Essence" />
+<meta property="og:site_name" content="Android Essence" />
+
+<meta name="description" content="Simplified Android Development">
+<meta itemprop="description" content="Simplified Android Development" />
+<meta property="og:description" content="Simplified Android Development" />
+<meta name="twitter:description" content="Simplified Android Development" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/posts/mastering-room-database-migrations/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2020-05-14T00:00:00Z />
+    <meta property="article:published_time" content=2020-05-14T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/mastering-room-database-migrations/" />
+
+    
+    <meta property="og:article:author" content="Adam McNeilly" />
+    <meta property="article:author" content="Adam McNeilly" />
+    <meta name="author" content="Adam McNeilly" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Mastering Room Database Migrations",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2020-05-14",
+        "description": "",
+        "wordCount":  2578 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2020-05-14",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Android Essence"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/mastering-room-database-migrations/">
+  <meta property="og:site_name" content="Android Essence">
+  <meta property="og:title" content="Mastering Room Database Migrations">
+  <meta property="og:description" content="In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we’re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-05-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-05-14T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mastering Room Database Migrations">
+  <meta name="twitter:description" content="In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we’re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/mastering-room-database-migrations/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Mastering Room Database Migrations</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2020-05-14T00:00:00&#43;00:00" itemprop="datePublished"> May 14, 2020 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#specific-destructive-migrations">Specific Destructive Migrations</a></li>
+    <li><a href="#downgrade-destructive-migrations">Downgrade Destructive Migrations</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#project-set-up">Project Set Up</a></li>
+    <li><a href="#making-the-change">Making The Change</a></li>
+    <li><a href="#create-the-migration">Create The Migration</a></li>
+    <li><a href="#add-migration-to-database-builder">Add Migration To Database Builder</a></li>
+    <li><a href="#testing-migrations">Testing Migrations</a>
+      <ul>
+        <li><a href="#step-1-create-a-database-at-the-starting-version">Step 1: Create A Database At The Starting Version</a></li>
+        <li><a href="#step-2-migrate-to-end-version">Step 2: Migrate To End Version</a></li>
+        <li><a href="#step-3-validate-data">Step 3: Validate Data</a></li>
+        <li><a href="#step-4-ship-with-confidence">Step 4: Ship With Confidence</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we&rsquo;re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.</p>
+<hr>
+<p>This post is adapted from a YouTube video I made for <a href="https://twitter.com/asyncandroid">AsyncAndroid</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tUGUNU6DPtk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h1 id="starting-point">Starting Point</h1>
+<p>Since we&rsquo;re exploring a niched topic within Room databases, I recommend at least reviewing the <a href="https://developer.android.com/training/data-storage/room">getting started</a> documentation for Room. You don&rsquo;t need to be an expert, but understanding the initial annotations is important.</p>
+<p>For this post, we&rsquo;re going to look at an application that has a Room database with one single entity, representing a Student:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Entity</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Student</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">id</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">firstName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">lastName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>There&rsquo;s a DAO for inserting and fetching students:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Dao</span>
+</span></span><span class="line"><span class="cl"><span class="k">interface</span> <span class="nc">StudentDAO</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Insert</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">insertStudent</span><span class="p">(</span><span class="n">student</span><span class="p">:</span> <span class="n">Student</span><span class="p">):</span> <span class="n">Long</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Query</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM Student&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">fetchStudents</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Student</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>And a database class with a helper method to create a database reference:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Database</span><span class="p">(</span><span class="n">entities</span> <span class="p">=</span> <span class="p">[</span><span class="n">Student</span><span class="o">::</span><span class="k">class</span><span class="p">],</span> <span class="n">version</span> <span class="p">=</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">abstract</span> <span class="k">class</span> <span class="nc">StudentDatabase</span> <span class="p">:</span> <span class="n">RoomDatabase</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">studentDAO</span><span class="p">():</span> <span class="n">StudentDAO</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fun</span> <span class="nf">createDatabase</span><span class="p">(</span><span class="n">appContext</span><span class="p">:</span> <span class="n">Context</span><span class="p">):</span> <span class="n">StudentDatabase</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nc">Room</span><span class="p">.</span><span class="n">databaseBuilder</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">appContext</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">StudentDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;student-database.db&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">allowMainThreadQueries</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>In this sample we&rsquo;ve allowed main thread queries to keep the focus on the database work itself. It is highly recommended that you do not do database operations on the main thread in production.</p>
+<h1 id="what-happens-if-i-dont-migrate">What Happens If I Don&rsquo;t Migrate?</h1>
+<p>Let&rsquo;s start by looking at a couple common errors that will happen if you change the database used by your applications. First, we can try to add a new field onto Student:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Entity</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Student</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">id</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">firstName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">lastName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>If we run our application right now, we&rsquo;ll get the following error:</p>
+<pre tabindex="0"><code>Caused by: java.lang.IllegalStateException: Room cannot verify the data integrity. Looks like you&#39;ve changed schema but forgot to update the version number. You can simply fix this by increasing the version number.
+</code></pre><p>When Room says that it cannot verify the data integrity, what it means is that the schema of the database we&rsquo;re trying to create does not match the schema of the database that&rsquo;s already on the device. In this case, our new database schema includes a column that wasn&rsquo;t there before.</p>
+<p>Thankfully, we&rsquo;ve got a helpful error message, we just need to increase the database version number!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Database</span><span class="p">(</span><span class="n">entities</span> <span class="p">=</span> <span class="p">[</span><span class="n">Student</span><span class="o">::</span><span class="k">class</span><span class="p">],</span> <span class="n">version</span> <span class="p">=</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">abstract</span> <span class="k">class</span> <span class="nc">StudentDatabase</span> <span class="p">:</span> <span class="n">RoomDatabase</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">studentDAO</span><span class="p">():</span> <span class="n">StudentDAO</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>Unfortunately, the app will crash again with this new error:</p>
+<pre tabindex="0"><code>Caused by: java.lang.IllegalStateException: A migration from 1 to 2 was required but not found. Please provide the necessary Migration path via RoomDatabase.Builder.addMigration(Migration ...) or allow for destructive migrations via one of the RoomDatabase.Builder.fallbackToDestructiveMigration* methods.
+</code></pre><p>Room now recognizes that we are using a different version of the database than what was previously there, but Room doesn&rsquo;t have the capabilities to understand how to migrate from the previous version to the new one. The error message hints at a couple options, and this post is going to review each of them.</p>
+<h1 id="the-easy-way-out">The Easy Way Out</h1>
+<p>First, we&rsquo;ll look at what might be considered the easy way out - destructive migrations. Ultimately, migrations are only important if you want to keep data on your device even after the user updates your application to a new database. For apps that work purely offline, this is very important. You may decide, though, that you don&rsquo;t care if a user&rsquo;s database is cleared out upon upgrade. Maybe the database is just a caching mechanism, and the user experience won&rsquo;t really be hindered by this.</p>
+<p>If that&rsquo;s the case, we can just supply a call to <code>fallbackToDestructiveMigration()</code> when we create the database:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">createDatabase</span><span class="p">(</span><span class="n">appContext</span><span class="p">:</span> <span class="n">Context</span><span class="p">):</span> <span class="n">StudentDatabase</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nc">Room</span><span class="p">.</span><span class="n">databaseBuilder</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">appContext</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StudentDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;student-database.db&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">allowMainThreadQueries</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">fallbackToDestructiveMigration</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>With this approach, we still need to update the database version each time the schema changes, but if Room comes across a migration that it can&rsquo;t support, it will fall back by destroying the entire database and recreating it with the new schema. This is certainly the shortest solution to database migrations, but may not be the best user experience. Discuss with your team if you think this approach is worth the tradeoffs.</p>
+<h2 id="specific-destructive-migrations">Specific Destructive Migrations</h2>
+<p>Maybe your application supports migrations in some cases, but from other versions you&rsquo;re willing to sacrifice a destructive migration. If that&rsquo;s the case, you can use the <a href="https://developer.android.com/reference/kotlin/androidx/room/RoomDatabase.Builder#fallbacktodestructivemigrationfrom">fallbackToDestructiveMigrationsFrom</a> method.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">createDatabase</span><span class="p">(</span><span class="n">appContext</span><span class="p">:</span> <span class="n">Context</span><span class="p">):</span> <span class="n">StudentDatabase</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nc">Room</span><span class="p">.</span><span class="n">databaseBuilder</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">appContext</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StudentDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;student-database.db&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">allowMainThreadQueries</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">fallbackToDestructiveMigrationsFrom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="downgrade-destructive-migrations">Downgrade Destructive Migrations</h2>
+<p>It&rsquo;s possible that a database version is being downgraded. We may see this happen often in development, if developer &ldquo;A&rdquo; is working on a new database change, but developer &ldquo;B&rdquo; is not. Switching between these branches will cause a migration error like we saw earlier. We could resolve this case by only allowing destructive migrations if we notice the database version is being downgraded:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">createDatabase</span><span class="p">(</span><span class="n">appContext</span><span class="p">:</span> <span class="n">Context</span><span class="p">):</span> <span class="n">StudentDatabase</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nc">Room</span><span class="p">.</span><span class="n">databaseBuilder</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">appContext</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StudentDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;student-database.db&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">allowMainThreadQueries</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">fallbackToDestructiveMigrationOnDowngrade</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This approach could make development smoother, while still ensuring that you handle migrations when upgrading the database, which is the flow your users are likely to encounter.</p>
+<h1 id="the-data-focused-way">The Data Focused Way</h1>
+<p>If you want to preserve your applications data while updating to a new schema, it requires a little more work. We&rsquo;re going to break down that process and help create a tool set for having the confidence to write and create migrations that are maintainable for developers, and keep your users happy without losing their on-device data.</p>
+<h2 id="project-set-up">Project Set Up</h2>
+<p>Before creating the database migrations, there&rsquo;s some recommended project configurations. We need to do three things:</p>
+<ol>
+<li>Update our build.gradle file to export the database schema as a JSON file. This will be used when we want to test our database migrations, as it will tell the Room library what the scema for the database is at a specific version.</li>
+<li>We need to modify our build.gradle file to make those schemas part of the source sets for the androidTest package, so that our database tests will be able to reference them.</li>
+<li>We need to add a dependency to the room-testing artifact to get access to classes that help us test database migrations.</li>
+</ol>
+<p>Here is what our app module&rsquo;s build.gradle file looks like after that, trimming it down to those three bullets:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">android</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">defaultConfig</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">javaCompileOptions</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">annotationProcessorOptions</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// Will export the schema to this directory during the &#34;build&#34; command.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">arguments</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&#34;room.schemaLocation&#34;</span><span class="o">:</span> <span class="s2">&#34;$projectDir/schemas&#34;</span><span class="o">.</span><span class="na">toString</span><span class="o">()]</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Tells our androidTest project where to find the schema
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">sourceSets</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">androidTest</span><span class="o">.</span><span class="na">assets</span><span class="o">.</span><span class="na">srcDirs</span> <span class="o">+=</span> <span class="n">files</span><span class="o">(</span><span class="s2">&#34;$projectDir/schemas&#34;</span><span class="o">.</span><span class="na">toString</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Brings in helpers for testing these migrations
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">androidTestImplementation</span> <span class="s2">&#34;androidx.room:room-testing:$room_version&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>If we build our project after this, we&rsquo;ll notice a new class inside <code>$projectDir/schemas</code> called <code>1.json</code>, or whatever your current database version is. Here is a <a href="https://github.com/AdamMc331/mastering-room-migrations/blob/master/app/schemas/com.adammcneilly.masteringroommigrations.StudentDatabase/1.json">sample</a> of what that looks like, but we&rsquo;ll revisit the importance of this file shortly.</p>
+<h2 id="making-the-change">Making The Change</h2>
+<p>Once we have done this project setup, and we&rsquo;ve exported the json schema of our current database version, we can go ahead and change our database. Let&rsquo;s make the same change as earlier - add a new field on <code>Student</code> called <code>age</code> and update our database version to 2. If we rebuild now, we&rsquo;ll see a new file for <code>2.json</code> in the schema directory.</p>
+<p>It&rsquo;s important to make sure we exported the original before making this change - having a file for each database version is what Room is going to use when we write tests for this, discussed in a later section.</p>
+<h2 id="create-the-migration">Create The Migration</h2>
+<p>In order to support the migration from one version to another, we need to create our own implementation of the <a href="https://developer.android.com/reference/kotlin/androidx/room/migration/Migration">Migration</a> abstract class:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * When Migrating from version 1 to version 2, we added the age property on the student
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * entity.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">MIGRATION</span><span class="n">_1_2</span> <span class="p">=</span> <span class="k">object</span> <span class="err">: </span><span class="nc">Migration</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">migrate</span><span class="p">(</span><span class="n">database</span><span class="p">:</span> <span class="n">SupportSQLiteDatabase</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Here are tips for creating these properties:</p>
+<ol>
+<li>A common naming convention found in the Room documentation is <code>MIGRATION_$startVersion_$endVersion</code>. You can use whatever you are comfortable with, though.</li>
+<li>The parent constructor takes an argument for the starting and ending version of the migration. Here, we&rsquo;re migrating from version 1 to version 2.</li>
+<li>Since <code>Migration</code> is an abstract class, we  need to override the one method called <code>migrate</code>, which gives us a reference to the database we&rsquo;re migrating.</li>
+<li>I recommend documenting your migrations with the changes that are relevant to it. This will help you and your team when reviewing these in the future.</li>
+</ol>
+<p>Inside of the <code>migrate</code> method, we have to write the actual SQL code for handling the migration. The code you put here will vary depending on what&rsquo;s changed - adding a field, removing a field, adding a new table, and more cases. At the end of this post you&rsquo;ll find some resources to help you with determining what the required statements are.</p>
+<p>For this particular change, we need to alter the <code>Student</code> table by adding a new column:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">MIGRATION</span><span class="n">_1_2</span> <span class="p">=</span> <span class="k">object</span> <span class="err">: </span><span class="nc">Migration</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">migrate</span><span class="p">(</span><span class="n">database</span><span class="p">:</span> <span class="n">SupportSQLiteDatabase</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">database</span><span class="p">.</span><span class="n">execSQL</span><span class="p">(</span><span class="s2">&#34;ALTER TABLE Student ADD COLUMN age INTEGER NOT NULL DEFAULT 0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Since <code>age</code> is non-null in the database, we need to supply a default which is going to be applied to all of the existing rows. If the new field were nullable, we could omit the <code>DEFAULT</code> property, if we wanted to.</p>
+<h2 id="add-migration-to-database-builder">Add Migration To Database Builder</h2>
+<p>Now that we&rsquo;ve defined the expected behavior for migrating from version 1 to version 2, we need to add this migration to our database builder, so that when we attempt to create a database for a phone that has our old application version, Room will know how to support this user:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">createDatabase</span><span class="p">(</span><span class="n">appContext</span><span class="p">:</span> <span class="n">Context</span><span class="p">):</span> <span class="n">StudentDatabase</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nc">Room</span><span class="p">.</span><span class="n">databaseBuilder</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">appContext</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StudentDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;student-database.db&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">addMigrations</span><span class="p">(</span><span class="n">MIGRATION_1_2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">allowMainThreadQueries</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>We&rsquo;re now safe to run our app without experiencing any of the crashes from the beginning of this post!</p>
+<h2 id="testing-migrations">Testing Migrations</h2>
+<p>Sometimes it may feel like manually testing your application is easier than writing your own unit tests. When it comes to database migrations, though, the opposite is often true. It is very time consuming to install a version of your app with the old database version, compile your app with the new database, and install on device to make sure everything worked. Especially if it doesn&rsquo;t - we have to start that whole process over again.</p>
+<p>So let&rsquo;s review how we can write our own tests to validate these migrations. First, we can create a test class inside our <code>androidTest</code> directory. This class needs two things before we can write tests:</p>
+<ol>
+<li>A reference to a SupportSQLiteDatabase, which we&rsquo;ll create for each test.</li>
+<li>A JUnit rule for a <a href="https://developer.android.com/reference/androidx/room/testing/MigrationTestHelper">MigrationTestHelper</a> from the Room library.</li>
+</ol>
+<p>Here is our initial code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@RunWith</span><span class="p">(</span><span class="n">AndroidJUnit4</span><span class="o">::</span><span class="k">class</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">StudentDatabaseMigrationsTest</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">lateinit</span> <span class="k">var</span> <span class="py">database</span><span class="p">:</span> <span class="n">SupportSQLiteDatabase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@JvmField</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Rule</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">migrationTestHelper</span> <span class="p">=</span> <span class="n">MigrationTestHelper</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nc">InstrumentationRegistry</span><span class="p">.</span><span class="n">getInstrumentation</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StudentDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">.</span><span class="n">canonicalName</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FrameworkSQLiteOpenHelperFactory</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Once we have that, we can begin to test a migration. We&rsquo;ll look at testing the migration from version 1 to version 2 in a step-by-step manner.</p>
+<h3 id="step-1-create-a-database-at-the-starting-version">Step 1: Create A Database At The Starting Version</h3>
+<p>We want to test migration from version 1 to 2. The first thing we should do is create a database that&rsquo;s using version 1 of our schema, and insert some test data that we want to work with. Note that we have to insert this test data manually, and cannot use the Room DAO interfaces, as those are expecting the latest database schema.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Test</span>
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">migrate1to2</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">database</span> <span class="p">=</span> <span class="n">migrationTestHelper</span><span class="p">.</span><span class="n">createDatabase</span><span class="p">(</span><span class="s2">&#34;test-database&#34;</span><span class="p">,</span> <span class="m">1</span><span class="p">).</span><span class="n">apply</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Since we&#39;ve created a database with version 1, we need to insert stuff manually, because
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// the  Room DAO interfaces are expecting the latest schema.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Version 1 of the database has id, firstName, and lastName.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">execSQL</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">            INSERT INTO Student VALUES (1, &#39;Adam&#39;,  &#39;McNeilly&#39;) 
+</span></span></span><span class="line"><span class="cl"><span class="s">            &#34;&#34;&#34;</span><span class="p">.</span><span class="n">trimIndent</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="step-2-migrate-to-end-version">Step 2: Migrate To End Version</h3>
+<p>Next, we need to have the database migrate from version 1 to 2, and validate the new schema. We also supply the migrations that should be run, in this case just <code>MIGRATION_1_2</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Test</span>
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">migrate1to2</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">database</span> <span class="p">=</span> <span class="n">migrationTestHelper</span><span class="p">.</span><span class="n">createDatabase</span><span class="p">(</span><span class="s2">&#34;test-database&#34;</span><span class="p">,</span> <span class="m">1</span><span class="p">).</span><span class="n">apply</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">database</span> <span class="p">=</span> <span class="n">migrationTestHelper</span><span class="p">.</span><span class="n">runMigrationsAndValidate</span><span class="p">(</span><span class="s2">&#34;test-database&#34;</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="k">true</span><span class="p">,</span> <span class="n">MIGRATION_1_2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>At this point, if Room was unable to find a valid migration path, your test will fail. This is a good sanity check, but I think we can take this test a little further and be more thorough.</p>
+<h3 id="step-3-validate-data">Step 3: Validate Data</h3>
+<p>Beyond validating the schema changes, we can also query the data from the database to ensure the data is what we expect. Earlier in the test, we inserted a dummy row with an id, first name, and last name. Let&rsquo;s manually query our new database and make sure we have all the same data, as well as a default age of 0 - which is the default we defined in our migration.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Test</span>
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">migrate1to2</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">database</span> <span class="p">=</span> <span class="n">migrationTestHelper</span><span class="p">.</span><span class="n">createDatabase</span><span class="p">(</span><span class="n">TEST_DB</span><span class="p">,</span> <span class="m">1</span><span class="p">).</span><span class="n">apply</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">/</span><span class="o">....</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">database</span> <span class="p">=</span> <span class="n">migrationTestHelper</span><span class="p">.</span><span class="n">runMigrationsAndValidate</span><span class="p">(</span><span class="n">TEST_DB</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="k">true</span><span class="p">,</span> <span class="n">MIGRATION_1_2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">resultCursor</span> <span class="p">=</span> <span class="n">database</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM Student&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">assertTrue</span><span class="p">(</span><span class="n">resultCursor</span><span class="p">.</span><span class="n">moveToFirst</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">ageColumnIndex</span> <span class="p">=</span> <span class="n">resultCursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="s2">&#34;age&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">nameColumnIndex</span> <span class="p">=</span> <span class="n">resultCursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="s2">&#34;firstName&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">lastNameColumnIndex</span> <span class="p">=</span> <span class="n">resultCursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="s2">&#34;lastName&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">ageFromDatabase</span> <span class="p">=</span> <span class="n">resultCursor</span><span class="p">.</span><span class="n">getInt</span><span class="p">(</span><span class="n">ageColumnIndex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">firstNameFromDatabase</span> <span class="p">=</span> <span class="n">resultCursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">nameColumnIndex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">lastNameFromDatabase</span> <span class="p">=</span> <span class="n">resultCursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">lastNameColumnIndex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">assertEquals</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">ageFromDatabase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">assertEquals</span><span class="p">(</span><span class="s2">&#34;Adam&#34;</span><span class="p">,</span> <span class="n">firstNameFromDatabase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">assertEquals</span><span class="p">(</span><span class="s2">&#34;McNeilly&#34;</span><span class="p">,</span> <span class="n">lastNameFromDatabase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="step-4-ship-with-confidence">Step 4: Ship With Confidence</h3>
+<p>Now that you&rsquo;ve written a database migration, and written a unit test that validates an application can update this schema and support the same data after this upgrade, you are able to ship your new app version with confidence. As you add more migrations, you can continue this approach to validate migrating from version 2 to 3, or versions 1 to 3, or whatever combination you find most important.</p>
+<h1 id="common-sql-statements-for-migrations">Common SQL Statements For Migrations</h1>
+<p>Understanding the process of creating and testing database migrations is the fundamental building block that is consistent no matter what changes are being made to your database. The only time the details about the change matters is when you are writing the migration itself:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">MIGRATION</span><span class="n">_1_2</span> <span class="p">=</span> <span class="k">object</span> <span class="err">: </span><span class="nc">Migration</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">migrate</span><span class="p">(</span><span class="n">database</span><span class="p">:</span> <span class="n">SupportSQLiteDatabase</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// What SQL statement really goes here?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">database</span><span class="p">.</span><span class="n">execSQL</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Room does a great job of abstracting away most of the SQL statements required for database interraction. As a result, it&rsquo;s easy to forget the SQL required for the migration statements. That&rsquo;s why I&rsquo;ve built <a href="https://github.com/AdamMc331/mastering-room-migrations/blob/master/README.md">this cheat sheet</a> alongside a sample project with database migrations to help you understand what to do, depending on the change you&rsquo;re making.</p>
+<h1 id="recap">Recap</h1>
+<p>Database migrations can be intimidating due to the number of steps required to create, implement, and test them. Not to mention the use of manual SQL statements that Room historically helps us avoid. I hope this post was helpful in breaking down those steps, and providing you with the confidence to ship your own migrations.</p>
+<p>Being able to save device data after making changes to the database schema is a really great user experience. Users don&rsquo;t want to feel like they&rsquo;re starting over every time they update your application.</p>
+<p>If you have any questions, let me know in the comments! If you find a particularly unique database migration, let me know how to help, and feel free to submit PRs to the public cheat sheet above.</p>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://twitch.tv/adammc" target="_blank" rel="noopener noreferrer me"
+    title="Twitch">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+</svg>
+</a>
+<a href="https://bsky.app/profile/adammc.bsky.social" target="_blank" rel="noopener noreferrer me"
+    title="Bluesky">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+    d="M11.999,10.236c0.321,-0.524 0.916,-1.507 1.405,-2.376c0.755,-1.344 1.692,-2.852 2.869,-4.028c1.283,-1.281 2.845,-2.171 4.739,-2.171c1.144,-0 1.864,0.585 2.299,1.497c0.486,1.017 0.545,2.551 0.51,3.883c-0.051,1.945 -0.232,3.337 -0.505,4.275c-0.229,0.786 -0.543,1.303 -0.878,1.615c-0.892,0.833 -1.8,1.263 -2.634,1.484c0.029,0.018 0.056,0.036 0.084,0.055c0.528,0.367 0.823,0.79 1.081,1.107c0.648,0.794 0.644,1.795 0.23,2.784c-0.481,1.151 -1.533,2.279 -2.12,2.773c-1.389,1.171 -2.506,1.362 -3.383,1.133c-0.88,-0.23 -1.59,-0.932 -2.156,-1.826c-0.45,-0.71 -0.817,-1.537 -1.176,-2.186c-0.115,-0.208 -0.302,-0.455 -0.406,-0.587c-0.02,0.019 -0.04,0.04 -0.056,0.058c-0.121,0.145 -0.234,0.328 -0.349,0.531c-0.363,0.644 -0.721,1.463 -1.157,2.166c-0.555,0.895 -1.252,1.597 -2.12,1.825c-0.863,0.227 -1.97,0.037 -3.363,-1.136c-0.586,-0.494 -1.638,-1.622 -2.119,-2.773c-0.414,-0.989 -0.418,-1.99 0.229,-2.784c0.258,-0.317 0.554,-0.74 1.082,-1.106c0.027,-0.019 0.055,-0.038 0.084,-0.056c-0.834,-0.221 -1.742,-0.651 -2.634,-1.484c-0.335,-0.312 -0.649,-0.829 -0.878,-1.615c-0.273,-0.938 -0.454,-2.33 -0.505,-4.275c-0.036,-1.332 0.024,-2.866 0.509,-3.883c0.435,-0.912 1.156,-1.497 2.3,-1.497c2.32,0 4.109,1.203 5.494,2.808c1.272,1.474 2.195,3.283 2.9,4.643c0.231,0.447 0.436,0.84 0.624,1.146Zm-0.01,5.653l0.296,0.031l0.271,0.086c0.208,0.088 0.413,0.229 0.607,0.428c0.455,0.467 0.882,1.369 1.36,2.284c0.249,0.477 0.518,0.958 0.841,1.339c0.231,0.274 0.483,0.502 0.805,0.569c0.488,0.103 1.052,-0.157 1.811,-0.797c0.452,-0.38 1.274,-1.239 1.645,-2.126c0.155,-0.371 0.265,-0.75 0.022,-1.048c-0.179,-0.22 -0.366,-0.529 -0.732,-0.783c-0.536,-0.372 -1.356,-0.51 -1.905,-0.654c-0.405,-0.106 -0.715,-0.234 -0.88,-0.355l-0.284,-0.303l-0.135,-0.367l-0.008,-0.211l0.035,-0.196l0.078,-0.195l0.142,-0.209l0.198,-0.181l0.296,-0.154c0.151,-0.055 0.348,-0.092 0.587,-0.104c0.815,-0.042 2.571,0.294 4.235,-1.259c0.171,-0.159 0.288,-0.445 0.404,-0.845c0.246,-0.843 0.391,-2.096 0.438,-3.843c0.024,-0.91 0.026,-1.938 -0.208,-2.738c-0.142,-0.486 -0.367,-0.891 -0.896,-0.891c-1.675,0 -2.974,0.983 -4.031,2.21c-1.179,1.369 -2.058,3.057 -2.752,4.321c-0.483,0.88 -0.902,1.573 -1.25,1.916c-0.088,0.086 -0.174,0.157 -0.257,0.214l-0.221,0.125l-0.228,0.078l-0.267,0.031l-0.274,-0.034l-0.231,-0.083l-0.219,-0.132c-0.081,-0.058 -0.164,-0.131 -0.248,-0.22c-0.327,-0.343 -0.718,-1.037 -1.174,-1.917c-0.654,-1.262 -1.497,-2.948 -2.676,-4.314c-1.067,-1.236 -2.417,-2.217 -4.203,-2.217c-0.53,0 -0.754,0.405 -0.896,0.891c-0.234,0.8 -0.232,1.828 -0.208,2.738c0.046,1.747 0.192,3 0.438,3.843c0.116,0.4 0.233,0.686 0.403,0.845c1.665,1.553 3.421,1.217 4.235,1.259c0.24,0.012 0.437,0.049 0.588,0.104l0.295,0.154l0.199,0.181l0.142,0.209l0.078,0.195l0.035,0.196l-0.009,0.211l-0.135,0.368l-0.283,0.303c-0.165,0.12 -0.476,0.248 -0.88,0.355c-0.549,0.144 -1.369,0.281 -1.905,0.653c-0.366,0.254 -0.554,0.564 -0.732,0.783c-0.243,0.298 -0.133,0.677 0.022,1.048c0.371,0.887 1.193,1.746 1.645,2.127c0.757,0.637 1.311,0.9 1.789,0.8c0.311,-0.066 0.55,-0.29 0.772,-0.557c0.315,-0.381 0.577,-0.86 0.822,-1.337c0.394,-0.763 0.752,-1.521 1.138,-2.01c0.431,-0.544 0.929,-0.815 1.455,-0.815Z" style="fill-rule:nonzero;"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://github.com/AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Adam McNeilly.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
