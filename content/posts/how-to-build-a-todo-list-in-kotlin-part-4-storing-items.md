@@ -77,22 +77,22 @@ Note that we use `object Storage` instead of `class Storage` at the top. This is
 The last thing we have to do is update our `MainActivity.kt` file to read from storage when it resumes, and writes to storage when it pauses. When the activity resumes, though, we only want to swap items when the list is empty. If the list isn't empty, this means the activity could be coming back from `AddTaskActivity` and if we just read from a file again, we'll overwrite that new item. Here is what this code looks like:
 
 ```kotlin
-override fun onResume() {
-    super.onResume()
+    override fun onResume() {
+        super.onResume()
 
-    val tasks = Storage.readData(this)
+        val tasks = Storage.readData(this)
 
-    // We only want to set the tasks if the list is already empty.
-    if (tasks != null && (adapter?.tasks?.isEmpty() ?: true)) {
-        adapter?.tasks = tasks
+        // We only want to set the tasks if the list is already empty.
+        if (tasks != null && (adapter?.tasks?.isEmpty() ?: true)) {
+            adapter?.tasks = tasks
+        }
     }
-}
 
-override fun onPause() {
-    super.onPause()
+    override fun onPause() {
+        super.onPause()
 
-    Storage.writeData(this, adapter?.tasks)
-}
+        Storage.writeData(this, adapter?.tasks)
+    }
 ```
 
 Note: When running this in Android Studio, you may notice that "tasks" is highlighted in onResume, stating "Smart cast to kotlin.collections.MutableList<com.package.Task>". The reason for this is because we never explicitly defined the type of "tasks", but it was inferred based on the return type of `readData()`. 

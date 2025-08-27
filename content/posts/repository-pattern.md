@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: Repository Pattern&#58; Properly Organizing Your Data Layer
-description: An explanation of the repository pattern and why we need it.
-modified: 2019-05-20
-published: true
-tags: [architecture]
-categories: [android]
----
++++
+date = '2019-05-20:00:00-04:00'
+draft = false
+title = "Repository Pattern: Properly Organizing Your Data Layer"
++++
 
 How to properly architect your application is a concern we as developers constantly face. There's unfortunately no one size fits all answer to it, and sometimes we don't even know where to begin. I've learned along my Android journey that the answer can also vary depending on what portion of your app you're trying to organize. Of course, you might say, [it depends](https://handstandsam.com/2019/03/10/it-depends-is-the-answer-to-your-android-question/).
 

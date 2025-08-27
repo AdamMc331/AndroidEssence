@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: Room Relationship Recap
-modified: 2020-04-27
-published: true
-tags: [databases]
-categories: [android]
----
++++
+date = '2020-04-27:00:00-04:00'
+draft = false
+title = "Room Relationship Recap"
++++
 
 In this post, we're going to explore some advanced concepts of the [Room Persistence Library](https://developer.android.com/training/data-storage/room). Room is a great tool for storing complex data for your Android applications inside a SQLite database. As you begin to store more data in your applications though, it can be difficult to determine how to organize all of it. 
 

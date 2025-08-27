@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: Storing Network Responses With Apollo Normalized Cache
-modified: 2021-02-15
-published: true
-tags: [graphql]
-categories: [android]
----
++++
+date = '2021-02-05:00:00-04:00'
+draft = false
+title = "Storing Network Responses With Apollo Normalized Cache"
++++
 
 In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-01-storing-network-responses-with-apollo-http-cache.md %}) we looked at the HTTP cache from [Apollo Android](https://www.apollographql.com/docs/android/) for storing network responses. In this post, we look at its counter part, the [normalized cache](https://www.apollographql.com/docs/android/essentials/normalized-cache/).
 

@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: Contributing Code Samples To Kotlin Documentation
-modified: 2020-02-24
-published: true
-tags: [open source]
-categories: [android]
----
++++
+date = '2020-02-24:00:00-04:00'
+draft = false
+title = "Contributing Code Samples To Kotlin Documentation"
++++
 
 The Kotlin language used by Android developers all over the world is open source and available on [GitHub](https://github.com/jetbrains/kotlin). This means it's open for contributions from anyone! It may, of course, feel very intimidating to contribute to a project of that size. Especially for those of us who are new to open source contributions. 
 

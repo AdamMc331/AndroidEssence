@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: "Five Essential Developer Experience Concepts For Android"
-modified: 2021-09-10
-published: true
-tags: [twitch, toa]
-categories: [android]
----
++++
+date = '2021-09-10:00:00-04:00'
+draft = false
+title = "Five Essential Developer Experience Concepts For Android"
++++
 
 In the most recent [live stream](https://www.youtube.com/watch?v=ePpbpLyYI1w) for Tasks Of Affirmation, we looked at creating a good developer experience. It's important to consider developers at the start of any new project, so we can ensure that over the lifetime of a project anyone who contributes can understand how to contribute, match any guidelines that a team has, and get up and running quickly. We also want to ensure that our codebase maintains a certain quality of formatting and a lack of code smells - and putting these checks in place before you even start prevents them from ever being introduced at all. 
 

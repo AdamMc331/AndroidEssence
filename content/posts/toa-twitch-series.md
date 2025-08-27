@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: "Tasks Of Affirmation: A New Twitch Live Stream Series"
-modified: 2021-09-02
-published: true
-tags: [twitch, toa]
-categories: [android]
----
++++
+date = '2021-09-02:00:00-04:00'
+draft = false
+title = "Tasks Of Affirmation: A New Twitch Live Stream Series"
++++
 
 In the late summer of 2020, I began live streaming on [my Twitch channel](https://twitch.com/adammc331). We started off by building an [Android Study Guide](https://github.com/adammc331/AndroidStudyGuide) application. The purpose of the application was to build something people would be interested in using, while also taking the opportunity to build an application out in the open. 
 

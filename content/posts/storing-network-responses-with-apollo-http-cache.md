@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: Storing Network Responses With Apollo HTTP Cache
-modified: 2021-02-01
-published: true
-tags: [graphql]
-categories: [android]
----
++++
+date = '2021-02-01:00:00-04:00'
+draft = false
+title = "Storing Network Responses With Apollo HTTP Cache"
++++
 
 Caching is the practice of storing data that we requested previously so we can serve it faster in the future. This creates a better user experience by decreasing loading times. It also has long term benefits like reducing the number of network requests, to save on phone resources or potentially provide offline support. Today, we're going to discuss how to use the [HTTP cache](https://www.apollographql.com/docs/android/essentials/http-cache/) for the [Apollo Android SDK](https://github.com/apollographql/apollo-android).
 

@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: Enforcing Custom View Usage With Android Lint
-modified: 2021-02-22
-published: true
-tags: [lint]
-categories: [android]
----
++++
+date = '2021-02-22:00:00-04:00'
+draft = false
+title = "Enforcing Custom View Usage With Android Lint"
++++
 
 Sometimes an Android project will have to implement a [custom view](https://developer.android.com/guide/topics/ui/custom-components) that is an extension of an existing Android view. We may do this for style purposes, or to implement additional logic, or any number of customization purposes. 
 

@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: Comparing Three Dependency Injection Solutions
-modified: 2020-08-22
-published: true
-tags: [dependency injection]
-categories: [android]
----
++++
+date = '2020-08-22:00:00-04:00'
+draft = false
+title = "Comparing Three Dependency Injection Solutions"
++++
 
 During a recent live stream on my [Twitch](https://www.twitch.tv/adammc331) channel, we explored three different solutions to dependency injection on Android. A do it yourself approach, Koin, and Dagger Hilt. Let's revisit them side by side, and look at the nuances between them, so we can determine which solution we want to use in our own applications.
 

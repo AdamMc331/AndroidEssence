@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: MVWTF&#58; Demystifying Architecture Patterns
-description: Breaking down the differences of various MV* patterns.
-modified: 2019-08-16
-published: true
-tags: [architecture]
-categories: [android]
----
++++
+date = '2019-08-16:00:00-04:00'
+draft = false
+title = "MVWTF: Demystifying Architecture Patterns"
++++
 
 As an Android developer, one of the questions I constantly see asked within the community is "what architecture pattern should I use?"
 

@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: Unit Testing RxJava or Coroutine Code With Constructor Injection
-description: A walk through for unit testing asynchronous tools such as RxJava or Coroutines.
-modified: 2019-04-30
-published: true
-tags: [rxjava, coroutines, testing]
-categories: [android]
----
++++
+date = '2019-04-30:00:00-04:00'
+draft = false
+title = "Unit Testing RxJava Or Coroutine Code With Constructor Injection"
++++
 
 Putting aside the long lasting debate right now about whether you should use RxJava or coroutines for your asynchronous code on Android, both camps often hit the same problem. How do I write unit tests for this? 
 

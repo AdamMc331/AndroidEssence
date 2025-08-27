@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: Getting Started With Test Driven Development
-modified: 2020-03-02
-published: true
-tags: [testing]
-categories: [android]
----
++++
+date = '2020-03-02:00:00-04:00'
+draft = false
+title = "Getting Started With Test Driven Development"
++++
 
 One of the many buzzwords thrown around the software devleopment community is Test Driven Development, or TDD. It is one of those phrases that sounds great when you say it - who wouldn't want to have tests be their first priority when writing code? 
 

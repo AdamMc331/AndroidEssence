@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: Unit Testing Custom Lint Checks
-modified: 2021-03-01
-published: true
-tags: [lint]
-categories: [android]
----
++++
+date = '2021-03-01:00:00-04:00'
+draft = false
+title = "Unit Testing Custom Lint Checks"
++++
 
 In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-22-enforce-custom-views-with-lint.md %}) we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.
 

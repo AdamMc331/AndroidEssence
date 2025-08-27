@@ -1,12 +1,8 @@
----
-layout: post
-author: adam
-title: Mastering Room Database Migrations
-modified: 2020-05-14
-published: true
-tags: [databases]
-categories: [android]
----
++++
+date = '2020-05-14:00:00-04:00'
+draft = false
+title = "Mastering Room Database Migrations"
++++
 
 In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we're going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store. 
 
