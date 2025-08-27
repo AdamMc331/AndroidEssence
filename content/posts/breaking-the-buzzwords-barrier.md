@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: Breaking the Buzzwords Barrier
-description: Series of posts going over a few of the Android development buzzwords, and how to integrate them into your application.
-modified: 2018-05-30
-published: true
-tags: [architecture]
-categories: [android, tutorial]
----
++++
+date = '2018-05-30:00:00-04:00'
+draft = false
+title = "Breaking The Buzzwords Barrier"
++++
 
 MVVM? Retrofit? RxJava? Data binding? Architecture components? LiveData? Kotlin?
 
