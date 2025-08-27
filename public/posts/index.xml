@@ -263,17 +263,6 @@
     </item>
     
     <item>
-      <title>Getting Started With Retrofit In Android</title>
-      <link>http://localhost:1313/posts/2016-11-05-getting-started-with-retrofit/</link>
-      <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/2016-11-05-getting-started-with-retrofit/</guid>
-      
-      <description>&lt;p&gt;As a new or intermediate Android developer, getting started with &lt;a href=&#34;http://square.github.io/retrofit&#34;&gt;Retrofit&lt;/a&gt;, a popular HTTP client, can seem pretty daunting. However, using this library is not as scary as it sounds. Here are four easy steps to creating your first Retrofit application!&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
       <title>Breaking the Buzzwords Barrier Part 3&amp;#58; ViewModel</title>
       <link>http://localhost:1313/posts/2018-06-01-breaking-the-buzzwords-barrier-viewmodel/</link>
       <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
@@ -482,11 +471,22 @@
     </item>
     
     <item>
-      <title>Creating Android App Shortcuts</title>
-      <link>http://localhost:1313/posts/2017-04-14-creating-android-app-shortcuts/</link>
-      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      <title>Maintain Library Versions ACross Modules</title>
+      <link>http://localhost:1313/posts/maintain-library-versions-across-modules/</link>
+      <pubDate>Fri, 05 May 2017 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2017-04-14-creating-android-app-shortcuts/</guid>
+      <guid>http://localhost:1313/posts/maintain-library-versions-across-modules/</guid>
+      
+      <description>&lt;p&gt;It is tough enough maintaing your app by updating the support library version numbers every time a new version is out, let alone factoring in any other third party libraries you may use. This is especially painful if you have multiple modules, as you have to update the version in each &lt;code&gt;build.gradle&lt;/code&gt; file. Thankfully, we can make use of the project level gradle file to make this more maintainable.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Creating Android App Shortcuts</title>
+      <link>http://localhost:1313/posts/creating-android-app-shortcuts/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/creating-android-app-shortcuts/</guid>
       
       <description>&lt;p&gt;Android app shortcuts are a special feature added in Android 7.1 (API 25). Shortcuts are special actions that appear when you long press on a launcher icon, that will trigger a specified intent. With this post you will learn how to create both static and dynamic app shortcuts. The only pre-requisite is that your app is targeting API 25 or greater.&lt;/p&gt;
 &lt;h4 id=&#34;static-shortcuts&#34;&gt;Static Shortcuts&lt;/h4&gt;
@@ -496,10 +496,10 @@
     
     <item>
       <title>PinchZoomTextView Library Released</title>
-      <link>http://localhost:1313/posts/2016-11-27-pinchzoomtextview-library-released/</link>
-      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/posts/pinchzoomtextview-library-released/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2016-11-27-pinchzoomtextview-library-released/</guid>
+      <guid>http://localhost:1313/posts/pinchzoomtextview-library-released/</guid>
       
       <description>&lt;p&gt;I was recently asked if there was a way to increase/decrease the font size of a TextView by pinching on it, just as you can with many iamges. Well, it turns out that&amp;rsquo;s quite possible!&lt;/p&gt;
 &lt;p&gt;All you have to do is override the &lt;code&gt;onTouchEvent()&lt;/code&gt; method of your view, which is &lt;a href=&#34;https://github.com/androidessence/PinchZoomTextView/blob/master/lib/src/main/java/com/androidessence/pinchzoomtextview/PinchZoomTextView.java#L67-L86&#34;&gt;exactly what I do&lt;/a&gt; in my latest library, which allows you to pinch your screen to zoom in and out of a TextView. Check out the sample gif below:&lt;/p&gt;</description>
@@ -507,11 +507,22 @@
     </item>
     
     <item>
-      <title>RecyclerViewUtils Library Released</title>
-      <link>http://localhost:1313/posts/2016-08-31-recyclerviewutils-library-released/</link>
-      <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
+      <title>Getting Started With Retrofit In Android</title>
+      <link>http://localhost:1313/posts/getting-started-with-retrofit/</link>
+      <pubDate>Thu, 13 Oct 2016 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2016-08-31-recyclerviewutils-library-released/</guid>
+      <guid>http://localhost:1313/posts/getting-started-with-retrofit/</guid>
+      
+      <description>&lt;p&gt;As a new or intermediate Android developer, getting started with &lt;a href=&#34;http://square.github.io/retrofit&#34;&gt;Retrofit&lt;/a&gt;, a popular HTTP client, can seem pretty daunting. However, using this library is not as scary as it sounds. Here are four easy steps to creating your first Retrofit application!&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>RecyclerViewUtils Library Released</title>
+      <link>http://localhost:1313/posts/recyclerviewutils-library-released/</link>
+      <pubDate>Wed, 31 Aug 2016 00:00:00 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/recyclerviewutils-library-released/</guid>
       
       <description>&lt;p&gt;Recently, I became tired of writing the same old tedious code for every single RecyclerView and Adpater class I used, that all did the same thing, so I extrapolated all of it into a personal library.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&#34;https://github.com/adammc331/RecyclerViewUtils&#34;&gt;RecyclerViewUtils&lt;/a&gt; library helps make everyone&amp;rsquo;s life a little easier with a CoreViewHolder and CoreAdapter class, described below.&lt;/p&gt;</description>
@@ -520,10 +531,10 @@
     
     <item>
       <title>MaterialSearchView Library</title>
-      <link>http://localhost:1313/posts/2016-04-22-materialsearchview-library/</link>
-      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/posts/materialsearchview-library/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2016-04-22-materialsearchview-library/</guid>
+      <guid>http://localhost:1313/posts/materialsearchview-library/</guid>
       
       <description>&lt;p&gt;Android has a built in SearchView component but it doesn&amp;rsquo;t feel much like Material Design. This has even been asked on &lt;a href=&#34;http://stackoverflow.com/questions/27556623/creating-a-searchview-that-looks-like-the-material-design-guidelines&#34;&gt;StackOverflow&lt;/a&gt; because developers are having trouble recreating the same MaterialSearchView that appears in many of Google&amp;rsquo;s applications. However, thanks to one of my good friends Maurício, you can now implement this great component in your own projects!&lt;/p&gt;</description>
       
@@ -531,10 +542,10 @@
     
     <item>
       <title>RichTextView Library Released</title>
-      <link>http://localhost:1313/posts/2016-04-03-richtextview-library-released/</link>
-      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/posts/richtextview-library-released/</link>
+      <pubDate>Sun, 03 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2016-04-03-richtextview-library-released/</guid>
+      <guid>http://localhost:1313/posts/richtextview-library-released/</guid>
       
       <description>&lt;p&gt;As a form of ultimate procrastination this weekend, I decided to spend the last two days developing a RichTextView library.&lt;/p&gt;
 &lt;p&gt;This weekend I built the RichTextView (the naming convention comes from the &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/system.windows.controls.richtextbox(v=vs.110).aspx&#34;&gt;RichTextBox&lt;/a&gt; C# class) which allows the user to format different parts ofa. TextView in different ways. For example, if I wanted to display a string but only bold a portion of it, I could achieve that with this class.&lt;/p&gt;</description>
@@ -542,11 +553,11 @@
     </item>
     
     <item>
-      <title>Designing User Interfaces For Android Wear Part 2&amp;#58; Cards</title>
-      <link>http://localhost:1313/posts/2016-01-26-designing-user-interfaces-for-android-wear-part-2/</link>
-      <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+      <title>Designing User Interfaces For Android Wear Part 2: Cards</title>
+      <link>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-2/</link>
+      <pubDate>Tue, 26 Jan 2016 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2016-01-26-designing-user-interfaces-for-android-wear-part-2/</guid>
+      <guid>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-2/</guid>
       
       <description>&lt;p&gt;User interface for Android Wear have all the same components as a phone&amp;rsquo;s UI, they just appear a little differently. In this post we&amp;rsquo;re going to talk about Cards. You&amp;rsquo;ve most likely seen these in the Google now app, among other Material Design apps. Cards are great because they are a component that is able to provide a consistent look across multiple platforms.&lt;/p&gt;
 &lt;p&gt;We will consider this post as a deeper dive into an &lt;a href=&#34;http://developer.android.com/training/wearables/ui/cards.html&#34;&gt;existing tutorial&lt;/a&gt; in the Android docs, but as that one states the Cards discussed here are not the same as the Cards that appear as notifications on Android Wear. See the link to better understand this distinction. Let&amp;rsquo;s go over some of the relevant classes, and we&amp;rsquo;ll discuss their differences and how to implement them.&lt;/p&gt;</description>
@@ -554,11 +565,11 @@
     </item>
     
     <item>
-      <title>Designing User Interfaces For Android Wear Part 1&amp;#58; Lists</title>
-      <link>http://localhost:1313/posts/2016-01-01-designing-user-interfaces-for-android-wear-part-1/</link>
-      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <title>Designing User Interfaces For Android Wear Part 1: Lists</title>
+      <link>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-1/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2016-01-01-designing-user-interfaces-for-android-wear-part-1/</guid>
+      <guid>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-1/</guid>
       
       <description>&lt;p&gt;Rising in popularity after the latest Google I/O, &lt;a href=&#34;https://www.android.com/wear/&#34;&gt;Android Wear&lt;/a&gt; is a game changer for mobile development. Wearable technology has brought benefits from a quicker access to information to a more accurate monitoring of our physical health. Developing for this platform allows you to tap into those features that are not as readily available on mobile handhelds as well as offer a more immersive experience of your product by making it available on wearable devices.&lt;/p&gt;
 &lt;p&gt;As always, the &lt;a href=&#34;http://developer.android.com/intl/pt-br/wear/index.html&#34;&gt;documentation&lt;/a&gt; will offer the most thorough insight into what is available, but I’d like to discuss how the UI development differs and how you can get started.&lt;/p&gt;</description>
@@ -567,10 +578,10 @@
     
     <item>
       <title>Material Design Specs Library</title>
-      <link>http://localhost:1313/posts/2015-12-13-material-design-specs-library/</link>
-      <pubDate>Sun, 13 Dec 2015 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/posts/material-design-specs-library/</link>
+      <pubDate>Sun, 13 Dec 2015 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-12-13-material-design-specs-library/</guid>
+      <guid>http://localhost:1313/posts/material-design-specs-library/</guid>
       
       <description>&lt;p&gt;Along with the &lt;a href=&#34;http://androidessence.com/recyclerview-cursoradapter-library/&#34;&gt;RecyclerViewCursorAdapter library&lt;/a&gt; that was released earlier this week, I have now released my second open source Android library. In collaboration with my good friend &lt;a href=&#34;https://github.com/Mauker1&#34;&gt;Maurício&lt;/a&gt;, we have built a library for including the Material Design Specs in your Android application. Currently, the library has the full color palette along with some helper methods, and some elevation resources to give the proper elevation to your components. The source code, as well as instructions for including the library can be found on &lt;a href=&#34;https://github.com/androidessence/MaterialDesignSpecs&#34;&gt;GitHub&lt;/a&gt;, so go there to check it out and give us a star!&lt;/p&gt;</description>
       
@@ -578,10 +589,10 @@
     
     <item>
       <title>RecyclerViewCursorAdapter Library</title>
-      <link>http://localhost:1313/posts/2015-12-10-recyclerviewcursoradapter-library/</link>
-      <pubDate>Thu, 10 Dec 2015 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/posts/recyclerviewcursoradapter-library/</link>
+      <pubDate>Thu, 10 Dec 2015 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-12-10-recyclerviewcursoradapter-library/</guid>
+      <guid>http://localhost:1313/posts/recyclerviewcursoradapter-library/</guid>
       
       <description>&lt;p&gt;Today I released my first library which is for a RecyclerviewCursorAdapter.&lt;/p&gt;
 &lt;p&gt;Using a ListView to display database data becomes a lot easier when you use a CursorAdapter combined with a CursorLoader to display data from your ContentProvider. The main benefit of &lt;a href=&#34;http://developer.android.com/intl/pt-br/reference/android/content/CursorLoader.html&#34;&gt;CursorLoader&lt;/a&gt; is explained in the docs:&lt;/p&gt;</description>
@@ -589,22 +600,22 @@
     </item>
     
     <item>
-      <title>How To Make An Android UI Part 2&amp;#58; Java Code</title>
-      <link>http://localhost:1313/posts/2015-12-02-how-to-make-an-android-ui-part-2/</link>
-      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
+      <title>How To Make An Android UI Part 2: Java Code</title>
+      <link>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</link>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-12-02-how-to-make-an-android-ui-part-2/</guid>
+      <guid>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</guid>
       
       <description>&lt;p&gt;After reading [part one]({{ site.baseurl }}{% link _posts/2015-11-08-how-to-make-an-android-ui-part-1.md %}) which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:&lt;/p&gt;</description>
       
     </item>
     
     <item>
-      <title>How To Make An Android UI Part 1&amp;#58; XML and Views</title>
-      <link>http://localhost:1313/posts/2015-11-08-how-to-make-an-android-ui-part-1/</link>
-      <pubDate>Sun, 08 Nov 2015 00:00:00 +0000</pubDate>
+      <title>How To Make An Android UI Part 1: XML And Views</title>
+      <link>http://localhost:1313/posts/how-to-make-an-android-ui-part-1/</link>
+      <pubDate>Sun, 08 Nov 2015 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-11-08-how-to-make-an-android-ui-part-1/</guid>
+      <guid>http://localhost:1313/posts/how-to-make-an-android-ui-part-1/</guid>
       
       <description>&lt;p&gt;Many of the posts on this site so far deal with nuanced tricks such as RecyclerView swiping/drag and drops, and often make the assumption that the reader has already worked with the Android UI. This post is going to break it down for the beginners, teaching you the fundamentals of mobile UI development and where you can pick up on skills to move forward.&lt;/p&gt;</description>
       
@@ -612,21 +623,21 @@
     
     <item>
       <title>Creating A Material Design Navigation Drawer</title>
-      <link>http://localhost:1313/posts/2015-10-11-creating-a-material-design-navigation-drawer/</link>
-      <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/posts/creating-a-material-design-navigation-drawer/</link>
+      <pubDate>Sun, 11 Oct 2015 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-10-11-creating-a-material-design-navigation-drawer/</guid>
+      <guid>http://localhost:1313/posts/creating-a-material-design-navigation-drawer/</guid>
       
-      <description>&lt;p&gt;For those of you who haven’t upgraded to Android Studio 1.4 yet, you may not have realized there is a new Navigation Drawer template in the New Project menu. While templates are great, they don’t always give you the full story. Modifying the Navigation View can be tricky if you don’t know where to look, and you may not understand why certain things are written as they are. This post is going to walk you through the process of creating your own Navigation View, and discussing some of the differences between this and the previous model.&lt;/p&gt;</description>
+      <description></description>
       
     </item>
     
     <item>
       <title>Top 5 Color Scheme Tools</title>
-      <link>http://localhost:1313/posts/2015-09-21-top-5-color-scheme-tools/</link>
+      <link>http://localhost:1313/posts/top-5-color-scheme-tools/</link>
       <pubDate>Mon, 21 Sep 2015 00:00:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/2015-09-21-top-5-color-scheme-tools/</guid>
+      <guid>http://localhost:1313/posts/top-5-color-scheme-tools/</guid>
       
       <description>&lt;p&gt;When it comes to making an app, some of the biggest struggles developers face is outside of the code itself. What should I name the app? Who is my target audience? Or the one I struggle with the most: what colors should I use in my Android application?&lt;/p&gt;
 &lt;p&gt;This last question does not have one right or wrong answer. For that reason, it is one of the hardest questions to answer. Thankfully, there are many tools out there to help you determine your applications color scheme, and these are my five favorites.&lt;/p&gt;</description>
@@ -680,7 +691,7 @@ categories: [android]&lt;/h2&gt;
     <item>
       <title>Swipe To Dismiss RecyclerView Items</title>
       <link>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</link>
-      <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Sep 2015 00:00:00 -0400</pubDate>
       
       <guid>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</guid>
       
@@ -728,17 +739,6 @@ categories: [android]&lt;/h2&gt;
       <description>&lt;p&gt;One of my favorite components introduced with Material Design is the &lt;a href=&#34;https://www.google.com/design/spec/components/buttons-floating-action-button.html&#34;&gt;FloatingActionButton&lt;/a&gt; (FAB). These buttons are great for emphasizing the primary action of an Activity, but quickly become a nuisance when displayed over a RecyclerView as they may block the bottom list item. To avoid this, we can hide the FloatingActionButton when scrolling a RecyclerView.&lt;/p&gt;
 &lt;p&gt;In today’s tutorial we will only be hiding the FAB when the RecyclerView is scrolled upward, and it will reappear on the next down scroll as shown here:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/fab_scroll.gif&#34; alt=&#34;FloatingActionButton&#34;&gt;&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Maintain Library Versions Across Modules</title>
-      <link>http://localhost:1313/posts/2017-05-05-maintain-library-versions-across-modules/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/2017-05-05-maintain-library-versions-across-modules/</guid>
-      
-      <description>&lt;p&gt;It is tough enough maintaing your app by updating the support library version numbers every time a new version is out, let alone factoring in any other third party libraries you may use. This is especially painful if you have multiple modules, as you have to update the version in each &lt;code&gt;build.gradle&lt;/code&gt; file. Thankfully, we can make use of the project level gradle file to make this more maintainable.&lt;/p&gt;</description>
       
     </item>
     

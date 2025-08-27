@@ -125,15 +125,6 @@
     <loc>http://localhost:1313/categories/tutorial/</loc>
     <lastmod>2018-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2016-11-05-getting-started-with-retrofit/</loc>
-    <lastmod>2018-10-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/networking/</loc>
-    <lastmod>2018-10-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/retrofit/</loc>
-    <lastmod>2018-10-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/2018-06-01-breaking-the-buzzwords-barrier-viewmodel/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -209,98 +200,62 @@
     <loc>http://localhost:1313/tags/recyclerview/</loc>
     <lastmod>2017-05-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/app-shortcuts/</loc>
-    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/maintain-library-versions-across-modules/</loc>
+    <lastmod>2017-05-05T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2017-04-14-creating-android-app-shortcuts/</loc>
-    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/creating-android-app-shortcuts/</loc>
+    <lastmod>2017-04-14T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/nougat/</loc>
-    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/pinchzoomtextview-library-released/</loc>
+    <lastmod>2016-11-27T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2016-11-27-pinchzoomtextview-library-released/</loc>
-    <lastmod>2016-11-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/getting-started-with-retrofit/</loc>
+    <lastmod>2016-10-13T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/views/</loc>
-    <lastmod>2016-11-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/recyclerviewutils-library-released/</loc>
+    <lastmod>2016-08-31T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2016-08-31-recyclerviewutils-library-released/</loc>
-    <lastmod>2016-08-31T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/materialsearchview-library/</loc>
+    <lastmod>2016-04-22T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/material-design/</loc>
-    <lastmod>2016-04-22T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/richtextview-library-released/</loc>
+    <lastmod>2016-04-03T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2016-04-22-materialsearchview-library/</loc>
-    <lastmod>2016-04-22T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-2/</loc>
+    <lastmod>2016-01-26T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2016-04-03-richtextview-library-released/</loc>
-    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-1/</loc>
+    <lastmod>2016-01-01T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/textview/</loc>
-    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/material-design-specs-library/</loc>
+    <lastmod>2015-12-13T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/android-wear/</loc>
-    <lastmod>2016-01-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/recyclerviewcursoradapter-library/</loc>
+    <lastmod>2015-12-10T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cards/</loc>
-    <lastmod>2016-01-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</loc>
+    <lastmod>2015-12-02T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2016-01-26-designing-user-interfaces-for-android-wear-part-2/</loc>
-    <lastmod>2016-01-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/how-to-make-an-android-ui-part-1/</loc>
+    <lastmod>2015-11-08T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2016-01-01-designing-user-interfaces-for-android-wear-part-1/</loc>
-    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/creating-a-material-design-navigation-drawer/</loc>
+    <lastmod>2015-10-11T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2015-12-13-material-design-specs-library/</loc>
-    <lastmod>2015-12-13T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/top-5-color-scheme-tools/</loc>
+    <lastmod>2015-09-21T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/adapter/</loc>
-    <lastmod>2015-12-10T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</loc>
+    <lastmod>2015-09-17T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2015-12-10-recyclerviewcursoradapter-library/</loc>
-    <lastmod>2015-12-10T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/using-elevation-in-android-applications/</loc>
+    <lastmod>2015-09-15T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2015-12-02-how-to-make-an-android-ui-part-2/</loc>
-    <lastmod>2015-12-02T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</loc>
+    <lastmod>2015-09-09T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ui/</loc>
-    <lastmod>2015-12-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2015-11-08-how-to-make-an-android-ui-part-1/</loc>
-    <lastmod>2015-11-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2015-10-11-creating-a-material-design-navigation-drawer/</loc>
-    <lastmod>2015-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/navigation-drawer/</loc>
-    <lastmod>2015-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/colors/</loc>
-    <lastmod>2015-09-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2015-09-21-top-5-color-scheme-tools/</loc>
-    <lastmod>2015-09-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2015-09-17-how-to-use-the-recyclerview-adapter/</loc>
-    <lastmod>2015-09-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/elevation/</loc>
-    <lastmod>2015-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2015-09-15-using-elevation-in-android-applications/</loc>
-    <lastmod>2015-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/drag-and-drop/</loc>
-    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2015-09-09-drag-and-drop-recyclerview-items/</loc>
-    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/swipe-to-dismiss/</loc>
-    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2015-09-09-swipe-to-dismiss-recyclerview-items/</loc>
-    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</loc>
+    <lastmod>2015-09-09T00:00:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/recyclerview-vs-listview/</loc>
     <lastmod>2015-09-07T00:00:00-04:00</lastmod>
@@ -310,9 +265,5 @@
   </url><url>
     <loc>http://localhost:1313/posts/hide-the-floatingactionbutton-when-scrolling-recyclerview/</loc>
     <lastmod>2015-09-02T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/gradle/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/2017-05-05-maintain-library-versions-across-modules/</loc>
   </url>
 </urlset>
