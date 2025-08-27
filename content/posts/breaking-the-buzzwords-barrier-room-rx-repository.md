@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: Breaking the Buzzwords Barrier Part 2&#58; Rx, Room, and Repository
-description: Demonstrates how to use RxJava with Room and the Repository pattern.
-modified: 2018-05-31
-published: true
-tags: [architecture, rxjava, room, databases]
-categories: [android, tutorial]
----
++++
+date = '2018-01-02:00:00-04:00'
+draft = false
+title = "Breaking The Buzzwords Barrier Part 2: Rx, Room, and Repository"
++++
 
 In [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) we discussed how we were going to architect the various components of our application. Now it's time to build them. To understand what we should build first, we should revisit the diagram:
 
@@ -42,66 +37,66 @@ The first thing we need to get started with Room is an [Entity](https://develope
 So if I wanted a table called `Account`, with a column for `name` and `balance`, I would write an entity like this:
 
 ```kotlin
-    @Entity(indices = [(Index("name"))])
-    data class Account(
-            @PrimaryKey(autoGenerate = false) var name: String = "",
-            var balance: Double = 0.0
-    )
+@Entity(indices = [(Index("name"))])
+data class Account(
+        @PrimaryKey(autoGenerate = false) var name: String = "",
+        var balance: Double = 0.0
+)
 ```
 
 If you chose to [export schemas](https://developer.android.com/reference/android/arch/persistence/room/Database#exportschema) in room, you can see a detailed overview of what this class will actually do with regards to the database:
 
 ```json
-    {
-        "tableName": "Account",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `balance` REAL NOT NULL, PRIMARY KEY(`name`))",
-        "fields": [
-          {
-            "fieldPath": "name",
-            "columnName": "name",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "balance",
-            "columnName": "balance",
-            "affinity": "REAL",
-            "notNull": true
-          }
+{
+    "tableName": "Account",
+    "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `balance` REAL NOT NULL, PRIMARY KEY(`name`))",
+    "fields": [
+      {
+        "fieldPath": "name",
+        "columnName": "name",
+        "affinity": "TEXT",
+        "notNull": true
+      },
+      {
+        "fieldPath": "balance",
+        "columnName": "balance",
+        "affinity": "REAL",
+        "notNull": true
+      }
+    ],
+    "primaryKey": {
+      "columnNames": [
+        "name"
+      ],
+      "autoGenerate": false
+    },
+    "indices": [
+      {
+        "name": "index_Account_name",
+        "unique": false,
+        "columnNames": [
+          "name"
         ],
-        "primaryKey": {
-          "columnNames": [
-            "name"
-          ],
-          "autoGenerate": false
-        },
-        "indices": [
-          {
-            "name": "index_Account_name",
-            "unique": false,
-            "columnNames": [
-              "name"
-            ],
-            "createSql": "CREATE  INDEX `index_Account_name` ON `${TABLE_NAME}` (`name`)"
-          }
-        ],
-        "foreignKeys": []
-    }
+        "createSql": "CREATE  INDEX `index_Account_name` ON `${TABLE_NAME}` (`name`)"
+      }
+    ],
+    "foreignKeys": []
+}
 ```
 
 An important thing to note, is that the class name is what is automatically used as the table name, unless annotated otherwise. In Cash Caretaker, we naturally want a class called a `Transaction`, representing a financial one, but we can't have a `Transaction` table as that's a reserved SQLite keyword. So in some cases you want to add the table name to your annotation (this example also shows how you can have foreign keys as well):
 
 ```kotlin
-    @Parcelize
-    @Entity(tableName = "transactionTable", foreignKeys = [(ForeignKey(entity = Account::class, parentColumns = arrayOf("name"), childColumns = arrayOf("accountName"), onDelete = ForeignKey.CASCADE))])
-    data class Transaction(
-            var accountName: String = "",
-            var description: String = "",
-            var amount: Double = 0.0,
-            var withdrawal: Boolean = true,
-            var date: Date = Date(),
-            @PrimaryKey(autoGenerate = true) var id: Long = 0
-    ) : Parcelable
+@Parcelize
+@Entity(tableName = "transactionTable", foreignKeys = [(ForeignKey(entity = Account::class, parentColumns = arrayOf("name"), childColumns = arrayOf("accountName"), onDelete = ForeignKey.CASCADE))])
+data class Transaction(
+        var accountName: String = "",
+        var description: String = "",
+        var amount: Double = 0.0,
+        var withdrawal: Boolean = true,
+        var date: Date = Date(),
+        @PrimaryKey(autoGenerate = true) var id: Long = 0
+) : Parcelable
 ```
 
 ## Database Access Object
@@ -111,20 +106,20 @@ Once we've created our entity, we need to create a Database Access Object (DAO).
 Fortunately, we have annotations for Insert/Update/Delete already, but if you want to write a special query (even if it's for deleting, not necessarily a select query), you can do that as well. Below is an example of some options, but you can find more info [in the official documentation](https://developer.android.com/training/data-storage/room/accessing-data):
 
 ```kotlin
-    @Dao
-    interface AccountDAO {
-        @Query("SELECT * FROM account ORDER BY name")
-        fun getAll(): Flowable<List<Account>>
+@Dao
+interface AccountDAO {
+    @Query("SELECT * FROM account ORDER BY name")
+    fun getAll(): Flowable<List<Account>>
 
-        @Insert
-        fun insert(account: Account): Long
+    @Insert
+    fun insert(account: Account): Long
 
-        @Delete
-        fun delete(account: Account): Int
+    @Delete
+    fun delete(account: Account): Int
 
-        @Query("DELETE FROM account")
-        fun deleteAll(): Int
-    }
+    @Query("DELETE FROM account")
+    fun deleteAll(): Int
+}
 ```
 
 Other than the two special cases, we didn't have to write out long insert/delete queries, or even worry about reading back from the cursor. We just annotate our interface with `@Dao`, and each method with the appropriate database action. If you're interested in studying the generate code for this DAO, I've put an example [into a GitHub gist](https://gist.github.com/AdamMc331/150908d1be78fec8d638542502e61839).
@@ -140,26 +135,26 @@ Once you've created your entity and DAO, the only thing left is the actual datab
 This will leave you with something like this:
 
 ```kotlin
-    @Database(entities = [(Account::class), (Transaction::class)], version = 1)
-    @TypeConverters(Converters::class)
-    abstract class CCDatabase : RoomDatabase() {
-        abstract fun accountDao(): AccountDAO
-        abstract fun transactionDao(): TransactionDAO
+@Database(entities = [(Account::class), (Transaction::class)], version = 1)
+@TypeConverters(Converters::class)
+abstract class CCDatabase : RoomDatabase() {
+    abstract fun accountDao(): AccountDAO
+    abstract fun transactionDao(): TransactionDAO
 
-        companion object {
-            private var INSTANCE: CCDatabase? = null
+    companion object {
+        private var INSTANCE: CCDatabase? = null
 
-            fun getInMemoryDatabase(context: Context): CCDatabase {
-                if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context,
-                            CCDatabase::class.java, "cashcaretaker.db")
-                            .build()
-                }
-
-                return INSTANCE!!
+        fun getInMemoryDatabase(context: Context): CCDatabase {
+            if (INSTANCE == null) {
+                INSTANCE = Room.databaseBuilder(context,
+                        CCDatabase::class.java, "cashcaretaker.db")
+                        .build()
             }
+
+            return INSTANCE!!
         }
     }
+}
 ```
 
 ### Callback
@@ -167,32 +162,32 @@ This will leave you with something like this:
 An optional feature you may want to add is a `RoomDatabase.Callback`. This [class](https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase.Callback) allows you to get a callback each time the database is updated or created. You may use this to define triggers for your database such as updating account balance whenever a transaction is added. That will look a little something like this:
 
 ```kotlin
-    fun getInMemoryDatabase(context: Context): CCDatabase {
-        if (INSTANCE == null) {
-            INSTANCE = Room.databaseBuilder(context,
-                    CCDatabase::class.java, "cashcaretaker.db")
-                    .addCallback(CALLBACK)
-                    .build()
-        }
-
-        return INSTANCE!!
+fun getInMemoryDatabase(context: Context): CCDatabase {
+    if (INSTANCE == null) {
+        INSTANCE = Room.databaseBuilder(context,
+                CCDatabase::class.java, "cashcaretaker.db")
+                .addCallback(CALLBACK)
+                .build()
     }
 
-    val CALLBACK = object : RoomDatabase.Callback() {
-        override fun onCreate(db: SupportSQLiteDatabase) {
-            super.onCreate(db)
+    return INSTANCE!!
+}
 
-            db.execSQL(
-                    "CREATE TRIGGER update_balance_for_withdrawal " +
-                            "AFTER INSERT ON transactionTable " +
-                            "WHEN new.withdrawal " +
-                            "BEGIN " +
-                            "UPDATE account " +
-                            "SET balance = balance - new.amount " +
-                            "WHERE name = new.accountName; END;")
+val CALLBACK = object : RoomDatabase.Callback() {
+    override fun onCreate(db: SupportSQLiteDatabase) {
+        super.onCreate(db)
 
-            ...
-    }
+        db.execSQL(
+                "CREATE TRIGGER update_balance_for_withdrawal " +
+                        "AFTER INSERT ON transactionTable " +
+                        "WHEN new.withdrawal " +
+                        "BEGIN " +
+                        "UPDATE account " +
+                        "SET balance = balance - new.amount " +
+                        "WHERE name = new.accountName; END;")
+
+        ...
+}
 ```
 
 # RxJava
@@ -245,24 +240,24 @@ For those of you coming from an MVP background, it works like an [interactor](ht
 For the purpose of this app, the repository will behave in a number of cases like a proxy straight through to the database - but it can also be used for some intermediate mapping where necessary! Let's look at our account examples:
 
 ```kotlin
-    open class CCRepository(private val database: CCDatabase) {
-        private val accountDAO: AccountDAO = database.accountDao()
+open class CCRepository(private val database: CCDatabase) {
+    private val accountDAO: AccountDAO = database.accountDao()
 
-        fun getAllAccounts(): Flowable<DataViewState> = accountDAO.getAll()
-                .map {
-                    if (it.isEmpty()) {
-                        DataViewState.Empty()
-                    } else {
-                        DataViewState.Success(it)
-                    }
+    fun getAllAccounts(): Flowable<DataViewState> = accountDAO.getAll()
+            .map {
+                if (it.isEmpty()) {
+                    DataViewState.Empty()
+                } else {
+                    DataViewState.Success(it)
                 }
+            }
 
-        fun deleteAccount(account: Account): Int = accountDAO.delete(account)
+    fun deleteAccount(account: Account): Int = accountDAO.delete(account)
 
-        fun insertAccount(account: Account): Long = accountDAO.insert(account)
+    fun insertAccount(account: Account): Long = accountDAO.insert(account)
 
-        ...
-    }
+    ...
+}
 ```
 
 In the case of deleting and inserting an account, we just return whatever the database wants. However, when I query for accounts, I don't want to return the list of accounts, but rather a state that my ViewModel can be in.

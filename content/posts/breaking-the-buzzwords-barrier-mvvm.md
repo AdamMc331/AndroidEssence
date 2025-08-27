@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: Breaking the Buzzwords Barrier Part 1&#58; MVVM
-description: Demonstrates how to architect an Android application using MVVM.
-modified: 2018-05-30
-published: true
-tags: [architecture, mvvm]
-categories: [android, tutorial]
----
++++
+date = '2018-05-30:00:00-04:00'
+draft = false
+title = "Breaking The Buzzwords Barrier Part 1: MVVM"
++++
 
 When you're starting out with Android development, and even as an expert, you will hear about a lot of different architecture patterns. Anything from:
 

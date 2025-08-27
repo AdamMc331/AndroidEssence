@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: Breaking the Buzzwords Barrier Part 3&#58; ViewModel
-description: Explains what a ViewModel means in both MVVM and Android contexts. 
-modified: 2018-06-01
-published: true
-tags: [architecture]
-categories: [android, tutorial]
----
++++
+date = '2018-06-01:00:00-04:00'
+draft = false
+title = "Breaking The Buzzwords Barrier Part 3: ViewModel"
++++
 
 So far we've covered four big buzzwords used in our application:
 
@@ -61,37 +56,37 @@ As I go over these buzzwords, I also want to show the implementation where it's 
 If you don't understand the RxJava code below, head back to [part 2]({{ site.baseurl }}{% link _posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository.md %}) for some notes and links to external resources.
 
 ```kotlin
-    class AccountViewModel(private val repository: CCRepository) : ViewModel() {
-        private val compositeDisposable = CompositeDisposable()
-        val state: BehaviorSubject<DataViewState> = BehaviorSubject.create()
+class AccountViewModel(private val repository: CCRepository) : ViewModel() {
+    private val compositeDisposable = CompositeDisposable()
+    val state: BehaviorSubject<DataViewState> = BehaviorSubject.create()
 
-        fun fetchAccounts() {
-            if (state.value !is DataViewState.Success<*>) {
-                Timber.d("Loading Accounts")
-                postState(DataViewState.Loading())
+    fun fetchAccounts() {
+        if (state.value !is DataViewState.Success<*>) {
+            Timber.d("Loading Accounts")
+            postState(DataViewState.Loading())
 
-                val subscription = repository
-                        .getAllAccounts()
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(
-                                this::postState,
-                                Timber::e
-                        )
+            val subscription = repository
+                    .getAllAccounts()
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(
+                            this::postState,
+                            Timber::e
+                    )
 
-                compositeDisposable.add(subscription)
-            }
-        }
-
-        private fun postState(newState: DataViewState) {
-            state.onNext(newState)
-            notifyChange()
-        }
-
-        override fun onCleared() {
-            compositeDisposable.dispose()
+            compositeDisposable.add(subscription)
         }
     }
+
+    private fun postState(newState: DataViewState) {
+        state.onNext(newState)
+        notifyChange()
+    }
+
+    override fun onCleared() {
+        compositeDisposable.dispose()
+    }
+}
 ```
 
 Because this survives orientation changes, and because we do a state check before pulling accounts, we can save ourselves from unnecessarily requesting data every time the user rotates their phone, and instead only when the view (and ViewModel) are created for the first time. 
