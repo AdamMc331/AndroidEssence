@@ -8,6 +8,11 @@ published: true
 tags: [espresso, testing, robot pattern]
 categories: [android]
 ---
++++
+date = '2017-07-04:00:00-04:00'
+draft = false
+title = "Leveraging The Robot Pattern For Espresso Tests"
++++
 
 Espresso is a [testing framework for Android](https://developer.android.com/training/testing/ui-testing/espresso-testing.html) that allows developers to write automated tests for their applications. The benefit of automated testing is that you can write a test plan, and simply hit run and have all of the important features in your app tested effortlessly, and arguably more consistent and thorough than manual testing. There is no doubt that it is a lot faster.
 
@@ -42,22 +47,22 @@ If you're new to Espresso, here are the take aways from that cheat sheet:
 Before we get into the robot pattern, it's important to understand the problem it solves. In the above application, we may want to automate a test that goes to the add person activity, enters their information, clicks submit, and verifies that the person was added to the list. We can do that like this:
 
 ```kotlin
-    @Test
-    fun addPersonSuccess() {
-        // Click the FAB
-        onView(withId(R.id.fab)).perform(click())
+@Test
+fun addPersonSuccess() {
+    // Click the FAB
+    onView(withId(R.id.fab)).perform(click())
 
-        // Enter all their information and click submit
-        onView(withId(R.id.first_name)).perform(clearText(), typeText(testPerson.firstName), closeSoftKeyboard())
-        onView(withId(R.id.last_name)).perform(clearText(), typeText(testPerson.lastName), closeSoftKeyboard())
-        onView(withId(R.id.age)).perform(clearText(), typeText(testPerson.age.toString()), closeSoftKeyboard())
-        onView(withId(R.id.email_address)).perform(clearText(), typeText(testPerson.emailAddress), closeSoftKeyboard())
-        onView(withId(R.id.submit)).perform(click())
+    // Enter all their information and click submit
+    onView(withId(R.id.first_name)).perform(clearText(), typeText(testPerson.firstName), closeSoftKeyboard())
+    onView(withId(R.id.last_name)).perform(clearText(), typeText(testPerson.lastName), closeSoftKeyboard())
+    onView(withId(R.id.age)).perform(clearText(), typeText(testPerson.age.toString()), closeSoftKeyboard())
+    onView(withId(R.id.email_address)).perform(clearText(), typeText(testPerson.emailAddress), closeSoftKeyboard())
+    onView(withId(R.id.submit)).perform(click())
 
-        // Make sure we came back, check for item to be displayed
-        onView(withId(R.id.fab)).check(matches(isDisplayed()))
-        onView(withText(testPerson.fullName)).check(matches(isDisplayed()))
-    }
+    // Make sure we came back, check for item to be displayed
+    onView(withId(R.id.fab)).check(matches(isDisplayed()))
+    onView(withText(testPerson.fullName)).check(matches(isDisplayed()))
+}
 ```
 
 Here is what our test is doing:
@@ -82,21 +87,21 @@ Now, imagine you had a robot you could use to perform each action for you. If yo
 Before we show the robot classes code, let's take a look at the implementation:
 
 ```kotlin
-    @Test
-    fun addPersonSuccess() {
-        onView(withId(R.id.fab)).perform(click())
+@Test
+fun addPersonSuccess() {
+    onView(withId(R.id.fab)).perform(click())
 
-        AddPersonRobot()
-                .firstName(testPerson.firstName)
-                .lastName(testPerson.lastName)
-                .age(testPerson.age)
-                .emailAddress(testPerson.emailAddress)
-                .submit()
+    AddPersonRobot()
+            .firstName(testPerson.firstName)
+            .lastName(testPerson.lastName)
+            .age(testPerson.age)
+            .emailAddress(testPerson.emailAddress)
+            .submit()
 
-        // Make sure we came back, check for item to be displayed
-        onView(withId(R.id.fab)).check(matches(isDisplayed()))
-        onView(withText(testPerson.fullName)).check(matches(isDisplayed()))
-    }
+    // Make sure we came back, check for item to be displayed
+    onView(withId(R.id.fab)).check(matches(isDisplayed()))
+    onView(withText(testPerson.fullName)).check(matches(isDisplayed()))
+}
 ```
 
 As far as our test is concerned, we just gained two big benefits by using a robot:
@@ -107,58 +112,58 @@ As far as our test is concerned, we just gained two big benefits by using a robo
 With this, we can write a robot once, and use it anywhere and it makes writing the actual tests more fun. Without it, I might not want to take the time to write four negative tests (one test with bad input for each of the four fields). However, with a Robot, writing those tests will take a lot less time. In fact, it's a very similar amount of code, which we discussed is already much less than the original:
 
 ```kotlin
-    @Test
-    fun checkFirstNameError() {
-        onView(withId(R.id.fab)).perform(click())
+@Test
+fun checkFirstNameError() {
+    onView(withId(R.id.fab)).perform(click())
 
-        AddPersonRobot()
-                .lastName(testPerson.lastName)
-                .age(testPerson.age)
-                .emailAddress(testPerson.emailAddress)
-                .submit()
-                .matchFirstNameError(rule.activity.getString(R.string.err_first_name_blank))
-    }
+    AddPersonRobot()
+            .lastName(testPerson.lastName)
+            .age(testPerson.age)
+            .emailAddress(testPerson.emailAddress)
+            .submit()
+            .matchFirstNameError(rule.activity.getString(R.string.err_first_name_blank))
+}
 ```
 
 As you can see above, our robot should use the [builder pattern](http://www.javaworld.com/article/2074938/core-java/too-many-parameters-in-java-methods-part-3-builder-pattern.html) which will allow us to chain calls together easily. Here is our `AddPersonRobot.kt` class:
 
 ```kotlin
-    class AddPersonRobot {
-        fun firstName(firstName: String): AddPersonRobot {
-            onView(FIRST_NAME_MATCHER).perform(clearText(), typeText(firstName), ViewActions.closeSoftKeyboard())
-            return this
-        }
-
-        fun lastName(lastName: String): AddPersonRobot {
-            onView(LAST_NAME_MATCHER).perform(clearText(), typeText(lastName), ViewActions.closeSoftKeyboard())
-            return this
-        }
-
-        // ...
-
-        fun submit(): AddPersonRobot {
-            onView(SUBMIT_MATCHER).perform(click())
-            return this
-        }
-
-        fun matchFirstNameError(error: String): AddPersonRobot {
-            onView(FIRST_NAME_MATCHER).check(matches(hasErrorText(error)))
-            return this
-        }
-
-        fun matchLastNameError(error: String): AddPersonRobot {
-            onView(LAST_NAME_MATCHER).check(matches(hasErrorText(error)))
-            return this
-        }
-
-        // ...
-
-        companion object {
-            val FIRST_NAME_MATCHER: Matcher<View> = withId(R.id.first_name)
-            val LAST_NAME_MATCHER: Matcher<View> = withId(R.id.last_name)
-            // ...
-        }
+class AddPersonRobot {
+    fun firstName(firstName: String): AddPersonRobot {
+        onView(FIRST_NAME_MATCHER).perform(clearText(), typeText(firstName), ViewActions.closeSoftKeyboard())
+        return this
     }
+
+    fun lastName(lastName: String): AddPersonRobot {
+        onView(LAST_NAME_MATCHER).perform(clearText(), typeText(lastName), ViewActions.closeSoftKeyboard())
+        return this
+    }
+
+    // ...
+
+    fun submit(): AddPersonRobot {
+        onView(SUBMIT_MATCHER).perform(click())
+        return this
+    }
+
+    fun matchFirstNameError(error: String): AddPersonRobot {
+        onView(FIRST_NAME_MATCHER).check(matches(hasErrorText(error)))
+        return this
+    }
+
+    fun matchLastNameError(error: String): AddPersonRobot {
+        onView(LAST_NAME_MATCHER).check(matches(hasErrorText(error)))
+        return this
+    }
+
+    // ...
+
+    companion object {
+        val FIRST_NAME_MATCHER: Matcher<View> = withId(R.id.first_name)
+        val LAST_NAME_MATCHER: Matcher<View> = withId(R.id.last_name)
+        // ...
+    }
+}
 ```
 
 I've left out some of the code for simplicity, but this demonstrates what I suggest doing for your robot class:
