@@ -1,5 +1,5 @@
 +++
-date = '2017-06-28:00:00-04:00'
+date = '2017-06-28'
 draft = false
 title = "Understanding Nullability In Kotlin"
 +++

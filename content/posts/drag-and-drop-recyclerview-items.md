@@ -1,5 +1,5 @@
 +++
-date = '2015-09-09T00:00:00-04:00'
+date = '2015-09-09'
 draft = false
 title = 'Drag And Drop RecyclerView Items'
 +++

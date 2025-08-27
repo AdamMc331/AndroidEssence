@@ -21,184 +21,25 @@
     <lastmod>2022-01-31T00:00:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/android/</loc>
-    <lastmod>2021-09-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2021-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2021-09-10-essential-dev-experience-concepts-android/</loc>
-    <lastmod>2021-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2021-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/toa/</loc>
-    <lastmod>2021-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/twitch/</loc>
-    <lastmod>2021-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2021-09-02-toa-twitch-series/</loc>
-    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/lint/</loc>
-    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2021-03-01-unit-testing-custom-lint-checks/</loc>
-    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2021-02-22-enforce-custom-views-with-lint/</loc>
-    <lastmod>2021-02-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/graphql/</loc>
-    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2021-02-15-storing-network-responses-with-apollo-normalized-cache/</loc>
-    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2021-02-01-storing-network-responses-with-apollo-http-cache/</loc>
-    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2020-08-22-comparing-three-dependency-injection-solutions/</loc>
-    <lastmod>2020-08-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/dependency-injection/</loc>
-    <lastmod>2020-08-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/databases/</loc>
-    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2020-05-14-mastering-room-database-migrations/</loc>
-    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2020-04-27-room-relationship-recap/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2020-03-02-test-driven-development/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/testing/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2020-02-24-contributing-to-kotlin/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/open-source/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/architecture/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2019-08-16-mvwtf/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2019-05-20-repository-pattern/</loc>
-    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/coroutines/</loc>
-    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/rxjava/</loc>
-    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2019-04-30-unit-testing-async-code/</loc>
-    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/fragments/</loc>
-    <lastmod>2019-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2019-01-04-starting-fragment-for-result/</loc>
-    <lastmod>2019-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2018-10-28-building-an-app-with-mvvm/</loc>
-    <lastmod>2018-10-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/mvvm/</loc>
-    <lastmod>2018-10-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2018-10-20-building-an-app-with-mvp/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/mvp/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/tutorial/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2018-06-01-breaking-the-buzzwords-barrier-viewmodel/</loc>
-    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository/</loc>
-    <lastmod>2018-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/room/</loc>
-    <lastmod>2018-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2018-05-29-breaking-the-buzzwords-barrier/</loc>
-    <lastmod>2018-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm/</loc>
-    <lastmod>2018-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/fingerprint/</loc>
-    <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2018-01-02-fingerprint-authentication-tutorial/</loc>
-    <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/android-essence/</loc>
-    <lastmod>2017-10-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2017-10-21-guest-authors-wanted/</loc>
-    <lastmod>2017-10-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2017-10-19-developing-and-publishing-android-libraries/</loc>
-    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/library/</loc>
-    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/app-review/</loc>
-    <lastmod>2017-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2017-10-09-app-review-digilux/</loc>
-    <lastmod>2017-10-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/espresso/</loc>
     <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2017-07-04-leveraging-the-robot-pattern-for-espresso-tests/</loc>
+    <loc>http://localhost:1313/posts/leveraging-the-robot-pattern-for-espresso-tests/</loc>
     <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/robot-pattern/</loc>
     <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kotlin/</loc>
-    <lastmod>2017-06-28T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2017-06-28-understanding-nullability-in-kotlin/</loc>
-    <lastmod>2017-06-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2017-06-10-getting-started-with-room-persistence-library/</loc>
-    <lastmod>2017-06-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/sqlite/</loc>
-    <lastmod>2017-06-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project/</loc>
-    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</loc>
-    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</loc>
-    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</loc>
-    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/recyclerview/</loc>
-    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/testing/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/maintain-library-versions-across-modules/</loc>
     <lastmod>2017-05-05T00:00:00-04:00</lastmod>
@@ -265,5 +106,65 @@
   </url><url>
     <loc>http://localhost:1313/posts/hide-the-floatingactionbutton-when-scrolling-recyclerview/</loc>
     <lastmod>2015-09-02T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/app-review-digilux/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/breaking-the-buzzwords-barrier-viewmodel/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/building-an-app-with-mvp/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/building-an-app-with-mvvm/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/comparing-three-dependency-injection-solutions/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/contributing-to-kotlin/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/developing-and-publishing-android-libraries/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/enforce-custom-views-with-lint/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/fingerprint-authentication-tutorial/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/essential-dev-experience-concepts-android/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/getting-started-with-room-persistence-library/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/test-driven-development/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/mastering-room-database-migrations/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/mvwtf/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/repository-pattern/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/room-relationship-recap/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/starting-fragment-for-result/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/toa-twitch-series/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/understanding-nullability-in-kotlin/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/unit-testing-custom-lint-checks/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/unit-testing-async-code/</loc>
   </url>
 </urlset>

@@ -1,5 +1,5 @@
 +++
-date = '2020-05-14:00:00-04:00'
+date = '2020-05-14'
 draft = false
 title = "Mastering Room Database Migrations"
 +++

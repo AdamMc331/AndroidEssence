@@ -1,5 +1,5 @@
 +++
-date = '2023-02-05T00:00:00-04:00'
+date = '2023-02-05'
 draft = false
 title = 'Interface Naming Conventions'
 +++

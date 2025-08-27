@@ -1,5 +1,5 @@
 +++
-date = '2018-01-02:00:00-04:00'
+date = '2018-01-02'
 draft = false
 title = "Fingerprint Authentication Tutorial"
 +++

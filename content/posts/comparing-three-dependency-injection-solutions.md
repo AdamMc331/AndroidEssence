@@ -1,5 +1,5 @@
 +++
-date = '2020-08-22:00:00-04:00'
+date = '2020-08-22'
 draft = false
 title = "Comparing Three Dependency Injection Solutions"
 +++

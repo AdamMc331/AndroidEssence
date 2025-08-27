@@ -1,5 +1,5 @@
 +++
-date = '2021-03-01:00:00-04:00'
+date = '2021-03-01'
 draft = false
 title = "Unit Testing Custom Lint Checks"
 +++

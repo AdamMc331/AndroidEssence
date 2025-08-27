@@ -1,5 +1,5 @@
 +++
-date = '2016-04-03T00:00:00-04:00'
+date = '2016-04-03'
 draft = false
 title = "RichTextView Library Released"
 +++

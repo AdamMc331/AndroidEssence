@@ -1,5 +1,5 @@
 +++
-date = '2015-09-02T00:00:00-04:00'
+date = '2015-09-02'
 draft = false
 title = 'Hide The FloatingActionButton When Scrolling A RecyclerView'
 +++

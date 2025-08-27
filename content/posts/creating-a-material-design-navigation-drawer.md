@@ -1,5 +1,5 @@
 +++
-date = '2015-10-11T00:00:00-04:00'
+date = '2015-10-11'
 draft = false
 title = 'Creating A Material Design Navigation Drawer'
 +++

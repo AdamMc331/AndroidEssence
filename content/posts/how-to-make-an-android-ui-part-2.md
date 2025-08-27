@@ -1,5 +1,5 @@
 +++
-date = '2015-12-02T00:00:00-04:00'
+date = '2015-12-02'
 draft = false
 title = 'How To Make An Android UI Part 2: Java Code'
 +++

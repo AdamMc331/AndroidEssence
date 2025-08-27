@@ -1,5 +1,5 @@
 +++
-date = '2016-10-13T00:00:00-04:00'
+date = '2016-10-13'
 draft = false
 title = 'Getting Started With Retrofit In Android'
 +++

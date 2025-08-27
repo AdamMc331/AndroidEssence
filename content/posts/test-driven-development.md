@@ -1,5 +1,5 @@
 +++
-date = '2020-03-02:00:00-04:00'
+date = '2020-03-02'
 draft = false
 title = "Getting Started With Test Driven Development"
 +++

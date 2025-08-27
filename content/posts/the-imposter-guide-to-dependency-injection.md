@@ -1,5 +1,5 @@
 +++
-date = '2022-01-31T00:00:00-04:00'
+date = '2022-01-31'
 draft = false
 title = "The Imposter's Guide To Dependency Injection"
 +++

@@ -1,5 +1,5 @@
 +++
-date = '2024-12-19T00:00:00-04:00'
+date = '2024-12-19'
 draft = false
 title = 'Wrapping Android XR For KMP'
 +++

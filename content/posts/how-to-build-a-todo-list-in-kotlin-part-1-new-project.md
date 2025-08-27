@@ -1,5 +1,5 @@
 +++
-date = '2017-05-21:00:00-04:00'
+date = '2017-05-21'
 draft = false
 title = "How To Build A Todo List In Kotlin Part 1: Creating A New Project"
 +++

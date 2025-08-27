@@ -1,5 +1,5 @@
 +++
-date = '2020-02-24:00:00-04:00'
+date = '2020-02-24'
 draft = false
 title = "Contributing Code Samples To Kotlin Documentation"
 +++

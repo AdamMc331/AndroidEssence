@@ -1,5 +1,5 @@
 +++
-date = '2016-11-27T00:00:00-04:00'
+date = '2016-11-27'
 draft = false
 title = 'PinchZoomTextView Library Released'
 +++

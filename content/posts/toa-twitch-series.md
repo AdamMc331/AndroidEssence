@@ -1,5 +1,5 @@
 +++
-date = '2021-09-02:00:00-04:00'
+date = '2021-09-02'
 draft = false
 title = "Tasks Of Affirmation: A New Twitch Live Stream Series"
 +++

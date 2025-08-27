@@ -1,5 +1,5 @@
 +++
-date = '2015-09-07T00:00:00-04:00'
+date = '2015-09-07'
 draft = false
 title = 'RecyclerView Vs ListView'
 +++

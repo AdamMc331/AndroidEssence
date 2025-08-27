@@ -1,5 +1,5 @@
 +++
-date = '2015-09-21T00:00:00-04:00'
+date = '2015-09-21'
 draft = false
 title = 'Top 5 Color Scheme Tools'
 +++

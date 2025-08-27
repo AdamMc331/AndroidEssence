@@ -1,5 +1,5 @@
 +++
-date = '2017-04-14T00:00:00-04:00'
+date = '2017-04-14'
 draft = false
 title = 'Creating Android App Shortcuts'
 +++

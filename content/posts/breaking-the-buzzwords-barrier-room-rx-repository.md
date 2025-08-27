@@ -1,5 +1,5 @@
 +++
-date = '2018-05-31:00:00-04:00'
+date = '2018-05-31'
 draft = false
 title = "Breaking The Buzzwords Barrier Part 2: Rx, Room, and Repository"
 +++

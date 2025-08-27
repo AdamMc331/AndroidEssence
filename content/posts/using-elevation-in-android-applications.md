@@ -1,5 +1,5 @@
 +++
-date = '2015-09-15T00:00:00-04:00'
+date = '2015-09-15'
 draft = false
 title = 'Using Elevation In Android Applications'
 +++

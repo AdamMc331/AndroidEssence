@@ -1,5 +1,5 @@
 +++
-date = '2018-10-20:00:00-04:00'
+date = '2018-10-20'
 draft = false
 title = "Building An Application With MVP"
 +++

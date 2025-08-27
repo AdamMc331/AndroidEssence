@@ -1,5 +1,5 @@
 +++
-date = '2019-05-20:00:00-04:00'
+date = '2019-05-20'
 draft = false
 title = "Repository Pattern: Properly Organizing Your Data Layer"
 +++

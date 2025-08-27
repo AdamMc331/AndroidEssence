@@ -1,5 +1,5 @@
 +++
-date = '2017-10-19:00:00-04:00'
+date = '2017-10-19'
 draft = false
 title = "Developing And Publishing Android Libraries"
 +++

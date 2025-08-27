@@ -1,5 +1,5 @@
 +++
-date = '2021-02-01:00:00-04:00'
+date = '2021-02-01'
 draft = false
 title = "Storing Network Responses With Apollo HTTP Cache"
 +++

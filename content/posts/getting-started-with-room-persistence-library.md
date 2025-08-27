@@ -1,5 +1,5 @@
 +++
-date = '2017-06-10:00:00-04:00'
+date = '2017-06-10'
 draft = false
 title = "Getting Started With Room Persistence Library"
 +++

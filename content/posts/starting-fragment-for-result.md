@@ -1,5 +1,5 @@
 +++
-date = '2019-01-04:00:00-04:00'
+date = '2019-01-04'
 draft = false
 title = "Showing A Fragment For A Result"
 +++

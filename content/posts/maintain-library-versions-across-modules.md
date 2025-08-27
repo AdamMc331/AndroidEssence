@@ -1,5 +1,5 @@
 +++
-date = '2017-05-05T00:00:00-04:00'
+date = '2017-05-05'
 draft = false
 title = 'Maintain Library Versions ACross Modules'
 +++

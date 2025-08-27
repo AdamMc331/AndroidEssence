@@ -1,5 +1,5 @@
 +++
-date = '2025-08-24T00:32:48-04:00'
+date = '2025-08-24'
 draft = false
 title = 'Sharing Shared Element Keys'
 +++

@@ -1,5 +1,5 @@
 +++
-date = '2016-01-01T00:00:00-04:00'
+date = '2016-01-01'
 draft = false
 title = "Designing User Interfaces For Android Wear Part 1: Lists"
 +++

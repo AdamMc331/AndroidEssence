@@ -1,5 +1,5 @@
 +++
-date = '2020-04-27:00:00-04:00'
+date = '2020-04-27'
 draft = false
 title = "Room Relationship Recap"
 +++

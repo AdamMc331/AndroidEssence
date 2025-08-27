@@ -1,5 +1,5 @@
 +++
-date = '2021-02-22:00:00-04:00'
+date = '2021-02-22'
 draft = false
 title = "Enforcing Custom View Usage With Android Lint"
 +++

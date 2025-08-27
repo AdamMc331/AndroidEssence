@@ -1,5 +1,5 @@
 +++
-date = '2015-12-10T00:00:00-04:00'
+date = '2015-12-10'
 draft = false
 title = 'RecyclerViewCursorAdapter Library'
 +++

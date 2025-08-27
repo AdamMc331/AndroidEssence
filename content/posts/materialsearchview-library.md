@@ -1,5 +1,5 @@
 +++
-date = '2016-04-22T00:00:00-04:00'
+date = '2016-04-22'
 draft = false
 title = 'MaterialSearchView Library'
 +++

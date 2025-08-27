@@ -1,5 +1,5 @@
 +++
-date = '2018-06-01:00:00-04:00'
+date = '2018-06-01'
 draft = false
 title = "Breaking The Buzzwords Barrier Part 3: ViewModel"
 +++

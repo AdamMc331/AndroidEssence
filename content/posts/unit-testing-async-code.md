@@ -1,5 +1,5 @@
 +++
-date = '2019-04-30:00:00-04:00'
+date = '2019-04-30'
 draft = false
 title = "Unit Testing RxJava Or Coroutine Code With Constructor Injection"
 +++
