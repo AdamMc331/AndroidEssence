@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: Building An Application With MVVM
-description: Demonstrates how to build an Android application with MVVM architecture.
-modified: 2018-10-28
-published: true
-tags: [architecture, mvvm]
-categories: [android]
----
++++
+date = '2018-10-28:00:00-04:00'
+draft = false
+title = "Building An Application With MVVM"
++++
 
 This is the second post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following [this repo](https://github.com/AdamMc331/todo-monorepo). Give it a star!
 
