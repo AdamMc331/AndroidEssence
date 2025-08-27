@@ -1,13 +1,8 @@
----
-layout: post
-author: adam
-title: App Review&#58;  DigiLux
-description: DigiLux allows the user to control the brightness of their phone screen with their fingerprint sensor.
-modified: 2017-10-09
-published: true
-tags: [app review]
-categories: [android]
----
++++
+date = '2017-10-09:00:00-04:00'
+draft = false
+title = "App Review: Digilux"
++++
 
 Controlling the brightness of your phone can be a hassle. Currently we're stuck with the two step process - swipe down on the notification drawer, and then deal with the slider trying to get it just right. However, with the release of Android Oreo and a new [fingerprint gesture API](https://developer.android.com/guide/topics/ui/accessibility/services.html#fingerprint), a new solution was born. Enter [DigiLux](https://play.google.com/store/apps/details?id=com.tunjid.fingergestures).
 
