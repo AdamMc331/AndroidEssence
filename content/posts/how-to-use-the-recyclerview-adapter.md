@@ -13,7 +13,7 @@ The [RecyclerView.Adapter](https://developer.android.com/reference/android/suppo
 Let's first take a look at the class header for the adapter:
 
 ```java
-    public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> { }
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> { }
 ```
 
 The class extends from RecyclerView.Adapter, which should be the obvious part here. However, you'll notice that the class requires a generic type that must extend from [RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
