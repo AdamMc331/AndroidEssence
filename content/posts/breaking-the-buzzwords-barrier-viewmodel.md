@@ -11,11 +11,11 @@ So far we've covered four big buzzwords used in our application:
 3. RxJava
 4. Repository Pattern
 
-Now, we should circle back to the beginning. Following our diagram outlined in the [previous parts]({{ site.baseurl }}{% link _posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository.md %}), the next component we can begin to work on is our AccountViewModel:
+Now, we should circle back to the beginning. Following our diagram outlined in the [previous parts](posts/breaking-the-buzzwords-barrier-room-rx-repository), the next component we can begin to work on is our AccountViewModel:
 
 ![Android Essence](/images/buzzwords/architecture_viewmodel.png)
 
-Naturally, this may bring up some confusion. We already discussed ViewModels in [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}). Well, depending on context, we may not be referring to the same thing.
+Naturally, this may bring up some confusion. We already discussed ViewModels in [part 1](posts/breaking-the-buzzwords-barrier-mvvm). Well, depending on context, we may not be referring to the same thing.
 
 <!--more-->
 
@@ -53,7 +53,7 @@ As I go over these buzzwords, I also want to show the implementation where it's 
 2. The ViewModel interracts with the Repository we made in the last section to fetch data. It also checks to make sure it's not pulling data redundently.
 3. The ViewModel also manages a [CompositeDisposable](http://reactivex.io/RxJava/javadoc/io/reactivex/disposables/CompositeDisposable.html) which holds our network subscription, and clears the network subscription when our ViewModel is cleared. This is to avoid memory leaks if there's a long running request.
 
-If you don't understand the RxJava code below, head back to [part 2]({{ site.baseurl }}{% link _posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository.md %}) for some notes and links to external resources.
+If you don't understand the RxJava code below, head back to [part 2](posts/breaking-the-buzzwords-barrier-room-rx-repository) for some notes and links to external resources.
 
 ```kotlin
 class AccountViewModel(private val repository: CCRepository) : ViewModel() {

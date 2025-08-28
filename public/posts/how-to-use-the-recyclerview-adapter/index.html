@@ -53,7 +53,7 @@
         },
         "datePublished": "2015-09-17",
         "description": "",
-        "wordCount":  714 ,
+        "wordCount":  704 ,
         "mainEntityOfPage": "True",
         "dateModified": "2015-09-17",
         "image": {
@@ -74,7 +74,7 @@
     <meta property="og:url" content="http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/">
   <meta property="og:site_name" content="Android Essence">
   <meta property="og:title" content="How To Use The RecyclerView Adapter">
-  <meta property="og:description" content="The RecyclerView.Adapter class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, [RecyclerView Vs ListView]({{ site.baseurl }}{% link _posts/2015-09-07-recyclerview-vs-listview.md %}), the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my [Swipe-To-Dismiss]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) example, and break it down to explain the required implementations and how to use the RecyclerView adapter.">
+  <meta property="og:description" content="The RecyclerView.Adapter class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, RecyclerView Vs ListView, the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my Swipe-To-Dismiss example, and break it down to explain the required implementations and how to use the RecyclerView adapter.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -86,7 +86,7 @@
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="How To Use The RecyclerView Adapter">
-  <meta name="twitter:description" content="The RecyclerView.Adapter class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, [RecyclerView Vs ListView]({{ site.baseurl }}{% link _posts/2015-09-07-recyclerview-vs-listview.md %}), the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my [Swipe-To-Dismiss]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) example, and break it down to explain the required implementations and how to use the RecyclerView adapter.">
+  <meta name="twitter:description" content="The RecyclerView.Adapter class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, RecyclerView Vs ListView, the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my Swipe-To-Dismiss example, and break it down to explain the required implementations and how to use the RecyclerView adapter.">
 
 
     
@@ -200,7 +200,7 @@ stroke-linejoin="round" class="feather feather-home">
         <nav id="TableOfContents"></nav>
     </details>
             <div class="page-content">
-                <p>The <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html">RecyclerView.Adapter</a> class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, [RecyclerView Vs ListView]({{ site.baseurl }}{% link _posts/2015-09-07-recyclerview-vs-listview.md %}), the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my [Swipe-To-Dismiss]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) example, and break it down to explain the required implementations and how to use the RecyclerView adapter.</p>
+                <p>The <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html">RecyclerView.Adapter</a> class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, <a href="/posts/recyclerview-vs-listview/">RecyclerView Vs ListView</a>, the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my <a href="/posts/swipe-to-dismiss-recyclerview-items/">Swipe-To-Dismiss</a> example, and break it down to explain the required implementations and how to use the RecyclerView adapter.</p>
 <h1 id="the-adapter-class">The Adapter Class</h1>
 <p>Let&rsquo;s first take a look at the class header for the adapter:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MovieAdapter</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">Adapter</span><span class="o">&lt;</span><span class="n">MovieAdapter</span><span class="p">.</span><span class="na">ViewHolder</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">

@@ -18,4 +18,4 @@ You can checkout a simple gif of the project here:
 
 You can find all the code for this project on [GitHub](https://github.com/adammc331/cashcaretaker).
 
-Now, let's dive into [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) and talk about the architecture, first.
+Now, let's dive into [part 1](posts/breaking-the-buzzwords-barrier-mvvm) and talk about the architecture, first.

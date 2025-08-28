@@ -4,7 +4,7 @@ draft = false
 title = "How To Build A Todo List In Kotlin Part 3: Adding Items"
 +++
 
-Following parts [1]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) and [2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview.md %}) you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.
+Following parts [1](posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project) and [2](posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview) you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.
 
 <!--more-->
 
@@ -139,4 +139,4 @@ class AddTaskActivity : AppCompatActivity() {
 }
 ```
 
-Running the app at this point you'll see that we can start a new activity, type in a description, and hit submit to see the new task in our list. That's it for part 3! Move on to the the [fourth part]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-4-storing-items.md %}) to see how we can read and write to a text file and persist the information. If you've missed any code, you can find it on [GitHub](http://github.com/AdamMc331/todo-kotlin).
+Running the app at this point you'll see that we can start a new activity, type in a description, and hit submit to see the new task in our list. That's it for part 3! Move on to the the [fourth part](posts/how-to-build-a-todo-list-in-kotlin-part-4-storing-items) to see how we can read and write to a text file and persist the information. If you've missed any code, you can find it on [GitHub](http://github.com/AdamMc331/todo-kotlin).

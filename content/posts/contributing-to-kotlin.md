@@ -28,7 +28,7 @@ There's one in particular that JetBrains is constantly requesting help on. That 
 
 Now that we've decided on the contribution we're going to make, we need to get ourselves set up and ready to contribute. There's a couple things we should do before we start writing our code samples.
 
-1. Make sure you check the [contribution guidelines](https://github.com/JetBrains/kotlin/blob/master/docs/contributing.md).
+1. Make sure you check the [contribution guidelines](https://github.com/JetBrains/kotlin/blob/master/docs/contributing).
 2. Fork the repository and make sure you can [build the project](https://github.com/JetBrains/kotlin#build-environment-requirements).
 
 # Finding Samples To Write

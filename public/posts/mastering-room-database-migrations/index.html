@@ -53,7 +53,7 @@
         },
         "datePublished": "2020-05-14",
         "description": "",
-        "wordCount":  2578 ,
+        "wordCount":  2574 ,
         "mainEntityOfPage": "True",
         "dateModified": "2020-05-14",
         "image": {
@@ -74,7 +74,7 @@
     <meta property="og:url" content="http://localhost:1313/posts/mastering-room-database-migrations/">
   <meta property="og:site_name" content="Android Essence">
   <meta property="og:title" content="Mastering Room Database Migrations">
-  <meta property="og:description" content="In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we’re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.">
+  <meta property="og:description" content="In the last post, we demonstrated the different types of database relationships in Room. Next, we’re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -86,7 +86,7 @@
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Mastering Room Database Migrations">
-  <meta name="twitter:description" content="In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we’re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.">
+  <meta name="twitter:description" content="In the last post, we demonstrated the different types of database relationships in Room. Next, we’re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.">
 
 
     
@@ -220,7 +220,7 @@ stroke-linejoin="round" class="feather feather-home">
 </nav>
     </details>
             <div class="page-content">
-                <p>In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we&rsquo;re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.</p>
+                <p>In the last post, we demonstrated the different types of <a href="/posts/room-relationship-recap/">database relationships in Room</a>. Next, we&rsquo;re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.</p>
 <hr>
 <p>This post is adapted from a YouTube video I made for <a href="https://twitter.com/asyncandroid">AsyncAndroid</a>.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tUGUNU6DPtk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -483,11 +483,12 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">database</span><span class="p">.</span><span class="n">execSQL</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Room does a great job of abstracting away most of the SQL statements required for database interraction. As a result, it&rsquo;s easy to forget the SQL required for the migration statements. That&rsquo;s why I&rsquo;ve built <a href="https://github.com/AdamMc331/mastering-room-migrations/blob/master/README.md">this cheat sheet</a> alongside a sample project with database migrations to help you understand what to do, depending on the change you&rsquo;re making.</p>
+</span></span></code></pre></div><p>Room does a great job of abstracting away most of the SQL statements required for database interraction. As a result, it&rsquo;s easy to forget the SQL required for the migration statements. That&rsquo;s why I&rsquo;ve built <a href="https://github.com/AdamMc331/mastering-room-migrations/blob/master/README">this cheat sheet</a> alongside a sample project with database migrations to help you understand what to do, depending on the change you&rsquo;re making.</p>
 <h1 id="recap">Recap</h1>
 <p>Database migrations can be intimidating due to the number of steps required to create, implement, and test them. Not to mention the use of manual SQL statements that Room historically helps us avoid. I hope this post was helpful in breaking down those steps, and providing you with the confidence to ship your own migrations.</p>
 <p>Being able to save device data after making changes to the database schema is a really great user experience. Users don&rsquo;t want to feel like they&rsquo;re starting over every time they update your application.</p>
-<p>If you have any questions, let me know in the comments! If you find a particularly unique database migration, let me know how to help, and feel free to submit PRs to the public cheat sheet above.</p>
+<p>If you have any questions, let me know in the comments! If you find a particularly unique database migration, let me know how to help, and feel free to submit PRs to the public cheat sheet above.
+���</p>
             </div>
         </article></main>
 </div>

@@ -4,7 +4,7 @@ draft = false
 title = "Unit Testing Custom Lint Checks"
 +++
 
-In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-22-enforce-custom-views-with-lint.md %}) we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.
+In our [previous post](posts/enforce-custom-views-with-lint) we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.
 
 In this post, we'll go over how to unit test such a scenario, and take the opportunity to look at some additional options of unit testing with lint as well. 
 

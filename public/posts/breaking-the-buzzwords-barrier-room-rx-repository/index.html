@@ -53,7 +53,7 @@
         },
         "datePublished": "2018-05-31",
         "description": "",
-        "wordCount":  2005 ,
+        "wordCount":  1985 ,
         "mainEntityOfPage": "True",
         "dateModified": "2018-05-31",
         "image": {
@@ -74,7 +74,7 @@
     <meta property="og:url" content="http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/">
   <meta property="og:site_name" content="Android Essence">
   <meta property="og:title" content="Breaking The Buzzwords Barrier Part 2: Rx, Room, and Repository">
-  <meta property="og:description" content="In [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) we discussed how we were going to architect the various components of our application. Now it’s time to build them. To understand what we should build first, we should revisit the diagram:
+  <meta property="og:description" content="In part 1 we discussed how we were going to architect the various components of our application. Now it’s time to build them. To understand what we should build first, we should revisit the diagram:
 I would start with three spots:
 The account The database The repository A good rule of thumb to remember this, is that these nodes don’t depend on anything else just yet (well, the repository depends on the database, but that was included). I can’t build my ViewModel until I have my repository, and so on.
 Let’s start with persistence.">
@@ -89,7 +89,7 @@ Let’s start with persistence.">
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Breaking The Buzzwords Barrier Part 2: Rx, Room, and Repository">
-  <meta name="twitter:description" content="In [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) we discussed how we were going to architect the various components of our application. Now it’s time to build them. To understand what we should build first, we should revisit the diagram:
+  <meta name="twitter:description" content="In part 1 we discussed how we were going to architect the various components of our application. Now it’s time to build them. To understand what we should build first, we should revisit the diagram:
 I would start with three spots:
 The account The database The repository A good rule of thumb to remember this, is that these nodes don’t depend on anything else just yet (well, the repository depends on the database, but that was included). I can’t build my ViewModel until I have my repository, and so on.
 Let’s start with persistence.">
@@ -229,7 +229,7 @@ stroke-linejoin="round" class="feather feather-home">
 </nav>
     </details>
             <div class="page-content">
-                <p>In [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) we discussed how we were going to architect the various components of our application. Now it&rsquo;s time to build them. To understand what we should build first, we should revisit the diagram:</p>
+                <p>In <a href="/posts/breaking-the-buzzwords-barrier-mvvm/">part 1</a> we discussed how we were going to architect the various components of our application. Now it&rsquo;s time to build them. To understand what we should build first, we should revisit the diagram:</p>
 <p><img src="/images/buzzwords/cashcaretaker_mvvm.png" alt="MVVM"></p>
 <p>I would start with three spots:</p>
 <ol>
@@ -240,9 +240,9 @@ stroke-linejoin="round" class="feather feather-home">
 <p>A good rule of thumb to remember this, is that these nodes don&rsquo;t depend on anything else just yet (well, the repository depends on the database, but that was included). I can&rsquo;t build my ViewModel until I have my repository, and so on.</p>
 <p>Let&rsquo;s start with persistence.</p>
 <h1 id="room-persistence-library">Room Persistence Library</h1>
-<p>I&rsquo;ve already written once about the [room persistence library]({{ site.baseurl }}{% link _posts/2017-06-10-getting-started-with-room-persistence-library.md %}) which was announced at Google I/O 2017. Feel free to skim that over for some details, but I&rsquo;m going to revisit a lot of it here, as I&rsquo;ve learned much more about Room/Kotlin over the last year, and I think this will be more relevant.</p>
+<p>I&rsquo;ve already written once about the <a href="/posts/getting-started-with-room-persistence-library/">room persistence library</a> which was announced at Google I/O 2017. Feel free to skim that over for some details, but I&rsquo;m going to revisit a lot of it here, as I&rsquo;ve learned much more about Room/Kotlin over the last year, and I think this will be more relevant.</p>
 <h2 id="purpose">Purpose</h2>
-<p>I mentioned in the [intro post]({{ site.baseurl }}{% link _posts/2018-05-29-breaking-the-buzzwords-barrier.md %}) that I would go over the necessity of each buzzword. Room was created as <a href="https://developer.android.com/topic/libraries/architecture/room">an abstraction over SQLite</a> to make working with a SQLite database on Android even easier for developers. The ability has always existed - but previously we had to write all of the table schema ourselves, handle upgrades (now simpler with <a href="https://developer.android.com/training/data-storage/room/migrating-db-versions">migrations</a>), and write our own queries and read from cursor objects, and much more I&rsquo;ve probably forgotten about.</p>
+<p>I mentioned in the <a href="/posts/breaking-the-buzzwords-barrier/">intro post</a> that I would go over the necessity of each buzzword. Room was created as <a href="https://developer.android.com/topic/libraries/architecture/room">an abstraction over SQLite</a> to make working with a SQLite database on Android even easier for developers. The ability has always existed - but previously we had to write all of the table schema ourselves, handle upgrades (now simpler with <a href="https://developer.android.com/training/data-storage/room/migrating-db-versions">migrations</a>), and write our own queries and read from cursor objects, and much more I&rsquo;ve probably forgotten about.</p>
 <p>As a result of all of this verbose, boilerplate, and often repetitive code, the developers over at Google sought out to make this easier for us, and they&rsquo;ve nailed it. I won&rsquo;t be comparing Room to previous options, but trust me that what you&rsquo;re about to see is smoother than it was.</p>
 <h2 id="entity">Entity</h2>
 <p>The first thing we need to get started with Room is an <a href="https://developer.android.com/training/data-storage/room/defining-data">Entity</a>. To create an entity in room, you just have to annotate the class. What this will do is create a table for your entity, and each property you have (that you don&rsquo;t ignore) will be created as a column.</p>
@@ -424,7 +424,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>If you&rsquo;re unfamiliar with the RxJava map operator, you can learn more <a href="http://reactivex.io/documentation/operators/map.html">here</a>.</p>
 <h1 id="conclusion">Conclusion</h1>
 <p>I hope this helped you understand a few &lsquo;R&rsquo; buzzwords - Room/RxJava/Repositories. Still confused? Unsure what their purposes are? Let me know in the comments and I&rsquo;ll be sure to clarify!</p>
-<p>Now you can head over to [part 3]({{ site.baseurl }}{% link _posts/2018-06-01-breaking-the-buzzwords-barrier-viewmodel.md %}), which will go over the ViewModel, and the differences between an Android ViewModel and the ViewModel we talk about in MVVM.</p>
+<p>Now you can head over to <a href="/posts/breaking-the-buzzwords-barrier-viewmodel/">part 3</a>, which will go over the ViewModel, and the differences between an Android ViewModel and the ViewModel we talk about in MVVM.</p>
             </div>
         </article></main>
 </div>

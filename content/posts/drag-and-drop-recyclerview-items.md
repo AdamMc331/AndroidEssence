@@ -4,7 +4,7 @@ draft = false
 title = 'Drag And Drop RecyclerView Items'
 +++
 
-Before continuing this post, I recommend that you read my previous one on [Swipe To Dismiss RecyclerView Items]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) as this will build upon the `ItemTouchHelper` class discussed there. Once you've done that, come back to this short post and learn how to drag and drop RecyclerView items like this:
+Before continuing this post, I recommend that you read my previous one on [Swipe To Dismiss RecyclerView Items](posts/swipe-to-dismiss-recyclerview-items) as this will build upon the `ItemTouchHelper` class discussed there. Once you've done that, come back to this short post and learn how to drag and drop RecyclerView items like this:
 
 ![Drag And Drop RecyclerView](/images/drag-and-drop.gif)
 

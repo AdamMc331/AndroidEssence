@@ -4,7 +4,7 @@ draft = false
 title = "Breaking The Buzzwords Barrier Part 2: Rx, Room, and Repository"
 +++
 
-In [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) we discussed how we were going to architect the various components of our application. Now it's time to build them. To understand what we should build first, we should revisit the diagram:
+In [part 1](posts/breaking-the-buzzwords-barrier-mvvm) we discussed how we were going to architect the various components of our application. Now it's time to build them. To understand what we should build first, we should revisit the diagram:
 
 ![MVVM](/images/buzzwords/cashcaretaker_mvvm.png)
 
@@ -22,11 +22,11 @@ Let's start with persistence.
 
 # Room Persistence Library
 
-I've already written once about the [room persistence library]({{ site.baseurl }}{% link _posts/2017-06-10-getting-started-with-room-persistence-library.md %}) which was announced at Google I/O 2017. Feel free to skim that over for some details, but I'm going to revisit a lot of it here, as I've learned much more about Room/Kotlin over the last year, and I think this will be more relevant.
+I've already written once about the [room persistence library](posts/getting-started-with-room-persistence-library) which was announced at Google I/O 2017. Feel free to skim that over for some details, but I'm going to revisit a lot of it here, as I've learned much more about Room/Kotlin over the last year, and I think this will be more relevant.
 
 ## Purpose
 
-I mentioned in the [intro post]({{ site.baseurl }}{% link _posts/2018-05-29-breaking-the-buzzwords-barrier.md %}) that I would go over the necessity of each buzzword. Room was created as [an abstraction over SQLite](https://developer.android.com/topic/libraries/architecture/room) to make working with a SQLite database on Android even easier for developers. The ability has always existed - but previously we had to write all of the table schema ourselves, handle upgrades (now simpler with [migrations](https://developer.android.com/training/data-storage/room/migrating-db-versions)), and write our own queries and read from cursor objects, and much more I've probably forgotten about. 
+I mentioned in the [intro post](posts/breaking-the-buzzwords-barrier) that I would go over the necessity of each buzzword. Room was created as [an abstraction over SQLite](https://developer.android.com/topic/libraries/architecture/room) to make working with a SQLite database on Android even easier for developers. The ability has always existed - but previously we had to write all of the table schema ourselves, handle upgrades (now simpler with [migrations](https://developer.android.com/training/data-storage/room/migrating-db-versions)), and write our own queries and read from cursor objects, and much more I've probably forgotten about. 
 
 As a result of all of this verbose, boilerplate, and often repetitive code, the developers over at Google sought out to make this easier for us, and they've nailed it. I won't be comparing Room to previous options, but trust me that what you're about to see is smoother than it was.
 
@@ -270,4 +270,4 @@ If you're unfamiliar with the RxJava map operator, you can learn more [here](htt
 
 I hope this helped you understand a few 'R' buzzwords - Room/RxJava/Repositories. Still confused? Unsure what their purposes are? Let me know in the comments and I'll be sure to clarify!
 
-Now you can head over to [part 3]({{ site.baseurl }}{% link _posts/2018-06-01-breaking-the-buzzwords-barrier-viewmodel.md %}), which will go over the ViewModel, and the differences between an Android ViewModel and the ViewModel we talk about in MVVM. 
+Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel), which will go over the ViewModel, and the differences between an Android ViewModel and the ViewModel we talk about in MVVM. 

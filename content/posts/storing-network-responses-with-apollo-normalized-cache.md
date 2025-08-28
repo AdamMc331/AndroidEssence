@@ -4,7 +4,7 @@ draft = false
 title = "Storing Network Responses With Apollo Normalized Cache"
 +++
 
-In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-01-storing-network-responses-with-apollo-http-cache.md %}) we looked at the HTTP cache from [Apollo Android](https://www.apollographql.com/docs/android/) for storing network responses. In this post, we look at its counter part, the [normalized cache](https://www.apollographql.com/docs/android/essentials/normalized-cache/).
+In our [previous post](posts/storing-network-responses-with-apollo-http-cache) we looked at the HTTP cache from [Apollo Android](https://www.apollographql.com/docs/android/) for storing network responses. In this post, we look at its counter part, the [normalized cache](https://www.apollographql.com/docs/android/essentials/normalized-cache/).
 
 <!--more-->
 

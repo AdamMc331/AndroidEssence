@@ -144,4 +144,4 @@ A note on the `as` keyword:
 
 You may have also noticed that converting to Kotlin was a whole 10 lines shorter in this example. Kotlin is much more concise than Java, thus making your code easier to maintain.
 
-Now that you've been introduced to including Kotlin in your project, let's move on in [part 2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview.md %}) to begin building our TodoList. If you've missed any code, you can find it on [GitHub](http://github.com/AdamMc331/todo-kotlin).
+Now that you've been introduced to including Kotlin in your project, let's move on in [part 2](posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview) to begin building our TodoList. If you've missed any code, you can find it on [GitHub](http://github.com/AdamMc331/todo-kotlin).

@@ -4,7 +4,7 @@ draft = false
 title = "How To Build A Todo List In Kotlin Part 2: Implementing A RecyclerView"
 +++
 
-Following up on [part 2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) which demonstrates how to create your Android app and configure Kotlin, we'll begin building the heart and soul of a Todo List application - the list!
+Following up on [part 2](posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project) which demonstrates how to create your Android app and configure Kotlin, we'll begin building the heart and soul of a Todo List application - the list!
 
 <!--more-->
 
@@ -163,4 +163,4 @@ At this point, let's run our app and verify that our list appears. Following all
 
 ![AndroidEssence](/images/kotlin/todo-1.png)
 
-Now that you have a working RecyclerView, you can move on to [part 3]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-3-adding-items.md %}). If you've missed any code, you can find it on [GitHub](http://github.com/AdamMc331/todo-kotlin).
+Now that you have a working RecyclerView, you can move on to [part 3](posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items). If you've missed any code, you can find it on [GitHub](http://github.com/AdamMc331/todo-kotlin).

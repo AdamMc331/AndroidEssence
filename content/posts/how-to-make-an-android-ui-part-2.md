@@ -4,7 +4,7 @@ draft = false
 title = 'How To Make An Android UI Part 2: Java Code'
 +++
 
-After reading [part one]({{ site.baseurl }}{% link _posts/2015-11-08-how-to-make-an-android-ui-part-1.md %}) which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:
+After reading [part one](posts/how-to-make-an-android-ui-part-1) which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:
 
 <!--more-->
 

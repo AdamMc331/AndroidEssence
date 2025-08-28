@@ -4,7 +4,7 @@ draft = false
 title = "Mastering Room Database Migrations"
 +++
 
-In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we're going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store. 
+In the last post, we demonstrated the different types of [database relationships in Room](posts/room-relationship-recap). Next, we're going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store. 
 
 <!--more-->
 
@@ -383,7 +383,7 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
 }
 ```
 
-Room does a great job of abstracting away most of the SQL statements required for database interraction. As a result, it's easy to forget the SQL required for the migration statements. That's why I've built [this cheat sheet](https://github.com/AdamMc331/mastering-room-migrations/blob/master/README.md) alongside a sample project with database migrations to help you understand what to do, depending on the change you're making. 
+Room does a great job of abstracting away most of the SQL statements required for database interraction. As a result, it's easy to forget the SQL required for the migration statements. That's why I've built [this cheat sheet](https://github.com/AdamMc331/mastering-room-migrations/blob/master/README) alongside a sample project with database migrations to help you understand what to do, depending on the change you're making. 
 
 # Recap
 

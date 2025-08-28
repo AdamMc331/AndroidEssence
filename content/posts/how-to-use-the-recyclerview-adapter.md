@@ -4,7 +4,7 @@ draft = false
 title = 'How To Use The RecyclerView Adapter'
 +++
 
-The [RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html) class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, [RecyclerView Vs ListView]({{ site.baseurl }}{% link _posts/2015-09-07-recyclerview-vs-listview.md %}), the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my [Swipe-To-Dismiss]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) example, and break it down to explain the required implementations and how to use the RecyclerView adapter.
+The [RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html) class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, [RecyclerView Vs ListView](posts/recyclerview-vs-listview), the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my [Swipe-To-Dismiss](posts/swipe-to-dismiss-recyclerview-items) example, and break it down to explain the required implementations and how to use the RecyclerView adapter.
 
 <!--more-->
 

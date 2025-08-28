@@ -85,7 +85,7 @@
       
       <guid>http://localhost:1313/posts/unit-testing-custom-lint-checks/</guid>
       
-      <description>&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-22-enforce-custom-views-with-lint.md %}) we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.&lt;/p&gt;
+      <description>&lt;p&gt;In our &lt;a href=&#34;http://localhost:1313/posts/enforce-custom-views-with-lint/&#34;&gt;previous post&lt;/a&gt; we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.&lt;/p&gt;
 &lt;p&gt;In this post, we&amp;rsquo;ll go over how to unit test such a scenario, and take the opportunity to look at some additional options of unit testing with lint as well.&lt;/p&gt;</description>
       
     </item>
@@ -109,7 +109,7 @@
       
       <guid>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</guid>
       
-      <description>&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2021-02-01-storing-network-responses-with-apollo-http-cache.md %}) we looked at the HTTP cache from &lt;a href=&#34;https://www.apollographql.com/docs/android/&#34;&gt;Apollo Android&lt;/a&gt; for storing network responses. In this post, we look at its counter part, the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/normalized-cache/&#34;&gt;normalized cache&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In our &lt;a href=&#34;http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/&#34;&gt;previous post&lt;/a&gt; we looked at the HTTP cache from &lt;a href=&#34;https://www.apollographql.com/docs/android/&#34;&gt;Apollo Android&lt;/a&gt; for storing network responses. In this post, we look at its counter part, the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/normalized-cache/&#34;&gt;normalized cache&lt;/a&gt;.&lt;/p&gt;</description>
       
     </item>
     
@@ -142,7 +142,7 @@
       
       <guid>http://localhost:1313/posts/mastering-room-database-migrations/</guid>
       
-      <description>&lt;p&gt;In the last post, we demonstrated the different types of [database relationships in Room]({{ site.baseurl }}{% link _posts/2020-04-27-room-relationship-recap.md %}). Next, we&amp;rsquo;re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In the last post, we demonstrated the different types of &lt;a href=&#34;http://localhost:1313/posts/room-relationship-recap/&#34;&gt;database relationships in Room&lt;/a&gt;. Next, we&amp;rsquo;re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.&lt;/p&gt;</description>
       
     </item>
     
@@ -246,7 +246,8 @@
       <guid>http://localhost:1313/posts/building-an-app-with-mvvm/</guid>
       
       <description>&lt;p&gt;This is the second post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following &lt;a href=&#34;https://github.com/AdamMc331/todo-monorepo&#34;&gt;this repo&lt;/a&gt;. Give it a star!&lt;/p&gt;
-&lt;p&gt;In our [previous post]({{ site.baseurl }}{% link _posts/2018-10-20-building-an-app-with-mvp.md %}) we discussed the MVP architecture for building an app. This time, we&amp;rsquo;re going to check out MVVM.&lt;/p&gt;</description>
+&lt;p&gt;In our &lt;a href=&#34;http://localhost:1313/posts/building-an-app-with-mvp/&#34;&gt;previous post&lt;/a&gt; we discussed the MVP architecture for building an app. This time, we&amp;rsquo;re going to check out MVVM.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-&lt;/p&gt;</description>
       
     </item>
     
@@ -276,9 +277,117 @@
 &lt;li&gt;RxJava&lt;/li&gt;
 &lt;li&gt;Repository Pattern&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Now, we should circle back to the beginning. Following our diagram outlined in the [previous parts]({{ site.baseurl }}{% link _posts/2018-05-31-breaking-the-buzzwords-barrier-room-rx-repository.md %}), the next component we can begin to work on is our AccountViewModel:&lt;/p&gt;
+&lt;p&gt;Now, we should circle back to the beginning. Following our diagram outlined in the &lt;a href=&#34;http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/&#34;&gt;previous parts&lt;/a&gt;, the next component we can begin to work on is our AccountViewModel:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/buzzwords/architecture_viewmodel.png&#34; alt=&#34;Android Essence&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Naturally, this may bring up some confusion. We already discussed ViewModels in [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}). Well, depending on context, we may not be referring to the same thing.&lt;/p&gt;</description>
+&lt;p&gt;Naturally, this may bring up some confusion. We already discussed ViewModels in &lt;a href=&#34;http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/&#34;&gt;part 1&lt;/a&gt;. Well, depending on context, we may not be referring to the same thing.&lt;/p&gt;
+&lt;!--mo
+
+
+
+itecture
+
+When we refer to the MVVM architecture, the ViewModel here just refers to a specific component in your application&#39;s architecture. It does not have anything to do with Android or life cycles at this point. To quote the [Wikipedia article](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel):
+
+&gt; The view model is an abstraction of the view exposing public properties and commands. Instead of the controller of the MVC pattern, or the presenter of the MVP pattern, MVVM has a binder. In the view model, the binder mediates communication between the view and the data binder. The view model has been described as a state of the data in the model.
+
+Up to this point, a ViewModel is nothing more than a component that binds data to your view. We can do this a number of ways, including data binding which we will discuss in a later post, but we&#39;ll leave it at that for now. An important take away from this discussion is that MVVM is not specific to Android - a ViewModel could be a class inside an iOS or even a desktop application, if you chose to architect it as such. 
+
+# Android
+
+So then what does a ViewModel mean in terms of Android discussions? Every time the [architecture components](https://developer.android.com/topic/libraries/architecture/) come up, it seems without fail that we begin talking about [ViewModels](https://developer.android.com/topic/libraries/architecture/viewmodel).
+
+This is a new class added with the architecture components in 2017 to manage data in a lifecycle conscious way. For those of you who have been doing Android for a long time, you&#39;ve experienced the struggles of activities being killed on rotation, and repulling for data, or learning the appropriate way to save state yourself. It&#39;s a hassle, and something every single Android developer has had to deal with.
+
+However, just like they did with Room, the Google developers sought out to make this easier for everybody, and provided this class to do so.
+
+&gt; Architecture Components provides ViewModel helper class for the UI controller that is responsible for preparing data for the UI. ViewModel objects are automatically retained during configuration changes so that data they hold is immediately available to the next activity or fragment instance.
+
+So in this context, when we refer to the architecture component, we&#39;re simply talking about a class that can maintain data throughout orientation changes. While this might sound counterintuitive, the Android class for ViewModel is completely separate from the MVVM concept, and can be mutually exclusive. You can use an MVVM architecture without this class, and you can use this class without an MVVM architecture.
+
+# Overlap
+
+Despite the ability to be mutually exclusive, there is often overlap in this discussion. The reason for that goes back to the purpose of a ViewModel in MVVM. As stated earlier, the ViewModel is simply an abstraction of the view that exposes certain properties. These properties could be a list of data to display, or the current state of your view.
+
+An Android ViewModel is a way to persist data across orientation changes. What kind of data would you want to persist? A list of data you&#39;re displaying, or the current state of your view. Thus, they often go hand in hand because the ViewModel class in Android was made to handle many of the concerns faced by a ViewModel in MVVM. 
+
+# Implementation
+
+As I go over these buzzwords, I also want to show the implementation where it&#39;s relevant. I&#39;ve trimmed this a little bit from the actual class in Cash Caretaker, but enough to demonstrate a couple key points:
+
+1. The ViewModel manages the current state of the view, not our Fragment. It&#39;s exposed via a [BehaviorSubject](), so the Fragment can respond to it. 
+2. The ViewModel interracts with the Repository we made in the last section to fetch data. It also checks to make sure it&#39;s not pulling data redundently.
+3. The ViewModel also manages a [CompositeDisposable](http://reactivex.io/RxJava/javadoc/io/reactivex/disposables/CompositeDisposable.html) which holds our network subscription, and clears the network subscription when our ViewModel is cleared. This is to avoid memory leaks if there&#39;s a long running request.
+
+If you don&#39;t understand the RxJava code below, head back to [part 2](posts/breaking-the-buzzwords-barrier-room-rx-repository) for some notes and links to external resources.
+
+```kotlin
+class AccountViewModel(private val repository: CCRepository) : ViewModel() {
+    private val compositeDisposable = CompositeDisposable()
+    val state: BehaviorSubject&lt;DataViewState&gt; = BehaviorSubject.create()
+
+    fun fetchAccounts() {
+        if (state.value !is DataViewState.Success&lt;*&gt;) {
+            Timber.d(&#34;Loading Accounts&#34;)
+            postState(DataViewState.Loading())
+
+            val subscription = repository
+                    .getAllAccounts()
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(
+                            this::postState,
+                            Timber::e
+                    )
+
+            compositeDisposable.add(subscription)
+        }
+    }
+
+    private fun postState(newState: DataViewState) {
+        state.onNext(newState)
+        notifyChange()
+    }
+
+    override fun onCleared() {
+        compositeDisposable.dispose()
+    }
+}
+```
+
+Because this survives orientation changes, and because we do a state check before pulling accounts, we can save ourselves from unnecessarily requesting data every time the user rotates their phone, and instead only when the view (and ViewModel) are created for the first time. 
+
+## Factory
+
+Instantiating your ViewModel from inside your activity or fragment can be pretty easy:
+
+```kotlin
+val viewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
+```
+
+However, you may notice in the above example, we don&#39;t have any way to call a constructor. Unfortunately, there aren&#39;t any examples in the documentation, but you can do this using a [ViewModelProvider.Factory](https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.Factory). There is an [explanation by Mohit Sharma](https://android.jlelse.eu/android-viewmodel-with-custom-arguments-d0ff0fba29e1) that is quick and to the point.
+
+You can create an instance of this factory using an anonymous class, create your ViewModel with the constructor, and then return that. Here is an example from Cash Caretaker:
+
+```kotlin
+val viewModelFactory: ViewModelProvider.Factory by lazy {
+    object : ViewModelProvider.Factory {
+        override fun &lt;T : ViewModel?&gt; create(modelClass: Class&lt;T&gt;): T {
+            val database = CCDatabase.getInMemoryDatabase(context!!)
+            val repository = CCRepository(database)
+
+            return AccountViewModel(repository) as T
+        }
+    }
+}
+
+val viewModel = ViewModelProviders.of(this, viewModelFactory).get(AccountViewModel::class.java)
+```
+
+# Conclusion
+
+I hope this demonstrates clearly what a ViewModel means in terms of the software architecture, as well as what the ViewModel class in Android does for us. Congratulations on making it through! You can now cross off another intimidating buzzword, and have a discussion about why this is truly relevant. 
+
+Keep an eye out for part 4 coming soon!���������</description>
       
     </item>
     
@@ -289,7 +398,7 @@
       
       <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</guid>
       
-      <description>&lt;p&gt;In [part 1]({{ site.baseurl }}{% link _posts/2018-05-30-breaking-the-buzzwords-barrier-mvvm.md %}) we discussed how we were going to architect the various components of our application. Now it&amp;rsquo;s time to build them. To understand what we should build first, we should revisit the diagram:&lt;/p&gt;
+      <description>&lt;p&gt;In &lt;a href=&#34;http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/&#34;&gt;part 1&lt;/a&gt; we discussed how we were going to architect the various components of our application. Now it&amp;rsquo;s time to build them. To understand what we should build first, we should revisit the diagram:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/buzzwords/cashcaretaker_mvvm.png&#34; alt=&#34;MVVM&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I would start with three spots:&lt;/p&gt;
 &lt;ol&gt;
@@ -423,7 +532,8 @@
       
       <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</guid>
       
-      <description>&lt;p&gt;Following up on [part 2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) which demonstrates how to create your Android app and configure Kotlin, we&amp;rsquo;ll begin building the heart and soul of a Todo List application - the list!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Following up on &lt;a href=&#34;http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/&#34;&gt;part 2&lt;/a&gt; which demonstrates how to create your Android app and configure Kotlin, we&amp;rsquo;ll begin building the heart and soul of a Todo List application - the list!&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-&lt;/p&gt;</description>
       
     </item>
     
@@ -434,7 +544,7 @@
       
       <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</guid>
       
-      <description>&lt;p&gt;Following parts [1]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) and [2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview.md %}) you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Following parts &lt;a href=&#34;http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/&#34;&gt;1&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/&#34;&gt;2&lt;/a&gt; you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.&lt;/p&gt;</description>
       
     </item>
     
@@ -585,7 +695,7 @@
       
       <guid>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</guid>
       
-      <description>&lt;p&gt;After reading [part one]({{ site.baseurl }}{% link _posts/2015-11-08-how-to-make-an-android-ui-part-1.md %}) which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:&lt;/p&gt;</description>
+      <description>&lt;p&gt;After reading &lt;a href=&#34;http://localhost:1313/posts/how-to-make-an-android-ui-part-1/&#34;&gt;part one&lt;/a&gt; which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:&lt;/p&gt;</description>
       
     </item>
     
@@ -630,7 +740,7 @@
       
       <guid>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</guid>
       
-      <description>&lt;p&gt;The &lt;a href=&#34;https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html&#34;&gt;RecyclerView.Adapter&lt;/a&gt; class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, [RecyclerView Vs ListView]({{ site.baseurl }}{% link _posts/2015-09-07-recyclerview-vs-listview.md %}), the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my [Swipe-To-Dismiss]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) example, and break it down to explain the required implementations and how to use the RecyclerView adapter.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html&#34;&gt;RecyclerView.Adapter&lt;/a&gt; class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, &lt;a href=&#34;http://localhost:1313/posts/recyclerview-vs-listview/&#34;&gt;RecyclerView Vs ListView&lt;/a&gt;, the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my &lt;a href=&#34;http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/&#34;&gt;Swipe-To-Dismiss&lt;/a&gt; example, and break it down to explain the required implementations and how to use the RecyclerView adapter.&lt;/p&gt;</description>
       
     </item>
     
@@ -662,8 +772,9 @@ categories: [android]&lt;/h2&gt;
       
       <guid>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</guid>
       
-      <description>&lt;p&gt;Before continuing this post, I recommend that you read my previous one on [Swipe To Dismiss RecyclerView Items]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) as this will build upon the &lt;code&gt;ItemTouchHelper&lt;/code&gt; class discussed there. Once you&amp;rsquo;ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/drag-and-drop.gif&#34; alt=&#34;Drag And Drop RecyclerView&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Before continuing this post, I recommend that you read my previous one on &lt;a href=&#34;http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/&#34;&gt;Swipe To Dismiss RecyclerView Items&lt;/a&gt; as this will build upon the &lt;code&gt;ItemTouchHelper&lt;/code&gt; class discussed there. Once you&amp;rsquo;ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/drag-and-drop.gif&#34; alt=&#34;Drag And Drop RecyclerView&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-&lt;/p&gt;</description>
       
     </item>
     

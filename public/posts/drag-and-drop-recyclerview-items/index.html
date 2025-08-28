@@ -53,7 +53,7 @@
         },
         "datePublished": "2015-09-09",
         "description": "",
-        "wordCount":  225 ,
+        "wordCount":  221 ,
         "mainEntityOfPage": "True",
         "dateModified": "2015-09-09",
         "image": {
@@ -74,7 +74,8 @@
     <meta property="og:url" content="http://localhost:1313/posts/drag-and-drop-recyclerview-items/">
   <meta property="og:site_name" content="Android Essence">
   <meta property="og:title" content="Drag And Drop RecyclerView Items">
-  <meta property="og:description" content="Before continuing this post, I recommend that you read my previous one on [Swipe To Dismiss RecyclerView Items]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) as this will build upon the ItemTouchHelper class discussed there. Once you’ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:">
+  <meta property="og:description" content="Before continuing this post, I recommend that you read my previous one on Swipe To Dismiss RecyclerView Items as this will build upon the ItemTouchHelper class discussed there. Once you’ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:
+&lt;!-">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -86,7 +87,8 @@
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Drag And Drop RecyclerView Items">
-  <meta name="twitter:description" content="Before continuing this post, I recommend that you read my previous one on [Swipe To Dismiss RecyclerView Items]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) as this will build upon the ItemTouchHelper class discussed there. Once you’ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:">
+  <meta name="twitter:description" content="Before continuing this post, I recommend that you read my previous one on Swipe To Dismiss RecyclerView Items as this will build upon the ItemTouchHelper class discussed there. Once you’ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:
+&lt;!-">
 
 
     
@@ -200,9 +202,10 @@ stroke-linejoin="round" class="feather feather-home">
         <nav id="TableOfContents"></nav>
     </details>
             <div class="page-content">
-                <p>Before continuing this post, I recommend that you read my previous one on [Swipe To Dismiss RecyclerView Items]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) as this will build upon the <code>ItemTouchHelper</code> class discussed there. Once you&rsquo;ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:</p>
+                <p>Before continuing this post, I recommend that you read my previous one on <a href="/posts/swipe-to-dismiss-recyclerview-items/">Swipe To Dismiss RecyclerView Items</a> as this will build upon the <code>ItemTouchHelper</code> class discussed there. Once you&rsquo;ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:</p>
 <p><img src="/images/drag-and-drop.gif" alt="Drag And Drop RecyclerView"></p>
-<h1 id="swap-adapter-items">Swap Adapter Items</h1>
+<p>&lt;!-</p>
+<p>wap Adapter Items</p>
 <p>Before we can properly use the drag and drop feature, we need to add another method to our Adapter that swaps two items. You can use `Collections.swap() to do this easily on a List object:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">firstPosition</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">secondPosition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Collections</span><span class="p">.</span><span class="na">swap</span><span class="p">(</span><span class="n">movies</span><span class="p">,</span><span class="w"> </span><span class="n">firstPosition</span><span class="p">,</span><span class="w"> </span><span class="n">secondPosition</span><span class="p">);</span><span class="w">
@@ -216,7 +219,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>Once you&rsquo;ve done those two things, in addition to all the necessary steps for swipe-to-dismiss, you&rsquo;re done. If you chose to only use the drag and drop feature, you can delet the <code>remove()</code> function from the adapter and the implementation of <code>onSwap()</code> inside the <code>ItemTouchHelper</code> class.</p>
-<p>I hope this simple tutorial helps you advance your RecyclerView skills. I have updated the MovieList project on <a href="https://github.com/androidessence/SwipeToDismissSample">GitHub</a> to include the code from this example.</p>
+<p>I hope this simple tutorial helps you advance your RecyclerView skills. I have updated the MovieList project on <a href="https://github.com/androidessence/SwipeToDismissSample">GitHub</a> to include the code from this example.���</p>
             </div>
         </article></main>
 </div>
