@@ -172,7 +172,7 @@ stroke-linejoin="round" class="feather feather-home">
             
             <div class="page-content">
                 <p>In my last post I broke down the differences between the RecyclerView and a ListView. One of the benefits of the RecyclerView that I touched on was the <a href="https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html">ItemTouchHelper</a>. This class is used to handle the Swipe-To-Dismiss and Drag-N-Drop behaviors of a RecyclerView. In this post I am going to teach you how to swipe to dismiss RecyclerView items using the sample application seen here:</p>
-<p><img src="/images/std-sample.gif" alt="Swipe To Dismiss"></p>
+<p><img src="/std-sample.gif" alt="Swipe To Dismiss"></p>
 <p>I am going to move forward with the assumption that you are familiar with a RecyclerView and have already added one into your application. If you haven&rsquo;t, you can check out <a href="https://developer.android.com/training/material/lists-cards.html">this link</a>. The sample list for this application will show a number of <code>Movie</code> objects, that have a single field for <code>movieName</code>.</p>
 <h1 id="the-adapter">The Adapter</h1>
 <p>We will not change the adapter much to allow for swiping, but we should add the following method along with all of the other required implementations:</p>

@@ -30,7 +30,7 @@ The presenter is responsible for most business logic in your application. That i
 
 To understand the communication flow a little better, let's look at a short flow chart:
 
-![](/assets/mvp/mvp-diagram.png)
+![](/mvp/mvp-diagram.png)
 
 Having explained each component, let's break down the communication:
 

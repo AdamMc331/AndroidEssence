@@ -196,22 +196,6 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#understanding-vetoable">Understanding Vetoable</a></li>
-    <li><a href="#writing-the-sample">Writing The Sample</a></li>
-    <li><a href="#linking-to-the-sample">Linking To The Sample</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#writing-the-sample-1">Writing The Sample</a></li>
-    <li><a href="#linking-to-the-sample-1">Linking To The Sample</a></li>
-  </ul>
-</nav>
-    </details>
             <div class="page-content">
                 <p>The Kotlin language used by Android developers all over the world is open source and available on <a href="https://github.com/jetbrains/kotlin">GitHub</a>. This means it&rsquo;s open for contributions from anyone! It may, of course, feel very intimidating to contribute to a project of that size. Especially for those of us who are new to open source contributions.</p>
 <p>The JetBrains team makes this process a lot less scary than it sounds. There are some beginner friendly ways to contribute to the language, and this post will walk you through every step.</p>
@@ -231,13 +215,13 @@ stroke-linejoin="round" class="feather feather-home">
 <h1 id="finding-samples-to-write">Finding Samples To Write</h1>
 <p>Unfortunately, there&rsquo;s no easy way to tell which parts of the standard library have samples or not. It&rsquo;s a little bit of trial and error clicking through the documentation.</p>
 <p>If a function does have samples, you&rsquo;ll see them as code blocks beneath the method:</p>
-<p><img src="../assets/contribute_kotlin/kotlin_vetoable.png" alt=""></p>
+<p><img src="../contribute_kotlin/kotlin_vetoable.png" alt=""></p>
 <p>If a function is lacking in samples, all of this space will be blank:</p>
-<p><img src="../assets/contribute_kotlin/kotlin_filternotnull.png" alt=""></p>
+<p><img src="../contribute_kotlin/kotlin_filternotnull.png" alt=""></p>
 <p>In this post, we&rsquo;re going to look at both of these samples, because each one is a little different.</p>
 <h1 id="vetoable-sample">Vetoable Sample</h1>
 <p>All of the samples for the Kotlin documentation are in the <code>kotlin/libraries/stdlib/samples/test/samples</code> directory. From there, they are all grouped by related functionality:</p>
-<p><img src="../assets/contribute_kotlin/samples_directory.png" alt=""></p>
+<p><img src="../contribute_kotlin/samples_directory.png" alt=""></p>
 <p>Since <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/vetoable.html">Vetoable</a> is a property delegate, we&rsquo;ll put it inside a file called <code>delegates.kt</code>.</p>
 <h2 id="understanding-vetoable">Understanding Vetoable</h2>
 <p>If you&rsquo;re unfamiliar with this property delegate, it is one that allows you to specify a callback that will have the opportunity to veto any new property values. An example use case of this would be to keep track of a maximum integer, and make sure we only update the property if the new value is actually greater than the old one.</p>
@@ -314,7 +298,7 @@ stroke-linejoin="round" class="feather feather-home">
 <li><a href="https://youtrack.jetbrains.com/issue/KT-20357">The YouTrack issue</a> requesting samples.</li>
 <li><a href="https://github.com/JetBrains/kotlin/pull/1426">The pull request</a> for the vetoable sample above, along with other property delegates.</li>
 <li><a href="https://github.com/JetBrains/kotlin/pull/3123">The pull request</a> for the filterNotNull sample above.
-���</li>
+���������������������</li>
 </ol>
             </div>
         </article></main>

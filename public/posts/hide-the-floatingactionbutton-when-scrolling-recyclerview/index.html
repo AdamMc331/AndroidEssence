@@ -53,7 +53,7 @@
         },
         "datePublished": "2015-09-02",
         "description": "",
-        "wordCount":  590 ,
+        "wordCount":  83 ,
         "mainEntityOfPage": "True",
         "dateModified": "2015-09-02",
         "image": {
@@ -196,90 +196,123 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents"></nav>
-    </details>
             <div class="page-content">
                 <p>One of my favorite components introduced with Material Design is the <a href="https://www.google.com/design/spec/components/buttons-floating-action-button.html">FloatingActionButton</a> (FAB). These buttons are great for emphasizing the primary action of an Activity, but quickly become a nuisance when displayed over a RecyclerView as they may block the bottom list item. To avoid this, we can hide the FloatingActionButton when scrolling a RecyclerView.</p>
 <p>In today’s tutorial we will only be hiding the FAB when the RecyclerView is scrolled upward, and it will reappear on the next down scroll as shown here:</p>
-<p><img src="/images/fab_scroll.gif" alt="FloatingActionButton"></p>
-<h1 id="add-the-support-library-dependency">Add the support library dependency</h1>
-<p>As with any support library component, like the Toolbar in my last post, we need to add a dependency to our build.gradle file for the design library, and for the RecyclerView:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">    <span class="n">dependencies</span><span class="o">{</span>
-</span></span><span class="line"><span class="cl">       <span class="n">compile</span> <span class="s1">&#39;com.android.support:design:23.0.0&#39;</span>
-</span></span><span class="line"><span class="cl">       <span class="n">compile</span> <span class="s1">&#39;com.android.support:recyclerview-v7:23:0:0&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span></code></pre></div><h1 id="add-the-fab-and-recyclerview-inside-a-coordinatorlayout">Add the FAB and RecyclerView inside a CoordinatorLayout</h1>
-<p>In order to achieve this scroll animation, we must put the Views inside of a CoordinatorLayout. As the documentation states, a primary use of the <a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html">CoordinatorLayout</a> is:</p>
-<blockquote>
-<p>As a container for a specific interaction with one or more child views</p></blockquote>
-<p>Since the FAB is interacting with the RecyclerView (by hiding/showing depending on scroll) the CoordinatorLayout will help us with this process. Here is how the XML will look:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">&gt;</span>  
-</span></span><span class="line"><span class="cl">     
-</span></span><span class="line"><span class="cl">       <span class="nt">&lt;android.support.v7.widget.RecyclerView</span> 
-</span></span><span class="line"><span class="cl">          <span class="na">android:id=</span><span class="s">&#34;@+id/recycler_view&#34;</span> 
-</span></span><span class="line"><span class="cl">          <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span> 
-</span></span><span class="line"><span class="cl">          <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">/&gt;</span>  
-</span></span><span class="line"><span class="cl">     
-</span></span><span class="line"><span class="cl">       <span class="nt">&lt;android.support.design.widget.FloatingActionButton</span>
-</span></span><span class="line"><span class="cl">          <span class="na">android:id=</span><span class="s">&#34;@+id/fab&#34;</span>
-</span></span><span class="line"><span class="cl">          <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span> 
-</span></span><span class="line"><span class="cl">          <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span> 
-</span></span><span class="line"><span class="cl">          <span class="na">android:layout_margin=</span><span class="s">&#34;16dp&#34;</span> 
-</span></span><span class="line"><span class="cl">          <span class="na">app:layout_anchor=</span><span class="s">&#34;@+id/recycler_view&#34;</span> 
-</span></span><span class="line"><span class="cl">          <span class="na">app:layout_anchorGravity=</span><span class="s">&#34;bottom|end&#34;</span> <span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="cl">     
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
-</span></span></code></pre></div><p>Two attributes that may be new to you are <code>layout_anchor</code> and <code>layout_anchorGravity</code>. These attributes were <a href="http://android-developers.blogspot.com/2015/05/android-design-support-library.html">introduced with the CoordinatorLayout</a> to place some views relative to others.</p>
-<h1 id="implement-the-fabs-behavior">Implement the FAB’s behavior</h1>
-<p>If you took a peak at the CoordinatorLayout documentation, you will notice the mentioned something about Behavior:</p>
-<blockquote>
-<p>By specifying <a href="https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html">Behaviors</a> for child views of a CoordinatorLayout you can provide many different interactions within a single parent and those views can also interact with one another.</p></blockquote>
-<p>There is a <code>FloatingActionButton.Behavior</code> class that we can extend to implement our own behavior. Start by creating the following class:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FABScrollBehavior</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">FloatingActionButton</span><span class="p">.</span><span class="na">Behavior</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>In order for our FAB to react to the scroll of the RecyclerView, we can override <code>onStartNestedScroll()</code> and <code>onNestedScroll()</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FABScrollBehavior</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">FloatingActionButton</span><span class="p">.</span><span class="na">Behavior</span><span class="w"> </span><span class="p">{</span><span class="w">  
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="nd">@Override</span><span class="w">  
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onNestedScroll</span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="w"> </span><span class="n">coordinatorLayout</span><span class="p">,</span><span class="w"> </span><span class="n">FloatingActionButton</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dxConsumed</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dyConsumed</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dxUnconsumed</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dyUnconsumed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="kd">super</span><span class="p">.</span><span class="na">onNestedScroll</span><span class="p">(</span><span class="n">coordinatorLayout</span><span class="p">,</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">dxConsumed</span><span class="p">,</span><span class="w"> </span><span class="n">dyConsumed</span><span class="p">,</span><span class="w"> </span><span class="n">dxUnconsumed</span><span class="p">,</span><span class="w"> </span><span class="n">dyUnconsumed</span><span class="p">);</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="n">dyConsumed</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">child</span><span class="p">.</span><span class="na">getVisibility</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">View</span><span class="p">.</span><span class="na">VISIBLE</span><span class="p">){</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="n">child</span><span class="p">.</span><span class="na">hide</span><span class="p">();</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">dyConsumed</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">child</span><span class="p">.</span><span class="na">getVisibility</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">View</span><span class="p">.</span><span class="na">GONE</span><span class="p">){</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="n">child</span><span class="p">.</span><span class="na">show</span><span class="p">();</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="p">}</span><span class="w">  
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">}</span><span class="w">  
-</span></span></span><span class="line"><span class="cl"><span class="w">     
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="nd">@Override</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onStartNestedScroll</span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="w"> </span><span class="n">coordinatorLayout</span><span class="p">,</span><span class="w"> </span><span class="n">FloatingActionButton</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">directTargetChild</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nestedScrollAxes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">nestedScrollAxes</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ViewCompat</span><span class="p">.</span><span class="na">SCROLL_AXIS_VERTICAL</span><span class="p">;</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>This implementation is pretty straight forward. If the scroll is upward (dyConsumed &gt; 0) and the child (the FAB here) is visible, hide it. If the opposite occurs, show it. Thankfully, we do not need to write any animations ourself! The FAB class contains methods for <a href="https://developer.android.com/reference/android/support/design/widget/FloatingActionButton.html#show%28%29">showing</a> and <a href="https://developer.android.com/reference/android/support/design/widget/FloatingActionButton.html#hide%28%29">hiding</a> the button.</p>
-<p>We’ve also implemented onStartNestedScroll to show that we are only handling vertical scrolls.</p>
-<h1 id="attach-the-behavior-to-the-fab">Attach the behavior to the FAB</h1>
-<p>Next we need to make sure the FAB behaves like we just implemented. This can be done using XML:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="nt">&lt;android.support.design.widget.FloatingActionButton</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">android:layout_margin=</span><span class="s">&#34;16dp&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">app:layout_anchor=</span><span class="s">&#34;@+id/recycler_view&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">app:layout_anchorGravity=</span><span class="s">&#34;bottom|end&#34;</span> 
-</span></span><span class="line"><span class="cl">       <span class="na">app:layout_behavior=</span><span class="s">&#34;com.adammcneilly.fabscrollsample.FABScrollBehavior&#34;</span><span class="nt">/&gt;</span>
-</span></span></code></pre></div><p>While writing this tutorial for you, I learned the hard way that this is not enough. As it is you will get the following error:</p>
-<blockquote>
-<p>Caused by: java.lang.RuntimeException: Could not inflate Behavior subclass com.adammcneilly.fabscrollsample.FABScrollBehavior</p></blockquote>
-<p>To fix this, just make sure you’ve added a default constructor to your behavior class:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">FABScrollBehavior</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">AttributeSet</span><span class="w"> </span><span class="n">attributeSet</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="kd">super</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>Once you’ve done that, you’ll be able to hide the FloatingActionButton when scrolling the RecyclerView. Great work!</p>
-<p>The code for this tutorial can be found on <a href="https://github.com/androidessence/FABScrollTutorial">GitHub</a>.</p>
+<p><img src="/fab_scroll.gif" alt="FloatingActionButton"></p>
+<!--mor
+
+
+he support library dependency
+
+As with any support library component, like the Toolbar in my last post, we need to add a dependency to our build.gradle file for the design library, and for the RecyclerView:
+
+```groovy
+    dependencies{
+       compile 'com.android.support:design:23.0.0'
+       compile 'com.android.support:recyclerview-v7:23:0:0'
+    }
+```
+
+# Add the FAB and RecyclerView inside a CoordinatorLayout
+
+In order to achieve this scroll animation, we must put the Views inside of a CoordinatorLayout. As the documentation states, a primary use of the [CoordinatorLayout](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html) is:
+
+> As a container for a specific interaction with one or more child views
+
+Since the FAB is interacting with the RecyclerView (by hiding/showing depending on scroll) the CoordinatorLayout will help us with this process. Here is how the XML will look:
+
+```xml
+    <android.support.design.widget.CoordinatorLayout 
+       xmlns:android="http://schemas.android.com/apk/res/android" 
+       xmlns:app="http://schemas.android.com/apk/res-auto" 
+       android:layout_width="match_parent" 
+       android:layout_height="match_parent">  
+     
+       <android.support.v7.widget.RecyclerView 
+          android:id="@+id/recycler_view" 
+          android:layout_width="match_parent" 
+          android:layout_height="match_parent"/>  
+     
+       <android.support.design.widget.FloatingActionButton
+          android:id="@+id/fab"
+          android:layout_width="wrap_content" 
+          android:layout_height="wrap_content" 
+          android:layout_margin="16dp" 
+          app:layout_anchor="@+id/recycler_view" 
+          app:layout_anchorGravity="bottom|end" />
+     
+    </android.support.design.widget.CoordinatorLayout>
+```
+
+Two attributes that may be new to you are `layout_anchor` and `layout_anchorGravity`. These attributes were [introduced with the CoordinatorLayout](http://android-developers.blogspot.com/2015/05/android-design-support-library.html) to place some views relative to others.
+
+# Implement the FAB’s behavior
+
+If you took a peak at the CoordinatorLayout documentation, you will notice the mentioned something about Behavior:
+
+> By specifying [Behaviors](https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html) for child views of a CoordinatorLayout you can provide many different interactions within a single parent and those views can also interact with one another.
+
+There is a `FloatingActionButton.Behavior` class that we can extend to implement our own behavior. Start by creating the following class:
+
+```java
+    public class FABScrollBehavior extends FloatingActionButton.Behavior { }
+```
+
+In order for our FAB to react to the scroll of the RecyclerView, we can override `onStartNestedScroll()` and `onNestedScroll()`:
+
+```java
+    public class FABScrollBehavior extends FloatingActionButton.Behavior {  
+       @Override  
+       public void onNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child, View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) { 
+          super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed); 
+          if(dyConsumed > 0 && child.getVisibility() == View.VISIBLE){ 
+             child.hide(); 
+          } else if(dyConsumed < 0 && child.getVisibility() == View.GONE){ 
+             child.show(); 
+          }  
+       }  
+     
+       @Override 
+       public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child, View directTargetChild, View target, int nestedScrollAxes) { 
+          return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL; 
+       }
+    }
+```
+
+This implementation is pretty straight forward. If the scroll is upward (dyConsumed > 0) and the child (the FAB here) is visible, hide it. If the opposite occurs, show it. Thankfully, we do not need to write any animations ourself! The FAB class contains methods for [showing](https://developer.android.com/reference/android/support/design/widget/FloatingActionButton.html#show()) and [hiding](https://developer.android.com/reference/android/support/design/widget/FloatingActionButton.html#hide()) the button.
+
+We’ve also implemented onStartNestedScroll to show that we are only handling vertical scrolls.
+
+# Attach the behavior to the FAB
+
+Next we need to make sure the FAB behaves like we just implemented. This can be done using XML:
+
+```xml
+    <android.support.design.widget.FloatingActionButton 
+       android:layout_width="wrap_content" 
+       android:layout_height="wrap_content" 
+       android:layout_margin="16dp" 
+       app:layout_anchor="@+id/recycler_view" 
+       app:layout_anchorGravity="bottom|end" 
+       app:layout_behavior="com.adammcneilly.fabscrollsample.FABScrollBehavior"/>
+```
+
+While writing this tutorial for you, I learned the hard way that this is not enough. As it is you will get the following error:
+
+> Caused by: java.lang.RuntimeException: Could not inflate Behavior subclass com.adammcneilly.fabscrollsample.FABScrollBehavior
+
+To fix this, just make sure you’ve added a default constructor to your behavior class:
+
+```java
+    public FABScrollBehavior(Context context, AttributeSet attributeSet){
+       super();
+    }
+```
+
+Once you’ve done that, you’ll be able to hide the FloatingActionButton when scrolling the RecyclerView. Great work!
+
+The code for this tutorial can be found on [GitHub](https://github.com/androidessence/FABScrollTutorial).�������
             </div>
         </article></main>
 </div>

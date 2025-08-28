@@ -238,7 +238,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>As mentioned, we can implement the <code>OnCenterProximityListener</code> so that items in the center of our list at the time can be enlarged, as seen by this photo:</p>
-<p><img src="/images/wear_list_sample.png" alt="WearList"></p>
+<p><img src="/wear_list_sample.png" alt="WearList"></p>
 <p>We also implement the <code>onNonCenterPosition</code> method so that when an item moves out of the center location, it returns back to the appropriate text appearance.</p>
 <p>Earlier I stated that the WearableListView class extends from RecyclerView, as a result the Adapter class is setup in a very similar fashion, so it has been omitted from this post. If you would like to see it, please check the code on <a href="https://github.com/androidessence/Android-Wear-Sample">GitHub</a>, which you can also run on your own Wear device or emulator to see the list in action.</p>
 <p>More information on running your Wear app can be found <a href="http://developer.android.com/intl/pt-br/training/wearables/apps/creating.html">here</a>.</p>

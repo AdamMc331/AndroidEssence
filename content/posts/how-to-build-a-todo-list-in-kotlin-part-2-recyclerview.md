@@ -161,6 +161,6 @@ Note: In this context it makes sense to have the adapter defined right before th
 
 At this point, let's run our app and verify that our list appears. Following all of the above steps, this is what you can expect to see:
 
-![AndroidEssence](/images/kotlin/todo-1.png)
+![AndroidEssence](/kotlin/todo-1.png)
 
 Now that you have a working RecyclerView, you can move on to [part 3](posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items). If you've missed any code, you can find it on [GitHub](http://github.com/AdamMc331/todo-kotlin).

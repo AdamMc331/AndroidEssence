@@ -16,7 +16,7 @@ categories: [android]
 
 The backbone of Material Design is to design your user interface in a way that is simple and intuitive for users, in the same way we use our intuition with real life materials. One of the many ways this is achieved is through the use of elevation in Android UI components, demonstrated here:
 
-![Android Layout Visualizer](/images/elevation.gif)
+![Android Layout Visualizer](/elevation.gif)
 
 <!--more-->
 

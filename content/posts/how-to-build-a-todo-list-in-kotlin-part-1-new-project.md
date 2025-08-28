@@ -14,17 +14,17 @@ I'll be writing this using Android Studio 2.3.2 which does not come with Kotlin 
 
 First, just create a new project using the wizard in Android Studio. I am building mine using a "Basic Activity" from the picker so that I can have a FloatingActionButton. Check out the below video:
 
-![AndroidEssence](/images/kotlin/NewProjectWizard.gif)
+![AndroidEssence](/kotlin/NewProjectWizard.gif)
 
 Once we have that, we also need to make sure to have the Kotlin plugin installed. You can do this by going to `Android Studio -> Preferences -> Plugins` and searching for Kotlin. Once you install and restart AndroidStudio, you can easily configure Kotlin by going to `Tools -> Kotlin -> Configure Kotlin In Project` in the menu:
 
-![AndroidEssence](/images/kotlin/configure_kotlin.png)
+![AndroidEssence](/kotlin/configure_kotlin.png)
 
 When it asks how to configure, simply select `Android with Gradle`, chose whether you want your entire project or a single module, the language version, and click OK. Android Studio will make the necessary changes in the appropriate `build.gradle` files, and all you have to do is resync the project and you're good to go.
 
 Now, you have support for Kotlin in your project, but if you look inside the source files everything is still Java. Configuring Kotlin in your project does not convert it for you, but that is still easy to do. On a Mac you can do `CMD + ALT + SHIFT + K` to convert, or select `Code -> Convert Java File To Kotlin File` in the menu:
 
-![AndroidEssence](/images/kotlin/convert_to_kotlin.png)
+![AndroidEssence](/kotlin/convert_to_kotlin.png)
 
 And that is all you need to get off the ground in Kotlin. You should run the HelloWorld application we've built to make sure that there weren't mistakes along the way. Let's wrap up part 1 by dissecting our new `MainActivity.kt` file, and how it's different from Java:
 

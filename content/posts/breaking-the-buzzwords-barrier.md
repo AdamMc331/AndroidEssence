@@ -14,7 +14,7 @@ You can checkout a simple gif of the project here:
 
 <!--more-->
 
-![Android Essence](/images/buzzwords/sample.gif)
+![Android Essence](/buzzwords/sample.gif)
 
 You can find all the code for this project on [GitHub](https://github.com/adammc331/cashcaretaker).
 

@@ -173,8 +173,8 @@ stroke-linejoin="round" class="feather feather-home">
                 <p>Following parts [1]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-1-new-project.md %}) and [2]({{ site.baseurl }}{% link _posts/2017-05-21-how-to-build-a-todo-list-in-kotlin-part-2-recyclerview.md %}) you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.</p>
 <h1 id="create-a-new-kotlin-activity">Create A New Kotlin Activity</h1>
 <p>First, we need to create an Activity for adding an account. We can create a new activity by selecting our project folder, right clicking and going to <code>New -&gt; Kotlin Activity -&gt; Empty Activity</code> in the context menu that pops up. I&rsquo;m going to name it AddTaskActivity:</p>
-<p><img src="/images/kotlin/new-activity-1.png" alt="AndroidEssence"></p>
-<p><img src="/images/kotlin/new-activity-2.png" alt="AndroidESsence"></p>
+<p><img src="/kotlin/new-activity-1.png" alt="AndroidEssence"></p>
+<p><img src="/kotlin/new-activity-2.png" alt="AndroidESsence"></p>
 <p>We&rsquo;ll just use a simple layout to avoid over-complicating the tutorial. I used the new <code>ConstraintLayout</code> and placed an EditText with a Button underneath:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;android.support.constraint.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>

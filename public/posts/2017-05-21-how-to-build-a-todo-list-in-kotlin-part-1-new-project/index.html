@@ -174,12 +174,12 @@ stroke-linejoin="round" class="feather feather-home">
 <p>This tutorial assumes a basic knowledge of programming, and some familiarity with Android. If you have any questions please leave them in the comments, and I will udpate these posts with a deeper explanation.</p>
 <p>I&rsquo;ll be writing this using Android Studio 2.3.2 which does not come with Kotlin out of the box, so we&rsquo;ll discuss how to get the Kotlin plugin. In AS 3.0, you&rsquo;ll have to option to include Kotlin support right in the new project wizard.</p>
 <p>First, just create a new project using the wizard in Android Studio. I am building mine using a &ldquo;Basic Activity&rdquo; from the picker so that I can have a FloatingActionButton. Check out the below video:</p>
-<p><img src="/images/kotlin/NewProjectWizard.gif" alt="AndroidEssence"></p>
+<p><img src="/kotlin/NewProjectWizard.gif" alt="AndroidEssence"></p>
 <p>Once we have that, we also need to make sure to have the Kotlin plugin installed. You can do this by going to <code>Android Studio -&gt; Preferences -&gt; Plugins</code> and searching for Kotlin. Once you install and restart AndroidStudio, you can easily configure Kotlin by going to <code>Tools -&gt; Kotlin -&gt; Configure Kotlin In Project</code> in the menu:</p>
-<p><img src="/images/kotlin/configure_kotlin.png" alt="AndroidEssence"></p>
+<p><img src="/kotlin/configure_kotlin.png" alt="AndroidEssence"></p>
 <p>When it asks how to configure, simply select <code>Android with Gradle</code>, chose whether you want your entire project or a single module, the language version, and click OK. Android Studio will make the necessary changes in the appropriate <code>build.gradle</code> files, and all you have to do is resync the project and you&rsquo;re good to go.</p>
 <p>Now, you have support for Kotlin in your project, but if you look inside the source files everything is still Java. Configuring Kotlin in your project does not convert it for you, but that is still easy to do. On a Mac you can do <code>CMD + ALT + SHIFT + K</code> to convert, or select <code>Code -&gt; Convert Java File To Kotlin File</code> in the menu:</p>
-<p><img src="/images/kotlin/convert_to_kotlin.png" alt="AndroidEssence"></p>
+<p><img src="/kotlin/convert_to_kotlin.png" alt="AndroidEssence"></p>
 <p>And that is all you need to get off the ground in Kotlin. You should run the HelloWorld application we&rsquo;ve built to make sure that there weren&rsquo;t mistakes along the way. Let&rsquo;s wrap up part 1 by dissecting our new <code>MainActivity.kt</code> file, and how it&rsquo;s different from Java:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl">    <span class="k">package</span> <span class="nn">com.adammcneilly.todolist</span>
 </span></span><span class="line"><span class="cl">

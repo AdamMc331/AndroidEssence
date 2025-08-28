@@ -14,7 +14,7 @@ This post is going to walk through how we can achieve that same affect using fra
 
 To walk through this concept, we're going to write a small application with two fragments. One is our `DisplayNameFragment` which displays a message like "Your name is: Adam", with a button that will navigate to a new fragment, `SetNameFragment`, where you can enter a name in an EditText, hit a finish button, and it will return back to the previous fragment and display whatever you put in the input. This is what it will look like:
 
-![Android Essence](/images/FragmentResultsSample.gif)
+![Android Essence](/FragmentResultsSample.gif)
 
 ## Target Fragments
 

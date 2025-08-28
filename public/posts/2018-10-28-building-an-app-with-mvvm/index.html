@@ -185,7 +185,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>The Android class is directly related to that. It&rsquo;s a class that maintains state throughout orientation, which is historically a pain in the ass on Android. So, if you&rsquo;re using MVVM architecture, it helps to have a class that can do that.</p>
 <h1 id="communication-flow">Communication Flow</h1>
 <p>Now that we have the components defined, let&rsquo;s dive into the MVVM communication flow. We&rsquo;ll go a step further and compare it to MVP, our last example.</p>
-<p><img src="/images/mvvm.png" alt=""></p>
+<p><img src="/mvvm.png" alt=""></p>
 <p>This image came from <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">Wikipedia</a>.</p>
 <p>If you followed the last post, you may feel like the communication pattern is very similar to MVP. Notably, the model and the view never talk to each other, in either case. That&rsquo;s the biggest benefit. <em>The difference between MVVM and MVP lies in the communication flow. MVP has two-way communication, but MVVM uses unidirectional data flow.</em></p>
 <p>I recommend this nice article by <a href="https://www.exclamationlabs.com/blog/the-case-for-unidirectional-data-flow/">David Street</a> to understand the benefits of unidirectional data flow. The TL;DR being that it is predictable, and has a lack of side effects, when communication only flows in one direction.</p>

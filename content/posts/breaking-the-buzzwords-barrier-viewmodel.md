@@ -13,7 +13,7 @@ So far we've covered four big buzzwords used in our application:
 
 Now, we should circle back to the beginning. Following our diagram outlined in the [previous parts](posts/breaking-the-buzzwords-barrier-room-rx-repository), the next component we can begin to work on is our AccountViewModel:
 
-![Android Essence](/images/buzzwords/architecture_viewmodel.png)
+![Android Essence](/buzzwords/architecture_viewmodel.png)
 
 Naturally, this may bring up some confusion. We already discussed ViewModels in [part 1](posts/breaking-the-buzzwords-barrier-mvvm). Well, depending on context, we may not be referring to the same thing.
 

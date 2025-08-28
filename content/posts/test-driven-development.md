@@ -28,7 +28,7 @@ Up to this point, TDD may sound like a great strategy. It's all the benefits of 
 
 Let's consider we start writing a unit test for some ViewModel class before we write the ViewModel itself. Immediately, we're going to end up in a situation like this:
 
-![Android Essence](../assets/tdd/viewmodel_not_found.png)
+![Android Essence](../tdd/viewmodel_not_found.png)
 
 Since the class doesn't exist, the IDE is going to complain that the reference isn't found. This means my tests won't even compile, nor will we get the auto complete support that many developers are used to.
 
@@ -124,7 +124,7 @@ If you'd like to see all five tests, you can find them in this [gist](https://gi
 
 When we run those tests, we will see that they are all failing as a result of our `NotImplementedError`:
 
-![Android Essence](../assets/tdd/not_implemented_failure.png)
+![Android Essence](../tdd/not_implemented_failure.png)
 
 ## Make Our Tests Pass
 
@@ -155,7 +155,7 @@ class PokemonDetailViewModel {
 
 We will see that we made three of our tests pass, but not the ones that had invalid input:
 
-![Android Essence](../assets/tdd/invalid_input_failure.png)
+![Android Essence](../tdd/invalid_input_failure.png)
 
 To fix those, we just need to update our `setPokemon` method to throw the relevant exception:
 
@@ -175,7 +175,7 @@ class PokemonDetailViewModel {
 
 Now, all of our tests are passing:
 
-![Android Essence](../assets/tdd/tests_passing.png)
+![Android Essence](../tdd/tests_passing.png)
 
 You can see the full ViewModel as part of the [gist](https://gist.github.com/AdamMc331/c815f3ae7579409b01b0fbfd5c9984aa), too. 
 

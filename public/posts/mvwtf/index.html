@@ -53,7 +53,7 @@
         },
         "datePublished": "2019-08-16",
         "description": "",
-        "wordCount":  2914 ,
+        "wordCount":  2915 ,
         "mainEntityOfPage": "True",
         "dateModified": "2019-08-16",
         "image": {
@@ -198,57 +198,6 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#model">Model</a></li>
-    <li><a href="#view">View</a></li>
-    <li><a href="#controller">Controller</a></li>
-    <li><a href="#mvc-diagram">MVC Diagram</a></li>
-    <li><a href="#why-dont-we-use-this-on-android">Why Don&rsquo;t We Use This On Android?</a></li>
-    <li><a href="#why-is-this-bad">Why Is This Bad?</a></li>
-    <li><a href="#how-do-we-fix-this">How Do We Fix This?</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#mvp-implementation">MVP Implementation</a>
-      <ul>
-        <li><a href="#contract-class">Contract Class</a></li>
-        <li><a href="#model-1">Model</a></li>
-        <li><a href="#view-1">View</a></li>
-        <li><a href="#presenter">Presenter</a></li>
-      </ul>
-    </li>
-    <li><a href="#is-this-good-enough">Is This Good Enough?</a></li>
-    <li><a href="#what-is-different-about-mvvm">What Is Different About MVVM?</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#mvvm-implementation">MVVM Implementation</a>
-      <ul>
-        <li><a href="#model-2">Model</a></li>
-        <li><a href="#view-2">View</a></li>
-        <li><a href="#viewmodel">ViewModel</a></li>
-      </ul>
-    </li>
-    <li><a href="#what-makes-mvvm-better-than-mvp">What Makes MVVM Better Than MVP?</a>
-      <ul>
-        <li><a href="#handle-rotation-in-mvp">Handle Rotation in MVP</a></li>
-        <li><a href="#handle-rotation-in-mvvm">Handle Rotation In MVVM</a></li>
-      </ul>
-    </li>
-    <li><a href="#why-isnt-mvvm-good-enough">Why Isn&rsquo;t MVVM Good Enough?</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#managing-predictable-state-changes-with-a-reducer">Managing Predictable State Changes With A Reducer</a></li>
-    <li><a href="#using-a-store-for-a-single-source-of-truth">Using A Store For A Single Source Of Truth</a></li>
-    <li><a href="#connect-this-to-our-viewmodel-or-presenter">Connect This To Our ViewModel Or Presenter</a></li>
-  </ul>
-</nav>
-    </details>
             <div class="page-content">
                 <p>As an Android developer, one of the questions I constantly see asked within the community is &ldquo;what architecture pattern should I use?&rdquo;</p>
 <p>This discussion usually leads to a handful of buzzwordy acronyms:</p>
@@ -292,11 +241,11 @@ stroke-linejoin="round" class="feather feather-home">
 <p>An easy way to think about this flow is to consider a form. The controller reads all of your text inputs, makes sure you&rsquo;ve filled everything out, sends it to the model, and then tells the UI to show a success screen.</p>
 <h2 id="mvc-diagram">MVC Diagram</h2>
 <p>Let&rsquo;s take a look at how this all connects together:</p>
-<p><img src="../assets/mvwtf/mvcdiagram.png" alt="Model View Controller"></p>
+<p><img src="../mvwtf/mvcdiagram.png" alt="Model View Controller"></p>
 <h2 id="why-dont-we-use-this-on-android">Why Don&rsquo;t We Use This On Android?</h2>
 <p>At face value, this looks pretty good. Our concerns are separated and the flow of information is pretty clear.</p>
 <p>However, of all the patterns in this post, MVC is the one discussed the least on Android. There&rsquo;s a quick explanation for this.</p>
-<p><img src="../assets/mvwtf/mvcandroiddiagram.png" alt="Model View Controller"></p>
+<p><img src="../mvwtf/mvcandroiddiagram.png" alt="Model View Controller"></p>
 <p>When you consider the responsibilities of a controller (accepting user inputs) and the responsibility of a view (displaying data), you may recognize that these are handled by the same thing in Android. This is your Activity or Fragment.</p>
 <h2 id="why-is-this-bad">Why Is This Bad?</h2>
 <p>I&rsquo;d like to highlight two reasons we wouldn&rsquo;t want this on Android:</p>
@@ -308,7 +257,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>Let&rsquo;s move the controller/UI logic out of the Activity/Fragment.</p>
 <h1 id="model-view-presenter">Model-View-Presenter</h1>
 <p>By breaking the UI and business logic out of the Activity/Fragment, we create a slightly different flow of information. This creates the MVP pattern.</p>
-<p><img src="../assets/mvwtf/mvp.png" alt="inline"></p>
+<p><img src="../mvwtf/mvp.png" alt="inline"></p>
 <p>Now we have a separation of concerns where all of our non UI code is outside of the Activity/Fragment, and we can unit test all of it.</p>
 <h2 id="mvp-implementation">MVP Implementation</h2>
 <p>Before we move on to the next pattern, I think it&rsquo;s important to understand a little bit about the implementation of a pattern like MVP, so we can compare how the code evolves along the way, too.</p>
@@ -393,7 +342,7 @@ stroke-linejoin="round" class="feather feather-home">
 <h1 id="model-view-viewmodel">Model-View-ViewModel</h1>
 <p>In the last pattern, we see that the presenter explicitly tells the view what to display. As an alternative, we can consider an event based approach where we just expose the state that our view should be in and anyone who needs to display that state can subscribe to those changes.</p>
 <p>That&rsquo;s exactly how MVVM works. It breaks the connection between the presenter and the view and instead exposes information via some observable type, like LiveData or RxJava.</p>
-<p><img src="../assets/mvwtf/mvvmdiagram.png" alt="Model View ViewModel"></p>
+<p><img src="../mvwtf/mvvmdiagram.png" alt="Model View ViewModel"></p>
 <h2 id="mvvm-implementation">MVVM Implementation</h2>
 <p>Let&rsquo;s look at the code comparisons between implementing MVP and MVVM.</p>
 <h3 id="model-2">Model</h3>
@@ -587,7 +536,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>This is better than what we had previously, because the state lives in one place only (the store) and can only be modified by one thing (the reducer). Not only do we get clearly defined inputs and outputs from this, but we are also able to get a unidirectional flow of data, as seen in this diagram from <a href="https://www.esri.com/arcgis-blog/products/3d-gis/3d-gis/react-redux-building-modern-web-apps-with-the-arcgis-js-api/">Esri</a>:</p>
-<p><img src="../assets/mvwtf/reduxdiagram.png" alt="Redux Diagram"></p>
+<p><img src="../mvwtf/reduxdiagram.png" alt="Redux Diagram"></p>
 <h2 id="connect-this-to-our-viewmodel-or-presenter">Connect This To Our ViewModel Or Presenter</h2>
 <p>Note in the diagram that we have a component that dispatches actions. This can be anything, meaning you don&rsquo;t need to be using MVVM to implement this flow. You can create a store and reducer and plug them into a presenter, too!</p>
 <p>For this post, we&rsquo;ll hook it up to a ViewModel. All we need to do is create a reference to the store, and where we were previously modifying state we will just dispatch actions to it:</p>
@@ -621,7 +570,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>You certainly shouldn&rsquo;t feel bad about using MVVM, and in fact in the majority of features I&rsquo;ve built it works well for me.</p>
 <h1 id="code-samples">Code Samples</h1>
 <p>Interested in seeing the implementation for a specific pattern? Check out this <a href="https://github.com/AdamMc331/MVWTF">GitHub repository</a> which has a sample app with a module for each architecture pattern.</p>
-<p>If you have any questions, drop a comment below or reach out to me on <a href="https://twitter.com/AdamMc331">Twitter</a>! If you were inspired by any particular section and want to see a deeper dive into a specific pattern, let me know!</p>
+<p>If you have any questions, drop a comment below or reach out to me on <a href="https://twitter.com/AdamMc331">Twitter</a>! If you were inspired by any particular section and want to see a deeper dive into a specific pattern, let me know! �����������������������������������</p>
             </div>
         </article></main>
 </div>

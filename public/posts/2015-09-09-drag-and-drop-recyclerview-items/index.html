@@ -170,7 +170,7 @@ stroke-linejoin="round" class="feather feather-home">
             
             <div class="page-content">
                 <p>Before continuing this post, I recommend that you read my previous one on [Swipe To Dismiss RecyclerView Items]({{ site.baseurl }}{% link _posts/2015-09-09-swipe-to-dismiss-recyclerview-items.md %}) as this will build upon the <code>ItemTouchHelper</code> class discussed there. Once you&rsquo;ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:</p>
-<p><img src="/images/drag-and-drop.gif" alt="Drag And Drop RecyclerView"></p>
+<p><img src="/drag-and-drop.gif" alt="Drag And Drop RecyclerView"></p>
 <h1 id="swap-adapter-items">Swap Adapter Items</h1>
 <p>Before we can properly use the drag and drop feature, we need to add another method to our Adapter that swaps two items. You can use `Collections.swap() to do this easily on a List object:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">firstPosition</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">secondPosition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">

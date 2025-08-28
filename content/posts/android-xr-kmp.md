@@ -164,6 +164,6 @@ fun SpatialModeSwitchFAB(
 
 And now, our entirely Compose Multiplatform application has the ability to switch between home and full space mode on an Android XR emulator:
 
-![Android XR Emulator Video](/XRSwitch.gif)
+![Android XR Emulator Video](/xr/XRSwitch.gif)
 
 For more Android XR and other general Android content, make sure you're following me over on [Twitch](https://twitch.tv/adammc) and [YouTube](https://youtube.com/adammcneilly)!

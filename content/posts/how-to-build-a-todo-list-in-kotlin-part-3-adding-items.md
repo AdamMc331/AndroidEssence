@@ -12,9 +12,9 @@ Following parts [1](posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project)
 
 First, we need to create an Activity for adding an account. We can create a new activity by selecting our project folder, right clicking and going to `New -> Kotlin Activity -> Empty Activity` in the context menu that pops up. I'm going to name it AddTaskActivity:
 
-![AndroidEssence](/images/kotlin/new-activity-1.png)
+![AndroidEssence](/kotlin/new-activity-1.png)
 
-![AndroidESsence](/images/kotlin/new-activity-2.png)
+![AndroidESsence](/kotlin/new-activity-2.png)
 
 We'll just use a simple layout to avoid over-complicating the tutorial. I used the new `ConstraintLayout` and placed an EditText with a Button underneath:
 

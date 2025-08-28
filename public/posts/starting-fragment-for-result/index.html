@@ -196,31 +196,12 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#example">Example</a></li>
-    <li><a href="#target-fragments">Target Fragments</a></li>
-    <li><a href="#starting-the-fragment">Starting The Fragment</a></li>
-    <li><a href="#returning-the-result">Returning The Result</a></li>
-    <li><a href="#handling-the-result">Handling The Result</a>
-      <ul>
-        <li><a href="#using-add">Using Add</a></li>
-        <li><a href="#using-replace">Using Replace</a></li>
-      </ul>
-    </li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
-    </details>
             <div class="page-content">
                 <p>A number of developers preach a single activity architecture on Android, which is something I&rsquo;ve been trying to move forward to as well. In the process, though, I ran into one tricky problem. I don&rsquo;t have something like <code>startActivityResult</code> for fragments. If you&rsquo;re unfamiliar, <code>startActivityForResult</code> is a method that allows you to launch an activity with a specific request code, and when that activity finishes, your first activity will get a callback in <code>onActivityResult</code> and can do stuff with it.</p>
 <p>This post is going to walk through how we can achieve that same affect using fragments.</p>
 <h2 id="example">Example</h2>
 <p>To walk through this concept, we&rsquo;re going to write a small application with two fragments. One is our <code>DisplayNameFragment</code> which displays a message like &ldquo;Your name is: Adam&rdquo;, with a button that will navigate to a new fragment, <code>SetNameFragment</code>, where you can enter a name in an EditText, hit a finish button, and it will return back to the previous fragment and display whatever you put in the input. This is what it will look like:</p>
-<p><img src="/images/FragmentResultsSample.gif" alt="Android Essence"></p>
+<p><img src="/FragmentResultsSample.gif" alt="Android Essence"></p>
 <h2 id="target-fragments">Target Fragments</h2>
 <p>The key to this is using a target fragment. A <a href="https://developer.android.com/reference/android/app/Fragment.html#setTargetFragment%28android.app.Fragment,%20int%29">target fragment</a> is used when one fragment is being started from another, and when the first one wants to get a result back. I had used this concept in dialog fragments quite often, but didn&rsquo;t realize the same could be applied to other fragments as well.</p>
 <h2 id="starting-the-fragment">Starting The Fragment</h2>
@@ -286,7 +267,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>While it&rsquo;s a little more code to do it this way, I still prefer using replace transactions, but it&rsquo;s up to you and your needs. Just be aware that what you chose will affect how you pass information between fragments.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>TL;DR You can use a target fragment to pass data between fragments in the same way you would use <code>startActivityForResult()</code> and <code>onActivityResult()</code>. You just need to be aware of how <code>add</code> and <code>replace</code> transactions affect the fragment lifecycles, and how to handle the result in each case.</p>
-<p>If you&rsquo;d like to see the full sample, you can find the project on <a href="https://github.com/AdamMc331/FragmentResults">GitHub</a>.</p>
+<p>If you&rsquo;d like to see the full sample, you can find the project on <a href="https://github.com/AdamMc331/FragmentResults">GitHub</a>.�������</p>
             </div>
         </article></main>
 </div>

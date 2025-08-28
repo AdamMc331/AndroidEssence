@@ -53,7 +53,7 @@
         },
         "datePublished": "2017-10-19",
         "description": "",
-        "wordCount":  776 ,
+        "wordCount":  777 ,
         "mainEntityOfPage": "True",
         "dateModified": "2017-10-19",
         "image": {
@@ -196,38 +196,19 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#app-module">App Module</a></li>
-    <li><a href="#library-module">Library Module</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#create-bintray-account">Create Bintray account</a></li>
-    <li><a href="#library-configuration">Library configuration</a></li>
-    <li><a href="#project-configuration">Project configuration</a></li>
-    <li><a href="#bintray-api-setup">Bintray API setup</a></li>
-    <li><a href="#generate-release-zip">Generate release zip</a></li>
-    <li><a href="#bintray-upload">Bintray Upload</a></li>
-  </ul>
-</nav>
-    </details>
             <div class="page-content">
                 <p>Third party libraries are a huge part of mobile app development. Popular tools like Retrofit, RxJava, Picasso, and many others prevent Android developers from reinventing the wheel everytime we need to do something over the network, asynchronously, or loading images.</p>
 <p>However, developing and publishing these libraries can be intimidating to many people. I think this occurs for a number of reasons - worry about keeping up with maintenance, being outshined, or sometimes thinking no one would use your code. I have many thoughts on those ideas, but will save them for another blog post. In this one, we&rsquo;ll just go over a step by step guide to creating and publishing a library to JCenter.</p>
 <h1 id="creating-the-library-module">Creating the library module</h1>
 <h2 id="app-module">App Module</h2>
 <p>Unfortunately, something that Android Studio doesn&rsquo;t support is creating a library module right out of the gate. What this means is that you have to create your application module first. The way I prefer to do this is by going through the new project wizard as usual, but I tweak my package name by adding <code>.sample</code> at the end.</p>
-<p><img src="/images/library/sample_package.png" alt="AndroidEssence"></p>
+<p><img src="/library/sample_package.png" alt="AndroidEssence"></p>
 <p>Then you can complete the setup wizard as usual with all of your necessary preferences.</p>
 <h2 id="library-module">Library Module</h2>
 <p>Now that you have a working project with an app module, you can right click on the project structure and select &ldquo;New -&gt; Module&rdquo; to create your library module. This will have the same package name as your sample app, but without the <code>.sample</code> at the end of the package. The flow is demonstrated by the following screenshots:</p>
-<p><img src="/images/library/new_module.png" alt="AndroidEssence"></p>
-<p><img src="/images/library/library_module.png" alt="AndroidEssence"></p>
-<p><img src="/images/library/library_package.png" alt="AndroidEssence"></p>
+<p><img src="/library/new_module.png" alt="AndroidEssence"></p>
+<p><img src="/library/library_module.png" alt="AndroidEssence"></p>
+<p><img src="/library/library_package.png" alt="AndroidEssence"></p>
 <h1 id="referencing-the-library-from-the-app">Referencing the library from the app</h1>
 <p>To use your library code within your application, all you have to do is modify your dependencies in your application&rsquo;s <code>build.gradle</code> file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">compile</span> <span class="nf">project</span><span class="o">(</span><span class="s2">&#34;:lib&#34;</span><span class="o">)</span>
@@ -266,7 +247,7 @@ stroke-linejoin="round" class="feather feather-home">
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">bintray</span><span class="o">.</span><span class="na">user</span><span class="o">=</span><span class="n">bintrayUserName</span>
 </span></span><span class="line"><span class="cl"><span class="n">bintray</span><span class="o">.</span><span class="na">apikey</span><span class="o">=</span><span class="n">abc123ApiKey</span>
 </span></span></code></pre></div><p>Your username is whatever you created your account with. To find your API key, login to bintray, click on your avatar at the top right and select edit profile. You will have a tab on the left menu for API Key and can find it there:</p>
-<p><img src="/images/library/api_key.png" alt="AndroidEssence"></p>
+<p><img src="/library/api_key.png" alt="AndroidEssence"></p>
 <h2 id="generate-release-zip">Generate release zip</h2>
 <p>Last, you need to generate the zip file that will be uploaded to Bintray. You can do that by going into the terminal in Android Studio and running:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./gradlew clean build generateRelease
@@ -279,13 +260,14 @@ stroke-linejoin="round" class="feather feather-home">
 <li>Click the &lsquo;Add New Package&rsquo; button.</li>
 <li>Enter the required info and click submit.</li>
 <li>Select this package, and on the right side you&rsquo;ll have a button to add a new version.
-<img src="/images/library/version.png" alt="AndroidEssence"></li>
+<img src="/library/version.png" alt="AndroidEssence"></li>
 <li>Enter all the additional info and hit submit.</li>
 <li>Select that version, and use the file uploader on the right. Make sure to select &ldquo;explode this archive&rdquo;.
-<img src="/images/library/files.png" alt="AndroidEssence">
-<img src="/images/library/explode.png" alt="AndroidEssence"></li>
+<img src="/library/files.png" alt="AndroidEssence">
+<img src="/library/explode.png" alt="AndroidEssence"></li>
 <li>You&rsquo;re done! People can now access your projects from your maven repo. If you want to link it to Jcenter, select your package and you&rsquo;ll see a &ldquo;Link To Jcenter&rdquo; option at the bottom right.
-<img src="/images/library/jcenter.png" alt="AndroidEssence"></li>
+<img src="/library/jcenter.png" alt="AndroidEssence">
+���������������������������������������������������������������</li>
 </ol>
             </div>
         </article></main>

@@ -19,7 +19,7 @@ It can be extremely hard to know which one to pick, what their differences are, 
 
 Let's take a look at a high level explanation of MVVM using a flow chart taken from [Wikipedia](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel):
 
-![MVVM](/images/buzzwords/MVVM.png)
+![MVVM](/buzzwords/MVVM.png)
 
 As you can see in this diagram, our application's logic is broken up into three parts:
 
@@ -35,7 +35,7 @@ When your application is broken up like the diagram, it becomes easier - want to
 
 Now that we understand at a high level of how MVVM is broken down, let's look at a flow chart for the account package inside Cash Caretaker:
 
-![MVVM](/images/buzzwords/cashcaretaker_mvvm.png)
+![MVVM](/buzzwords/cashcaretaker_mvvm.png)
 
 We'll briefly break down each block, but go over each part in more detail in later posts:
 

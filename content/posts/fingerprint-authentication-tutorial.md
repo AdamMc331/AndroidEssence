@@ -16,7 +16,7 @@ When adding fingerprint authentication to your app, you have full control over h
 
 From the above specification, you'll notice that Google has supplied the red lines for creating a dialog:
 
-![fingerprint Authentication Dialog](/images/fingerprint/redlines.png)
+![fingerprint Authentication Dialog](/fingerprint/redlines.png)
 
 For the purposes of this tutorial, we won't be including a "use password" fallback, and will focus solely on the fingerprint authentication. Using the above red lines, I was able to create an XML file for the dialog using a ConstraintLayout. The following code is inside my `dialog_fingerprint.xml` file, which you can see on [GitHub](https://github.com/androidessence/FingerprintDialogSample/blob/master/app/src/main/res/layout/dialog_fingerprint.xml).
 

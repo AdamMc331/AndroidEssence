@@ -196,35 +196,13 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#dialog-view">Dialog View</a></li>
-    <li><a href="#fingerprint-controller">Fingerprint Controller</a>
-      <ul>
-        <li><a href="#class-properties">Class Properties</a></li>
-        <li><a href="#listening-for-authentication">Listening For Authentication</a></li>
-        <li><a href="#handle-fingerprint-authentication-callbacks">Handle Fingerprint Authentication Callbacks</a></li>
-      </ul>
-    </li>
-    <li><a href="#fingerprint-dialog">Fingerprint Dialog</a>
-      <ul>
-        <li><a href="#cryptography-components">Cryptography Components</a></li>
-      </ul>
-    </li>
-    <li><a href="#summary">Summary</a></li>
-  </ul>
-</nav>
-    </details>
             <div class="page-content">
                 <p>When Android released version 6.0 Marshmallow (yes, a little outdated at this point), a whole slew of new developer APIs came with it. One that I&rsquo;ve personally enjoyed as a consumer is <a href="https://developer.android.com/about/versions/marshmallow/android-6.0.html#fingerprint-authentication">fingerprint authentication</a>. I skimmed over the official docs, and even through their <a href="https://developer.android.com/samples/FingerprintDialog/index.html">Fingerprint Dialog Sample</a> but had a difficult time following what was going on.</p>
 <p>Eventually, though, I was able to recreate the flow. This post is going to be a step by step guide to integrating your own fingerprint dialog in your Android application.</p>
 <h2 id="dialog-view">Dialog View</h2>
 <p>When adding fingerprint authentication to your app, you have full control over how that flow should be designed. However, there is a <a href="https://material.io/guidelines/patterns/fingerprint.html">material design specification</a> for the fingerprint authentication flow. This page dicusses certain text that should be included, what the behavior looks like, and the icon that you should use. This is necessary because we, as developers, want to make sure our apps are providing a consistent flow compared to other apps doing similar work.</p>
 <p>From the above specification, you&rsquo;ll notice that Google has supplied the red lines for creating a dialog:</p>
-<p><img src="/images/fingerprint/redlines.png" alt="fingerprint Authentication Dialog"></p>
+<p><img src="/fingerprint/redlines.png" alt="fingerprint Authentication Dialog"></p>
 <p>For the purposes of this tutorial, we won&rsquo;t be including a &ldquo;use password&rdquo; fallback, and will focus solely on the fingerprint authentication. Using the above red lines, I was able to create an XML file for the dialog using a ConstraintLayout. The following code is inside my <code>dialog_fingerprint.xml</code> file, which you can see on <a href="https://github.com/androidessence/FingerprintDialogSample/blob/master/app/src/main/res/layout/dialog_fingerprint.xml">GitHub</a>.</p>
 <h2 id="fingerprint-controller">Fingerprint Controller</h2>
 <p>Before writing out the actual dialog, we need to create a helper class that handles some of the fingerprint authentication flow. While much of this code could be written inside the DialogFragment class, it is better to abstract it out for separation of concerns, and only give the controller the info that it needs. Let&rsquo;s look at how we define our <code>FingerprintController.kt</code> class:</p>
@@ -485,7 +463,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h2 id="summary">Summary</h2>
 <p>Congrats! If you&rsquo;ve made it this far, you made it through the toughest chunk of fingerprint authentication code. The only remaining step is to setup your <a href="https://github.com/androidessence/FingerprintDialogSample/blob/master/app/src/main/java/com/androidessence/fingerprintdialogsample/MainActivity.kt">MainActivity</a> to launch this dialog.</p>
-<p>As usual, you can find a full sample application for this post on <a href="https://github.com/androidessence/FingerprintDialogSample">GitHub</a>, where everything is documented. If you have questions or improvements, please leave them in the comments!</p>
+<p>As usual, you can find a full sample application for this post on <a href="https://github.com/androidessence/FingerprintDialogSample">GitHub</a>, where everything is documented. If you have questions or improvements, please leave them in the comments!�������</p>
             </div>
         </article></main>
 </div>

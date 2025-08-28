@@ -66,7 +66,7 @@ An easy way to think about this flow is to consider a form. The controller reads
 
 Let's take a look at how this all connects together:
 
-![Model View Controller](../assets/mvwtf/mvcdiagram.png)
+![Model View Controller](../mvwtf/mvcdiagram.png)
 
 ## Why Don't We Use This On Android?
 
@@ -74,7 +74,7 @@ At face value, this looks pretty good. Our concerns are separated and the flow o
 
 However, of all the patterns in this post, MVC is the one discussed the least on Android. There's a quick explanation for this. 
 
-![Model View Controller](../assets/mvwtf/mvcandroiddiagram.png)
+![Model View Controller](../mvwtf/mvcandroiddiagram.png)
 
 When you consider the responsibilities of a controller (accepting user inputs) and the responsibility of a view (displaying data), you may recognize that these are handled by the same thing in Android. This is your Activity or Fragment.
 
@@ -93,7 +93,7 @@ Let's move the controller/UI logic out of the Activity/Fragment.
 
 By breaking the UI and business logic out of the Activity/Fragment, we create a slightly different flow of information. This creates the MVP pattern.
 
-![inline](../assets/mvwtf/mvp.png)
+![inline](../mvwtf/mvp.png)
 
 Now we have a separation of concerns where all of our non UI code is outside of the Activity/Fragment, and we can unit test all of it. 
 
@@ -209,7 +209,7 @@ In the last pattern, we see that the presenter explicitly tells the view what to
 
 That's exactly how MVVM works. It breaks the connection between the presenter and the view and instead exposes information via some observable type, like LiveData or RxJava.
 
-![Model View ViewModel](../assets/mvwtf/mvvmdiagram.png)
+![Model View ViewModel](../mvwtf/mvvmdiagram.png)
 
 ## MVVM Implementation
 
@@ -463,7 +463,7 @@ class BaseStore<S : State>(
 
 This is better than what we had previously, because the state lives in one place only (the store) and can only be modified by one thing (the reducer). Not only do we get clearly defined inputs and outputs from this, but we are also able to get a unidirectional flow of data, as seen in this diagram from [Esri](https://www.esri.com/arcgis-blog/products/3d-gis/3d-gis/react-redux-building-modern-web-apps-with-the-arcgis-js-api/):
 
-![Redux Diagram](../assets/mvwtf/reduxdiagram.png)
+![Redux Diagram](../mvwtf/reduxdiagram.png)
 
 ## Connect This To Our ViewModel Or Presenter
 

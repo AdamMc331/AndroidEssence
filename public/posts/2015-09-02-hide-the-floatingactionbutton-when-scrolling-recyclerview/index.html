@@ -173,7 +173,7 @@ stroke-linejoin="round" class="feather feather-home">
             <div class="page-content">
                 <p>One of my favorite components introduced with Material Design is the <a href="https://www.google.com/design/spec/components/buttons-floating-action-button.html">FloatingActionButton</a> (FAB). These buttons are great for emphasizing the primary action of an Activity, but quickly become a nuisance when displayed over a RecyclerView as they may block the bottom list item. To avoid this, we can hide the FloatingActionButton when scrolling a RecyclerView.</p>
 <p>In today’s tutorial we will only be hiding the FAB when the RecyclerView is scrolled upward, and it will reappear on the next down scroll as shown here:</p>
-<p><img src="/images/fab_scroll.gif" alt="FloatingActionButton"></p>
+<p><img src="/fab_scroll.gif" alt="FloatingActionButton"></p>
 <h1 id="add-the-support-library-dependency">Add the support library dependency</h1>
 <p>As with any support library component, like the Toolbar in my last post, we need to add a dependency to our build.gradle file for the design library, and for the RecyclerView:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl">	<span class="n">dependencies</span><span class="o">{</span>

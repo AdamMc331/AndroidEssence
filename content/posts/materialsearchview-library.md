@@ -10,7 +10,7 @@ Android has a built in SearchView component but it doesn't feel much like Materi
 
 The [MaterialSearchView](https://github.com/Mauker1/MaterialSearchView) library that he wrote provides a Material Design overlay for your screen that includes an EditText for searching, along with a ListView to show some items, typically recent or suggested searches. It supports both text input and voice input searches. Let's take a look at the sample:
 
-![MaterialSearchView](/images/msv-sample.gif)
+![MaterialSearchView](/msv-sample.gif)
 
 You'll notice three really great things about this sample:
 

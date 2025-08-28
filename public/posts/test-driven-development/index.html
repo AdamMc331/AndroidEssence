@@ -53,7 +53,7 @@
         },
         "datePublished": "2020-03-02",
         "description": "",
-        "wordCount":  1345 ,
+        "wordCount":  1346 ,
         "mainEntityOfPage": "True",
         "dateModified": "2020-03-02",
         "image": {
@@ -196,19 +196,6 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#an-example-component">An Example Component</a></li>
-    <li><a href="#creating-a-minimal-implementation">Creating A Minimal Implementation</a></li>
-    <li><a href="#developing-a-test-plan">Developing A Test Plan</a></li>
-    <li><a href="#write-our-tests">Write Our Tests</a></li>
-    <li><a href="#make-our-tests-pass">Make Our Tests Pass</a></li>
-  </ul>
-</nav>
-    </details>
             <div class="page-content">
                 <p>One of the many buzzwords thrown around the software devleopment community is Test Driven Development, or TDD. It is one of those phrases that sounds great when you say it - who wouldn&rsquo;t want to have tests be their first priority when writing code?</p>
 <p>However, it&rsquo;s not always clear what TDD means. Does it mean you write code with testability in mind? Does it mean writing tests first? How can we write tests if we don&rsquo;t have code <em>to</em> test? This post will answer all of those questions, and teach you how to implement TDD effectively on Android.</p>
@@ -229,7 +216,7 @@ stroke-linejoin="round" class="feather feather-home">
 <h1 id="what-makes-tdd-hard-to-adopt">What Makes TDD Hard To Adopt?</h1>
 <p>Up to this point, TDD may sound like a great strategy. It&rsquo;s all the benefits of testing, but by prioritizing it earlier in the development process we get additional benefits like writing our code with confidence and developing that code faster. In practice, though, this can be really tricky for a lot of developers.</p>
 <p>Let&rsquo;s consider we start writing a unit test for some ViewModel class before we write the ViewModel itself. Immediately, we&rsquo;re going to end up in a situation like this:</p>
-<p><img src="../assets/tdd/viewmodel_not_found.png" alt="Android Essence"></p>
+<p><img src="../tdd/viewmodel_not_found.png" alt="Android Essence"></p>
 <p>Since the class doesn&rsquo;t exist, the IDE is going to complain that the reference isn&rsquo;t found. This means my tests won&rsquo;t even compile, nor will we get the auto complete support that many developers are used to.</p>
 <p>This may feel like a big barrier to entry for TDD. We&rsquo;re already dealing with the learning curve of writing failing tests first, but trying to write tests that don&rsquo;t compile is even more difficult.</p>
 <h1 id="how-to-effectively-implement-tdd">How To Effectively Implement TDD</h1>
@@ -304,7 +291,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>If you&rsquo;d like to see all five tests, you can find them in this <a href="https://gist.github.com/AdamMc331/c815f3ae7579409b01b0fbfd5c9984aa">gist</a>.</p>
 <p>When we run those tests, we will see that they are all failing as a result of our <code>NotImplementedError</code>:</p>
-<p><img src="../assets/tdd/not_implemented_failure.png" alt="Android Essence"></p>
+<p><img src="../tdd/not_implemented_failure.png" alt="Android Essence"></p>
 <h2 id="make-our-tests-pass">Make Our Tests Pass</h2>
 <p>With our defined contract of behavior, and tests covering all cases we expect, we can go into our actual code now and implement the required fields. We don&rsquo;t need to make all tests pass at once, though, so let&rsquo;s start by handling the happy paths. Here is what our ViewModel may look like:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">PokemonDetailViewModel</span> <span class="p">{</span>
@@ -328,7 +315,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">        <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">secondType</span> <span class="o">!=</span> <span class="k">null</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>We will see that we made three of our tests pass, but not the ones that had invalid input:</p>
-<p><img src="../assets/tdd/invalid_input_failure.png" alt="Android Essence"></p>
+<p><img src="../tdd/invalid_input_failure.png" alt="Android Essence"></p>
 <p>To fix those, we just need to update our <code>setPokemon</code> method to throw the relevant exception:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">PokemonDetailViewModel</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -342,7 +329,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Now, all of our tests are passing:</p>
-<p><img src="../assets/tdd/tests_passing.png" alt="Android Essence"></p>
+<p><img src="../tdd/tests_passing.png" alt="Android Essence"></p>
 <p>You can see the full ViewModel as part of the <a href="https://gist.github.com/AdamMc331/c815f3ae7579409b01b0fbfd5c9984aa">gist</a>, too.</p>
 <h1 id="recap--tips">Recap &amp; Tips</h1>
 <p>I hope this post has alleviated some concerns and fears you had for implementing TDD. Let&rsquo;s go over everything that we learned:</p>
@@ -353,7 +340,8 @@ stroke-linejoin="round" class="feather feather-home">
 <li>Write tests to cover all functionality expected for the component you&rsquo;re building.</li>
 <li>Replace all of our TODO calls with the actual implementation to get those tests to pass.</li>
 </ol>
-<p>While this may feel like a lot, keep in mind that TDD does not have to be an all-or-nothing implementation. You don&rsquo;t need to change your entire development process over night. I encourage you to try this process next time you make a small class, or are writing a few utility methods. This will help you become familiar with the process, and determine what works for you before using this approach at a larger scale.</p>
+<p>While this may feel like a lot, keep in mind that TDD does not have to be an all-or-nothing implementation. You don&rsquo;t need to change your entire development process over night. I encourage you to try this process next time you make a small class, or are writing a few utility methods. This will help you become familiar with the process, and determine what works for you before using this approach at a larger scale.
+����������������������������</p>
             </div>
         </article></main>
 </div>

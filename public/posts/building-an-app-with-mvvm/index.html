@@ -53,7 +53,7 @@
         },
         "datePublished": "2018-10-28",
         "description": "",
-        "wordCount":  1090 ,
+        "wordCount":  1089 ,
         "mainEntityOfPage": "True",
         "dateModified": "2018-10-28",
         "image": {
@@ -75,8 +75,7 @@
   <meta property="og:site_name" content="Android Essence">
   <meta property="og:title" content="Building An Application With MVVM">
   <meta property="og:description" content="This is the second post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following this repo. Give it a star!
-In our previous post we discussed the MVP architecture for building an app. This time, we’re going to check out MVVM.
-&lt;!-">
+In our previous post we discussed the MVP architecture for building an app. This time, we’re going to check out MVVM.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -89,8 +88,7 @@ In our previous post we discussed the MVP architecture for building an app. This
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Building An Application With MVVM">
   <meta name="twitter:description" content="This is the second post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following this repo. Give it a star!
-In our previous post we discussed the MVP architecture for building an app. This time, we’re going to check out MVVM.
-&lt;!-">
+In our previous post we discussed the MVP architecture for building an app. This time, we’re going to check out MVVM.">
 
 
     
@@ -198,22 +196,10 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#model">Model</a></li>
-    <li><a href="#view">View</a></li>
-    <li><a href="#viewmodel">ViewModel</a></li>
-  </ul>
-</nav>
-    </details>
             <div class="page-content">
                 <p>This is the second post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following <a href="https://github.com/AdamMc331/todo-monorepo">this repo</a>. Give it a star!</p>
 <p>In our <a href="/posts/building-an-app-with-mvp/">previous post</a> we discussed the MVP architecture for building an app. This time, we&rsquo;re going to check out MVVM.</p>
-<p>&lt;!-</p>
-<p>VVM</p>
+<h1 id="mvvm">MVVM</h1>
 <p>MVVM stands for Model-View-ViewModel. The name, just like any other architecture, comes from the components involved. I&rsquo;ll break them down just like the last post (in fact, Model and View have been copy and pasted):</p>
 <h2 id="model">Model</h2>
 <p>Model, in this context, doesn&rsquo;t necessarily refer to your model classes that you write. I prefer to think of it as the data source for your application. This could be a database, a remote server, or even just dummy data that you supply. Often, you will see developers put the code for this in some kind of <code>Repository</code> class. That is what we will refer to as our model.</p>
@@ -225,7 +211,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>The Android class is directly related to that. It&rsquo;s a class that maintains state throughout orientation, which is historically a pain in the ass on Android. So, if you&rsquo;re using MVVM architecture, it helps to have a class that can do that.</p>
 <h1 id="communication-flow">Communication Flow</h1>
 <p>Now that we have the components defined, let&rsquo;s dive into the MVVM communication flow. We&rsquo;ll go a step further and compare it to MVP, our last example.</p>
-<p><img src="/images/mvvm.png" alt=""></p>
+<p><img src="/mvvm.png" alt=""></p>
 <p>This image came from <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">Wikipedia</a>.</p>
 <p>If you followed the last post, you may feel like the communication pattern is very similar to MVP. Notably, the model and the view never talk to each other, in either case. That&rsquo;s the biggest benefit. <em>The difference between MVVM and MVP lies in the communication flow. MVP has two-way communication, but MVVM uses unidirectional data flow.</em></p>
 <p>I recommend this nice article by <a href="https://www.exclamationlabs.com/blog/the-case-for-unidirectional-data-flow/">David Street</a> to understand the benefits of unidirectional data flow. The TL;DR being that it is predictable, and has a lack of side effects, when communication only flows in one direction.</p>
@@ -359,7 +345,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></div><h1 id="more">More</h1>
-<p>To see the complete code for this MVVM example, you can find it on <a href="https://github.com/AdamMc331/todo-monorepo/tree/master/todo-mvvm">GitHub</a>!���</p>
+<p>To see the complete code for this MVVM example, you can find it on <a href="https://github.com/AdamMc331/todo-monorepo/tree/master/todo-mvvm">GitHub</a>!�������</p>
             </div>
         </article></main>
 </div>

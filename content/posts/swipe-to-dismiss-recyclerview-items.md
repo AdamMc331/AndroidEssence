@@ -6,7 +6,7 @@ title = 'Swipe To Dismiss RecyclerView Items'
 
 In my last post I broke down the differences between the RecyclerView and a ListView. One of the benefits of the RecyclerView that I touched on was the [ItemTouchHelper](https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html). This class is used to handle the Swipe-To-Dismiss and Drag-N-Drop behaviors of a RecyclerView. In this post I am going to teach you how to swipe to dismiss RecyclerView items using the sample application seen here:
 
-![Swipe To Dismiss](/images/std-sample.gif)
+![Swipe To Dismiss](/std-sample.gif)
 
 <!--more-->
 

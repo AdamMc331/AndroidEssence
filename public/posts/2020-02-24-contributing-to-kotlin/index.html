@@ -190,13 +190,13 @@ stroke-linejoin="round" class="feather feather-home">
 <h1 id="finding-samples-to-write">Finding Samples To Write</h1>
 <p>Unfortunately, there&rsquo;s no easy way to tell which parts of the standard library have samples or not. It&rsquo;s a little bit of trial and error clicking through the documentation.</p>
 <p>If a function does have samples, you&rsquo;ll see them as code blocks beneath the method:</p>
-<p><img src="../assets/contribute_kotlin/kotlin_vetoable.png" alt=""></p>
+<p><img src="../contribute_kotlin/kotlin_vetoable.png" alt=""></p>
 <p>If a function is lacking in samples, all of this space will be blank:</p>
-<p><img src="../assets/contribute_kotlin/kotlin_filternotnull.png" alt=""></p>
+<p><img src="../contribute_kotlin/kotlin_filternotnull.png" alt=""></p>
 <p>In this post, we&rsquo;re going to look at both of these samples, because each one is a little different.</p>
 <h1 id="vetoable-sample">Vetoable Sample</h1>
 <p>All of the samples for the Kotlin documentation are in the <code>kotlin/libraries/stdlib/samples/test/samples</code> directory. From there, they are all grouped by related functionality:</p>
-<p><img src="../assets/contribute_kotlin/samples_directory.png" alt=""></p>
+<p><img src="../contribute_kotlin/samples_directory.png" alt=""></p>
 <p>Since <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/vetoable.html">Vetoable</a> is a property delegate, we&rsquo;ll put it inside a file called <code>delegates.kt</code>.</p>
 <h2 id="understanding-vetoable">Understanding Vetoable</h2>
 <p>If you&rsquo;re unfamiliar with this property delegate, it is one that allows you to specify a callback that will have the opportunity to veto any new property values. An example use case of this would be to keep track of a maximum integer, and make sure we only update the property if the new value is actually greater than the old one.</p>

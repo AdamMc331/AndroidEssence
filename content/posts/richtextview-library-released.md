@@ -14,6 +14,6 @@ Formatting a TextView like this is not unheard of, as you can do things such as 
 
 Here is a sample of the library in action:
 
-![RichTextView](/images/rtv-sample.png)
+![RichTextView](/rtv-sample.png)
 
 If you'd like to learn more, such as the available methods and how to include this into your next project, please check out the library on [GitHub](https://github.com/androidessence/RichTextView).

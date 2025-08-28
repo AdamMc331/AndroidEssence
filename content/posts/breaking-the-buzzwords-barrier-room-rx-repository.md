@@ -6,7 +6,7 @@ title = "Breaking The Buzzwords Barrier Part 2: Rx, Room, and Repository"
 
 In [part 1](posts/breaking-the-buzzwords-barrier-mvvm) we discussed how we were going to architect the various components of our application. Now it's time to build them. To understand what we should build first, we should revisit the diagram:
 
-![MVVM](/images/buzzwords/cashcaretaker_mvvm.png)
+![MVVM](/buzzwords/cashcaretaker_mvvm.png)
 
 I would start with three spots:
 

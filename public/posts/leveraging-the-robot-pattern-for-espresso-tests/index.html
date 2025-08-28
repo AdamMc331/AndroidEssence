@@ -196,21 +196,16 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents"></nav>
-    </details>
             <div class="page-content">
                 <p>Espresso is a <a href="https://developer.android.com/training/testing/ui-testing/espresso-testing.html">testing framework for Android</a> that allows developers to write automated tests for their applications. The benefit of automated testing is that you can write a test plan, and simply hit run and have all of the important features in your app tested effortlessly, and arguably more consistent and thorough than manual testing. There is no doubt that it is a lot faster.</p>
 <p>However, one of the lesser known development patterns for automated testing is the robot pattern, which makes writing tests much easier while providing a painless way to update tests whenever your app changes. Let&rsquo;s take a deeper dive into what makes the robot pattern so powerful, and how to implement it in your next test suite.</p>
 <p>This tutorial is going to assume a basic knowledge of Android development. Exposure to Espresso already will help, but we&rsquo;ll do a quick run down of that first.</p>
 <h1 id="sample">Sample</h1>
 <p>First, let&rsquo;s take a look at an example of what we&rsquo;re building. This is a simple application that takes you to a new activity to enter a person&rsquo;s information and then displays that person&rsquo;s name in the original activity:</p>
-<p><img src="/images/espresso/sample.gif" alt="Espresso"></p>
+<p><img src="/espresso/sample.gif" alt="Espresso"></p>
 <h1 id="espresso-cheat-sheet">Espresso Cheat Sheet</h1>
 <p>Below is a quick <a href="https://google.github.io/android-testing-support-library/docs/espresso/cheatsheet/">cheat sheet</a> for using Espresso. We&rsquo;ll be using each of the categories you see below:</p>
-<p><img src="/images/espresso-cheatsheet.png" alt="Espresso Cheat Sheet"></p>
+<p><img src="/espresso-cheatsheet.png" alt="Espresso Cheat Sheet"></p>
 <p>If you&rsquo;re new to Espresso, here are the take aways from that cheat sheet:</p>
 <ul>
 <li>ViewMatcher: This is something that describes a View that you want to interact with - whether that&rsquo;s the id, the text, the parent, or various other matchers in the above sheet.</li>
@@ -248,10 +243,10 @@ stroke-linejoin="round" class="feather feather-home">
 </ol>
 <p>Now we can take this code, copy it, and modify it to test all error scenarios such as an empty input and verify that the error is displayed. One problem this poses is that you have many tests that are difficult to read (you start to see onView&hellip; all the time and may not easily spot differences), and another is that as you write more tests, you&rsquo;ll have more work to do if your view ever changes.</p>
 <p>This downfall is demonstrated in a <a href="https://www.youtube.com/watch?v=fhx_Ji5s3p4">presentation by Sam Edwards</a>, where you can see that if your view changes, you need to go in and update every single test:</p>
-<p><img src="/images/espresso-no-robot.png" alt="Espresso"></p>
+<p><img src="/espresso-no-robot.png" alt="Espresso"></p>
 <h1 id="robot-pattern">Robot Pattern</h1>
 <p>Now, imagine you had a robot you could use to perform each action for you. If your view ever changes, you wouldn&rsquo;t have to update each individual test anymore - you&rsquo;d just need to update your robot. Our above diagram now looks something like this:</p>
-<p><img src="/images/espresso-robot.png" alt="Espresso"></p>
+<p><img src="/espresso-robot.png" alt="Espresso"></p>
 <p>Before we show the robot classes code, let&rsquo;s take a look at the implementation:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Test</span>
 </span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">addPersonSuccess</span><span class="p">()</span> <span class="p">{</span>
@@ -328,7 +323,7 @@ stroke-linejoin="round" class="feather feather-home">
 <li>Create one method for each input, and one to check each error. You might have the urge to abstract this, but I like being able to keep each input separate. I also like the readability this gives me inside the test class itself.</li>
 </ol>
 <p>That&rsquo;s all you need to implement the robot pattern for your tests. As linked above, Sam Edwards presentation from Droidcon 2016 goes into even deeper detail on how you can leverage this robot pattern for taking screenshots at each step of your tests. I hope you found this useful and this shows you that automated testing does not have to be as daunting as it sounds!</p>
-<p>The full code for a sample application can be found on <a href="https://github.com/androidessence/EspressoSample">GitHub</a>.</p>
+<p>The full code for a sample application can be found on <a href="https://github.com/androidessence/EspressoSample">GitHub</a>.����������������������������</p>
             </div>
         </article></main>
 </div>

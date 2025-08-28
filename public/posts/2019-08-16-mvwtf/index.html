@@ -212,11 +212,11 @@ stroke-linejoin="round" class="feather feather-home">
 <p>An easy way to think about this flow is to consider a form. The controller reads all of your text inputs, makes sure you&rsquo;ve filled everything out, sends it to the model, and then tells the UI to show a success screen.</p>
 <h2 id="mvc-diagram">MVC Diagram</h2>
 <p>Let&rsquo;s take a look at how this all connects together:</p>
-<p><img src="../assets/mvwtf/mvcdiagram.png" alt="Model View Controller"></p>
+<p><img src="../mvwtf/mvcdiagram.png" alt="Model View Controller"></p>
 <h2 id="why-dont-we-use-this-on-android">Why Don&rsquo;t We Use This On Android?</h2>
 <p>At face value, this looks pretty good. Our concerns are separated and the flow of information is pretty clear.</p>
 <p>However, of all the patterns in this post, MVC is the one discussed the least on Android. There&rsquo;s a quick explanation for this.</p>
-<p><img src="../assets/mvwtf/mvcandroiddiagram.png" alt="Model View Controller"></p>
+<p><img src="../mvwtf/mvcandroiddiagram.png" alt="Model View Controller"></p>
 <p>When you consider the responsibilities of a controller (accepting user inputs) and the responsibility of a view (displaying data), you may recognize that these are handled by the same thing in Android. This is your Activity or Fragment.</p>
 <h2 id="why-is-this-bad">Why Is This Bad?</h2>
 <p>I&rsquo;d like to highlight two reasons we wouldn&rsquo;t want this on Android:</p>
@@ -228,7 +228,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>Let&rsquo;s move the controller/UI logic out of the Activity/Fragment.</p>
 <h1 id="model-view-presenter">Model-View-Presenter</h1>
 <p>By breaking the UI and business logic out of the Activity/Fragment, we create a slightly different flow of information. This creates the MVP pattern.</p>
-<p><img src="../assets/mvwtf/mvp.png" alt="inline"></p>
+<p><img src="../mvwtf/mvp.png" alt="inline"></p>
 <p>Now we have a separation of concerns where all of our non UI code is outside of the Activity/Fragment, and we can unit test all of it.</p>
 <h2 id="mvp-implementation">MVP Implementation</h2>
 <p>Before we move on to the next pattern, I think it&rsquo;s important to understand a little bit about the implementation of a pattern like MVP, so we can compare how the code evolves along the way, too.</p>
@@ -313,7 +313,7 @@ stroke-linejoin="round" class="feather feather-home">
 <h1 id="model-view-viewmodel">Model-View-ViewModel</h1>
 <p>In the last pattern, we see that the presenter explicitly tells the view what to display. As an alternative, we can consider an event based approach where we just expose the state that our view should be in and anyone who needs to display that state can subscribe to those changes.</p>
 <p>That&rsquo;s exactly how MVVM works. It breaks the connection between the presenter and the view and instead exposes information via some observable type, like LiveData or RxJava.</p>
-<p><img src="../assets/mvwtf/mvvmdiagram.png" alt="Model View ViewModel"></p>
+<p><img src="../mvwtf/mvvmdiagram.png" alt="Model View ViewModel"></p>
 <h2 id="mvvm-implementation">MVVM Implementation</h2>
 <p>Let&rsquo;s look at the code comparisons between implementing MVP and MVVM.</p>
 <h3 id="model-2">Model</h3>
@@ -507,7 +507,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>This is better than what we had previously, because the state lives in one place only (the store) and can only be modified by one thing (the reducer). Not only do we get clearly defined inputs and outputs from this, but we are also able to get a unidirectional flow of data, as seen in this diagram from <a href="https://www.esri.com/arcgis-blog/products/3d-gis/3d-gis/react-redux-building-modern-web-apps-with-the-arcgis-js-api/">Esri</a>:</p>
-<p><img src="../assets/mvwtf/reduxdiagram.png" alt="Redux Diagram"></p>
+<p><img src="../mvwtf/reduxdiagram.png" alt="Redux Diagram"></p>
 <h2 id="connect-this-to-our-viewmodel-or-presenter">Connect This To Our ViewModel Or Presenter</h2>
 <p>Note in the diagram that we have a component that dispatches actions. This can be anything, meaning you don&rsquo;t need to be using MVVM to implement this flow. You can create a store and reducer and plug them into a presenter, too!</p>
 <p>For this post, we&rsquo;ll hook it up to a ViewModel. All we need to do is create a reference to the store, and where we were previously modifying state we will just dispatch actions to it:</p>

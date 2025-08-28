@@ -196,17 +196,6 @@ stroke-linejoin="round" class="feather feather-home">
                 
             </header>
             
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#model">Model</a></li>
-    <li><a href="#view">View</a></li>
-    <li><a href="#presenter">Presenter</a></li>
-  </ul>
-</nav>
-    </details>
             <div class="page-content">
                 <p>This is the first post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following <a href="https://github.com/AdamMc331/todo-monorepo">this repo</a>. Give it a star!</p>
 <p>The first architecture pattern we&rsquo;re going to walk through is MVP.</p>
@@ -220,7 +209,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>The presenter is responsible for most business logic in your application. That is everything from &ldquo;what do we do when the view first loads&rdquo; to &ldquo;what do we do when a button is clicked&rdquo;. The presenter is notified of these events from the view, performs some actions, and tells the view what to do. We&rsquo;ll see this explained more in a second.</p>
 <h1 id="communication-flow">Communication Flow</h1>
 <p>To understand the communication flow a little better, let&rsquo;s look at a short flow chart:</p>
-<p><img src="/assets/mvp/mvp-diagram.png" alt=""></p>
+<p><img src="/mvp/mvp-diagram.png" alt=""></p>
 <p>Having explained each component, let&rsquo;s break down the communication:</p>
 <ul>
 <li>There is one way communication between the model and presenter. Usually this communication is pretty quick: the presenter asks for data, the model hands it back. Note: Some people may make this two-way communication, but we won&rsquo;t do that here.</li>

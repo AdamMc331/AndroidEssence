@@ -97,6 +97,6 @@ A CardScrollView will detect the screen shape and display the Card appropriately
 
 Since the Card is predefined in XML, you won't need to do anythign special in the Activity unless you chose to manipulate it. The CardFrame example looks like this:
 
-![CardFrame](/images/square_card.png)
+![CardFrame](/square_card.png)
 
 I hope that now you have a little better foundation of Android Wear and some of the special UIs you can create for it. In the future I will be expanding on the Wear platform, discussing things such as 2D pickers and notifications. Let me know in the comments what you'd like to learn next!

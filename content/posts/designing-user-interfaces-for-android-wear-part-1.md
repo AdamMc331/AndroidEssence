@@ -96,7 +96,7 @@ public class WearableListItemLayout extends TextView implements WearableListView
 
 As mentioned, we can implement the `OnCenterProximityListener` so that items in the center of our list at the time can be enlarged, as seen by this photo:
 
-![WearList](/images/wear_list_sample.png)
+![WearList](/wear_list_sample.png)
 
 We also implement the `onNonCenterPosition` method so that when an item moves out of the center location, it returns back to the appropriate text appearance.
 

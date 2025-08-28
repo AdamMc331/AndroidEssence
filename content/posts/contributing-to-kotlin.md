@@ -37,11 +37,11 @@ Unfortunately, there's no easy way to tell which parts of the standard library h
 
 If a function does have samples, you'll see them as code blocks beneath the method: 
 
-![](../assets/contribute_kotlin/kotlin_vetoable.png)
+![](../contribute_kotlin/kotlin_vetoable.png)
 
 If a function is lacking in samples, all of this space will be blank:
 
-![](../assets/contribute_kotlin/kotlin_filternotnull.png)
+![](../contribute_kotlin/kotlin_filternotnull.png)
 
 In this post, we're going to look at both of these samples, because each one is a little different. 
 
@@ -49,7 +49,7 @@ In this post, we're going to look at both of these samples, because each one is 
 
 All of the samples for the Kotlin documentation are in the `kotlin/libraries/stdlib/samples/test/samples` directory. From there, they are all grouped by related functionality: 
 
-![](../assets/contribute_kotlin/samples_directory.png)
+![](../contribute_kotlin/samples_directory.png)
 
 Since [Vetoable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/vetoable.html) is a property delegate, we'll put it inside a file called `delegates.kt`. 
 

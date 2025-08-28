@@ -16,13 +16,13 @@ This tutorial is going to assume a basic knowledge of Android development. Expos
 
 First, let's take a look at an example of what we're building. This is a simple application that takes you to a new activity to enter a person's information and then displays that person's name in the original activity:
 
-![Espresso](/images/espresso/sample.gif)
+![Espresso](/espresso/sample.gif)
 
 # Espresso Cheat Sheet
 
 Below is a quick [cheat sheet](https://google.github.io/android-testing-support-library/docs/espresso/cheatsheet/) for using Espresso. We'll be using each of the categories you see below:
 
-![Espresso Cheat Sheet](/images/espresso-cheatsheet.png)
+![Espresso Cheat Sheet](/espresso-cheatsheet.png)
 
 If you're new to Espresso, here are the take aways from that cheat sheet:
  * ViewMatcher: This is something that describes a View that you want to interact with - whether that's the id, the text, the parent, or various other matchers in the above sheet.
@@ -66,13 +66,13 @@ Now we can take this code, copy it, and modify it to test all error scenarios su
 
 This downfall is demonstrated in a [presentation by Sam Edwards](https://www.youtube.com/watch?v=fhx_Ji5s3p4), where you can see that if your view changes, you need to go in and update every single test:
 
-![Espresso](/images/espresso-no-robot.png)
+![Espresso](/espresso-no-robot.png)
 
 # Robot Pattern
 
 Now, imagine you had a robot you could use to perform each action for you. If your view ever changes, you wouldn't have to update each individual test anymore - you'd just need to update your robot. Our above diagram now looks something like this:
 
-![Espresso](/images/espresso-robot.png)
+![Espresso](/espresso-robot.png)
 
 Before we show the robot classes code, let's take a look at the implementation:
 

@@ -16,7 +16,7 @@ However, developing and publishing these libraries can be intimidating to many p
 
 Unfortunately, something that Android Studio doesn't support is creating a library module right out of the gate. What this means is that you have to create your application module first. The way I prefer to do this is by going through the new project wizard as usual, but I tweak my package name by adding `.sample` at the end. 
 
-![AndroidEssence](/images/library/sample_package.png)
+![AndroidEssence](/library/sample_package.png)
 
 Then you can complete the setup wizard as usual with all of your necessary preferences.
 
@@ -24,11 +24,11 @@ Then you can complete the setup wizard as usual with all of your necessary prefe
 
 Now that you have a working project with an app module, you can right click on the project structure and select "New -> Module" to create your library module. This will have the same package name as your sample app, but without the `.sample` at the end of the package. The flow is demonstrated by the following screenshots:
 
-![AndroidEssence](/images/library/new_module.png)
+![AndroidEssence](/library/new_module.png)
 
-![AndroidEssence](/images/library/library_module.png)
+![AndroidEssence](/library/library_module.png)
 
-![AndroidEssence](/images/library/library_package.png)
+![AndroidEssence](/library/library_package.png)
 
 # Referencing the library from the app
 
@@ -102,7 +102,7 @@ bintray.apikey=abc123ApiKey
 
 Your username is whatever you created your account with. To find your API key, login to bintray, click on your avatar at the top right and select edit profile. You will have a tab on the left menu for API Key and can find it there:
 
-![AndroidEssence](/images/library/api_key.png)
+![AndroidEssence](/library/api_key.png)
 
 ## Generate release zip 
 
@@ -123,10 +123,10 @@ Once you've generated the zip file, the remaining steps are just a tedious uploa
 3. Click the 'Add New Package' button.
 4. Enter the required info and click submit.
 5. Select this package, and on the right side you'll have a button to add a new version.
-![AndroidEssence](/images/library/version.png)
+![AndroidEssence](/library/version.png)
 6. Enter all the additional info and hit submit.
 7. Select that version, and use the file uploader on the right. Make sure to select "explode this archive".
-![AndroidEssence](/images/library/files.png)
-![AndroidEssence](/images/library/explode.png)
+![AndroidEssence](/library/files.png)
+![AndroidEssence](/library/explode.png)
 8. You're done! People can now access your projects from your maven repo. If you want to link it to Jcenter, select your package and you'll see a "Link To Jcenter" option at the bottom right.
-![AndroidEssence](/images/library/jcenter.png)
+![AndroidEssence](/library/jcenter.png)

@@ -8,7 +8,7 @@ One of my favorite components introduced with Material Design is the [FloatingAc
 
 In today’s tutorial we will only be hiding the FAB when the RecyclerView is scrolled upward, and it will reappear on the next down scroll as shown here:
 
-![FloatingActionButton](/images/fab_scroll.gif)
+![FloatingActionButton](/fab_scroll.gif)
 
 <!--more-->
 
