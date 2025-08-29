@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Android Essence</title>
+    <link>http://localhost:1313/pages/</link>
+    <description>Recent content in Pages on Android Essence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      
+      <description>&lt;h1 id=&#34;about-android-essence&#34;&gt;About Android Essence&lt;/h1&gt;
+&lt;p&gt;Android Essence was first launched on September 2, 2015 by &lt;a href=&#34;https://bsky.app/profile/adammc.bsky.social&#34;&gt;Adam McNeilly&lt;/a&gt;. It started off with Adam just wanting to share everything he&amp;rsquo;d learned about Android development with the community. You can find all sorts of historical context from these posts, like understanding a RecyclerView vs ListView, or even working with a navigation drawer (what a throwback). The problem is that there wasn&amp;rsquo;t always a rhyme or reason to the posts.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
