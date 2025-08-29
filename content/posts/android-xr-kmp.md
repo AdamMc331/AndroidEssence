@@ -10,8 +10,6 @@ However, one of the biggest benefits of KMP is how seamless it is to provide pla
 
 <!--more-->
 
----
-
 ## Dependency Setup
 
 With KMP, we can have [source set specific dependencies](https://kotlinlang.org/docs/multiplatform-add-dependencies.html#library-used-in-specific-source-sets), so the XR dependencies are only applied to the Android target of our shared module:
