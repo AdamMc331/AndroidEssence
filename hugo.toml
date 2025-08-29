@@ -108,3 +108,4 @@ url = "/index.xml"
 
 [permalinks]
   posts = '/:filename/'
+  pages = '/:filename/'
