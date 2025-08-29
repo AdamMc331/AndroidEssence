@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Contributing Code Samples To Kotlin Documentation | Android Essence</title>
+<meta property="og:title" content="Contributing Code Samples To Kotlin Documentation | Android Essence" />
+<meta name="twitter:title" content="Contributing Code Samples To Kotlin Documentation | Android Essence" />
+<meta itemprop="name" content="Contributing Code Samples To Kotlin Documentation | Android Essence" />
+<meta name="application-name" content="Contributing Code Samples To Kotlin Documentation | Android Essence" />
+<meta property="og:site_name" content="Android Essence" />
+
+<meta name="description" content="Simplified Android Development">
+<meta itemprop="description" content="Simplified Android Development" />
+<meta property="og:description" content="Simplified Android Development" />
+<meta name="twitter:description" content="Simplified Android Development" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/contributing-to-kotlin/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2020-02-24T00:00:00Z />
+    <meta property="article:published_time" content=2020-02-24T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/contributing-to-kotlin/" />
+
+    
+    <meta property="og:article:author" content="Adam McNeilly" />
+    <meta property="article:author" content="Adam McNeilly" />
+    <meta name="author" content="Adam McNeilly" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Contributing Code Samples To Kotlin Documentation",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2020-02-24",
+        "description": "",
+        "wordCount":  1199 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2020-02-24",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Android Essence"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/contributing-to-kotlin/">
+  <meta property="og:site_name" content="Android Essence">
+  <meta property="og:title" content="Contributing Code Samples To Kotlin Documentation">
+  <meta property="og:description" content="The Kotlin language used by Android developers all over the world is open source and available on GitHub. This means it’s open for contributions from anyone! It may, of course, feel very intimidating to contribute to a project of that size. Especially for those of us who are new to open source contributions.
+The JetBrains team makes this process a lot less scary than it sounds. There are some beginner friendly ways to contribute to the language, and this post will walk you through every step.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-02-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-02-24T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contributing Code Samples To Kotlin Documentation">
+  <meta name="twitter:description" content="The Kotlin language used by Android developers all over the world is open source and available on GitHub. This means it’s open for contributions from anyone! It may, of course, feel very intimidating to contribute to a project of that size. Especially for those of us who are new to open source contributions.
+The JetBrains team makes this process a lot less scary than it sounds. There are some beginner friendly ways to contribute to the language, and this post will walk you through every step.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/contributing-to-kotlin/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Contributing Code Samples To Kotlin Documentation</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2020-02-24T00:00:00&#43;00:00" itemprop="datePublished"> Feb 24, 2020 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>The Kotlin language used by Android developers all over the world is open source and available on <a href="https://github.com/jetbrains/kotlin">GitHub</a>. This means it&rsquo;s open for contributions from anyone! It may, of course, feel very intimidating to contribute to a project of that size. Especially for those of us who are new to open source contributions.</p>
+<p>The JetBrains team makes this process a lot less scary than it sounds. There are some beginner friendly ways to contribute to the language, and this post will walk you through every step.</p>
+<hr>
+<p>This post is adapted from a <a href="https://speakerdeck.com/brianplummer/adam-mcneilly">presentation</a> I gave with my coworker <a href="https://twitter.com/plummermakes">Brian Plummer</a>.</p>
+<hr>
+<h1 id="where-to-start">Where To Start</h1>
+<p>Trying to decide where to start when contributing to a project like Kotlin feels like a task by itself. It&rsquo;s a large project, with tons of contributors, managed by both the team at JetBrains and the developer community.</p>
+<p>Thankfully, in the Kotlin issue tracker YouTrack, we have a tag called <a href="https://youtrack.jetbrains.com/issues?q=tag:%20%7BUp%20For%20Grabs%7D">Up For Grabs</a> which will show you all of the tasks that JetBrains is requesting community help with.</p>
+<p>There&rsquo;s one in particular that JetBrains is constantly requesting help on. That is to <a href="https://youtrack.jetbrains.com/issue/KT-20357">provide samples for all standard library functions</a>. Not all of the standard library has code samples yet, and this is a great way for you to make both a quick and impactful contribution to the language.</p>
+<h1 id="getting-set-up">Getting Set Up</h1>
+<p>Now that we&rsquo;ve decided on the contribution we&rsquo;re going to make, we need to get ourselves set up and ready to contribute. There&rsquo;s a couple things we should do before we start writing our code samples.</p>
+<ol>
+<li>Make sure you check the <a href="https://github.com/JetBrains/kotlin/blob/master/docs/contributing">contribution guidelines</a>.</li>
+<li>Fork the repository and make sure you can <a href="https://github.com/JetBrains/kotlin#build-environment-requirements">build the project</a>.</li>
+</ol>
+<h1 id="finding-samples-to-write">Finding Samples To Write</h1>
+<p>Unfortunately, there&rsquo;s no easy way to tell which parts of the standard library have samples or not. It&rsquo;s a little bit of trial and error clicking through the documentation.</p>
+<p>If a function does have samples, you&rsquo;ll see them as code blocks beneath the method:</p>
+<p><img src="../contribute_kotlin/kotlin_vetoable.png" alt=""></p>
+<p>If a function is lacking in samples, all of this space will be blank:</p>
+<p><img src="../contribute_kotlin/kotlin_filternotnull.png" alt=""></p>
+<p>In this post, we&rsquo;re going to look at both of these samples, because each one is a little different.</p>
+<h1 id="vetoable-sample">Vetoable Sample</h1>
+<p>All of the samples for the Kotlin documentation are in the <code>kotlin/libraries/stdlib/samples/test/samples</code> directory. From there, they are all grouped by related functionality:</p>
+<p><img src="../contribute_kotlin/samples_directory.png" alt=""></p>
+<p>Since <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/vetoable.html">Vetoable</a> is a property delegate, we&rsquo;ll put it inside a file called <code>delegates.kt</code>.</p>
+<h2 id="understanding-vetoable">Understanding Vetoable</h2>
+<p>If you&rsquo;re unfamiliar with this property delegate, it is one that allows you to specify a callback that will have the opportunity to veto any new property values. An example use case of this would be to keep track of a maximum integer, and make sure we only update the property if the new value is actually greater than the old one.</p>
+<h2 id="writing-the-sample">Writing The Sample</h2>
+<p>When writing the sample, it&rsquo;s important to first plan how you want to explain the concept of the method under test. In our max scenario, we can do this in three steps:</p>
+<ol>
+<li>Start by ensuring the default value is printed.</li>
+<li>Assign a new value larger than our default and ensure the property is updated.</li>
+<li>Assign a new value smaller than the previous one and ensure the property did not update.</li>
+</ol>
+<p>Here is what that sample may look like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="c1">// kotlin/libraries/stdlib/samples/test/samples/properties/delegates.kt
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">vetoableDelegate</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">var</span> <span class="py">max</span><span class="p">:</span> <span class="n">Int</span> <span class="k">by</span> <span class="nc">Delegates</span><span class="p">.</span><span class="n">vetoable</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="p">{</span> <span class="k">property</span><span class="p">,</span> <span class="n">oldValue</span><span class="p">,</span> <span class="n">newValue</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">newValue</span> <span class="p">&gt;</span> <span class="n">oldValue</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">assertPrints</span><span class="p">(</span><span class="n">max</span><span class="p">,</span> <span class="s2">&#34;0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">max</span> <span class="p">=</span> <span class="m">10</span>
+</span></span><span class="line"><span class="cl">    <span class="n">assertPrints</span><span class="p">(</span><span class="n">max</span><span class="p">,</span> <span class="s2">&#34;10&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">max</span> <span class="p">=</span> <span class="m">5</span>
+</span></span><span class="line"><span class="cl">    <span class="n">assertPrints</span><span class="p">(</span><span class="n">max</span><span class="p">,</span> <span class="s2">&#34;10&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now, in order for this sample to appear in the fancy runnable code block, we also need to make sure we annotate it with <code>@Sample</code>. We don&rsquo;t need to worry about how this works under the hood, but if you&rsquo;re curious, you can look at the Kotlin documentation tool, <a href="https://github.com/JetBrains/kotlin-dokka-stdlib">Dokka</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Sample</span>
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">vetoableDelegate</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>If you&rsquo;d like to see the full list of property delegate samples, you can find them on <a href="https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/samples/test/samples/properties/delegates.kt">GitHub</a>.</p>
+<h2 id="linking-to-the-sample">Linking To The Sample</h2>
+<p>Once you&rsquo;ve written your sample, we need a way to connect it with the actual method in the standard library. We do that by finding the method source, and providing another annotation with the fully qualified path to our sample:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="c1">// kotlin/libraries/stdlib/src/kotlin/properties/Delegates.kt
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Returns a property delegate for a read/write property that calls a specified callback function when changed,
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * allowing the callback to veto the modification.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  @sample samples.properties.Delegates.vetoableDelegate
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  @sample samples.properties.Delegates.throwVetoableDelegate
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">inline</span> <span class="k">fun</span> <span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;</span> <span class="nf">vetoable</span><span class="p">(</span><span class="o">..</span><span class="p">.):</span> <span class="n">ReadWriteProperty</span><span class="p">&lt;</span><span class="n">Any</span><span class="p">?,</span> <span class="n">T</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>If you want to see the full source for vetoable, you can find it on <a href="https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/src/kotlin/properties/Delegates.kt#L37-L55">GitHub</a>.</p>
+<h1 id="filternotnull-sample">FilterNotNull Sample</h1>
+<p>Some of the Kotlin standard library is actually created from generated code. The reason for having a <a href="https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-stdlib-gen">standard library code generator</a> for Kotlin is to provide useful extension functions that can apply to multiple types: arrays, lists, sequences, etc. Many of the collections related functions in the standard library are created from templates.</p>
+<h2 id="writing-the-sample-1">Writing The Sample</h2>
+<p>Despite being a sample for generated code, we can put our sample in the same directory as the ones before. In this example, we just want to demonstrate that we can have a list of nullable items, and parse out a list of only the non-null items.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="c1">// kotlin/libraries/stdlib/samples/test/samples/collections/collections.kt
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Sample</span>
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">filterNotNull</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">numbers</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">?&gt;</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">nonNullNumbers</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="n">filterNotNull</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">assertPrints</span><span class="p">(</span><span class="n">nonNullNumbers</span><span class="p">,</span> <span class="s2">&#34;[1, 2, 4]&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="linking-to-the-sample-1">Linking To The Sample</h2>
+<p>Since the method under test is a generated file, linking to it is a littler trickier than finding the method source. Instead, we have to find the template the method is generated from. You can find these in the <code>kotlin-stdlib-gen</code> module. In this case, the template is in <code>kotlin/libraries/tools/kotlin-stdlib-gen/src/templates/Filtering.kt</code>. Once there, we&rsquo;ll find the <code>filterNotNull</code> template, and add a reference to our sample inside the method builder:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">f</span><span class="n">_filterNotNull</span> <span class="p">=</span> <span class="n">fn</span><span class="p">(</span><span class="s2">&#34;filterNotNull()&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">builder</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sample</span><span class="p">(</span><span class="s2">&#34;samples.collections.Collections.Filtering.filterNotNull&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>Once we&rsquo;ve done that, we need to be sure to run the <code>./gradlew :tools:kotlin-stdlib-gen:run</code> command, which will also add this sample to the relevant generated methods.</p>
+<h1 id="validate-changes-and-make-a-pull-request">Validate Changes And Make A Pull Request</h1>
+<p>Once you&rsquo;ve made the relevant changes in your fork, you can validate your changes by running the gradle command: <code>./gradlew coreLibsTest</code>. If this passes, you&rsquo;re ready to contribute your changes. Note that these are tests - which brings up a cool fun fact about this process. All of the samples are also unit tests, which means we can simultaneously produce better documentation, and increase code coverage for the language.</p>
+<p>You can make a pull request to the <a href="https://github.com/JetBrains/kotlin/pulls">Kotlin repo</a>. In the PR title and/or description, make sure you include a link to the <a href="https://youtrack.jetbrains.com/issue/KT-20357">sample request YouTrack</a> issue. Be open to feedback from the JetBrains team - keeping in mind that they are here to help, and always appreciate support from the community.</p>
+<h1 id="recap--resources">Recap &amp; Resources</h1>
+<p>Before this post, contributing to Kotlin may have seemed like a very daunting task. I hope that by the end of it, you see that there is a great beginner friendly process in place for anyone to start contributing! If you&rsquo;d like to contribute these samples, don&rsquo;t forget these resources:</p>
+<ol>
+<li><a href="https://youtrack.jetbrains.com/issue/KT-20357">The YouTrack issue</a> requesting samples.</li>
+<li><a href="https://github.com/JetBrains/kotlin/pull/1426">The pull request</a> for the vetoable sample above, along with other property delegates.</li>
+<li><a href="https://github.com/JetBrains/kotlin/pull/3123">The pull request</a> for the filterNotNull sample above.</li>
+</ol>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://twitch.tv/adammc" target="_blank" rel="noopener noreferrer me"
+    title="Twitch">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+</svg>
+</a>
+<a href="https://bsky.app/profile/adammc.bsky.social" target="_blank" rel="noopener noreferrer me"
+    title="Bluesky">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+    d="M11.999,10.236c0.321,-0.524 0.916,-1.507 1.405,-2.376c0.755,-1.344 1.692,-2.852 2.869,-4.028c1.283,-1.281 2.845,-2.171 4.739,-2.171c1.144,-0 1.864,0.585 2.299,1.497c0.486,1.017 0.545,2.551 0.51,3.883c-0.051,1.945 -0.232,3.337 -0.505,4.275c-0.229,0.786 -0.543,1.303 -0.878,1.615c-0.892,0.833 -1.8,1.263 -2.634,1.484c0.029,0.018 0.056,0.036 0.084,0.055c0.528,0.367 0.823,0.79 1.081,1.107c0.648,0.794 0.644,1.795 0.23,2.784c-0.481,1.151 -1.533,2.279 -2.12,2.773c-1.389,1.171 -2.506,1.362 -3.383,1.133c-0.88,-0.23 -1.59,-0.932 -2.156,-1.826c-0.45,-0.71 -0.817,-1.537 -1.176,-2.186c-0.115,-0.208 -0.302,-0.455 -0.406,-0.587c-0.02,0.019 -0.04,0.04 -0.056,0.058c-0.121,0.145 -0.234,0.328 -0.349,0.531c-0.363,0.644 -0.721,1.463 -1.157,2.166c-0.555,0.895 -1.252,1.597 -2.12,1.825c-0.863,0.227 -1.97,0.037 -3.363,-1.136c-0.586,-0.494 -1.638,-1.622 -2.119,-2.773c-0.414,-0.989 -0.418,-1.99 0.229,-2.784c0.258,-0.317 0.554,-0.74 1.082,-1.106c0.027,-0.019 0.055,-0.038 0.084,-0.056c-0.834,-0.221 -1.742,-0.651 -2.634,-1.484c-0.335,-0.312 -0.649,-0.829 -0.878,-1.615c-0.273,-0.938 -0.454,-2.33 -0.505,-4.275c-0.036,-1.332 0.024,-2.866 0.509,-3.883c0.435,-0.912 1.156,-1.497 2.3,-1.497c2.32,0 4.109,1.203 5.494,2.808c1.272,1.474 2.195,3.283 2.9,4.643c0.231,0.447 0.436,0.84 0.624,1.146Zm-0.01,5.653l0.296,0.031l0.271,0.086c0.208,0.088 0.413,0.229 0.607,0.428c0.455,0.467 0.882,1.369 1.36,2.284c0.249,0.477 0.518,0.958 0.841,1.339c0.231,0.274 0.483,0.502 0.805,0.569c0.488,0.103 1.052,-0.157 1.811,-0.797c0.452,-0.38 1.274,-1.239 1.645,-2.126c0.155,-0.371 0.265,-0.75 0.022,-1.048c-0.179,-0.22 -0.366,-0.529 -0.732,-0.783c-0.536,-0.372 -1.356,-0.51 -1.905,-0.654c-0.405,-0.106 -0.715,-0.234 -0.88,-0.355l-0.284,-0.303l-0.135,-0.367l-0.008,-0.211l0.035,-0.196l0.078,-0.195l0.142,-0.209l0.198,-0.181l0.296,-0.154c0.151,-0.055 0.348,-0.092 0.587,-0.104c0.815,-0.042 2.571,0.294 4.235,-1.259c0.171,-0.159 0.288,-0.445 0.404,-0.845c0.246,-0.843 0.391,-2.096 0.438,-3.843c0.024,-0.91 0.026,-1.938 -0.208,-2.738c-0.142,-0.486 -0.367,-0.891 -0.896,-0.891c-1.675,0 -2.974,0.983 -4.031,2.21c-1.179,1.369 -2.058,3.057 -2.752,4.321c-0.483,0.88 -0.902,1.573 -1.25,1.916c-0.088,0.086 -0.174,0.157 -0.257,0.214l-0.221,0.125l-0.228,0.078l-0.267,0.031l-0.274,-0.034l-0.231,-0.083l-0.219,-0.132c-0.081,-0.058 -0.164,-0.131 -0.248,-0.22c-0.327,-0.343 -0.718,-1.037 -1.174,-1.917c-0.654,-1.262 -1.497,-2.948 -2.676,-4.314c-1.067,-1.236 -2.417,-2.217 -4.203,-2.217c-0.53,0 -0.754,0.405 -0.896,0.891c-0.234,0.8 -0.232,1.828 -0.208,2.738c0.046,1.747 0.192,3 0.438,3.843c0.116,0.4 0.233,0.686 0.403,0.845c1.665,1.553 3.421,1.217 4.235,1.259c0.24,0.012 0.437,0.049 0.588,0.104l0.295,0.154l0.199,0.181l0.142,0.209l0.078,0.195l0.035,0.196l-0.009,0.211l-0.135,0.368l-0.283,0.303c-0.165,0.12 -0.476,0.248 -0.88,0.355c-0.549,0.144 -1.369,0.281 -1.905,0.653c-0.366,0.254 -0.554,0.564 -0.732,0.783c-0.243,0.298 -0.133,0.677 0.022,1.048c0.371,0.887 1.193,1.746 1.645,2.127c0.757,0.637 1.311,0.9 1.789,0.8c0.311,-0.066 0.55,-0.29 0.772,-0.557c0.315,-0.381 0.577,-0.86 0.822,-1.337c0.394,-0.763 0.752,-1.521 1.138,-2.01c0.431,-0.544 0.929,-0.815 1.455,-0.815Z" style="fill-rule:nonzero;"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://github.com/AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Adam McNeilly.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

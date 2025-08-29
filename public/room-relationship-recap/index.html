@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Room Relationship Recap | Android Essence</title>
+<meta property="og:title" content="Room Relationship Recap | Android Essence" />
+<meta name="twitter:title" content="Room Relationship Recap | Android Essence" />
+<meta itemprop="name" content="Room Relationship Recap | Android Essence" />
+<meta name="application-name" content="Room Relationship Recap | Android Essence" />
+<meta property="og:site_name" content="Android Essence" />
+
+<meta name="description" content="Simplified Android Development">
+<meta itemprop="description" content="Simplified Android Development" />
+<meta property="og:description" content="Simplified Android Development" />
+<meta name="twitter:description" content="Simplified Android Development" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/room-relationship-recap/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2020-04-27T00:00:00Z />
+    <meta property="article:published_time" content=2020-04-27T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/room-relationship-recap/" />
+
+    
+    <meta property="og:article:author" content="Adam McNeilly" />
+    <meta property="article:author" content="Adam McNeilly" />
+    <meta name="author" content="Adam McNeilly" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Room Relationship Recap",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2020-04-27",
+        "description": "",
+        "wordCount":  2358 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2020-04-27",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Android Essence"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/room-relationship-recap/">
+  <meta property="og:site_name" content="Android Essence">
+  <meta property="og:title" content="Room Relationship Recap">
+  <meta property="og:description" content="In this post, we’re going to explore some advanced concepts of the Room Persistence Library. Room is a great tool for storing complex data for your Android applications inside a SQLite database. As you begin to store more data in your applications though, it can be difficult to determine how to organize all of it.
+We’re going to demistify database organization, and break down everything you need to know about database relationships in the Room library.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-04-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-04-27T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Room Relationship Recap">
+  <meta name="twitter:description" content="In this post, we’re going to explore some advanced concepts of the Room Persistence Library. Room is a great tool for storing complex data for your Android applications inside a SQLite database. As you begin to store more data in your applications though, it can be difficult to determine how to organize all of it.
+We’re going to demistify database organization, and break down everything you need to know about database relationships in the Room library.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/room-relationship-recap/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Room Relationship Recap</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2020-04-27T00:00:00&#43;00:00" itemprop="datePublished"> Apr 27, 2020 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>In this post, we&rsquo;re going to explore some advanced concepts of the <a href="https://developer.android.com/training/data-storage/room">Room Persistence Library</a>. Room is a great tool for storing complex data for your Android applications inside a SQLite database. As you begin to store more data in your applications though, it can be difficult to determine how to organize all of it.</p>
+<p>We&rsquo;re going to demistify database organization, and break down everything you need to know about database relationships in the Room library.</p>
+<hr>
+<p>This blog post is adapted from a YouTube video I made for <a href="https://twitter.com/AsyncAndroid">AsyncAndroid</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8-3GbQq8GMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<hr>
+<h1 id="the-problem">The Problem</h1>
+<p>To start, let&rsquo;s look at a very common limitation we will encounter when working with a SQLite database. Here is a basic Room entity with three fields:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Entity</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Student</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">studentId</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">firstName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">lastName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>Room will be able to take this entity, and successfully map it to a SQLite table with three columns:</p>
+<p><img src="assets/rrr/student_table.png" alt="Android Essence"></p>
+<p>This works because Room is able to take primitive data types (numbers, strings, booleans) and map them to valid SQLite data types. We aren&rsquo;t able to store anything more complex than that in a single table. Let&rsquo;s try to make <code>Student</code> more complex and include an <code>Address</code> field:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Entity</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Student</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">studentId</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">firstName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">lastName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">address</span><span class="p">:</span> <span class="n">Address</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Address</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">streetName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">streetNumber</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>Room will not be able to convert this to a SQLite table, because Address is not a valid SQLite data type:</p>
+<p><img src="assets/rrr/student_table_with_address.png" alt="Android Essence"></p>
+<p>This is the baseline for the rest of this post. While SQLite can&rsquo;t store complex data in a single table, our applications still need to store information about students such as addresses, and the classes they&rsquo;re taking. The solution to storing this data can vary, so let&rsquo;s explore each of the options we have.</p>
+<h1 id="embedded-properties">Embedded Properties</h1>
+<p>The previous example of storing a Student with their Address actually has a quick, one line, solution, which is the <a href="https://developer.android.com/reference/androidx/room/Embedded">@Embedded</a> annotation. This will tell the Room library to take each field from the <code>@Embedded</code> property, and map it to a column inside the entity we&rsquo;re creating. We can demonstrate this clearly by also specifying a <code>prefix</code> for the embedded columns.</p>
+<p>This means we can take this code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Entity</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Student</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">studentId</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">firstName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">lastName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Embedded</span><span class="p">(</span><span class="n">prefix</span> <span class="p">=</span> <span class="s2">&#34;address_&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">address</span><span class="p">:</span> <span class="n">Address</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Address</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">streetName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">streetNumber</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>To create a database table with these columns:</p>
+<p><img src="assets/rrr/student_table_with_address_mapped.png" alt="Android Essence"></p>
+<h1 id="embedded-property-limitations">Embedded Property Limitations</h1>
+<p>It&rsquo;s really great that we can get a one line solution to this problem with embedded properties, but it&rsquo;s important to understand their own limitations, too. Since these are just additional columns on our student table, we don&rsquo;t have a way to safely share this data across entities. Let&rsquo;s consider two students, Adam and John, who live at the same address:</p>
+<table>
+  <thead>
+      <tr>
+          <th>studentName</th>
+          <th>streetNumber</th>
+          <th>streetName</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Adam</td>
+          <td>111</td>
+          <td>Wall Street</td>
+      </tr>
+      <tr>
+          <td>John</td>
+          <td>111</td>
+          <td>Wall Street</td>
+      </tr>
+  </tbody>
+</table>
+<p>If we go into the database, it&rsquo;s possible that we only update one of the rows, causing the students to have different addresses:</p>
+<table>
+  <thead>
+      <tr>
+          <th>studentName</th>
+          <th>streetNumber</th>
+          <th>streetName</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Adam</td>
+          <td>111</td>
+          <td>Wall Street</td>
+      </tr>
+      <tr>
+          <td>John</td>
+          <td>112</td>
+          <td>Wall Street</td>
+      </tr>
+  </tbody>
+</table>
+<p>Looking at the database, we have no idea which one is right. This problem is something called an update anomaly. Now, if you aren&rsquo;t concerned about sharing information between rows, and you are just looking for a way to better structure your Room entities, then embedded properties are the perfect solution.</p>
+<p>If you need stronger data integrity, we need to move this information into a different entity, and create a link between the two. This connection between two entities is called an <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">entity relationship</a>. We&rsquo;re going to look at three types of relationships in this post.</p>
+<h1 id="one-to-many-relationships">One-To-Many Relationships</h1>
+<p>The first relationship to discuss is a one-to-many relationship. This is when you have exactly one instance of a parent entity, and zero or more instances of a child entity that relates to it. An example could be a <code>Student</code>, and any <code>Vehicle</code>s that they have registered to park at their university. Using our knowledge of creating Room entities, we may arrive on a solution kind of like this one:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @property[ownerId] This property should map to a valid id in the [Student.kt] entity.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Entity</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">vehicleId</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">ownerId</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">vehicleType</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>This entity will compile, and we will be able to insert vehicles for valid students, query them, and all the functionality we want. There is a small problem here, though, which is that the two entities aren&rsquo;t actually linked at a database level. This means:</p>
+<ol>
+<li>We can add vehicle entities with invalid student ids that don&rsquo;t actually exist.</li>
+<li>If we delete a student, the vehicles associated with them still exist in the database and we end up with <a href="https://database.guide/what-is-an-orphaned-record/">orphaned records</a>.</li>
+</ol>
+<h2 id="creating-one-to-many-relationships">Creating One-To-Many Relationships</h2>
+<p>To solve this problem, we need to define a foreign key relationship between the two tables. To create one of these, we need to specify three things:</p>
+<ol>
+<li>The entity we want to reference.</li>
+<li>The columns in the child entity that will be used to define this relationship.</li>
+<li>The columns in the parent entity that should match the child columns to ensure the relationship.</li>
+</ol>
+<p>Altogether, we will end up with this code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Entity</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">foreignKeys</span> <span class="p">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ForeignKey</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">entity</span> <span class="p">=</span> <span class="n">Student</span><span class="o">::</span><span class="k">class</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">childColumns</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;ownerId&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="n">parentColumns</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;studentId&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">vehicleId</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">ownerId</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">vehicleType</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>This means that we will be unable to insert into the <code>Vehicle</code> entity unless we use an ownerId that does exist inside the <code>Student</code> table already.</p>
+<p>Optionally, we can add a fourth property which is what to do when a row is deleted from the Student table if there are associated Vehicle records. You can learn more about that <a href="https://developer.android.com/reference/androidx/room/ForeignKey#onDelete%28%29">here</a>.</p>
+<h2 id="querying-one-to-many-relationships">Querying One-To-Many Relationships</h2>
+<p>A common query with this structure is to request a student and the vehicles associated with them. This may seem like an intimidating challenge in the Room library, like you might have to learn join queries and write some complex SQL, but the Room library takes care of a lot of that for us. Let&rsquo;s try to build a query that returns the following response class:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">StudentWithVehicles</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">student</span><span class="p">:</span> <span class="n">Student</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">vehicles</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Vehicle</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>In order for Room to return this entity from a query, we need to supply two annotations.</p>
+<ol>
+<li>The <code>@Embedded</code> annotation on student, so that Room will be able to map each column from the response to the Student entity, much like we saw with embedded properties.</li>
+<li>The <code>@Relation</code> annotaion on vehicles, so that Room will understand how the two entities are related.</li>
+</ol>
+<p>The resulting code is like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">StudentWithVehicles</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Embedded</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">student</span><span class="p">:</span> <span class="n">Student</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Relation</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">parentColumn</span> <span class="p">=</span> <span class="s2">&#34;studentId&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">entityColumn</span> <span class="p">=</span> <span class="s2">&#34;ownerId&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">vehicles</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Vehicle</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>Next, we can go into our DAO and write a query to fetch every student and their vehicles:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Dao</span>
+</span></span><span class="line"><span class="cl"><span class="k">interface</span> <span class="nc">UniversityDAO</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Query</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM Student&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Transaction</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">fetchStudentsWithVehicles</span><span class="p">():</span> <span class="n">LiveData</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">StudentWithVehicles</span><span class="p">&gt;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>You&rsquo;ll notice two annotations here as well:</p>
+<ol>
+<li>The <code>@Query()</code> annotation which defines every student we want returned for the query.</li>
+<li>The <code>@Transaction</code> annotation which is required because Room is actually going to run two queries behind the scenes - so they must run inside a database transaction.</li>
+</ol>
+<h2 id="room-behind-the-scenes">Room Behind The Scenes</h2>
+<p>It&rsquo;s rare that you&rsquo;ll ever dive into the generated code from a library like Room, but it may be helpful in scenarios like this one to understand what each of the annotations are actually doing. We can see all of the generated code for the <code>UniversityDAO_Impl.java</code> file in <a href="https://gist.github.com/AdamMc331/311f1b84045af382132c8fa145be81cf">this gist</a>, but let&rsquo;s just highlight what actually happens when we call <code>fetchStudentsWithVehicles()</code>.</p>
+<ol>
+<li>First, we run the SQL query specified in our <code>@Query()</code> annotation, which in this example is to request all students. Seen on <a href="https://gist.github.com/AdamMc331/311f1b84045af382132c8fa145be81cf#file-universitydao_impl-java-L30">line 30</a>.</li>
+<li>Next, we get the index of all the relevant Student columns, thanks to the <code>@Embedded</code> annotation in our response object. Seen on <a href="https://gist.github.com/AdamMc331/311f1b84045af382132c8fa145be81cf#file-universitydao_impl-java-L39-L43">lines 39 to 43</a>.</li>
+<li>Once we&rsquo;ve requested all of the students, we request all vehicles that belong to one of those students. Room knows how to relate the two tables thanks to our <code>@Relation</code> annotation. This is the second database query that&rsquo;s run, and also why we needed the <code>@Transaction</code> annotation. Seen on <a href="https://gist.github.com/AdamMc331/311f1b84045af382132c8fa145be81cf#file-universitydao_impl-java-L132">line 132</a>.</li>
+<li>After running these queries, the Room library will then take the responses and map everything into the neat data class that we&rsquo;ve defined and return a list of them.</li>
+</ol>
+<h1 id="one-to-one-relationships">One-To-One Relationships</h1>
+<p>Having looked at one type of database relationship, we&rsquo;ll notice that the syntax to create, enforce, and query the next two types of relationships will be quite similar.</p>
+<p>A one-to-one relationship is when you have exactly one instance of a parent and a child entity. An example would be a <code>Student</code>, and their university <code>Application</code>, if they can only apply once.</p>
+<p>This may seem counter intuitive at first, and it&rsquo;s reasonable to wonder why you wouldn&rsquo;t just put all of the information in one table. There&rsquo;s a couple reasons we might do that:</p>
+<ol>
+<li>Data size concerns. Let&rsquo;s say we want to request information about all of the students, but we don&rsquo;t need to care about their applications. Separating the data into two entities allows us to request only the data we actually need.</li>
+<li>Security. This may not be common in Android applications, but in other database systems you may want some information to be in a separate database that has different permissions, but still keep a one-to-one relationship with information in another database.</li>
+</ol>
+<h2 id="creating-one-to-one-relationships">Creating One-To-One Relationships</h2>
+<p>This type of relationship is hard to enforce perfectly. We can&rsquo;t create a link between two entities directly because we don&rsquo;t have a way to insert into two tables at the exact same time. We can get close, though, by limiting the number of <code>Application</code> that can relate to a student.</p>
+<p>If we add a unique index on our <code>Application</code> entity, we can enforce that any given <code>studentId</code> only appears <em>once</em> inside the applicaiton table:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Entity</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">foreignKeys</span> <span class="p">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ForeignKey</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">entity</span> <span class="p">=</span> <span class="n">Student</span><span class="o">::</span><span class="k">class</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">parentColumns</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;studentId&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="n">childColumns</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;studentId&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">indices</span> <span class="p">=</span> <span class="p">[</span><span class="n">Index</span><span class="p">(</span><span class="k">value</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;studentId&#34;</span><span class="p">],</span> <span class="n">unique</span> <span class="p">=</span> <span class="k">true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Application</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">applicationId</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">studentId</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="m">0L</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">applicationText</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>There is still potential for this to be a one-to-zero relationship, if you insert a student but never a corresponding application, so keep that in mind as you develop your applications.</p>
+<h2 id="querying-one-to-one-relationships">Querying One-To-One Relationships</h2>
+<p>The query code for this will look very similar to the last example! There is only one difference:</p>
+<ol>
+<li>The response object references a single <code>Application</code> record, and not a list like it did in the last example.</li>
+</ol>
+<p>Here is the code:</p>
+<pre tabindex="0"><code>// StudentWithApplication.kt
+data class StudentWithApplication(
+    @Embedded
+    val student: Student,
+    @Relation(
+        parentColumn = &#34;studentId&#34;,
+        entityColumn = &#34;studentId&#34;
+    )
+    val application: Application
+)
+
+// UniversityDAO.kt
+@Query(&#34;SELECT * FROM Student&#34;)
+@Transaction
+fun fetchStudentsWithApplication(): LiveData&lt;List&lt;StudentWithApplication&gt;&gt;
+</code></pre><p>We still need the <code>@Transaction</code> annotation because a second query is run behind the scenes. If we dive into the generated code for this method, as well, we can understand potential corner cases that we&rsquo;ll encounter here:</p>
+<ol>
+<li>If there is no application associated with a student, this query will return null and potentially crash. The solution is to make <code>application</code> property nullable inside <code>StudentWithApplication</code>.</li>
+<li>If there is only one application associated with a student, this will return as expected.</li>
+<li>If there happens to be more than one application per student (which won&rsquo;t be possible in our example), then Room will return the last <code>application</code> that it finds.</li>
+</ol>
+<h1 id="many-to-many-relationships">Many-To-Many Relationships</h1>
+<p>The last relationship type to discuss is a many-to-many relationship. This is when you have many instances of a parent entity, and many instances of a child entity. An example would be students and classes. A student can take more than one class, and a class can have more than one student.</p>
+<p>To create this entity, we need something called a joining table. We can&rsquo;t link students and classes directly, we have to go through a third table that defines the relationships between them. We can do that with a third entity called <code>ClassEnrollments</code>. Here is what that relationship will look like:</p>
+<p><img src="assets/rrr/class_enrollments.png" alt="Android Essence"></p>
+<h2 id="creating-many-to-many-relationships">Creating Many-To-Many Relationships</h2>
+<p>Let&rsquo;s look at the entity code required for <code>ClassEnrollments</code>. We need to do the following things:</p>
+<ol>
+<li>Create a ForeignKey relationship between this and <code>Student</code>.</li>
+<li>Create a ForeignKey relationship between this and <code>Class</code>.</li>
+<li>Create a composite primary key between (studentId, classId) so that we can ensure a student isn&rsquo;t taking a class twice.</li>
+</ol>
+<p>Here is the resulting entity:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Entity</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">primaryKeys</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;studentId&#34;</span><span class="p">,</span> <span class="s2">&#34;classId&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">foreignKeys</span> <span class="p">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ForeignKey</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">entity</span> <span class="p">=</span> <span class="n">Student</span><span class="o">::</span><span class="k">class</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">parentColumns</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;studentId&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="n">childColumns</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;studentId&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ForeignKey</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">entity</span> <span class="p">=</span> <span class="n">Class</span><span class="o">::</span><span class="k">class</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">parentColumns</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;classId&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="n">childColumns</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;classId&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">ClassEnrollments</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">studentId</span><span class="p">:</span> <span class="n">Long</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">classId</span><span class="p">:</span> <span class="n">Long</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><h2 id="querying-many-to-many-relationships">Querying Many-To-Many Relationships</h2>
+<p>You guessed it, the query code here is once again almost identical to the previous example. The only new addition for requesting a many-to-many response is to specify the joining table using the <code>associateBy</code> property inside the <code>@Relation</code> annotation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">StudentWithClasses</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Embedded</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">student</span><span class="p">:</span> <span class="n">Student</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Relation</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">parentColumn</span> <span class="p">=</span> <span class="s2">&#34;studentId&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">entityColumn</span> <span class="p">=</span> <span class="s2">&#34;classId&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">associateBy</span> <span class="p">=</span> <span class="n">Junction</span><span class="p">(</span><span class="k">value</span> <span class="p">=</span> <span class="n">ClassEnrollments</span><span class="o">::</span><span class="k">class</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">classes</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Class</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>The query itself remains consistent with what we&rsquo;ve already done:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Query</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM Student&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Transaction</span>
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">fetchStudentsWithClasses</span><span class="p">():</span> <span class="n">LiveData</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">StudentWithClasses</span><span class="p">&gt;&gt;</span>
+</span></span></code></pre></div><h1 id="recap">Recap</h1>
+<p>Now you have everything in your toolbox to understand how to structure complex data within a SQLite database using room. We know the use cases for each time of relationship, how to enforce them at a database level, and how to query each one. If you have any questions, or want to learn more about the Room library, please let me know in the comments below! You can also reach out to me on <a href="https://twitter.com/AdamMc331">Twitter</a>.</p>
+<p>If you&rsquo;d like to learn more about database organization as a concept, you can read my series on Effective Database Design at <a href="https://dev.to/adammc331/how-to-properly-design-a-database-part-1-2h6f">dev.to</a>.</p>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://twitch.tv/adammc" target="_blank" rel="noopener noreferrer me"
+    title="Twitch">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+</svg>
+</a>
+<a href="https://bsky.app/profile/adammc.bsky.social" target="_blank" rel="noopener noreferrer me"
+    title="Bluesky">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+    d="M11.999,10.236c0.321,-0.524 0.916,-1.507 1.405,-2.376c0.755,-1.344 1.692,-2.852 2.869,-4.028c1.283,-1.281 2.845,-2.171 4.739,-2.171c1.144,-0 1.864,0.585 2.299,1.497c0.486,1.017 0.545,2.551 0.51,3.883c-0.051,1.945 -0.232,3.337 -0.505,4.275c-0.229,0.786 -0.543,1.303 -0.878,1.615c-0.892,0.833 -1.8,1.263 -2.634,1.484c0.029,0.018 0.056,0.036 0.084,0.055c0.528,0.367 0.823,0.79 1.081,1.107c0.648,0.794 0.644,1.795 0.23,2.784c-0.481,1.151 -1.533,2.279 -2.12,2.773c-1.389,1.171 -2.506,1.362 -3.383,1.133c-0.88,-0.23 -1.59,-0.932 -2.156,-1.826c-0.45,-0.71 -0.817,-1.537 -1.176,-2.186c-0.115,-0.208 -0.302,-0.455 -0.406,-0.587c-0.02,0.019 -0.04,0.04 -0.056,0.058c-0.121,0.145 -0.234,0.328 -0.349,0.531c-0.363,0.644 -0.721,1.463 -1.157,2.166c-0.555,0.895 -1.252,1.597 -2.12,1.825c-0.863,0.227 -1.97,0.037 -3.363,-1.136c-0.586,-0.494 -1.638,-1.622 -2.119,-2.773c-0.414,-0.989 -0.418,-1.99 0.229,-2.784c0.258,-0.317 0.554,-0.74 1.082,-1.106c0.027,-0.019 0.055,-0.038 0.084,-0.056c-0.834,-0.221 -1.742,-0.651 -2.634,-1.484c-0.335,-0.312 -0.649,-0.829 -0.878,-1.615c-0.273,-0.938 -0.454,-2.33 -0.505,-4.275c-0.036,-1.332 0.024,-2.866 0.509,-3.883c0.435,-0.912 1.156,-1.497 2.3,-1.497c2.32,0 4.109,1.203 5.494,2.808c1.272,1.474 2.195,3.283 2.9,4.643c0.231,0.447 0.436,0.84 0.624,1.146Zm-0.01,5.653l0.296,0.031l0.271,0.086c0.208,0.088 0.413,0.229 0.607,0.428c0.455,0.467 0.882,1.369 1.36,2.284c0.249,0.477 0.518,0.958 0.841,1.339c0.231,0.274 0.483,0.502 0.805,0.569c0.488,0.103 1.052,-0.157 1.811,-0.797c0.452,-0.38 1.274,-1.239 1.645,-2.126c0.155,-0.371 0.265,-0.75 0.022,-1.048c-0.179,-0.22 -0.366,-0.529 -0.732,-0.783c-0.536,-0.372 -1.356,-0.51 -1.905,-0.654c-0.405,-0.106 -0.715,-0.234 -0.88,-0.355l-0.284,-0.303l-0.135,-0.367l-0.008,-0.211l0.035,-0.196l0.078,-0.195l0.142,-0.209l0.198,-0.181l0.296,-0.154c0.151,-0.055 0.348,-0.092 0.587,-0.104c0.815,-0.042 2.571,0.294 4.235,-1.259c0.171,-0.159 0.288,-0.445 0.404,-0.845c0.246,-0.843 0.391,-2.096 0.438,-3.843c0.024,-0.91 0.026,-1.938 -0.208,-2.738c-0.142,-0.486 -0.367,-0.891 -0.896,-0.891c-1.675,0 -2.974,0.983 -4.031,2.21c-1.179,1.369 -2.058,3.057 -2.752,4.321c-0.483,0.88 -0.902,1.573 -1.25,1.916c-0.088,0.086 -0.174,0.157 -0.257,0.214l-0.221,0.125l-0.228,0.078l-0.267,0.031l-0.274,-0.034l-0.231,-0.083l-0.219,-0.132c-0.081,-0.058 -0.164,-0.131 -0.248,-0.22c-0.327,-0.343 -0.718,-1.037 -1.174,-1.917c-0.654,-1.262 -1.497,-2.948 -2.676,-4.314c-1.067,-1.236 -2.417,-2.217 -4.203,-2.217c-0.53,0 -0.754,0.405 -0.896,0.891c-0.234,0.8 -0.232,1.828 -0.208,2.738c0.046,1.747 0.192,3 0.438,3.843c0.116,0.4 0.233,0.686 0.403,0.845c1.665,1.553 3.421,1.217 4.235,1.259c0.24,0.012 0.437,0.049 0.588,0.104l0.295,0.154l0.199,0.181l0.142,0.209l0.078,0.195l0.035,0.196l-0.009,0.211l-0.135,0.368l-0.283,0.303c-0.165,0.12 -0.476,0.248 -0.88,0.355c-0.549,0.144 -1.369,0.281 -1.905,0.653c-0.366,0.254 -0.554,0.564 -0.732,0.783c-0.243,0.298 -0.133,0.677 0.022,1.048c0.371,0.887 1.193,1.746 1.645,2.127c0.757,0.637 1.311,0.9 1.789,0.8c0.311,-0.066 0.55,-0.29 0.772,-0.557c0.315,-0.381 0.577,-0.86 0.822,-1.337c0.394,-0.763 0.752,-1.521 1.138,-2.01c0.431,-0.544 0.929,-0.815 1.455,-0.815Z" style="fill-rule:nonzero;"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://github.com/AdamMc331" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Adam McNeilly.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
