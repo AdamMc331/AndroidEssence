@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sharing Shared Element Keys</title>
-      <link>http://localhost:1313/posts/sharing-shared-element-keys/</link>
+      <link>http://localhost:1313/sharing-shared-element-keys/</link>
       <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/sharing-shared-element-keys/</guid>
+      <guid>http://localhost:1313/sharing-shared-element-keys/</guid>
       
       <description>&lt;p&gt;&lt;a href=&#34;https://developer.android.com/develop/ui/compose/animation/shared-elements&#34;&gt;Shared Element Transitions&lt;/a&gt; are a fantastic way to add visual flair to your applications. They allow us to animate content between two separate screens. One complication is sharing keys for these components across different screens in a consistent manner. Let&amp;rsquo;s explore one simple option.&lt;/p&gt;</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Wrapping Android XR For KMP</title>
-      <link>http://localhost:1313/posts/android-xr-kmp/</link>
+      <link>http://localhost:1313/android-xr-kmp/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/android-xr-kmp/</guid>
+      <guid>http://localhost:1313/android-xr-kmp/</guid>
       
       <description>&lt;p&gt;Recently I&amp;rsquo;ve been finding myself immersed in &lt;a href=&#34;https://github.com/JetBrains/compose-multiplatform&#34;&gt;Compose Multiplatform&lt;/a&gt;, a way to build cross platform mobile applications with Jetpack Compose UI. Of course, when Android announced their extended reality framework &lt;a href=&#34;https://www.android.com/xr/&#34;&gt;Android XR&lt;/a&gt; this week, I initially worried I wouldn&amp;rsquo;t be able to try it out in my newest side projects.&lt;/p&gt;
 &lt;p&gt;However, one of the biggest benefits of KMP is how seamless it is to provide platform specific functionality for your shared code. So let&amp;rsquo;s do that with Android XR.&lt;/p&gt;</description>
@@ -32,10 +32,10 @@
     
     <item>
       <title>Interface Naming Conventions</title>
-      <link>http://localhost:1313/posts/interface-naming-conventions/</link>
+      <link>http://localhost:1313/interface-naming-conventions/</link>
       <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/interface-naming-conventions/</guid>
+      <guid>http://localhost:1313/interface-naming-conventions/</guid>
       
       <description>&lt;p&gt;Many engineers will tell you that one of the most complicated responsibilities of our job is naming things. Variables, classes, functions, everything we write requires conscious thought.&lt;/p&gt;
 &lt;p&gt;A special case among these are interfaces. This is because we not only have to name an interface, but we need to decide how to name the implementations as well.&lt;/p&gt;</description>
@@ -44,10 +44,10 @@
     
     <item>
       <title>The Imposter&#39;s Guide To Dependency Injection</title>
-      <link>http://localhost:1313/posts/the-imposter-guide-to-dependency-injection/</link>
+      <link>http://localhost:1313/the-imposter-guide-to-dependency-injection/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/the-imposter-guide-to-dependency-injection/</guid>
+      <guid>http://localhost:1313/the-imposter-guide-to-dependency-injection/</guid>
       
       <description>&lt;p&gt;Dependency Injection is one of the hottest topics in Android and software development in general. It&amp;rsquo;s also a topic that can provide a lot of anxiety and create imposter syndrome for developers.&lt;/p&gt;
 &lt;p&gt;In this post, we&amp;rsquo;ll take incremental steps toward understanding DI, why we need it, and how to implement it inside our applications.&lt;/p&gt;</description>
@@ -56,10 +56,10 @@
     
     <item>
       <title>Five Essential Developer Experience Concepts For Android</title>
-      <link>http://localhost:1313/posts/essential-dev-experience-concepts-android/</link>
+      <link>http://localhost:1313/essential-dev-experience-concepts-android/</link>
       <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/essential-dev-experience-concepts-android/</guid>
+      <guid>http://localhost:1313/essential-dev-experience-concepts-android/</guid>
       
       <description>&lt;p&gt;In the most recent &lt;a href=&#34;https://www.youtube.com/watch?v=ePpbpLyYI1w&#34;&gt;live stream&lt;/a&gt; for Tasks Of Affirmation, we looked at creating a good developer experience. It&amp;rsquo;s important to consider developers at the start of any new project, so we can ensure that over the lifetime of a project anyone who contributes can understand how to contribute, match any guidelines that a team has, and get up and running quickly. We also want to ensure that our codebase maintains a certain quality of formatting and a lack of code smells - and putting these checks in place before you even start prevents them from ever being introduced at all.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s look at five developer experience concepts I consider essential to every project.&lt;/p&gt;</description>
@@ -68,10 +68,10 @@
     
     <item>
       <title>Tasks Of Affirmation: A New Twitch Live Stream Series</title>
-      <link>http://localhost:1313/posts/toa-twitch-series/</link>
+      <link>http://localhost:1313/toa-twitch-series/</link>
       <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/toa-twitch-series/</guid>
+      <guid>http://localhost:1313/toa-twitch-series/</guid>
       
       <description>&lt;p&gt;In the late summer of 2020, I began live streaming on &lt;a href=&#34;https://twitch.com/adammc331&#34;&gt;my Twitch channel&lt;/a&gt;. We started off by building an &lt;a href=&#34;https://github.com/adammc331/AndroidStudyGuide&#34;&gt;Android Study Guide&lt;/a&gt; application. The purpose of the application was to build something people would be interested in using, while also taking the opportunity to build an application out in the open.&lt;/p&gt;
 &lt;p&gt;For a number of reasons, discussed in &lt;a href=&#34;https://www.youtube.com/watch?v=8Umvlpx-Wvg&#34;&gt;the latest video&lt;/a&gt;, I&amp;rsquo;ve decided to sunset that project and begin a new live stream series: Tasks Of Affirmation.&lt;/p&gt;</description>
@@ -80,22 +80,22 @@
     
     <item>
       <title>Unit Testing Custom Lint Checks</title>
-      <link>http://localhost:1313/posts/unit-testing-custom-lint-checks/</link>
+      <link>http://localhost:1313/unit-testing-custom-lint-checks/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/unit-testing-custom-lint-checks/</guid>
+      <guid>http://localhost:1313/unit-testing-custom-lint-checks/</guid>
       
-      <description>&lt;p&gt;In our &lt;a href=&#34;http://localhost:1313/posts/enforce-custom-views-with-lint/&#34;&gt;previous post&lt;/a&gt; we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.&lt;/p&gt;
+      <description>&lt;p&gt;In our &lt;a href=&#34;http://localhost:1313/enforce-custom-views-with-lint/&#34;&gt;previous post&lt;/a&gt; we looked at writing a custom lint check to enforce usages of a custom view instead of an Android framework implementation.&lt;/p&gt;
 &lt;p&gt;In this post, we&amp;rsquo;ll go over how to unit test such a scenario, and take the opportunity to look at some additional options of unit testing with lint as well.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Enforcing Custom View Usage With Android Lint</title>
-      <link>http://localhost:1313/posts/enforce-custom-views-with-lint/</link>
+      <link>http://localhost:1313/enforce-custom-views-with-lint/</link>
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/enforce-custom-views-with-lint/</guid>
+      <guid>http://localhost:1313/enforce-custom-views-with-lint/</guid>
       
       <description>&lt;p&gt;Sometimes an Android project will have to implement a &lt;a href=&#34;https://developer.android.com/guide/topics/ui/custom-components&#34;&gt;custom view&lt;/a&gt; that is an extension of an existing Android view. We may do this for style purposes, or to implement additional logic, or any number of customization purposes.&lt;/p&gt;
 &lt;p&gt;This solution brings a new problem for our codebase - how do we enforce that other developers use our custom view, instead of the Android framework view? We can solve this problem by writing our own &lt;a href=&#34;https://developer.android.com/studio/write/lint&#34;&gt;Android lint&lt;/a&gt; check.&lt;/p&gt;</description>
@@ -104,21 +104,21 @@
     
     <item>
       <title>Storing Network Responses With Apollo Normalized Cache</title>
-      <link>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</link>
+      <link>http://localhost:1313/storing-network-responses-with-apollo-normalized-cache/</link>
       <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/storing-network-responses-with-apollo-normalized-cache/</guid>
+      <guid>http://localhost:1313/storing-network-responses-with-apollo-normalized-cache/</guid>
       
-      <description>&lt;p&gt;In our &lt;a href=&#34;http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/&#34;&gt;previous post&lt;/a&gt; we looked at the HTTP cache from &lt;a href=&#34;https://www.apollographql.com/docs/android/&#34;&gt;Apollo Android&lt;/a&gt; for storing network responses. In this post, we look at its counter part, the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/normalized-cache/&#34;&gt;normalized cache&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In our &lt;a href=&#34;http://localhost:1313/storing-network-responses-with-apollo-http-cache/&#34;&gt;previous post&lt;/a&gt; we looked at the HTTP cache from &lt;a href=&#34;https://www.apollographql.com/docs/android/&#34;&gt;Apollo Android&lt;/a&gt; for storing network responses. In this post, we look at its counter part, the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/normalized-cache/&#34;&gt;normalized cache&lt;/a&gt;.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Storing Network Responses With Apollo HTTP Cache</title>
-      <link>http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/</link>
+      <link>http://localhost:1313/storing-network-responses-with-apollo-http-cache/</link>
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/storing-network-responses-with-apollo-http-cache/</guid>
+      <guid>http://localhost:1313/storing-network-responses-with-apollo-http-cache/</guid>
       
       <description>&lt;p&gt;Caching is the practice of storing data that we requested previously so we can serve it faster in the future. This creates a better user experience by decreasing loading times. It also has long term benefits like reducing the number of network requests, to save on phone resources or potentially provide offline support. Today, we&amp;rsquo;re going to discuss how to use the &lt;a href=&#34;https://www.apollographql.com/docs/android/essentials/http-cache/&#34;&gt;HTTP cache&lt;/a&gt; for the &lt;a href=&#34;https://github.com/apollographql/apollo-android&#34;&gt;Apollo Android SDK&lt;/a&gt;.&lt;/p&gt;</description>
       
@@ -126,10 +126,10 @@
     
     <item>
       <title>Comparing Three Dependency Injection Solutions</title>
-      <link>http://localhost:1313/posts/comparing-three-dependency-injection-solutions/</link>
+      <link>http://localhost:1313/comparing-three-dependency-injection-solutions/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/comparing-three-dependency-injection-solutions/</guid>
+      <guid>http://localhost:1313/comparing-three-dependency-injection-solutions/</guid>
       
       <description>&lt;p&gt;During a recent live stream on my &lt;a href=&#34;https://www.twitch.tv/adammc331&#34;&gt;Twitch&lt;/a&gt; channel, we explored three different solutions to dependency injection on Android. A do it yourself approach, Koin, and Dagger Hilt. Let&amp;rsquo;s revisit them side by side, and look at the nuances between them, so we can determine which solution we want to use in our own applications.&lt;/p&gt;</description>
       
@@ -137,21 +137,21 @@
     
     <item>
       <title>Mastering Room Database Migrations</title>
-      <link>http://localhost:1313/posts/mastering-room-database-migrations/</link>
+      <link>http://localhost:1313/mastering-room-database-migrations/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/mastering-room-database-migrations/</guid>
+      <guid>http://localhost:1313/mastering-room-database-migrations/</guid>
       
-      <description>&lt;p&gt;In the last post, we demonstrated the different types of &lt;a href=&#34;http://localhost:1313/posts/room-relationship-recap/&#34;&gt;database relationships in Room&lt;/a&gt;. Next, we&amp;rsquo;re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In the last post, we demonstrated the different types of &lt;a href=&#34;http://localhost:1313/room-relationship-recap/&#34;&gt;database relationships in Room&lt;/a&gt;. Next, we&amp;rsquo;re going to explore another niched concept of Room database management: database migrations. A migration is a way to handle moving from one version of a database to another as users update your application from the play store.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Room Relationship Recap</title>
-      <link>http://localhost:1313/posts/room-relationship-recap/</link>
+      <link>http://localhost:1313/room-relationship-recap/</link>
       <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/room-relationship-recap/</guid>
+      <guid>http://localhost:1313/room-relationship-recap/</guid>
       
       <description>&lt;p&gt;In this post, we&amp;rsquo;re going to explore some advanced concepts of the &lt;a href=&#34;https://developer.android.com/training/data-storage/room&#34;&gt;Room Persistence Library&lt;/a&gt;. Room is a great tool for storing complex data for your Android applications inside a SQLite database. As you begin to store more data in your applications though, it can be difficult to determine how to organize all of it.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;re going to demistify database organization, and break down everything you need to know about database relationships in the Room library.&lt;/p&gt;</description>
@@ -160,10 +160,10 @@
     
     <item>
       <title>Getting Started With Test Driven Development</title>
-      <link>http://localhost:1313/posts/test-driven-development/</link>
+      <link>http://localhost:1313/test-driven-development/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/test-driven-development/</guid>
+      <guid>http://localhost:1313/test-driven-development/</guid>
       
       <description>&lt;p&gt;One of the many buzzwords thrown around the software devleopment community is Test Driven Development, or TDD. It is one of those phrases that sounds great when you say it - who wouldn&amp;rsquo;t want to have tests be their first priority when writing code?&lt;/p&gt;
 &lt;p&gt;However, it&amp;rsquo;s not always clear what TDD means. Does it mean you write code with testability in mind? Does it mean writing tests first? How can we write tests if we don&amp;rsquo;t have code &lt;em&gt;to&lt;/em&gt; test? This post will answer all of those questions, and teach you how to implement TDD effectively on Android.&lt;/p&gt;</description>
@@ -172,10 +172,10 @@
     
     <item>
       <title>Contributing Code Samples To Kotlin Documentation</title>
-      <link>http://localhost:1313/posts/contributing-to-kotlin/</link>
+      <link>http://localhost:1313/contributing-to-kotlin/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/contributing-to-kotlin/</guid>
+      <guid>http://localhost:1313/contributing-to-kotlin/</guid>
       
       <description>&lt;p&gt;The Kotlin language used by Android developers all over the world is open source and available on &lt;a href=&#34;https://github.com/jetbrains/kotlin&#34;&gt;GitHub&lt;/a&gt;. This means it&amp;rsquo;s open for contributions from anyone! It may, of course, feel very intimidating to contribute to a project of that size. Especially for those of us who are new to open source contributions.&lt;/p&gt;
 &lt;p&gt;The JetBrains team makes this process a lot less scary than it sounds. There are some beginner friendly ways to contribute to the language, and this post will walk you through every step.&lt;/p&gt;</description>
@@ -184,10 +184,10 @@
     
     <item>
       <title>MVWTF: Demystifying Architecture Patterns</title>
-      <link>http://localhost:1313/posts/mvwtf/</link>
+      <link>http://localhost:1313/mvwtf/</link>
       <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/mvwtf/</guid>
+      <guid>http://localhost:1313/mvwtf/</guid>
       
       <description>&lt;p&gt;As an Android developer, one of the questions I constantly see asked within the community is &amp;ldquo;what architecture pattern should I use?&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;This discussion usually leads to a handful of buzzwordy acronyms:&lt;/p&gt;
@@ -204,10 +204,10 @@
     
     <item>
       <title>Repository Pattern: Properly Organizing Your Data Layer</title>
-      <link>http://localhost:1313/posts/repository-pattern/</link>
+      <link>http://localhost:1313/repository-pattern/</link>
       <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/repository-pattern/</guid>
+      <guid>http://localhost:1313/repository-pattern/</guid>
       
       <description>&lt;p&gt;How to properly architect your application is a concern we as developers constantly face. There&amp;rsquo;s unfortunately no one size fits all answer to it, and sometimes we don&amp;rsquo;t even know where to begin. I&amp;rsquo;ve learned along my Android journey that the answer can also vary depending on what portion of your app you&amp;rsquo;re trying to organize. Of course, you might say, &lt;a href=&#34;https://handstandsam.com/2019/03/10/it-depends-is-the-answer-to-your-android-question/&#34;&gt;it depends&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;When it comes to your data layer, though, there are some really good tips on how to write clean, maintainable code. One of them is the Repository Pattern, and I&amp;rsquo;d like to provide a quick walk through of what it is and why it&amp;rsquo;s important.&lt;/p&gt;</description>
@@ -216,10 +216,10 @@
     
     <item>
       <title>Unit Testing RxJava Or Coroutine Code With Constructor Injection</title>
-      <link>http://localhost:1313/posts/unit-testing-async-code/</link>
+      <link>http://localhost:1313/unit-testing-async-code/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/unit-testing-async-code/</guid>
+      <guid>http://localhost:1313/unit-testing-async-code/</guid>
       
       <description>&lt;p&gt;Putting aside the long lasting debate right now about whether you should use RxJava or coroutines for your asynchronous code on Android, both camps often hit the same problem. How do I write unit tests for this?&lt;/p&gt;
 &lt;p&gt;Unit testing asynchronous code is tricky, because we may need to know how to properly test callback APIs, or perhaps we just want things to run instantly and not worry about thread changes. We may also be wondering how to handle not having a &amp;ldquo;main&amp;rdquo; thread in a junit test, unlike a connected test. This post will be focusing on handling that last one.&lt;/p&gt;</description>
@@ -228,10 +228,10 @@
     
     <item>
       <title>Showing A Fragment For A Result</title>
-      <link>http://localhost:1313/posts/starting-fragment-for-result/</link>
+      <link>http://localhost:1313/starting-fragment-for-result/</link>
       <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/starting-fragment-for-result/</guid>
+      <guid>http://localhost:1313/starting-fragment-for-result/</guid>
       
       <description>&lt;p&gt;A number of developers preach a single activity architecture on Android, which is something I&amp;rsquo;ve been trying to move forward to as well. In the process, though, I ran into one tricky problem. I don&amp;rsquo;t have something like &lt;code&gt;startActivityResult&lt;/code&gt; for fragments. If you&amp;rsquo;re unfamiliar, &lt;code&gt;startActivityForResult&lt;/code&gt; is a method that allows you to launch an activity with a specific request code, and when that activity finishes, your first activity will get a callback in &lt;code&gt;onActivityResult&lt;/code&gt; and can do stuff with it.&lt;/p&gt;
 &lt;p&gt;This post is going to walk through how we can achieve that same affect using fragments.&lt;/p&gt;</description>
@@ -240,22 +240,22 @@
     
     <item>
       <title>Building An Application With MVVM</title>
-      <link>http://localhost:1313/posts/building-an-app-with-mvvm/</link>
+      <link>http://localhost:1313/building-an-app-with-mvvm/</link>
       <pubDate>Sun, 28 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/building-an-app-with-mvvm/</guid>
+      <guid>http://localhost:1313/building-an-app-with-mvvm/</guid>
       
       <description>&lt;p&gt;This is the second post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following &lt;a href=&#34;https://github.com/AdamMc331/todo-monorepo&#34;&gt;this repo&lt;/a&gt;. Give it a star!&lt;/p&gt;
-&lt;p&gt;In our &lt;a href=&#34;http://localhost:1313/posts/building-an-app-with-mvp/&#34;&gt;previous post&lt;/a&gt; we discussed the MVP architecture for building an app. This time, we&amp;rsquo;re going to check out MVVM.&lt;/p&gt;</description>
+&lt;p&gt;In our &lt;a href=&#34;http://localhost:1313/building-an-app-with-mvp/&#34;&gt;previous post&lt;/a&gt; we discussed the MVP architecture for building an app. This time, we&amp;rsquo;re going to check out MVVM.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Building An Application With MVP</title>
-      <link>http://localhost:1313/posts/building-an-app-with-mvp/</link>
+      <link>http://localhost:1313/building-an-app-with-mvp/</link>
       <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/building-an-app-with-mvp/</guid>
+      <guid>http://localhost:1313/building-an-app-with-mvp/</guid>
       
       <description>&lt;p&gt;This is the first post in what will be an ongoing series to demonstrate a few different architecture patterns that are used for Android development. You can find the code for each of them, often appearing before the blog posts, by following &lt;a href=&#34;https://github.com/AdamMc331/todo-monorepo&#34;&gt;this repo&lt;/a&gt;. Give it a star!&lt;/p&gt;
 &lt;p&gt;The first architecture pattern we&amp;rsquo;re going to walk through is MVP.&lt;/p&gt;</description>
@@ -264,10 +264,10 @@
     
     <item>
       <title>Breaking The Buzzwords Barrier Part 3: ViewModel</title>
-      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier-viewmodel/</link>
+      <link>http://localhost:1313/breaking-the-buzzwords-barrier-viewmodel/</link>
       <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-viewmodel/</guid>
+      <guid>http://localhost:1313/breaking-the-buzzwords-barrier-viewmodel/</guid>
       
       <description>&lt;p&gt;So far we&amp;rsquo;ve covered four big buzzwords used in our application:&lt;/p&gt;
 &lt;ol&gt;
@@ -276,128 +276,20 @@
 &lt;li&gt;RxJava&lt;/li&gt;
 &lt;li&gt;Repository Pattern&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Now, we should circle back to the beginning. Following our diagram outlined in the &lt;a href=&#34;http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/&#34;&gt;previous parts&lt;/a&gt;, the next component we can begin to work on is our AccountViewModel:&lt;/p&gt;
+&lt;p&gt;Now, we should circle back to the beginning. Following our diagram outlined in the &lt;a href=&#34;http://localhost:1313/breaking-the-buzzwords-barrier-room-rx-repository/&#34;&gt;previous parts&lt;/a&gt;, the next component we can begin to work on is our AccountViewModel:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/buzzwords/architecture_viewmodel.png&#34; alt=&#34;Android Essence&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Naturally, this may bring up some confusion. We already discussed ViewModels in &lt;a href=&#34;http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/&#34;&gt;part 1&lt;/a&gt;. Well, depending on context, we may not be referring to the same thing.&lt;/p&gt;
-&lt;!--mor
-
-
-
-tecture
-
-When we refer to the MVVM architecture, the ViewModel here just refers to a specific component in your application&#39;s architecture. It does not have anything to do with Android or life cycles at this point. To quote the [Wikipedia article](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel):
-
-&gt; The view model is an abstraction of the view exposing public properties and commands. Instead of the controller of the MVC pattern, or the presenter of the MVP pattern, MVVM has a binder. In the view model, the binder mediates communication between the view and the data binder. The view model has been described as a state of the data in the model.
-
-Up to this point, a ViewModel is nothing more than a component that binds data to your view. We can do this a number of ways, including data binding which we will discuss in a later post, but we&#39;ll leave it at that for now. An important take away from this discussion is that MVVM is not specific to Android - a ViewModel could be a class inside an iOS or even a desktop application, if you chose to architect it as such. 
-
-# Android
-
-So then what does a ViewModel mean in terms of Android discussions? Every time the [architecture components](https://developer.android.com/topic/libraries/architecture/) come up, it seems without fail that we begin talking about [ViewModels](https://developer.android.com/topic/libraries/architecture/viewmodel).
-
-This is a new class added with the architecture components in 2017 to manage data in a lifecycle conscious way. For those of you who have been doing Android for a long time, you&#39;ve experienced the struggles of activities being killed on rotation, and repulling for data, or learning the appropriate way to save state yourself. It&#39;s a hassle, and something every single Android developer has had to deal with.
-
-However, just like they did with Room, the Google developers sought out to make this easier for everybody, and provided this class to do so.
-
-&gt; Architecture Components provides ViewModel helper class for the UI controller that is responsible for preparing data for the UI. ViewModel objects are automatically retained during configuration changes so that data they hold is immediately available to the next activity or fragment instance.
-
-So in this context, when we refer to the architecture component, we&#39;re simply talking about a class that can maintain data throughout orientation changes. While this might sound counterintuitive, the Android class for ViewModel is completely separate from the MVVM concept, and can be mutually exclusive. You can use an MVVM architecture without this class, and you can use this class without an MVVM architecture.
-
-# Overlap
-
-Despite the ability to be mutually exclusive, there is often overlap in this discussion. The reason for that goes back to the purpose of a ViewModel in MVVM. As stated earlier, the ViewModel is simply an abstraction of the view that exposes certain properties. These properties could be a list of data to display, or the current state of your view.
-
-An Android ViewModel is a way to persist data across orientation changes. What kind of data would you want to persist? A list of data you&#39;re displaying, or the current state of your view. Thus, they often go hand in hand because the ViewModel class in Android was made to handle many of the concerns faced by a ViewModel in MVVM. 
-
-# Implementation
-
-As I go over these buzzwords, I also want to show the implementation where it&#39;s relevant. I&#39;ve trimmed this a little bit from the actual class in Cash Caretaker, but enough to demonstrate a couple key points:
-
-1. The ViewModel manages the current state of the view, not our Fragment. It&#39;s exposed via a [BehaviorSubject](), so the Fragment can respond to it. 
-2. The ViewModel interracts with the Repository we made in the last section to fetch data. It also checks to make sure it&#39;s not pulling data redundently.
-3. The ViewModel also manages a [CompositeDisposable](http://reactivex.io/RxJava/javadoc/io/reactivex/disposables/CompositeDisposable.html) which holds our network subscription, and clears the network subscription when our ViewModel is cleared. This is to avoid memory leaks if there&#39;s a long running request.
-
-If you don&#39;t understand the RxJava code below, head back to [part 2](posts/breaking-the-buzzwords-barrier-room-rx-repository) for some notes and links to external resources.
-
-```kotlin
-class AccountViewModel(private val repository: CCRepository) : ViewModel() {
-    private val compositeDisposable = CompositeDisposable()
-    val state: BehaviorSubject&lt;DataViewState&gt; = BehaviorSubject.create()
-
-    fun fetchAccounts() {
-        if (state.value !is DataViewState.Success&lt;*&gt;) {
-            Timber.d(&#34;Loading Accounts&#34;)
-            postState(DataViewState.Loading())
-
-            val subscription = repository
-                    .getAllAccounts()
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(
-                            this::postState,
-                            Timber::e
-                    )
-
-            compositeDisposable.add(subscription)
-        }
-    }
-
-    private fun postState(newState: DataViewState) {
-        state.onNext(newState)
-        notifyChange()
-    }
-
-    override fun onCleared() {
-        compositeDisposable.dispose()
-    }
-}
-```
-
-Because this survives orientation changes, and because we do a state check before pulling accounts, we can save ourselves from unnecessarily requesting data every time the user rotates their phone, and instead only when the view (and ViewModel) are created for the first time. 
-
-## Factory
-
-Instantiating your ViewModel from inside your activity or fragment can be pretty easy:
-
-```kotlin
-val viewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
-```
-
-However, you may notice in the above example, we don&#39;t have any way to call a constructor. Unfortunately, there aren&#39;t any examples in the documentation, but you can do this using a [ViewModelProvider.Factory](https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider.Factory). There is an [explanation by Mohit Sharma](https://android.jlelse.eu/android-viewmodel-with-custom-arguments-d0ff0fba29e1) that is quick and to the point.
-
-You can create an instance of this factory using an anonymous class, create your ViewModel with the constructor, and then return that. Here is an example from Cash Caretaker:
-
-```kotlin
-val viewModelFactory: ViewModelProvider.Factory by lazy {
-    object : ViewModelProvider.Factory {
-        override fun &lt;T : ViewModel?&gt; create(modelClass: Class&lt;T&gt;): T {
-            val database = CCDatabase.getInMemoryDatabase(context!!)
-            val repository = CCRepository(database)
-
-            return AccountViewModel(repository) as T
-        }
-    }
-}
-
-val viewModel = ViewModelProviders.of(this, viewModelFactory).get(AccountViewModel::class.java)
-```
-
-# Conclusion
-
-I hope this demonstrates clearly what a ViewModel means in terms of the software architecture, as well as what the ViewModel class in Android does for us. Congratulations on making it through! You can now cross off another intimidating buzzword, and have a discussion about why this is truly relevant. 
-
-Keep an eye out for part 4 coming soon!�������</description>
+&lt;p&gt;Naturally, this may bring up some confusion. We already discussed ViewModels in &lt;a href=&#34;http://localhost:1313/breaking-the-buzzwords-barrier-mvvm/&#34;&gt;part 1&lt;/a&gt;. Well, depending on context, we may not be referring to the same thing.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Breaking The Buzzwords Barrier Part 2: Rx, Room, and Repository</title>
-      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</link>
+      <link>http://localhost:1313/breaking-the-buzzwords-barrier-room-rx-repository/</link>
       <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-room-rx-repository/</guid>
+      <guid>http://localhost:1313/breaking-the-buzzwords-barrier-room-rx-repository/</guid>
       
-      <description>&lt;p&gt;In &lt;a href=&#34;http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/&#34;&gt;part 1&lt;/a&gt; we discussed how we were going to architect the various components of our application. Now it&amp;rsquo;s time to build them. To understand what we should build first, we should revisit the diagram:&lt;/p&gt;
+      <description>&lt;p&gt;In &lt;a href=&#34;http://localhost:1313/breaking-the-buzzwords-barrier-mvvm/&#34;&gt;part 1&lt;/a&gt; we discussed how we were going to architect the various components of our application. Now it&amp;rsquo;s time to build them. To understand what we should build first, we should revisit the diagram:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/buzzwords/cashcaretaker_mvvm.png&#34; alt=&#34;MVVM&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I would start with three spots:&lt;/p&gt;
 &lt;ol&gt;
@@ -406,271 +298,16 @@ Keep an eye out for part 4 coming soon!�������</description>
 &lt;li&gt;The repository&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;A good rule of thumb to remember this, is that these nodes don&amp;rsquo;t depend on anything else just yet (well, the repository depends on the database, but that was included). I can&amp;rsquo;t build my ViewModel until I have my repository, and so on.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s start with persistence.&lt;/p&gt;
-&lt;!--mor
-
-
-
-Persistence Library
-
-I&#39;ve already written once about the [room persistence library](posts/getting-started-with-room-persistence-library) which was announced at Google I/O 2017. Feel free to skim that over for some details, but I&#39;m going to revisit a lot of it here, as I&#39;ve learned much more about Room/Kotlin over the last year, and I think this will be more relevant.
-
-## Purpose
-
-I mentioned in the [intro post](posts/breaking-the-buzzwords-barrier) that I would go over the necessity of each buzzword. Room was created as [an abstraction over SQLite](https://developer.android.com/topic/libraries/architecture/room) to make working with a SQLite database on Android even easier for developers. The ability has always existed - but previously we had to write all of the table schema ourselves, handle upgrades (now simpler with [migrations](https://developer.android.com/training/data-storage/room/migrating-db-versions)), and write our own queries and read from cursor objects, and much more I&#39;ve probably forgotten about. 
-
-As a result of all of this verbose, boilerplate, and often repetitive code, the developers over at Google sought out to make this easier for us, and they&#39;ve nailed it. I won&#39;t be comparing Room to previous options, but trust me that what you&#39;re about to see is smoother than it was.
-
-## Entity
-
-The first thing we need to get started with Room is an [Entity](https://developer.android.com/training/data-storage/room/defining-data). To create an entity in room, you just have to annotate the class. What this will do is create a table for your entity, and each property you have (that you don&#39;t ignore) will be created as a column. 
-
-So if I wanted a table called `Account`, with a column for `name` and `balance`, I would write an entity like this:
-
-```kotlin
-@Entity(indices = [(Index(&#34;name&#34;))])
-data class Account(
-        @PrimaryKey(autoGenerate = false) var name: String = &#34;&#34;,
-        var balance: Double = 0.0
-)
-```
-
-If you chose to [export schemas](https://developer.android.com/reference/android/arch/persistence/room/Database#exportschema) in room, you can see a detailed overview of what this class will actually do with regards to the database:
-
-```json
-{
-    &#34;tableName&#34;: &#34;Account&#34;,
-    &#34;createSql&#34;: &#34;CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `balance` REAL NOT NULL, PRIMARY KEY(`name`))&#34;,
-    &#34;fields&#34;: [
-      {
-        &#34;fieldPath&#34;: &#34;name&#34;,
-        &#34;columnName&#34;: &#34;name&#34;,
-        &#34;affinity&#34;: &#34;TEXT&#34;,
-        &#34;notNull&#34;: true
-      },
-      {
-        &#34;fieldPath&#34;: &#34;balance&#34;,
-        &#34;columnName&#34;: &#34;balance&#34;,
-        &#34;affinity&#34;: &#34;REAL&#34;,
-        &#34;notNull&#34;: true
-      }
-    ],
-    &#34;primaryKey&#34;: {
-      &#34;columnNames&#34;: [
-        &#34;name&#34;
-      ],
-      &#34;autoGenerate&#34;: false
-    },
-    &#34;indices&#34;: [
-      {
-        &#34;name&#34;: &#34;index_Account_name&#34;,
-        &#34;unique&#34;: false,
-        &#34;columnNames&#34;: [
-          &#34;name&#34;
-        ],
-        &#34;createSql&#34;: &#34;CREATE  INDEX `index_Account_name` ON `${TABLE_NAME}` (`name`)&#34;
-      }
-    ],
-    &#34;foreignKeys&#34;: []
-}
-```
-
-An important thing to note, is that the class name is what is automatically used as the table name, unless annotated otherwise. In Cash Caretaker, we naturally want a class called a `Transaction`, representing a financial one, but we can&#39;t have a `Transaction` table as that&#39;s a reserved SQLite keyword. So in some cases you want to add the table name to your annotation (this example also shows how you can have foreign keys as well):
-
-```kotlin
-@Parcelize
-@Entity(tableName = &#34;transactionTable&#34;, foreignKeys = [(ForeignKey(entity = Account::class, parentColumns = arrayOf(&#34;name&#34;), childColumns = arrayOf(&#34;accountName&#34;), onDelete = ForeignKey.CASCADE))])
-data class Transaction(
-        var accountName: String = &#34;&#34;,
-        var description: String = &#34;&#34;,
-        var amount: Double = 0.0,
-        var withdrawal: Boolean = true,
-        var date: Date = Date(),
-        @PrimaryKey(autoGenerate = true) var id: Long = 0
-) : Parcelable
-```
-
-## Database Access Object
-
-Once we&#39;ve created our entity, we need to create a Database Access Object (DAO). Our DAO is what we use to write our insert/update/query functionality.
-
-Fortunately, we have annotations for Insert/Update/Delete already, but if you want to write a special query (even if it&#39;s for deleting, not necessarily a select query), you can do that as well. Below is an example of some options, but you can find more info [in the official documentation](https://developer.android.com/training/data-storage/room/accessing-data):
-
-```kotlin
-@Dao
-interface AccountDAO {
-    @Query(&#34;SELECT * FROM account ORDER BY name&#34;)
-    fun getAll(): Flowable&lt;List&lt;Account&gt;&gt;
-
-    @Insert
-    fun insert(account: Account): Long
-
-    @Delete
-    fun delete(account: Account): Int
-
-    @Query(&#34;DELETE FROM account&#34;)
-    fun deleteAll(): Int
-}
-```
-
-Other than the two special cases, we didn&#39;t have to write out long insert/delete queries, or even worry about reading back from the cursor. We just annotate our interface with `@Dao`, and each method with the appropriate database action. If you&#39;re interested in studying the generate code for this DAO, I&#39;ve put an example [into a GitHub gist](https://gist.github.com/AdamMc331/150908d1be78fec8d638542502e61839).
-
-## Database
-
-Once you&#39;ve created your entity and DAO, the only thing left is the actual database. This is only a few short steps as well:
-
-1. Define your database as an abstract class extending from `RoomDatabase`.
-2. Annotate your DAOs, version number, and any [converters](https://developer.android.com/reference/android/arch/persistence/room/TypeConverter) you may have. These are used to convert special types like longs to datetimes. 
-3. Create an abstract function for each of your DAOs.
-
-This will leave you with something like this:
-
-```kotlin
-@Database(entities = [(Account::class), (Transaction::class)], version = 1)
-@TypeConverters(Converters::class)
-abstract class CCDatabase : RoomDatabase() {
-    abstract fun accountDao(): AccountDAO
-    abstract fun transactionDao(): TransactionDAO
-
-    companion object {
-        private var INSTANCE: CCDatabase? = null
-
-        fun getInMemoryDatabase(context: Context): CCDatabase {
-            if (INSTANCE == null) {
-                INSTANCE = Room.databaseBuilder(context,
-                        CCDatabase::class.java, &#34;cashcaretaker.db&#34;)
-                        .build()
-            }
-
-            return INSTANCE!!
-        }
-    }
-}
-```
-
-### Callback
-
-An optional feature you may want to add is a `RoomDatabase.Callback`. This [class](https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase.Callback) allows you to get a callback each time the database is updated or created. You may use this to define triggers for your database such as updating account balance whenever a transaction is added. That will look a little something like this:
-
-```kotlin
-fun getInMemoryDatabase(context: Context): CCDatabase {
-    if (INSTANCE == null) {
-        INSTANCE = Room.databaseBuilder(context,
-                CCDatabase::class.java, &#34;cashcaretaker.db&#34;)
-                .addCallback(CALLBACK)
-                .build()
-    }
-
-    return INSTANCE!!
-}
-
-val CALLBACK = object : RoomDatabase.Callback() {
-    override fun onCreate(db: SupportSQLiteDatabase) {
-        super.onCreate(db)
-
-        db.execSQL(
-                &#34;CREATE TRIGGER update_balance_for_withdrawal &#34; +
-                        &#34;AFTER INSERT ON transactionTable &#34; +
-                        &#34;WHEN new.withdrawal &#34; +
-                        &#34;BEGIN &#34; +
-                        &#34;UPDATE account &#34; +
-                        &#34;SET balance = balance - new.amount &#34; +
-                        &#34;WHERE name = new.accountName; END;&#34;)
-
-        ...
-}
-```
-
-# RxJava
-
-There are countless blog posts and tutorial on the internet about RxJava. Rightfully so, as this is a really complex topic and one with a high learning curve. I really recommend [RxJava With Kotlin In Baby Steps](https://www.youtube.com/watch?v=YPf6AYDaYf8) by Annyce Davis for getting started. 
-
-## Purpose
-
-[RxJava](https://github.com/ReactiveX/RxJava) is an implementation of [Reactive Extensions](http://reactivex.io/), a pattern of APIs used for asynchronous programming in a number of languages. It is used by many Android developers to be able to run operations asynchronously, without managing the thread handling ourselves. Use cases for asynchronous programming include long running operations like downloading files, calling a network, or reading and writing to a database. Streams can also be used to notify different components when something happens, which you&#39;ll see later on in the ViewModel section. As I said, though, we also want to do our database operations asynchronously (in fact, Room requires this unless you specify otherwise), so it is important to understand RxJava here.
-
-I won&#39;t be going into a deep dive of Rx, but instead linked to one helpful resource as well as the official docs. However, there are a few classes that will appear throughout the Cash Caretaker codebase that are worth highlighting.
-
-## Flowable
-
-You may have noticed above that our select query returned a `Flowable&lt;List&lt;Account&gt;&gt;`. A [Flowable](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Flowable.html) is a stream that you can subscribe to, and observe each item that is emitted by that stream. 
-
-In this database example, our query will give us a Flowable that exists a `List&lt;Account&gt;` when the query returns, but them subsequently each time the data changes. This is great! We only have to subscribe once, and then be notified each time the data changes, until the subscription is killed. 
-
-## Single
-
-A single is similar to a Flowable, in that it is something that you can observe, but it will only emit a single item (get it?) and then complete. This is used a couple times in Cash Caretaker to run an asynchronous operation. You can use [Single.fromCallable](http://reactivex.io/RxJava/javadoc/io/reactivex/Single.html#fromCallable-java.util.concurrent.Callable-) to run a function that you pass in, and the result of the function will be emitted. We&#39;ll see this example in our repository too. 
-
-## Subject
-
-A subject is an interesting class in RxJava because it is both an Observer (can subscribe to something and react to change), but also an Observable (meaning it can be subscribed to, and admit new items). We use Subjects in Cash Caretaker later on to handle being notified when a view is clicked, but also when accounts are interacted with. You&#39;ll see this in the Fragment/ViewModel section, but was worth discussing with other RxJava classes.
-
-To learn more about the various subjects, I love [this post](https://blog.mindorks.com/understanding-rxjava-subject-publish-replay-behavior-and-async-subject-224d663d452f) by Amit Shekhar.
-
-# Repository Pattern
-
-I feel this is another common buzzword that appears often in Android development discussions. I learned more about this pattern from [an article by Hannes Dorfmann](http://hannesdorfmann.com/android/evolution-of-the-repository-pattern) which explains the history and evolution of the pattern, and I found it very helpful.
-
-## Purpose
-
-The TL;DR purpose of the repository pattern is abstracting *what* information is required from the *how* it is collected. Let&#39;s consider the Cash Caretaker example. When we build a repository, it should run the same 4 account operations that are in our DAO:
-
-1. Select all accounts
-2. Insert an account
-3. Delete a specific account
-4. Delete all accounts
-
-Now, a reasonable question is &#34;why not just have our ViewModel that we eventually write interract with our DAO directly?&#34; We could! But the downfall is, what if I ever want to change the application to read/write data from a server instead of a local database? Or perhaps both? To make that change - it would require modifying the way the ViewModel works.
-
-If we use a repository as a middle man, we don&#39;t have to update our ViewModel when we change our underlying data source. We only have to change the repository itself. This is the same separation of concerns discussion we had in part 1. Our ViewModel only cares about what information it needs access to, it does not care how that information is collected. Our repository serves as that interface.
-
-For those of you coming from an MVP background, it works like an [interactor](https://stackoverflow.com/a/47452682/3131147).
-
-## Implementation
-
-For the purpose of this app, the repository will behave in a number of cases like a proxy straight through to the database - but it can also be used for some intermediate mapping where necessary! Let&#39;s look at our account examples:
-
-```kotlin
-open class CCRepository(private val database: CCDatabase) {
-    private val accountDAO: AccountDAO = database.accountDao()
-
-    fun getAllAccounts(): Flowable&lt;DataViewState&gt; = accountDAO.getAll()
-            .map {
-                if (it.isEmpty()) {
-                    DataViewState.Empty()
-                } else {
-                    DataViewState.Success(it)
-                }
-            }
-
-    fun deleteAccount(account: Account): Int = accountDAO.delete(account)
-
-    fun insertAccount(account: Account): Long = accountDAO.insert(account)
-
-    ...
-}
-```
-
-In the case of deleting and inserting an account, we just return whatever the database wants. However, when I query for accounts, I don&#39;t want to return the list of accounts, but rather a state that my ViewModel can be in.
-
-We&#39;ll learn more about this in the next post, but there&#39;s room for discussion on whether or not this mapping logic should be inside my repository or the ViewModel itself. I think it is okay here in the repository, but some could argue that your repository should only care about fetching data, and nothing to do with a state. 
-
-If you&#39;re unfamiliar with the RxJava map operator, you can learn more [here](http://reactivex.io/documentation/operators/map.html). 
-
-# Conclusion
-
-I hope this helped you understand a few &#39;R&#39; buzzwords - Room/RxJava/Repositories. Still confused? Unsure what their purposes are? Let me know in the comments and I&#39;ll be sure to clarify!
-
-Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel), which will go over the ViewModel, and the differences between an Android ViewModel and the ViewModel we talk about in MVVM. �������</description>
+&lt;p&gt;Let&amp;rsquo;s start with persistence.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Breaking The Buzzwords Barrier</title>
-      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier/</link>
+      <link>http://localhost:1313/breaking-the-buzzwords-barrier/</link>
       <pubDate>Wed, 30 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier/</guid>
+      <guid>http://localhost:1313/breaking-the-buzzwords-barrier/</guid>
       
       <description>&lt;p&gt;MVVM? Retrofit? RxJava? Data binding? Architecture components? LiveData? Kotlin?&lt;/p&gt;
 &lt;p&gt;Right now, these buzzwords are heard all over the Android community. Every podcast/blog/conference talk is referencing one of these. Which can be &lt;strong&gt;very&lt;/strong&gt; intimidating to new developers. Which one should I learn first? Do I need all of them? What are these things even used for?&lt;/p&gt;
@@ -681,10 +318,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Breaking The Buzzwords Barrier Part 1: MVVM</title>
-      <link>http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/</link>
+      <link>http://localhost:1313/breaking-the-buzzwords-barrier-mvvm/</link>
       <pubDate>Wed, 30 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/breaking-the-buzzwords-barrier-mvvm/</guid>
+      <guid>http://localhost:1313/breaking-the-buzzwords-barrier-mvvm/</guid>
       
       <description>&lt;p&gt;When you&amp;rsquo;re starting out with Android development, and even as an expert, you will hear about a lot of different architecture patterns. Anything from:&lt;/p&gt;
 &lt;ul&gt;
@@ -699,10 +336,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Fingerprint Authentication Tutorial</title>
-      <link>http://localhost:1313/posts/fingerprint-authentication-tutorial/</link>
+      <link>http://localhost:1313/fingerprint-authentication-tutorial/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/fingerprint-authentication-tutorial/</guid>
+      <guid>http://localhost:1313/fingerprint-authentication-tutorial/</guid>
       
       <description>&lt;p&gt;When Android released version 6.0 Marshmallow (yes, a little outdated at this point), a whole slew of new developer APIs came with it. One that I&amp;rsquo;ve personally enjoyed as a consumer is &lt;a href=&#34;https://developer.android.com/about/versions/marshmallow/android-6.0.html#fingerprint-authentication&#34;&gt;fingerprint authentication&lt;/a&gt;. I skimmed over the official docs, and even through their &lt;a href=&#34;https://developer.android.com/samples/FingerprintDialog/index.html&#34;&gt;Fingerprint Dialog Sample&lt;/a&gt; but had a difficult time following what was going on.&lt;/p&gt;
 &lt;p&gt;Eventually, though, I was able to recreate the flow. This post is going to be a step by step guide to integrating your own fingerprint dialog in your Android application.&lt;/p&gt;</description>
@@ -711,10 +348,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Developing And Publishing Android Libraries</title>
-      <link>http://localhost:1313/posts/developing-and-publishing-android-libraries/</link>
+      <link>http://localhost:1313/developing-and-publishing-android-libraries/</link>
       <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/developing-and-publishing-android-libraries/</guid>
+      <guid>http://localhost:1313/developing-and-publishing-android-libraries/</guid>
       
       <description>&lt;p&gt;Third party libraries are a huge part of mobile app development. Popular tools like Retrofit, RxJava, Picasso, and many others prevent Android developers from reinventing the wheel everytime we need to do something over the network, asynchronously, or loading images.&lt;/p&gt;
 &lt;p&gt;However, developing and publishing these libraries can be intimidating to many people. I think this occurs for a number of reasons - worry about keeping up with maintenance, being outshined, or sometimes thinking no one would use your code. I have many thoughts on those ideas, but will save them for another blog post. In this one, we&amp;rsquo;ll just go over a step by step guide to creating and publishing a library to JCenter.&lt;/p&gt;</description>
@@ -723,10 +360,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>App Review: Digilux</title>
-      <link>http://localhost:1313/posts/app-review-digilux/</link>
+      <link>http://localhost:1313/app-review-digilux/</link>
       <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/app-review-digilux/</guid>
+      <guid>http://localhost:1313/app-review-digilux/</guid>
       
       <description>&lt;blockquote&gt;
 &lt;p&gt;DISCLAIMER: This application no longer exists in Google Play, but the post has been kept for posterity.&lt;/p&gt;&lt;/blockquote&gt;
@@ -736,10 +373,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Leveraging The Robot Pattern For Espresso Tests</title>
-      <link>http://localhost:1313/posts/leveraging-the-robot-pattern-for-espresso-tests/</link>
+      <link>http://localhost:1313/leveraging-the-robot-pattern-for-espresso-tests/</link>
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/leveraging-the-robot-pattern-for-espresso-tests/</guid>
+      <guid>http://localhost:1313/leveraging-the-robot-pattern-for-espresso-tests/</guid>
       
       <description>&lt;p&gt;Espresso is a &lt;a href=&#34;https://developer.android.com/training/testing/ui-testing/espresso-testing.html&#34;&gt;testing framework for Android&lt;/a&gt; that allows developers to write automated tests for their applications. The benefit of automated testing is that you can write a test plan, and simply hit run and have all of the important features in your app tested effortlessly, and arguably more consistent and thorough than manual testing. There is no doubt that it is a lot faster.&lt;/p&gt;
 &lt;p&gt;However, one of the lesser known development patterns for automated testing is the robot pattern, which makes writing tests much easier while providing a painless way to update tests whenever your app changes. Let&amp;rsquo;s take a deeper dive into what makes the robot pattern so powerful, and how to implement it in your next test suite.&lt;/p&gt;</description>
@@ -748,10 +385,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Understanding Nullability In Kotlin</title>
-      <link>http://localhost:1313/posts/understanding-nullability-in-kotlin/</link>
+      <link>http://localhost:1313/understanding-nullability-in-kotlin/</link>
       <pubDate>Wed, 28 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/understanding-nullability-in-kotlin/</guid>
+      <guid>http://localhost:1313/understanding-nullability-in-kotlin/</guid>
       
       <description>&lt;p&gt;Every Java programmer has faced the dreaded &lt;code&gt;NullPointerException&lt;/code&gt; at some point in their life. Sometimes it&amp;rsquo;s your fault, sometimes it&amp;rsquo;s a pesky race condition. Regardless, it&amp;rsquo;s a head ache and generally leads to a ton of &lt;code&gt;if (myVariable != null) { }&lt;/code&gt; conditions all over your code. However, the latest craze &lt;a href=&#34;https://kotlinlang.org&#34;&gt;Kotlin&lt;/a&gt; can help with that too. Kotlin introduced &lt;a href=&#34;https://kotlinlang.org/docs/reference/null-safety.html&#34;&gt;null safety&lt;/a&gt; into its type system, with the potential of removing all NPEs.&lt;/p&gt;
 &lt;p&gt;This post is both going to review the official docs linked above, as well as provide some common tips and tricks to work with the nullability - something that is new in this language for many Java programmers.&lt;/p&gt;</description>
@@ -760,10 +397,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Getting Started With Room Persistence Library</title>
-      <link>http://localhost:1313/posts/getting-started-with-room-persistence-library/</link>
+      <link>http://localhost:1313/getting-started-with-room-persistence-library/</link>
       <pubDate>Sat, 10 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/getting-started-with-room-persistence-library/</guid>
+      <guid>http://localhost:1313/getting-started-with-room-persistence-library/</guid>
       
       <description>&lt;p&gt;This year at Google I/O, the Android team announced &lt;a href=&#34;https://developer.android.com/topic/libraries/architecture/index.html&#34;&gt;Android Architecture Components&lt;/a&gt; a combination of new, helpful libraries for Android development. One that particularly interested me was the &lt;a href=&#34;https://developer.android.com/topic/libraries/architecture/room.html&#34;&gt;Room Persistence Library&lt;/a&gt;, which is an abstraction layer of SQLite designed to make database access and creation a lot easier. Right off the bat it reminded me of &lt;a href=&#34;https://realm.io/products/realm-mobile-database/&#34;&gt;Realm&lt;/a&gt;, which I learned about at &lt;a href=&#34;https://www.youtube.com/watch?v=QT7XD1hifkU&#34;&gt;Droidcon NYC&lt;/a&gt; and really admired, so I decided to dive in and build a todo list using Room &amp;amp; RxJava.&lt;/p&gt;</description>
       
@@ -771,10 +408,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>How To Build A Todo List In Kotlin Part 1: Creating A New Project</title>
-      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</link>
+      <link>http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</link>
       <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</guid>
+      <guid>http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-1-new-project/</guid>
       
       <description>&lt;p&gt;This blog post is going to discuss creating a project from scratch in Kotlin. We will build a sample Todo List application that will not be very complicated, but covers enough to show the benefits of Kotlin. Part 1 will discuss creating a new project and configuring Kotlin. If you&amp;rsquo;re familiar with that, copy the &lt;code&gt;MainActivity.kt&lt;/code&gt; code and skip to part 2 to begin building the app.&lt;/p&gt;
 &lt;p&gt;This tutorial assumes a basic knowledge of programming, and some familiarity with Android. If you have any questions please leave them in the comments, and I will udpate these posts with a deeper explanation.&lt;/p&gt;</description>
@@ -783,32 +420,32 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>How To Build A Todo List In Kotlin Part 2: Implementing A RecyclerView</title>
-      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</link>
+      <link>http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</link>
       <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</guid>
+      <guid>http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/</guid>
       
-      <description>&lt;p&gt;Following up on &lt;a href=&#34;http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/&#34;&gt;part 2&lt;/a&gt; which demonstrates how to create your Android app and configure Kotlin, we&amp;rsquo;ll begin building the heart and soul of a Todo List application - the list!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Following up on &lt;a href=&#34;http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-1-new-project/&#34;&gt;part 2&lt;/a&gt; which demonstrates how to create your Android app and configure Kotlin, we&amp;rsquo;ll begin building the heart and soul of a Todo List application - the list!&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>How To Build A Todo List In Kotlin Part 3: Adding Items</title>
-      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</link>
+      <link>http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</link>
       <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</guid>
+      <guid>http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-3-adding-items/</guid>
       
-      <description>&lt;p&gt;Following parts &lt;a href=&#34;http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-1-new-project/&#34;&gt;1&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/&#34;&gt;2&lt;/a&gt; you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Following parts &lt;a href=&#34;http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-1-new-project/&#34;&gt;1&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-2-recyclerview/&#34;&gt;2&lt;/a&gt; you should have a working Android app in Kotlin that displays a list of Tasks to be completed and lets you mark them as complete. This segment is going to show you how to implement support for adding new items.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>How To Build A Todo List In Kotlin Part 4: Storing Items</title>
-      <link>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</link>
+      <link>http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</link>
       <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</guid>
+      <guid>http://localhost:1313/how-to-build-a-todo-list-in-kotlin-part-4-storing-items/</guid>
       
       <description>&lt;p&gt;If you&amp;rsquo;ve been following along with parts 1-3, you now have an (almost) working todo list application. The only thing we are missing is persisting the data. Running your Android app now and rotating your screen will show you that the items you add won&amp;rsquo;t persist, and disappear anytime an activity is killed and recreated. This post will show you how to write the list to a text file and read from it.&lt;/p&gt;</description>
       
@@ -816,10 +453,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Maintain Library Versions ACross Modules</title>
-      <link>http://localhost:1313/posts/maintain-library-versions-across-modules/</link>
+      <link>http://localhost:1313/maintain-library-versions-across-modules/</link>
       <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/maintain-library-versions-across-modules/</guid>
+      <guid>http://localhost:1313/maintain-library-versions-across-modules/</guid>
       
       <description>&lt;p&gt;It is tough enough maintaing your app by updating the support library version numbers every time a new version is out, let alone factoring in any other third party libraries you may use. This is especially painful if you have multiple modules, as you have to update the version in each &lt;code&gt;build.gradle&lt;/code&gt; file. Thankfully, we can make use of the project level gradle file to make this more maintainable.&lt;/p&gt;</description>
       
@@ -827,10 +464,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Creating Android App Shortcuts</title>
-      <link>http://localhost:1313/posts/creating-android-app-shortcuts/</link>
+      <link>http://localhost:1313/creating-android-app-shortcuts/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/creating-android-app-shortcuts/</guid>
+      <guid>http://localhost:1313/creating-android-app-shortcuts/</guid>
       
       <description>&lt;p&gt;Android app shortcuts are a special feature added in Android 7.1 (API 25). Shortcuts are special actions that appear when you long press on a launcher icon, that will trigger a specified intent. With this post you will learn how to create both static and dynamic app shortcuts. The only pre-requisite is that your app is targeting API 25 or greater.&lt;/p&gt;
 &lt;h4 id=&#34;static-shortcuts&#34;&gt;Static Shortcuts&lt;/h4&gt;
@@ -840,10 +477,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>PinchZoomTextView Library Released</title>
-      <link>http://localhost:1313/posts/pinchzoomtextview-library-released/</link>
+      <link>http://localhost:1313/pinchzoomtextview-library-released/</link>
       <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/pinchzoomtextview-library-released/</guid>
+      <guid>http://localhost:1313/pinchzoomtextview-library-released/</guid>
       
       <description>&lt;p&gt;I was recently asked if there was a way to increase/decrease the font size of a TextView by pinching on it, just as you can with many iamges. Well, it turns out that&amp;rsquo;s quite possible!&lt;/p&gt;
 &lt;p&gt;All you have to do is override the &lt;code&gt;onTouchEvent()&lt;/code&gt; method of your view, which is &lt;a href=&#34;https://github.com/androidessence/PinchZoomTextView/blob/master/lib/src/main/java/com/androidessence/pinchzoomtextview/PinchZoomTextView.java#L67-L86&#34;&gt;exactly what I do&lt;/a&gt; in my latest library, which allows you to pinch your screen to zoom in and out of a TextView. Check out the sample gif below:&lt;/p&gt;</description>
@@ -852,10 +489,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Getting Started With Retrofit In Android</title>
-      <link>http://localhost:1313/posts/getting-started-with-retrofit/</link>
+      <link>http://localhost:1313/getting-started-with-retrofit/</link>
       <pubDate>Thu, 13 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/getting-started-with-retrofit/</guid>
+      <guid>http://localhost:1313/getting-started-with-retrofit/</guid>
       
       <description>&lt;p&gt;As a new or intermediate Android developer, getting started with &lt;a href=&#34;http://square.github.io/retrofit&#34;&gt;Retrofit&lt;/a&gt;, a popular HTTP client, can seem pretty daunting. However, using this library is not as scary as it sounds. Here are four easy steps to creating your first Retrofit application!&lt;/p&gt;</description>
       
@@ -863,10 +500,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>RecyclerViewUtils Library Released</title>
-      <link>http://localhost:1313/posts/recyclerviewutils-library-released/</link>
+      <link>http://localhost:1313/recyclerviewutils-library-released/</link>
       <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/recyclerviewutils-library-released/</guid>
+      <guid>http://localhost:1313/recyclerviewutils-library-released/</guid>
       
       <description>&lt;p&gt;Recently, I became tired of writing the same old tedious code for every single RecyclerView and Adpater class I used, that all did the same thing, so I extrapolated all of it into a personal library.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&#34;https://github.com/adammc331/RecyclerViewUtils&#34;&gt;RecyclerViewUtils&lt;/a&gt; library helps make everyone&amp;rsquo;s life a little easier with a CoreViewHolder and CoreAdapter class, described below.&lt;/p&gt;</description>
@@ -875,10 +512,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>MaterialSearchView Library</title>
-      <link>http://localhost:1313/posts/materialsearchview-library/</link>
+      <link>http://localhost:1313/materialsearchview-library/</link>
       <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/materialsearchview-library/</guid>
+      <guid>http://localhost:1313/materialsearchview-library/</guid>
       
       <description>&lt;p&gt;Android has a built in SearchView component but it doesn&amp;rsquo;t feel much like Material Design. This has even been asked on &lt;a href=&#34;http://stackoverflow.com/questions/27556623/creating-a-searchview-that-looks-like-the-material-design-guidelines&#34;&gt;StackOverflow&lt;/a&gt; because developers are having trouble recreating the same MaterialSearchView that appears in many of Google&amp;rsquo;s applications. However, thanks to one of my good friends Maurício, you can now implement this great component in your own projects!&lt;/p&gt;</description>
       
@@ -886,10 +523,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>RichTextView Library Released</title>
-      <link>http://localhost:1313/posts/richtextview-library-released/</link>
+      <link>http://localhost:1313/richtextview-library-released/</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/richtextview-library-released/</guid>
+      <guid>http://localhost:1313/richtextview-library-released/</guid>
       
       <description>&lt;p&gt;As a form of ultimate procrastination this weekend, I decided to spend the last two days developing a RichTextView library.&lt;/p&gt;
 &lt;p&gt;This weekend I built the RichTextView (the naming convention comes from the &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/system.windows.controls.richtextbox%28v=vs.110%29.aspx&#34;&gt;RichTextBox&lt;/a&gt; C# class) which allows the user to format different parts ofa. TextView in different ways. For example, if I wanted to display a string but only bold a portion of it, I could achieve that with this class.&lt;/p&gt;</description>
@@ -898,10 +535,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Designing User Interfaces For Android Wear Part 2: Cards</title>
-      <link>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-2/</link>
+      <link>http://localhost:1313/designing-user-interfaces-for-android-wear-part-2/</link>
       <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-2/</guid>
+      <guid>http://localhost:1313/designing-user-interfaces-for-android-wear-part-2/</guid>
       
       <description>&lt;p&gt;User interface for Android Wear have all the same components as a phone&amp;rsquo;s UI, they just appear a little differently. In this post we&amp;rsquo;re going to talk about Cards. You&amp;rsquo;ve most likely seen these in the Google now app, among other Material Design apps. Cards are great because they are a component that is able to provide a consistent look across multiple platforms.&lt;/p&gt;
 &lt;p&gt;We will consider this post as a deeper dive into an &lt;a href=&#34;http://developer.android.com/training/wearables/ui/cards.html&#34;&gt;existing tutorial&lt;/a&gt; in the Android docs, but as that one states the Cards discussed here are not the same as the Cards that appear as notifications on Android Wear. See the link to better understand this distinction. Let&amp;rsquo;s go over some of the relevant classes, and we&amp;rsquo;ll discuss their differences and how to implement them.&lt;/p&gt;</description>
@@ -910,10 +547,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Designing User Interfaces For Android Wear Part 1: Lists</title>
-      <link>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-1/</link>
+      <link>http://localhost:1313/designing-user-interfaces-for-android-wear-part-1/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/designing-user-interfaces-for-android-wear-part-1/</guid>
+      <guid>http://localhost:1313/designing-user-interfaces-for-android-wear-part-1/</guid>
       
       <description>&lt;p&gt;Rising in popularity after the latest Google I/O, &lt;a href=&#34;https://www.android.com/wear/&#34;&gt;Android Wear&lt;/a&gt; is a game changer for mobile development. Wearable technology has brought benefits from a quicker access to information to a more accurate monitoring of our physical health. Developing for this platform allows you to tap into those features that are not as readily available on mobile handhelds as well as offer a more immersive experience of your product by making it available on wearable devices.&lt;/p&gt;
 &lt;p&gt;As always, the &lt;a href=&#34;http://developer.android.com/intl/pt-br/wear/index.html&#34;&gt;documentation&lt;/a&gt; will offer the most thorough insight into what is available, but I’d like to discuss how the UI development differs and how you can get started.&lt;/p&gt;</description>
@@ -922,10 +559,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Material Design Specs Library</title>
-      <link>http://localhost:1313/posts/material-design-specs-library/</link>
+      <link>http://localhost:1313/material-design-specs-library/</link>
       <pubDate>Sun, 13 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/material-design-specs-library/</guid>
+      <guid>http://localhost:1313/material-design-specs-library/</guid>
       
       <description>&lt;p&gt;Along with the &lt;a href=&#34;http://androidessence.com/recyclerview-cursoradapter-library/&#34;&gt;RecyclerViewCursorAdapter library&lt;/a&gt; that was released earlier this week, I have now released my second open source Android library. In collaboration with my good friend &lt;a href=&#34;https://github.com/Mauker1&#34;&gt;Maurício&lt;/a&gt;, we have built a library for including the Material Design Specs in your Android application. Currently, the library has the full color palette along with some helper methods, and some elevation resources to give the proper elevation to your components. The source code, as well as instructions for including the library can be found on &lt;a href=&#34;https://github.com/androidessence/MaterialDesignSpecs&#34;&gt;GitHub&lt;/a&gt;, so go there to check it out and give us a star!&lt;/p&gt;</description>
       
@@ -933,10 +570,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>RecyclerViewCursorAdapter Library</title>
-      <link>http://localhost:1313/posts/recyclerviewcursoradapter-library/</link>
+      <link>http://localhost:1313/recyclerviewcursoradapter-library/</link>
       <pubDate>Thu, 10 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/recyclerviewcursoradapter-library/</guid>
+      <guid>http://localhost:1313/recyclerviewcursoradapter-library/</guid>
       
       <description>&lt;p&gt;Today I released my first library which is for a RecyclerviewCursorAdapter.&lt;/p&gt;
 &lt;p&gt;Using a ListView to display database data becomes a lot easier when you use a CursorAdapter combined with a CursorLoader to display data from your ContentProvider. The main benefit of &lt;a href=&#34;http://developer.android.com/intl/pt-br/reference/android/content/CursorLoader.html&#34;&gt;CursorLoader&lt;/a&gt; is explained in the docs:&lt;/p&gt;</description>
@@ -945,21 +582,21 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>How To Make An Android UI Part 2: Java Code</title>
-      <link>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</link>
+      <link>http://localhost:1313/how-to-make-an-android-ui-part-2/</link>
       <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/how-to-make-an-android-ui-part-2/</guid>
+      <guid>http://localhost:1313/how-to-make-an-android-ui-part-2/</guid>
       
-      <description>&lt;p&gt;After reading &lt;a href=&#34;http://localhost:1313/posts/how-to-make-an-android-ui-part-1/&#34;&gt;part one&lt;/a&gt; which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:&lt;/p&gt;</description>
+      <description>&lt;p&gt;After reading &lt;a href=&#34;http://localhost:1313/how-to-make-an-android-ui-part-1/&#34;&gt;part one&lt;/a&gt; which discusses what Views and ViewGroups are, as well as how to create them in XML, the next step is to incorporate them into your Android application. How you use the UI you wrote depends on what it’s used for. Let’s break down some of the key things:&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>How To Make An Android UI Part 1: XML And Views</title>
-      <link>http://localhost:1313/posts/how-to-make-an-android-ui-part-1/</link>
+      <link>http://localhost:1313/how-to-make-an-android-ui-part-1/</link>
       <pubDate>Sun, 08 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/how-to-make-an-android-ui-part-1/</guid>
+      <guid>http://localhost:1313/how-to-make-an-android-ui-part-1/</guid>
       
       <description>&lt;p&gt;Many of the posts on this site so far deal with nuanced tricks such as RecyclerView swiping/drag and drops, and often make the assumption that the reader has already worked with the Android UI. This post is going to break it down for the beginners, teaching you the fundamentals of mobile UI development and where you can pick up on skills to move forward.&lt;/p&gt;</description>
       
@@ -967,10 +604,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Creating A Material Design Navigation Drawer</title>
-      <link>http://localhost:1313/posts/creating-a-material-design-navigation-drawer/</link>
+      <link>http://localhost:1313/creating-a-material-design-navigation-drawer/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/creating-a-material-design-navigation-drawer/</guid>
+      <guid>http://localhost:1313/creating-a-material-design-navigation-drawer/</guid>
       
       <description></description>
       
@@ -978,10 +615,10 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>Top 5 Color Scheme Tools</title>
-      <link>http://localhost:1313/posts/top-5-color-scheme-tools/</link>
+      <link>http://localhost:1313/top-5-color-scheme-tools/</link>
       <pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/top-5-color-scheme-tools/</guid>
+      <guid>http://localhost:1313/top-5-color-scheme-tools/</guid>
       
       <description>&lt;p&gt;When it comes to making an app, some of the biggest struggles developers face is outside of the code itself. What should I name the app? Who is my target audience? Or the one I struggle with the most: what colors should I use in my Android application?&lt;/p&gt;
 &lt;p&gt;This last question does not have one right or wrong answer. For that reason, it is one of the hardest questions to answer. Thankfully, there are many tools out there to help you determine your applications color scheme, and these are my five favorites.&lt;/p&gt;</description>
@@ -990,21 +627,21 @@ Now you can head over to [part 3](posts/breaking-the-buzzwords-barrier-viewmodel
     
     <item>
       <title>How To Use The RecyclerView Adapter</title>
-      <link>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</link>
+      <link>http://localhost:1313/how-to-use-the-recyclerview-adapter/</link>
       <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/how-to-use-the-recyclerview-adapter/</guid>
+      <guid>http://localhost:1313/how-to-use-the-recyclerview-adapter/</guid>
       
-      <description>&lt;p&gt;The &lt;a href=&#34;https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html&#34;&gt;RecyclerView.Adapter&lt;/a&gt; class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, &lt;a href=&#34;http://localhost:1313/posts/recyclerview-vs-listview/&#34;&gt;RecyclerView Vs ListView&lt;/a&gt;, the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my &lt;a href=&#34;http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/&#34;&gt;Swipe-To-Dismiss&lt;/a&gt; example, and break it down to explain the required implementations and how to use the RecyclerView adapter.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html&#34;&gt;RecyclerView.Adapter&lt;/a&gt; class is used to bind a dataset to a RecyclerView to be displayed to a user. As I explained in another post, &lt;a href=&#34;http://localhost:1313/recyclerview-vs-listview/&#34;&gt;RecyclerView Vs ListView&lt;/a&gt;, the RecyclerView.Adapter forces the use of the ViewHolder pattern, which may be hard to understand when switching to a RecyclerView from a ListView. In this short post I am going to reference my MovieAdapter class from my &lt;a href=&#34;http://localhost:1313/swipe-to-dismiss-recyclerview-items/&#34;&gt;Swipe-To-Dismiss&lt;/a&gt; example, and break it down to explain the required implementations and how to use the RecyclerView adapter.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Using Elevation In Android Applications</title>
-      <link>http://localhost:1313/posts/using-elevation-in-android-applications/</link>
+      <link>http://localhost:1313/using-elevation-in-android-applications/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/using-elevation-in-android-applications/</guid>
+      <guid>http://localhost:1313/using-elevation-in-android-applications/</guid>
       
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;categories-android&#34;&gt;layout: post
@@ -1016,178 +653,40 @@ published: true
 tags: [elevation, material design]
 categories: [android]&lt;/h2&gt;
 &lt;p&gt;The backbone of Material Design is to design your user interface in a way that is simple and intuitive for users, in the same way we use our intuition with real life materials. One of the many ways this is achieved is through the use of elevation in Android UI components, demonstrated here:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/elevation.gif&#34; alt=&#34;Android Layout Visualizer&#34;&gt;&lt;/p&gt;
-&lt;!--mor
-
-
-
-ng shadow to represent the elevation, your users can intuitively determine the different surfaces in your application. This gif is courtesy of [Roman Nurik’s tweet](https://twitter.com/romannurik/status/641123623324020736) of an open-source layout visualizer. As with many designs, there are no strict requirements for using elevation in Android apps, but you can follow these three steps in order to make the best use out of it.
-
-# Determine what surfaces you need
-
-Let’s break down the three screens you see above. In the first one, we have three types of surfaces. One being the Toolbar at the top, one for the FloatingActionButton, and one for each of the individual cards. Be sure to note that each of the individual cards have the same elevation. This is a great way to show that elements are different, but of equal importance.
-
-The second screenshot is an even better example of showing things of different values that are of equal importance. In this application a user has to complete a variety of tasks such as calling someone, completing a list, or cleaning their desk, it is helpful to show all of these tasks on an individual surface to emphasize the difference between them. However, since they all fall in the category of tasks to be completed, they can be grouped together by giving each of them the same amount of elevation. The FAB in this example is accented both by a higher color and a larger elevation, so it is clearly not part of our tasks.
-
-In the third example there is an animation showing how two surfaces may start at the same level, but as the list scrolls the Toolbar rises up to let the list pass underneath it. Also in this example each row of text is on the same surface. This is useful because there is very little difference between items, and separating them only makes it harder on the user to scan over them quickly. You can look at the [Material Design Spec](https://www.google.com/design/spec/components/cards.html#cards-usage) for more information on when to use, or not to use cards.
-
-# Determine how your surfaces will stack in relation to each other
-
-What you should do in this step is consider each of the surfaces you have defined in the last step, and rank them in order of importance. In the first screenshot above, the FAB is given the highest elevation in that screen, typically 6 dps. Next is the Toolbar with 4dp elevation, and the Cards themselves with 2 dps. When determining which elevation to use for each component, take a look at the [specifications](https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-elevation-android-) which can give you an idea. Always remember that these are just guidelines, and not strict rules. The most important thing to take away from this step is to use elevation to give users an intuitive way to navigate through the screen. If you feel that your individual Cards are more important than the Toolbar, don’t give your toolbar any elevation, like the second example above.
-
-# Add the elevation in XML
-
-Adding the elevation to components in Android is the easiest part, as all you need to do is set the elevation attribute, added in API 21. For example, you can give your FloatingActionButton the necessary 6 dps elevation like this:
-
-```xml
-&lt;android.support.design.widget.FloatingActionButton 
-    android:layout_width=&#34;wrap_content&#34; 
-    android:layout_height=&#34;wrap_content&#34; 
-    android:layout_margin=&#34;16dp&#34; 
-    android:layout_gravity=&#34;bottom|end&#34; 
-    android:elevation=&#34;6dp&#34;/&gt;
-```
-
-During this step, you will also want to consider if any elements require an additional elevation upon being pressed. When using a button, you may want to add extra elevation to make it appear as if it rises up and meets your finger when you press it, or sink further down. To do this, you can just use the `pressedTranslationZ` attribute:
-
-```xml
-&lt;android.support.design.widget.FloatingActionButton
-    xmlns:fab=&#34;http://schemas.android.com/apk/res-auto&#34;
-    android:layout_width=&#34;wrap_content&#34;
-    android:layout_height=&#34;wrap_content&#34;
-    android:layout_margin=&#34;16dp&#34;
-    android:layout_gravity=&#34;bottom|end&#34;
-    android:elevation=&#34;6dp&#34;
-    fab:pressedTranslationZ=&#34;12dp&#34;/&gt;
-```
-
-Following these three steps to use elevation in your Android applications will help you create a much more understandable and intuitive user interface that is both simple to use and visually appealing. As always, make sure to browse the [Material Design specifications on elevation](http://www.google.com/design/spec/what-is-material/elevation-shadows.html#) for more examples and specific use cases that aren’t discussed here.�������</description>
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/elevation.gif&#34; alt=&#34;Android Layout Visualizer&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Drag And Drop RecyclerView Items</title>
-      <link>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</link>
+      <link>http://localhost:1313/drag-and-drop-recyclerview-items/</link>
       <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/drag-and-drop-recyclerview-items/</guid>
+      <guid>http://localhost:1313/drag-and-drop-recyclerview-items/</guid>
       
-      <description>&lt;p&gt;Before continuing this post, I recommend that you read my previous one on &lt;a href=&#34;http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/&#34;&gt;Swipe To Dismiss RecyclerView Items&lt;/a&gt; as this will build upon the &lt;code&gt;ItemTouchHelper&lt;/code&gt; class discussed there. Once you&amp;rsquo;ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/drag-and-drop.gif&#34; alt=&#34;Drag And Drop RecyclerView&#34;&gt;&lt;/p&gt;
-&lt;!--mor
-
-
-
-Adapter Items
-
-Before we can properly use the drag and drop feature, we need to add another method to our Adapter that swaps two items. You can use `Collections.swap() to do this easily on a List object:
-
-```java
-public void swap(int firstPosition, int secondPosition) {
-    Collections.swap(movies, firstPosition, secondPosition);
-    notifyItemMoved(firstPosition, secondPosition);
-}
-```
-
-# Implement onMove
-
-In our previous lesson, you&#39;ll recall we left our implementation of `onMove` blank. To make us of it, all we have to do is make sure it swaps our Adapter items:
-
-```java
-@Override
-public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-   mMovieAdapter.swap(viewHolder.getAdapterPosition(), target.getAdapterPosition());
-   return true;
-}
-```
-
-Once you&#39;ve done those two things, in addition to all the necessary steps for swipe-to-dismiss, you&#39;re done. If you chose to only use the drag and drop feature, you can delet the `remove()` function from the adapter and the implementation of `onSwap()` inside the `ItemTouchHelper` class.
-
-I hope this simple tutorial helps you advance your RecyclerView skills. I have updated the MovieList project on [GitHub](https://github.com/androidessence/SwipeToDismissSample) to include the code from this example.�������</description>
+      <description>&lt;p&gt;Before continuing this post, I recommend that you read my previous one on &lt;a href=&#34;http://localhost:1313/swipe-to-dismiss-recyclerview-items/&#34;&gt;Swipe To Dismiss RecyclerView Items&lt;/a&gt; as this will build upon the &lt;code&gt;ItemTouchHelper&lt;/code&gt; class discussed there. Once you&amp;rsquo;ve done that, come back to this short post and learn how to drag and drop RecyclerView items like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/drag-and-drop.gif&#34; alt=&#34;Drag And Drop RecyclerView&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Swipe To Dismiss RecyclerView Items</title>
-      <link>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</link>
+      <link>http://localhost:1313/swipe-to-dismiss-recyclerview-items/</link>
       <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/swipe-to-dismiss-recyclerview-items/</guid>
+      <guid>http://localhost:1313/swipe-to-dismiss-recyclerview-items/</guid>
       
       <description>&lt;p&gt;In my last post I broke down the differences between the RecyclerView and a ListView. One of the benefits of the RecyclerView that I touched on was the &lt;a href=&#34;https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html&#34;&gt;ItemTouchHelper&lt;/a&gt;. This class is used to handle the Swipe-To-Dismiss and Drag-N-Drop behaviors of a RecyclerView. In this post I am going to teach you how to swipe to dismiss RecyclerView items using the sample application seen here:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/std-sample.gif&#34; alt=&#34;Swipe To Dismiss&#34;&gt;&lt;/p&gt;
-&lt;!--mor
-
-
-
-ing to move forward with the assumption that you are familiar with a RecyclerView and have already added one into your application. If you haven&#39;t, you can check out [this link](https://developer.android.com/training/material/lists-cards.html). The sample list for this application will show a number of `Movie` objects, that have a single field for `movieName`.
-
-# The Adapter
-
-We will not change the adapter much to allow for swiping, but we should add the following method along with all of the other required implementations:
-
-```java
-public void remove(int position) {
-    movies.remove(position);
-    notifyItemRemoved(position);
-}
-```
-
-This method will remove an item from our movie list, and notifies the adapter that an item has been removed. By notifying the adapter, we are not rebinding the data but simply altering the positions, as explained in the [documentation](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html#notifyItemRemoved(int)):
-
-&gt; This is a structural change event. Representations of other existing items in the data set are still considered up to date and will not be rebound, though their positions may be altered.
-
-If you would like to see the entire Adapter class, please see [this file on GitHub](https://github.com/androidessence/SwipeToDismissSample/blob/master/app/src/main/java/androidessence/movielist/MovieAdapter.java).
-
-# ItemTouchHelper.SimpleCallback
-
-To handle the swiping we will create an [ItemTouchHelper.SimpleCallback](https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.SimpleCallback.html) class. This is a simple wrapper class using drag and swipe directions to handle those events. In this tutorial, we are only concerned with swiping. Here is our callback:
-
-```java
-public class MovieTouchHelper extends ItemTouchHelper.SimpleCallback {
-   private MovieAdapter mMovieAdapter;  
- 
-   public MovieTouchHelper(MovieAdapter movieAdapter){ 
-      super(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT); 
-      this.mMovieAdapter = movieAdapter; 
-   }  
- 
-   @Override 
-   public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {  
-      //TODO: Not implemented here
-      return false;  
-   } 
-  
-   @Override 
-   public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) { 
-      //Remove item
-      mMovieAdapter.remove(viewHolder.getAdapterPosition()); 
-   }
-}
-```
-
-The required default constructor for the SimpleCallback class takes two parameters. The first is for the drag directions, the second for swiping directions. The two methods are required implementations. However, we are not implementing Drag-N-Drop for this example so we can leave the method empty. Inside the `onSwiped` method we remove the swiped item from the Adapter using the `remove()` method we added earlier.
-
-# Add ItemTouchHelper to RecyclerView
-
-Now that we’ve created our ItemTouchHelper class, we can easily attach it to our RecyclerView in just three lines of code. This code is found inside `onCreate()` of the activity:
-
-```java
-ItemTouchHelper.Callback callback = new MovieTouchHelper(movieAdapter);
-ItemTouchHelper helper = new ItemTouchHelper(callback);
-helper.attachToRecyclerView(movieRecyclerView);
-```
-
-Now we’re done! You don’t have to add any animations, all of those are handled behind the scenes. I hope you enjoyed learning how to swipe to dismiss RecyclerView items. The full code for this sample application can be found on my [GitHub](https://github.com/androidessence/SwipeToDismissSample) page.�������</description>
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/std-sample.gif&#34; alt=&#34;Swipe To Dismiss&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>RecyclerView Vs ListView</title>
-      <link>http://localhost:1313/posts/recyclerview-vs-listview/</link>
+      <link>http://localhost:1313/recyclerview-vs-listview/</link>
       <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/recyclerview-vs-listview/</guid>
+      <guid>http://localhost:1313/recyclerview-vs-listview/</guid>
       
       <description>&lt;p&gt;Introduced in API 21 (Android 5.0), along with other MaterialDesign components, was the &lt;a href=&#34;https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html&#34;&gt;RecyclerView&lt;/a&gt; widget. This widget is a more flexible version of the &lt;a href=&#34;http://developer.android.com/reference/android/widget/ListView.html&#34;&gt;ListView&lt;/a&gt;, which to many developers was their go-to &lt;a href=&#34;http://developer.android.com/reference/android/widget/AdapterView.html&#34;&gt;AdapterView&lt;/a&gt; for applications.&lt;/p&gt;
 &lt;p&gt;It is important to note here, though, that the RecyclerView does not extend from the AdapterView class. Intuitively, it sounds like it would as an AdapterView is defined in the docs as:&lt;/p&gt;
@@ -1199,10 +698,10 @@ Now we’re done! You don’t have to add any animations, all of those are handl
     
     <item>
       <title>SQLiteOpenHelper and the Singleton Pattern</title>
-      <link>http://localhost:1313/posts/sqliteopenhelper-and-the-singleton-pattern/</link>
+      <link>http://localhost:1313/sqliteopenhelper-and-the-singleton-pattern/</link>
       <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/sqliteopenhelper-and-the-singleton-pattern/</guid>
+      <guid>http://localhost:1313/sqliteopenhelper-and-the-singleton-pattern/</guid>
       
       <description>&lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/Singleton_pattern&#34;&gt;singleton design pattern&lt;/a&gt; is a design that limits the instantiation of a class to a single object. To quote Wikipedia:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1213,128 +712,14 @@ Now we’re done! You don’t have to add any animations, all of those are handl
     
     <item>
       <title>Hide The FloatingActionButton When Scrolling A RecyclerView</title>
-      <link>http://localhost:1313/posts/hide-the-floatingactionbutton-when-scrolling-recyclerview/</link>
+      <link>http://localhost:1313/hide-the-floatingactionbutton-when-scrolling-recyclerview/</link>
       <pubDate>Wed, 02 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/hide-the-floatingactionbutton-when-scrolling-recyclerview/</guid>
+      <guid>http://localhost:1313/hide-the-floatingactionbutton-when-scrolling-recyclerview/</guid>
       
       <description>&lt;p&gt;One of my favorite components introduced with Material Design is the &lt;a href=&#34;https://www.google.com/design/spec/components/buttons-floating-action-button.html&#34;&gt;FloatingActionButton&lt;/a&gt; (FAB). These buttons are great for emphasizing the primary action of an Activity, but quickly become a nuisance when displayed over a RecyclerView as they may block the bottom list item. To avoid this, we can hide the FloatingActionButton when scrolling a RecyclerView.&lt;/p&gt;
 &lt;p&gt;In today’s tutorial we will only be hiding the FAB when the RecyclerView is scrolled upward, and it will reappear on the next down scroll as shown here:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/fab_scroll.gif&#34; alt=&#34;FloatingActionButton&#34;&gt;&lt;/p&gt;
-&lt;!--mor
-
-
-
-he support library dependency
-
-As with any support library component, like the Toolbar in my last post, we need to add a dependency to our build.gradle file for the design library, and for the RecyclerView:
-
-```groovy
-    dependencies{
-       compile &#39;com.android.support:design:23.0.0&#39;
-       compile &#39;com.android.support:recyclerview-v7:23:0:0&#39;
-    }
-```
-
-# Add the FAB and RecyclerView inside a CoordinatorLayout
-
-In order to achieve this scroll animation, we must put the Views inside of a CoordinatorLayout. As the documentation states, a primary use of the [CoordinatorLayout](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html) is:
-
-&gt; As a container for a specific interaction with one or more child views
-
-Since the FAB is interacting with the RecyclerView (by hiding/showing depending on scroll) the CoordinatorLayout will help us with this process. Here is how the XML will look:
-
-```xml
-    &lt;android.support.design.widget.CoordinatorLayout 
-       xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; 
-       xmlns:app=&#34;http://schemas.android.com/apk/res-auto&#34; 
-       android:layout_width=&#34;match_parent&#34; 
-       android:layout_height=&#34;match_parent&#34;&gt;  
-     
-       &lt;android.support.v7.widget.RecyclerView 
-          android:id=&#34;@+id/recycler_view&#34; 
-          android:layout_width=&#34;match_parent&#34; 
-          android:layout_height=&#34;match_parent&#34;/&gt;  
-     
-       &lt;android.support.design.widget.FloatingActionButton
-          android:id=&#34;@+id/fab&#34;
-          android:layout_width=&#34;wrap_content&#34; 
-          android:layout_height=&#34;wrap_content&#34; 
-          android:layout_margin=&#34;16dp&#34; 
-          app:layout_anchor=&#34;@+id/recycler_view&#34; 
-          app:layout_anchorGravity=&#34;bottom|end&#34; /&gt;
-     
-    &lt;/android.support.design.widget.CoordinatorLayout&gt;
-```
-
-Two attributes that may be new to you are `layout_anchor` and `layout_anchorGravity`. These attributes were [introduced with the CoordinatorLayout](http://android-developers.blogspot.com/2015/05/android-design-support-library.html) to place some views relative to others.
-
-# Implement the FAB’s behavior
-
-If you took a peak at the CoordinatorLayout documentation, you will notice the mentioned something about Behavior:
-
-&gt; By specifying [Behaviors](https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html) for child views of a CoordinatorLayout you can provide many different interactions within a single parent and those views can also interact with one another.
-
-There is a `FloatingActionButton.Behavior` class that we can extend to implement our own behavior. Start by creating the following class:
-
-```java
-    public class FABScrollBehavior extends FloatingActionButton.Behavior { }
-```
-
-In order for our FAB to react to the scroll of the RecyclerView, we can override `onStartNestedScroll()` and `onNestedScroll()`:
-
-```java
-    public class FABScrollBehavior extends FloatingActionButton.Behavior {  
-       @Override  
-       public void onNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child, View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) { 
-          super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed); 
-          if(dyConsumed &gt; 0 &amp;&amp; child.getVisibility() == View.VISIBLE){ 
-             child.hide(); 
-          } else if(dyConsumed &lt; 0 &amp;&amp; child.getVisibility() == View.GONE){ 
-             child.show(); 
-          }  
-       }  
-     
-       @Override 
-       public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child, View directTargetChild, View target, int nestedScrollAxes) { 
-          return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL; 
-       }
-    }
-```
-
-This implementation is pretty straight forward. If the scroll is upward (dyConsumed &gt; 0) and the child (the FAB here) is visible, hide it. If the opposite occurs, show it. Thankfully, we do not need to write any animations ourself! The FAB class contains methods for [showing](https://developer.android.com/reference/android/support/design/widget/FloatingActionButton.html#show()) and [hiding](https://developer.android.com/reference/android/support/design/widget/FloatingActionButton.html#hide()) the button.
-
-We’ve also implemented onStartNestedScroll to show that we are only handling vertical scrolls.
-
-# Attach the behavior to the FAB
-
-Next we need to make sure the FAB behaves like we just implemented. This can be done using XML:
-
-```xml
-    &lt;android.support.design.widget.FloatingActionButton 
-       android:layout_width=&#34;wrap_content&#34; 
-       android:layout_height=&#34;wrap_content&#34; 
-       android:layout_margin=&#34;16dp&#34; 
-       app:layout_anchor=&#34;@+id/recycler_view&#34; 
-       app:layout_anchorGravity=&#34;bottom|end&#34; 
-       app:layout_behavior=&#34;com.adammcneilly.fabscrollsample.FABScrollBehavior&#34;/&gt;
-```
-
-While writing this tutorial for you, I learned the hard way that this is not enough. As it is you will get the following error:
-
-&gt; Caused by: java.lang.RuntimeException: Could not inflate Behavior subclass com.adammcneilly.fabscrollsample.FABScrollBehavior
-
-To fix this, just make sure you’ve added a default constructor to your behavior class:
-
-```java
-    public FABScrollBehavior(Context context, AttributeSet attributeSet){
-       super();
-    }
-```
-
-Once you’ve done that, you’ll be able to hide the FloatingActionButton when scrolling the RecyclerView. Great work!
-
-The code for this tutorial can be found on [GitHub](https://github.com/androidessence/FABScrollTutorial).�������</description>
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/fab_scroll.gif&#34; alt=&#34;FloatingActionButton&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     

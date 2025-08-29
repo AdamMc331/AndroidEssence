@@ -105,3 +105,6 @@ url = "/index.xml"
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[permalinks]
+  posts = '/:filename/'
