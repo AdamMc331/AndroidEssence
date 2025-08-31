@@ -1,6 +1,6 @@
 +++
 date = '2025-09-02'
-draft = false
+draft = true
 title = "Reflecting On A Decade Of Content Creation"
 +++
 
@@ -43,8 +43,11 @@ My third (and more selfish) goal has always been to inspire. I hope that you hav
 Thank you for reading this far. It's not just you, the audience, that I'd like to thank.
 
 To the people who helped me write and publish my first blog post,
+
 To everyone who has proofread a post or watched a dry-run of a presenation,
-To the conferences that took a chance and gave me an opportunity to share with their communities,
+
+To the conferences that gave me an opportunity to share with their communities,
+
 To my friends and family that have lifted me up every step of the way,
 
 Thank you.
