@@ -8,6 +8,18 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Reflecting On A Decade Of Content Creation</title>
+      <link>http://localhost:1313/reflecting-on-a-decade/</link>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/reflecting-on-a-decade/</guid>
+      
+      <description>&lt;p&gt;Ten years ago today, I published &lt;a href=&#34;http://localhost:1313/hide-the-floatingactionbutton-when-scrolling-recyclerview&#34;&gt;my first blog post&lt;/a&gt;. There&amp;rsquo;s something special about looking back an entire decade at an achievement like that. A chance to reflect on what my life was like then, the motivations that got me into writing, and where I am today as a result.&lt;/p&gt;
+&lt;p&gt;It has been an honor to learn in public over these last ten years, whether that be here on AndroidEssence, on &lt;a href=&#34;https://twitch.tv/adammc&#34;&gt;Twitch&lt;/a&gt;, on &lt;a href=&#34;https://youtube.com/@AdamMc331&#34;&gt;YouTube&lt;/a&gt;, at &lt;a href=&#34;https://www.droidcon.com/?filter-type=speakers&amp;amp;s=adam&amp;#43;mcneilly&#34;&gt;Droidcon&lt;/a&gt;, or the countless number of meetups, hackathons, and other events that have enabled me to connect with the amazing Android community.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Sharing Shared Element Keys</title>
       <link>http://localhost:1313/sharing-shared-element-keys/</link>
       <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
