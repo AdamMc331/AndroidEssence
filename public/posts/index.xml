@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Android Essence</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Managing Multi Table Inserts With Room</title>
+      <link>http://localhost:1313/multi-table-inserts/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/multi-table-inserts/</guid>
+      
+      <description>&lt;p&gt;A properly relational database may have a type that appears referenced multiple times. In my &lt;a href=&#34;https://github.com/AdamMc331/SpaceNerd&#34;&gt;SpaceNerd&lt;/a&gt; playground app, that is the Country object. An Agency has a country, and an Agency is a dependency of a Launch, of a Space Station, and likely more types to come.&lt;/p&gt;
+&lt;p&gt;How do I enforce that any time I insert an Agency, I also insert the Countries associated with it? That&amp;rsquo;s what this blog post sets out to explore, and the answer is much simpler than I thought when I started.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Reflecting On A Decade Of Content Creation</title>
       <link>http://localhost:1313/reflecting-on-a-decade/</link>
